@@ -3,6 +3,46 @@
     height: 80px;
 }
 
+#pesquisa {
+    border-color: black;
+    border-width: 1px;
+    text-indent: 10px;
+    color: black;
+    width: 300px;
+    z-index: 10;
+    background: transparent;
+    outline: none;
+}
+
 .navbar-dark {
     background-color: #DA381D;
+}
+
+::-webkit-input-placeholder {
+    color: black;
+    font: 12px verdana, arial, sans-serif;
+}
+
+ :-moz-placeholder {
+    color: black;
+    font: 12px verdana, arial, sans-serif;
+}
+
+ ::-moz-placeholder {
+    color: black;
+    font: 12px verdana, arial, sans-serif;
+}
+
+ :-ms-input-placeholder {
+    color: black;
+    font: 12px verdana, arial, sans-serif;
+}
+
+.submit-line {
+    position: relative;
+    width: 200px;
+}
+
+.submit-line input {
+    width: 100%;
 }

@@ -1,0 +1,47 @@
+.barraNav {
+    background-color: #000000;
+}
+
+.cabecalho {
+    display: flex;
+    background-color: #DA381D;
+}
+
+.inPesquisar {
+    margin-left: 50px;
+    width: 350px;
+    border: 1px solid #000000;
+    background-color: #DA381D;
+    color: #000000;
+}
+
+/* Firefox e Chrome(eu acho)*/
+.inPesquisar::placeholder {
+    color: #000000;
+    opacity: 1;
+}
+
+/* Internet Explorer 10-11 */
+.inPesquisar:-ms-input-placeholder {
+    color: #000000;
+}
+
+/* Microsoft Edge */
+.inPesquisar::-ms-input-placeholder {
+    color: #000000;
+}
+a{
+    color: #ffffff;
+}
+a:hover{
+    color: #DA381D;
+}
+
+#barraDeNavegacao{
+    display: flex;
+    justify-content: center;
+}
+#barraDeNavegacao ul li{
+    margin: 0px 50px;
+    
+}

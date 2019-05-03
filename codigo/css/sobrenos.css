@@ -3,7 +3,7 @@
 }
 
 .cabecalho {
-    display: flex;
+
     background-color: #DA381D;
 }
 
@@ -38,10 +38,23 @@ a:hover{
 }
 
 #barraDeNavegacao{
-    display: flex;
     justify-content: center;
 }
 #barraDeNavegacao ul li{
     margin: 0px 50px;
-    
+}
+#carrossel{
+    width: 100%;
+    height:100%;
+    background-color: aqua;
+}
+#carrossel img{
+    width: 100%;
+    height: 100%;;
+}
+
+#conteudo{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }

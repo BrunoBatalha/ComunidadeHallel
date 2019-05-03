@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 #imgNome {
     width: 200px;
     height: 80px;
@@ -38,11 +42,14 @@
     font: 12px verdana, arial, sans-serif;
 }
 
-.submit-line {
-    position: relative;
-    width: 200px;
+a {
+    color: white;
 }
 
-.submit-line input {
-    width: 100%;
+.active {
+    color: #DA381D;
+}
+
+a:hover {
+    color: #DA381D;
 }

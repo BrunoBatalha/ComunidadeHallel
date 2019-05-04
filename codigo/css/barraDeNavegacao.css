@@ -1,0 +1,14 @@
+.barraNav {
+    background-color: #000000;
+}
+
+.cabecalho {
+    background-color: #DA381D;
+}
+
+#barraDeNavegacao{
+    justify-content: center;
+}
+#barraDeNavegacao ul li{
+    margin: 0px 50px;
+}

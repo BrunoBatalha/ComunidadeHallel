@@ -150,7 +150,7 @@
                 <!-- Fim carousel -->
             </div>
         </div>
-        <article id="eventos" class="row" style="border: 1px solid black;">
+        <article id="eventos" class="row">
             <div class="col-md-12 titulo">
                 <h2>Eventos</h2>
             </div>
@@ -209,67 +209,84 @@
             <!-- Fim carousel -->
         </article>
 
-        <article id="formações" class="row" style="border: 1px solid black;">
+        <article id="formações" class="row">
             <div class="col-md-12 titulo">
                 <h2>Formações</h2>
             </div>
-            <!-- Inicio carousel -->
-            <div id="carrosselFormacoes" class="carousel slide col-md-12 carrossel" data-ride="carrosselFormacoes"
-                data-interval="4000">
-                <!-- Inidicadores -->
-                <ul class=" carousel-indicators">
-                    <li data-target="#carrosselFormacoes" data-slide-to="0" class="active"></li>
-                    <li data-target="#carrosselFormacoes" data-slide-to="1"></li>
-                    <li data-target="#carrosselFormacoes" data-slide-to="2"></li>
-                    <li data-target="#carrosselFormacoes" data-slide-to="3"></li>
-                </ul>
+            <div class="col-md-8 col-sm-12">
+                <!-- Inicio carousel -->
+                <div id="carrosselFormacoes" class="carousel slide col-md-12 carrossel" data-ride="carrosselFormacoes"
+                    data-interval="4000">
+                    <!-- Inidicadores -->
+                    <ul class=" carousel-indicators">
+                        <li data-target="#carrosselFormacoes" data-slide-to="0" class="active"></li>
+                        <li data-target="#carrosselFormacoes" data-slide-to="1"></li>
+                        <li data-target="#carrosselFormacoes" data-slide-to="2"></li>
+                        <li data-target="#carrosselFormacoes" data-slide-to="3"></li>
+                    </ul>
 
-                <!-- Slides -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="rsc/img/ex1.png">
-                        <div class="carousel-caption">
-                            <h3>Exemplo1</h3>
-                            <p>Exemplo 1 tá top!</p>
+                    <!-- Slides -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="rsc/img/ex1.png">
+                            <div class="carousel-caption">
+                                <h3>Exemplo1</h3>
+                                <p>Exemplo 1 tá top!</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="rsc/img/ex2.png">
+                            <div class="carousel-caption">
+                                <h3>Exemplo2</h3>
+                                <p>Exemplo 2 tá top!</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="rsc/img/ex3.png">
+                            <div class="carousel-caption">
+                                <h3>Exemplo3</h3>
+                                <p>Exemplo 3 tá top!</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="rsc/img/ex4.png">
+                            <div class="carousel-caption">
+                                <h3>Exemplo4</h3>
+                                <p>Exemplo 4 tá top!</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <img src="rsc/img/ex2.png">
-                        <div class="carousel-caption">
-                            <h3>Exemplo2</h3>
-                            <p>Exemplo 2 tá top!</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="rsc/img/ex3.png">
-                        <div class="carousel-caption">
-                            <h3>Exemplo3</h3>
-                            <p>Exemplo 3 tá top!</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="rsc/img/ex4.png">
-                        <div class="carousel-caption">
-                            <h3>Exemplo4</h3>
-                            <p>Exemplo 4 tá top!</p>
-                        </div>
-                    </div>
+
+                    <!-- Controles do carrossel-->
+                    <a class="carousel-control-prev" href="#carrosselFormacoes" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#carrosselFormacoes" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
                 </div>
-
-                <!-- Controles do carrossel-->
-                <a class="carousel-control-prev" href="#carrosselFormacoes" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#carrosselFormacoes" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
+                <!-- Fim carousel -->
             </div>
-            <!-- Fim carousel -->
+            <div class="col-md-4 row">
+                <div class="col-md-12">
+                    <img src="rsc/img/ex4.png" width="100px" height="150px" style="float: left;">
+                    <h6 style="color: red;">Engenharia da santidade</h6>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste sint qui beatae accusantium animi
+                        blanditiis alias, ab minima.</p>
+                </div>
+                <div class="col-md-12">
+                    <img src="rsc/img/ex4.png" width="100px" height="150px" style="float: left;">
+                    <h6 style="color: red;">Engenharia da santidade</h6>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste sint qui beatae accusantium animi
+                        blanditiis alias, ab minima.</p>
+                </div>
+            </div>
+
         </article>
 
         <div class="row">
             <article class="col-md-6">
-                <div class="row" style="border: 1px solid black;">
+                <div class="row">
                     <header class="col-md-12 titulo">
                         <h2>Faça seu pedido de oração</h2>
                     </header>
@@ -334,7 +351,7 @@
     </div>
 
     <!-- Inicio do Footer -->
-    <footer class="page-footer font-small pt-3 rodape container-fluid ">
+    <footer class="page-footer font-small pt-3 rodape container-fluid">
         <div class="row">
             <div class="col-md-6">
                 <!-- Content -->

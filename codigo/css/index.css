@@ -1,11 +1,16 @@
 .titulo{
     /* background-color:#000; */
-    background-color:#97292E;
+    background-color:rgb(0, 0, 0);
     color: #ffffff;
+   
 }
 a{
     color: #ffffff;
 }
 a:hover{
     color: #DA381D;
+}
+
+.tit{
+    font-size: 20px;
 }

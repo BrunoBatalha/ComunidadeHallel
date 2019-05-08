@@ -4,7 +4,7 @@
 }
 
 .cabecalho {
-    background-color: #DA381D;
+    background-color: #902726;
 }
 
 a:active{
@@ -17,6 +17,7 @@ a:active{
 #barraDeNavegacao ul li{
     margin: 0px 50px;
 }
+
 @include media-breakpoint-up(md) {
     html {
       font-size: 1.4rem;

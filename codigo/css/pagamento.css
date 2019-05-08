@@ -9,12 +9,12 @@ a{
 
 a:hover{
     color: #DA381D;
+    text-decoration:none; 
 }
 
 .tit{
     font-size: 20px;
 }
-
 
 .displayed {
     display: block;
@@ -28,7 +28,6 @@ a:hover{
     margin: 10% 5% 0%;
     width: 100%;
     position:relative;
-   
   }
   
   #timeline{
@@ -98,13 +97,11 @@ a:hover{
   
   
   .timeline-panel {
-    margin-top: 20%;
     width: 100%;
-    height: 200px;
+    height: 50px;
     border-radius:2px;
     position:relative;
     text-align:left;
-    
     font-size:20px;
     font-weight:bold;
     line-height:20px;

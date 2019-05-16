@@ -14,3 +14,25 @@ a:hover{
 .tit{
     font-size: 20px;
 }
+
+body, html {
+    height: 100%;
+    font-family: 'Montserrat';
+    letter-spacing: 0.4em
+  }
+
+ .page-footer{
+    letter-spacing: 0;
+  }
+
+.parallax {
+    background-image: url("rsc/img/fundohallel.png");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+  

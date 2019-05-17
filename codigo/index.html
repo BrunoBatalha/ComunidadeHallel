@@ -46,7 +46,7 @@
         </div>
 
         <!-- Barra de Navegação -->
-        <nav class="barraNav navbar-expand-md">
+        <nav class="barraNav navbar-expand-md" id="navbar">
             <!-- Recolher navbar -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barraDeNavegacao">
                 <span class="fa fa-bars" style="color: white; font-size: 25px;"></span>
@@ -55,23 +55,23 @@
             <div class="collapse navbar-collapse" id="barraDeNavegacao" style="color: white; font-size: 14px;">
 
                 <!-- Link da navbar -->
-                <ul class="listaNavbar navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">INÍCIO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">ASSOCIAÇÃO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">EVENTOS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">FORMAÇÕES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">LOJA</a>
-                    </li>
 
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">INÍCIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#associacao">ASSOCIAÇÃO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#eventos">EVENTOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#formacoes">FORMAÇÕES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#loja">LOJA</a>
+                    </li>
 
                 </ul>
             </div>
@@ -81,73 +81,184 @@
 
     <!-- Início do home -->
 
-    <div>
+    <div data-spy="scroll" data-target="#navbar" data-offset="0">
 
-        <img src="rsc/img/fundohallel.png" height="100%" width="100%" style="filter: blur(3px); filter: brightness(25%);">
+        <div id="inicio">
 
-    </div>
+            <img src="rsc/img/fundohallel.png" height="40%" width="100%" style="filter: blur(3px); filter: brightness(25%);">
 
-
-    <div style="background-color: black">
-        <div class="container">
-            <center>
-                <br>
-                <br>
-
-                <p style="color: white; font-weight: regular; font-size: 24px; ">CARISMA</p>
-
-                <p style="color: white; font-weight: bold; font-size: 18px;"> REGATAR ALMAS PARA DEUS, ATRAVÉS DO LOUVOR, DA FORMAÇÃO E DO AMOR POR EXCELÊNCIA.</p>
-
-                <br>
-                <br>
-            </center>
         </div>
 
-    </div>
 
-    <div style="background-color: white">
-        <div class="container">
-            <center>
-                <br>
-                <br>
+        <div style="background-color: black">
+            <div class="container">
+                <center>
+                    <br>
+                    <br>
 
-                <p style="color: black; font-weight: bold; font-size: 24px; ">ASSOCIAÇÃO</p>
+                    <p style="color: white; font-weight: regular; font-size: 24px; ">CARISMA</p>
 
-                <p style="color: black; font-weight: regular; font-size: 18px;">TORNE-SE UM ASSOCIADO DA
-                    <em>COMUNIDADE HALLEL</em> E TENHA ACESSO À:</p>
-                <br>
-                <div class="row">
+                    <p style="color: white; font-weight: bold; font-size: 18px;"> REGATAR ALMAS PARA DEUS, ATRAVÉS DO LOUVOR, DA FORMAÇÃO E DO AMOR POR EXCELÊNCIA.</p>
 
-                    <div class="col-md-3">
+                    <br>
+                    <br>
+                </center>
+            </div>
 
-                    </div>
-
-                    <div class="col-md-3">
-                        <img src="rsc/img/aula.png" alt="aula" height="150px" width="150px">
-                        <br>
-                        <p>ACESSO ILIMITADO AS FORMAÇÕES</p>
-                    </div>
-
-                    <div class="col-md-3">
-                        <img src="rsc/img/desconto.png" alt="aula" height="150px" width="150px">
-                        <br>
-                        <p>ÓTIMOS DESCONTOS NA LOJA HALLEL</p>
-                    </div>
-
-                    <div class="col-md-3">
-
-                    </div>
-
-                </div>
-
-                <br>
-                <br>
-            </center>
         </div>
 
+        <div style="background-color: white" id="associacao">
+            <div class="container">
+                <center>
+                    <br>
+                    <br>
+
+                    <p style="color: black; font-weight: bold; font-size: 24px; ">ASSOCIAÇÃO</p>
+
+                    <p style="color: black; font-weight: regular; font-size: 18px;">TORNE-SE UM ASSOCIADO DA
+                        <em>COMUNIDADE HALLEL</em> E TENHA ACESSO À:</p>
+                    <br>
+                    <div class="row">
+
+                        <div class="col-md-2">
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <br>
+                                    <img src="rsc/img/aula.png" alt="aula" height="150px" width="150px">
+                                    <br>
+                                    <p>ACESSO ILIMITADO AS
+                                        <span style="color: #720100;">FORMAÇÕES</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <br>
+                                    <img src="rsc/img/desconto.png" alt="aula" height="150px" width="150px">
+                                    <br>
+                                    <p>ÓTIMOS DESCONTOS NA
+                                        <span style="color: #720100;">LOJA HALLEL</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-2">
+
+                        </div>
+
+                    </div>
+
+                    <br>
+
+                    <a href="pagamento.html" style="text-decoration: none;">
+                        <input class="btnPadrao" type="button" value="MOSTRAR-ME">
+                    </a>
+
+                    <br>
+                    <br>
+                </center>
+            </div>
+
+        </div>
+
+        <div style="background-color: black" id="eventos">
+            <div class="container">
+                <center>
+                    <br>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="d-flex justify-content-start align-items-center" style="color: white">
+                                <button class="marcador"></button> &nbsp
+                                <b>EVENTOS</b>
+                            </p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <P class="d-flex justify-content-end align-items-center">
+                                <button class="btnPadrao">Mostrar mais</button>
+                            </P>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                </center>
+            </div>
+
+        </div>
+
+        <div style="background-color: white" id="formacoes">
+            <div class="container">
+                <center>
+                    <br>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="d-flex justify-content-start align-items-center" style="color: black">
+                                <button class="marcador"></button> &nbsp
+                                <b>FORMAÇÕES</b>
+                            </p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <P class="d-flex justify-content-end align-items-center">
+                                <button class="btnPadrao">Mostrar mais</button>
+                            </P>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                </center>
+            </div>
+
+        </div>
+
+        <div style="background-color: black" id="loja">
+            <div class="container">
+                <center>
+                    <br>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="d-flex justify-content-start align-items-center" style="color: white">
+                                <button class="marcador"></button> &nbsp
+                                <b>EVENTOS</b>
+                            </p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <P class="d-flex justify-content-end align-items-center">
+                                <button class="btnPadrao">Mostrar mais</button>
+                            </P>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                </center>
+            </div>
+
+        </div>
+
+
+
     </div>
-
-
 
     <!-- Fim do home -->
 

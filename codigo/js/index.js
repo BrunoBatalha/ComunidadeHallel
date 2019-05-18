@@ -1,5 +1,5 @@
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 45) {
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 85) {
         document.getElementById('navbar').className = 'barraNav navbar-expand-md fixed-top';
         console.log($(this).scrollTop())
     } else {

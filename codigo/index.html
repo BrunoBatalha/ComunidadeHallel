@@ -13,67 +13,63 @@
     <link rel="stylesheet" href="css/carrossel.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 
+    <link href='//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body>
     <!-- Inicio do header -->
-    <header class="container-fluid " style="background-color: #000000">
+    <header class="container-fluid " style="background-color: #000000;">
         <div class="cabecalho row">
+
             <div class="col-md-4">
-                <!-- Barra de pesquisa -->
-                <!-- <center>
-                    <section class="input-group mb-3" style="margin-top: 25px">
-                        <input class="form-control inPesquisar" type="text" placeholder="Pesquise no site...">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-dark" type="button">
-                                <span class="fas fa-search"></span>
-                            </button>
-                        </div>
-                    </section>
-                </center> -->
+
             </div>
 
             <!-- Imagem Comunidade Hallel -->
             <div class="col-md-4">
                 <center>
-                    <img class="img-responsive" src="rsc/img/nome.png" style="width: 200px; height: 80px;">
+                    <br>
+                    <img class="d-flex align-items-center" src="rsc/img/nome-topo.png" style="width: 200px;">
+                    <br>
                 </center>
             </div>
 
+
+
             <!-- Redes sociais -->
             <div class="col-md-4">
-                <center>
-                    <section style="font-size: 25px; margin-top: 25px;">
-                        <i class=" fab fa-facebook"></i>
-                        <i class=" fab fa-instagram"></i>
-                    </section>
-                </center>
+
             </div>
 
         </div>
 
         <!-- Barra de Navegação -->
-        <nav class="navbar-expand-md">
+        <nav class="barraNav navbar-expand-md" id="navbar">
             <!-- Recolher navbar -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barraDeNavegacao">
                 <span class="fa fa-bars" style="color: white; font-size: 25px;"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="barraDeNavegacao">
+            <div class="collapse navbar-collapse" id="barraDeNavegacao" style="color: white; font-size: 14px;">
 
                 <!-- Link da navbar -->
-                <ul class="listaNavbar navbar-nav">
+
+                <ul class="nav nav-pills">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link" href="#inicio">INÍCIO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#eventos">Eventos</a>
+                        <a class="nav-link" href="#associacao">ASSOCIAÇÃO</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#formacoes">Formações</a>
+                        <a class="nav-link" href="#eventos">EVENTOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#associacao">Associação</a>
+                        <a class="nav-link" href="#formacoes">FORMAÇÕES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#loja">LOJA</a>
                     </li>
 
                 </ul>
@@ -81,283 +77,189 @@
         </nav>
     </header>
     <!-- Fim do header -->
-    <br>
 
-    <div class="container">
+    <!-- Início do home -->
 
-        <!-- Inicio row home -->
-        <div class="row" id="home">
+    <div data-spy="scroll" data-target="#navbar" data-offset="0">
 
-            <div class="col-md-4">
+        <div id="inicio">
+
+            <img src="rsc/img/fundohallel.png" height="40%" width="100%" style="filter: blur(3px); filter: brightness(25%);">
+
+        </div>
+
+
+        <div style="background-color: black">
+            <div class="container">
                 <center>
-                    <img class="img-responsive" src="rsc/img/logoHallel.jpg" width="290px" style="margin-top: 40px">
+                    <br>
+                    <br>
+
+                    <p style="color: white; font-weight: regular; font-size: 24px; ">CARISMA</p>
+
+                    <p style="color: white; font-weight: bold; font-size: 18px;"> REGATAR ALMAS PARA DEUS, ATRAVÉS DO LOUVOR, DA FORMAÇÃO E DO AMOR POR EXCELÊNCIA.</p>
+
+                    <br>
+                    <br>
                 </center>
             </div>
 
-            <div class="col-md-8">
-                <!-- Inicio carousel -->
-                <div id="carrossel1" class="carousel slide col-md-12 carrossel" data-ride="carousel" data-interval="4000">
-                    <!-- Inidicadores -->
-                    <ul class=" carousel-indicators">
-                        <li data-target="#carrossel1" data-slide-to="0" class="active"></li>
-                        <li data-target="#carrossel1" data-slide-to="1"></li>
-                        <li data-target="#carrossel1" data-slide-to="2"></li>
-                        <li data-target="#carrossel1" data-slide-to="3"></li>
-                    </ul>
-
-                    <!-- Slides -->
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="rsc/img/ex1.png">
-                            <div class="carousel-caption">
-                                <h3>Exemplo1</h3>
-                                <p>Exemplo 1 tá top!</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="rsc/img/ex2.png">
-                            <div class="carousel-caption">
-                                <h3>Exemplo2</h3>
-                                <p>Exemplo 2 tá top!</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="rsc/img/ex3.png">
-                            <div class="carousel-caption">
-                                <h3>Exemplo3</h3>
-                                <p>Exemplo 3 tá top!</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="rsc/img/ex4.png">
-                            <div class="carousel-caption">
-                                <h3>Exemplo4</h3>
-                                <p>Exemplo 4 tá top!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Controles do carrossel-->
-                    <a class="carousel-control-prev" href="#carrossel1" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </a>
-                    <a class="carousel-control-next" href="#carrossel1" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
-                </div>
-                <!-- Fim carousel -->
-            </div>
-
-        </div>
-        <!-- Fim row home -->
-
-        <hr class="border-dark">
-
-        <div id="eventos" class="row">
-            <div class="col-md-12 titulo">
-                <h4 class="my-2 float-left">Eventos</h4>
-                <button type="button" class="btn btn-dark my-2  float-right">Mais
-                    eventos</button>
-            </div>
-
-
-            <!-- Inicio carousel -->
-            <div id="carrosselEventos" class="carousel slide col-md-12 carrossel" data-ride="carousel" data-interval="4000">
-                <!-- Inidicadores -->
-                <ul class=" carousel-indicators">
-                    <li data-target="#carrosselEventos" data-slide-to="0" class="active"></li>
-                    <li data-target="#carrosselEventos" data-slide-to="1"></li>
-                    <li data-target="#carrosselEventos" data-slide-to="2"></li>
-                    <li data-target="#carrosselEventos" data-slide-to="3"></li>
-                </ul>
-
-                <!-- Slides -->
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="rsc/img/ex1.png">
-                        <div class="carousel-caption">
-                            <h3>Exemplo1</h3>
-                            <p>Exemplo 1 tá top!</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="rsc/img/ex2.png">
-                        <div class="carousel-caption">
-                            <h3>Exemplo2</h3>
-                            <p>Exemplo 2 tá top!</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="rsc/img/ex3.png">
-                        <div class="carousel-caption">
-                            <h3>Exemplo3</h3>
-                            <p>Exemplo 3 tá top!</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="rsc/img/ex4.png">
-                        <div class="carousel-caption">
-                            <h3>Exemplo4</h3>
-                            <p>Exemplo 4 tá top!</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Controles do carrossel-->
-                <a class="carousel-control-prev" href="#carrosselEventos" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#carrosselEventos" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
-            </div>
-            <!-- Fim carousel -->
         </div>
 
-        <hr class="border-dark">
+        <div style="background-color: white" id="associacao">
+            <div class="container">
+                <center>
+                    <br>
+                    <br>
 
-        <div id="formacoes" class="row">
-            <div class="col-md-12 titulo">
-                <h4 class="my-2 float-left">Formações</h4>
-                <button type="button" class="my-2 btn btn-dark float-right">Mais
-                    informações</button>
-            </div>
-            <div class="col-md-8 col-sm-12">
-                <!-- Inicio carousel -->
-                <div id="carrosselFormacoes" class="carousel slide col-md-12 carrossel" data-ride="carrosselFormacoes" data-interval="4000">
-                    <!-- Inidicadores -->
-                    <ul class=" carousel-indicators">
-                        <li data-target="#carrosselFormacoes" data-slide-to="0" class="active"></li>
-                        <li data-target="#carrosselFormacoes" data-slide-to="1"></li>
-                        <li data-target="#carrosselFormacoes" data-slide-to="2"></li>
-                        <li data-target="#carrosselFormacoes" data-slide-to="3"></li>
-                    </ul>
+                    <p style="color: black; font-weight: bold; font-size: 24px; ">ASSOCIAÇÃO</p>
 
-                    <!-- Slides -->
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="rsc/img/ex1.png">
-                            <div class="carousel-caption">
-                                <h3>Exemplo1</h3>
-                                <p>Exemplo 1 tá top!</p>
-                            </div>
+                    <p style="color: black; font-weight: regular; font-size: 18px;">TORNE-SE UM ASSOCIADO DA
+                        <em>COMUNIDADE HALLEL</em> E TENHA ACESSO À:</p>
+                    <br>
+                    <div class="row">
+
+                        <div class="col-md-2">
+
                         </div>
-                        <div class="carousel-item">
-                            <img src="rsc/img/ex2.png">
-                            <div class="carousel-caption">
-                                <h3>Exemplo2</h3>
-                                <p>Exemplo 2 tá top!</p>
+
+                        <div class="col-md-4">
+
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <br>
+                                    <img src="rsc/img/aula.png" alt="aula" height="150px" width="150px">
+                                    <br>
+                                    <p>ACESSO ILIMITADO AS
+                                        <span style="color: #720100;">FORMAÇÕES</span>
+                                    </p>
+                                </div>
                             </div>
+
                         </div>
-                        <div class="carousel-item">
-                            <img src="rsc/img/ex3.png">
-                            <div class="carousel-caption">
-                                <h3>Exemplo3</h3>
-                                <p>Exemplo 3 tá top!</p>
+
+                        <div class="col-md-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <br>
+                                    <img src="rsc/img/desconto.png" alt="aula" height="150px" width="150px">
+                                    <br>
+                                    <p>ÓTIMOS DESCONTOS NA
+                                        <span style="color: #720100;">LOJA HALLEL</span>
+                                    </p>
+                                </div>
                             </div>
+
                         </div>
-                        <div class="carousel-item">
-                            <img src="rsc/img/ex4.png">
-                            <div class="carousel-caption">
-                                <h3>Exemplo4</h3>
-                                <p>Exemplo 4 tá top!</p>
-                            </div>
+
+                        <div class="col-md-2">
+
                         </div>
+
                     </div>
 
-                    <!-- Controles do carrossel-->
-                    <a class="carousel-control-prev" href="#carrosselFormacoes" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
+                    <br>
+
+                    <a href="pagamento.html" style="text-decoration: none;">
+                        <input class="btnPadrao" type="button" value="MOSTRAR-ME">
                     </a>
-                    <a class="carousel-control-next" href="#carrosselFormacoes" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </a>
-                </div>
-                <!-- Fim carousel -->
-            </div>
-            <div class="col-md-4 mt-3 row">
-                <div class="col-md-12">
-                    <img src="rsc/img/ex4.png" width="100px" height="150px" class="float-left mr-2">
-                    <h6 style="color: red;">Engenharia da santidade</h6>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste sint qui beatae accusantium animi blanditiis alias, ab minima.</p>
-                </div>
-                <div class="col-md-12">
-                    <img src="rsc/img/ex4.png" width="100px" height="150px" class="float-left mr-2">
-                    <h6 style="color: red;">Engenharia da santidade</h6>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste sint qui beatae accusantium animi blanditiis alias, ab minima.</p>
-                </div>
+
+                    <br>
+                    <br>
+                </center>
             </div>
 
         </div>
 
-        <hr class="border-dark">
+        <div style="background-color: black" id="eventos">
+            <div class="container">
+                <center>
+                    <br>
+                    <br>
 
-        <div class="row" id="associacao">
-            <article class="col-md-6 mb-3">
-                <div class="row border border-dark">
-                    <div class="col-md-12 titulo">
-                        <h4 class="my-2">Faça seu pedido</h4>
-                    </div>
-                    <div class="col-md-12">
-
-                        <form class="col-md-12">
-                            <div class="form-group">
-                                <label for="email">Nome:</label>
-                                <input class="form-control" type="text" id="nome" name="nome" placeholder="Nome">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email:</label>
-                                <input class="form-control" type="email" id="email" name="email" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Telefone (opcional):</label>
-                                <input class="form-control" type="tel" id="telefone" name="telefone" placeholder="Telefone (opcional)">
-                            </div>
-                            <div class="form-group">
-                                <label for="pedido">Seu pedido:</label>
-                                <textarea class="form-control" cols="50" placeholder="Seus pedido:"></textarea>
-                            </div>
-                            <div class="form-group float-right">
-                                <input type="submit" class="btn btn-dark" value="Enviar">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </article>
-
-            <article class="col-md-6 ">
-                <div class="ml-2 row h-100">
-
-                    <div class="mt-4 col-md-12 border border-dark" style="height: 40%;">
-                        <div class="titulo row">
-                            <h4 class="my-2  ml-2">Rádio</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="d-flex justify-content-start align-items-center" style="color: white">
+                                <button class="marcador"></button> &nbsp
+                                <b>EVENTOS</b>
+                            </p>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p style="color: red;">Programação</p>
-                                <p style="color: black;">14:00 - 16:00</p>
-                                <p style="color: black;">Seleção de composições Hallel</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4 col-md-12 border border-dark" style="height: 40%;">
-                        <div class="titulo row">
-                            <h4 class="my-2 ml-2">TV</h4>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p style="color: red;">Programação</p>
-                                <p style="color: black;">15:00 - 17:00</p>
-                                <p style="color: black;">Missa Sagrada</p>
-                            </div>
+
+                        <div class="col-md-6">
+                            <P class="d-flex justify-content-end align-items-center">
+                                <button class="btnPadrao">Mostrar mais</button>
+                            </P>
                         </div>
                     </div>
 
-                </div>
-            </article>
+                    <br>
+                    <br>
+                </center>
+            </div>
+
         </div>
+
+        <div style="background-color: white" id="formacoes">
+            <div class="container">
+                <center>
+                    <br>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="d-flex justify-content-start align-items-center" style="color: black">
+                                <button class="marcador"></button> &nbsp
+                                <b>FORMAÇÕES</b>
+                            </p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <P class="d-flex justify-content-end align-items-center">
+                                <button class="btnPadrao">Mostrar mais</button>
+                            </P>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                </center>
+            </div>
+
+        </div>
+
+        <div style="background-color: black" id="loja">
+            <div class="container">
+                <center>
+                    <br>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="d-flex justify-content-start align-items-center" style="color: white">
+                                <button class="marcador"></button> &nbsp
+                                <b>EVENTOS</b>
+                            </p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <P class="d-flex justify-content-end align-items-center">
+                                <button class="btnPadrao">Mostrar mais</button>
+                            </P>
+                        </div>
+                    </div>
+
+                    <br>
+                    <br>
+                </center>
+            </div>
+
+        </div>
+
+
 
     </div>
+
+    <!-- Fim do home -->
 
     <!-- Inicio do Footer -->
     <footer class="page-footer font-small pt-3 rodape container-fluid">

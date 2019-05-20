@@ -58,13 +58,13 @@ html {
 .card {
     background-color: white;
     border-color: transparent;
-    
+
 }
 
 .card:hover {
     background: #00000015;
     cursor: pointer;
-    
+
 }
 
 .cardPreto {
@@ -90,14 +90,41 @@ html {
     width: 30%;
     background-color: #720100;
     border-width: 0px;
+    animation: close-animation 2s;
 }
+
 
 .marcadorMidiaAbriu {
     height: 10px;
     width: 70%;
     background-color: #720100;
     border-width: 0px;
+    animation: open-animation 2s;
 }
+
+@keyframes open-animation {
+    from {
+        width: 30%;
+    }
+
+    to {
+
+        width: 70%;
+    }
+}
+
+@keyframes close-animation {
+    from {
+        width: 70%;
+    }
+
+    to {
+
+        width: 30%;
+    }
+}
+
+
 
 .alinhaTitulo {
     float: left;
@@ -120,3 +147,4 @@ html {
     color: #000000;
     font-weight: bold;
 }
+

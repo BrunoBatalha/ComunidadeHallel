@@ -20,7 +20,7 @@
         <div class="cabecalho row">
             <div class="col-md-4">
                 <!-- Barra de pesquisa -->
-                <center>
+                <!--  <center>
                     <section class="input-group mb-3" style="margin-top: 25px">
                         <input class="form-control inPesquisar" type="text" placeholder="Pesquise no site...">
                         <div class="input-group-append">
@@ -29,7 +29,7 @@
                             </button>
                         </div>
                     </section>
-                </center>
+                </center> -->
             </div>
 
             <!-- Imagem Comunidade Hallel -->
@@ -87,24 +87,27 @@
     </header>
     <!-- Fim do header -->
 
-
     <div class="container">
 
+        <!-- Inicio row -->
         <div class="row">
-            <div class="col-md-6">
+
+            <div class="col-md-4">
                 <center>
-                    <img class="img-responsive" src="rsc/img/logoHallel.jpg" width="290px">
+                    <img class="img-responsive" src="rsc/img/logoHallel.jpg" width="290px" style="margin-top: 40px">
                 </center>
             </div>
-            <div class="col-md-6">
+
+            <div class="col-md-8">
                 <!-- Inicio carousel -->
-                <div id="carrossel" class="carousel slide" data-ride="carousel" data-interval="4000">
+                <div id="carrossel1" class="carousel slide col-md-12 carrossel" data-ride="carousel"
+                    data-interval="4000">
                     <!-- Inidicadores -->
                     <ul class=" carousel-indicators">
-                        <li data-target="#carrossel" data-slide-to="0" class="active"></li>
-                        <li data-target="#carrossel" data-slide-to="1"></li>
-                        <li data-target="#carrossel" data-slide-to="2"></li>
-                        <li data-target="#carrossel" data-slide-to="3"></li>
+                        <li data-target="#carrossel1" data-slide-to="0" class="active"></li>
+                        <li data-target="#carrossel1" data-slide-to="1"></li>
+                        <li data-target="#carrossel1" data-slide-to="2"></li>
+                        <li data-target="#carrossel1" data-slide-to="3"></li>
                     </ul>
 
                     <!-- Slides -->
@@ -140,38 +143,49 @@
                     </div>
 
                     <!-- Controles do carrossel-->
-                    <a class="carousel-control-prev" href="#carrossel" data-slide="prev">
+                    <a class="carousel-control-prev" href="#carrossel1" data-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
                     </a>
-                    <a class="carousel-control-next" href="#carrossel" data-slide="next">
+                    <a class="carousel-control-next" href="#carrossel1" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
                 </div>
                 <!-- Fim carousel -->
             </div>
-        </div>
 
-        <div class="row titulo">
-            <h2>Eventos</h2>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <img class="img-responsive" src="rsc/img/ex1.png" width="100%">
+        <!-- Fim row -->
+
+        <hr class="border-dark">
+
+        <!-- Inicio row -->
+        <div class="row mb-3">
+
+            <div class="col-md-12 titulo">
+                <h4 class="my-2 float-left">Eventos</h4>
             </div>
-            <div class="col-md-6">
-                <p class="text-danger">Título</p>
-                <p>
-                    Exemplo para preencher uma descrição de forma simulativa.
-                </p>
+
+            <div class="row mt-2 ml-1">
+                <div class="col-md-6">
+                    <img class="img-responsive" src="rsc/img/ex1.png" width="100%">
+                </div>
+                <div class="col-md-6">
+                    <h5 class="text-danger">Título</h5>
+                    <p>
+                        Exemplo para preencher uma descrição de forma simulativa.
+                    </p>
+                </div>
             </div>
-            <div class="col-md-6">
-                <img class="img-responsive" src="rsc/img/ex1.png" width="100%">
-            </div>
-            <div class="col-md-6">
-                <p class="text-danger">Título</p>
-                <p>
-                    Exemplo para preencher uma descrição de forma simulativa.
-                </p>
+            <div class="row mt-2  ml-1">
+                <div class="col-md-6">
+                    <img class="img-responsive" src="rsc/img/ex1.png" width="100%">
+                </div>
+                <div class="col-md-6">
+                    <h5 class="text-danger">Título</h5>
+                    <p>
+                        Exemplo para preencher uma descrição de forma simulativa.
+                    </p>
+                </div>
             </div>
         </div>
 

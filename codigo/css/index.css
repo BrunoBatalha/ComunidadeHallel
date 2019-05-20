@@ -1,16 +1,95 @@
-.titulo{
+.titulo {
     /* background-color:#000; */
-    background-color:rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
     color: #ffffff;
 }
 
-a{
+a {
     color: #ffffff;
 }
-a:hover{
-    color: #DA381D;
+
+a:hover {
+    color: #720100;
 }
 
-.tit{
+.tit {
     font-size: 20px;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: 'Montserrat';
+    letter-spacing: 0.4em
+}
+
+.page-footer {
+    letter-spacing: 0;
+}
+
+.parallax {
+    background-image: url(rsc/img/fundohallel.png);
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btnPadrao {
+    background-color: #720100;
+    color: white;
+    letter-spacing: 0.1px;
+    border-width: 0px;
+    cursor: pointer;
+    height: 40px;
+    width: 30%;
+}
+
+.btnPadrao:hover {
+    border-width: 2px;
+    border-color: #720100;
+    background-color: transparent;
+    color: #720100;
+    font-weight: bold;
+}
+
+.card {
+    background-color: white;
+    ;
+    border-color: transparent;
+}
+
+.card:hover {
+    background: #00000015;
+    cursor: pointer;
+}
+
+.marcador {
+    height: 30px;
+    width: 15px;
+    background-color: #720100;
+    border-width: 0px;
+}
+
+.alinhaTitulo {
+    float: left;
+}
+
+.btnVariavel {
+    background-color: #000000;
+    color: white;
+    letter-spacing: 0.1px;
+    border-width: 0px;
+    cursor: pointer;
+    height: 30px;
+    width: 30%;
+}
+
+.btnVariavel:hover {
+    border-width: 2px;
+    border-color: #000000;
+    background-color: transparent;
+    color: #000000;
+    font-weight: bold;
 }

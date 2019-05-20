@@ -10,6 +10,7 @@ a {
 
 a:hover {
     color: #720100;
+    text-decoration: none;
 }
 
 .tit {
@@ -56,18 +57,44 @@ html {
 
 .card {
     background-color: white;
-    ;
     border-color: transparent;
+    
 }
 
 .card:hover {
     background: #00000015;
+    cursor: pointer;
+    
+}
+
+.cardPreto {
+    background-color: rgb(0, 0, 0);
+    border-color: transparent;
+    color: white
+}
+
+.cardPreto:hover {
+    color: #720100;
     cursor: pointer;
 }
 
 .marcador {
     height: 30px;
     width: 15px;
+    background-color: #720100;
+    border-width: 0px;
+}
+
+.marcadorMidia {
+    height: 10px;
+    width: 30%;
+    background-color: #720100;
+    border-width: 0px;
+}
+
+.marcadorMidiaAbriu {
+    height: 10px;
+    width: 70%;
     background-color: #720100;
     border-width: 0px;
 }

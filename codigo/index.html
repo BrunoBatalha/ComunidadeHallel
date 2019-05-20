@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="css/carrossel.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 
-    <link href='//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800' rel='stylesheet'
+        type='text/css'>
 
 </head>
 
@@ -226,6 +227,9 @@
     </div>
 
     <div style="background-color: black" id="loja">
+
+        <button class="marcadorMidia mt-5" id="marcadorEsquerdo"></button>
+
         <div class="container">
             <center>
                 <br>
@@ -237,25 +241,33 @@
 
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-4" id="radio">
 
-
-
-                        <img src="rsc/img/radio.png" alt="aula" height="150px" width="150px">
-                        <br>
-                        <p style="color: white"><b>RÁDIO</b> HALLEL</span>
-                        </p>
-
+                        <div class="cardPreto text-center">
+                            <div class="card-body">
+                                <br>
+                                <img src="rsc/img/radio.png" alt="aula" height="150px" width="150px">
+                                <br>
+                                <p>
+                                    <b>RÁDIO</b> HALLEL</span>
+                                </p>
+                            </div>
+                        </div>
 
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-4" id="tv">
 
-
-                        <img src="rsc/img/monitor.png" alt="aula" height="150px" width="150px">
-                        <br>
-                        <p style="color: white"><b>TV</b> HALLEL</span>
-
+                        <div class="cardPreto text-center">
+                            <div class="card-body">
+                                <br>
+                                <img src="rsc/img/monitor.png" alt="aula" height="150px" width="150px">
+                                <br>
+                                <p>
+                                    <b>TV</b> HALLEL</span>
+                                </p>
+                            </div>
+                        </div>
 
                     </div>
 
@@ -267,9 +279,13 @@
 
                 <br>
                 <br>
+                <br>
             </center>
         </div>
+        <p align="right">
 
+            <button class="marcadorMidia mb-5" id="marcadorDireito"></button>
+        </p>
     </div>
 
     <div style="background-color: white" id="formacoes">

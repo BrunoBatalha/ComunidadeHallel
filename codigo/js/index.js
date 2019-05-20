@@ -45,3 +45,4 @@ elemento.addEventListener('mouseover', aumentaDireita);
 
 var elemento = document.getElementById("tv");
 elemento.addEventListener('mouseout', diminuiDireita);
+

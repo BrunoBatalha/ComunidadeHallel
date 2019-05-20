@@ -99,7 +99,7 @@ html {
     width: 70%;
     background-color: #720100;
     border-width: 0px;
-    animation: open-animation 2s;
+    animation: open-animation 1s;
 }
 
 @keyframes open-animation {

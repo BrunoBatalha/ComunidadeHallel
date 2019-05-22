@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="css/carrossel.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 
-    <link href='//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800' rel='stylesheet'
-        type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
 </head>
 
@@ -32,7 +31,6 @@
                 <center>
                     <br>
                     <img class="d-flex align-items-center" src="rsc/img/nome-topo.png" style="width: 200px;">
-
                     <br>
                 </center>
             </div>
@@ -85,12 +83,8 @@
 
 
     <div id="inicio" style="height: 65%;">
-        <img src="rsc/img/fundo8.jpg" width="100%" height="100%" alt="fundo" style="filter: grayscale(100%); z-index:0">
-        <!--
-        <div class="w-100 h-100 d-flex justify-content-center" style="position: relative; top: -400px">
-            <img src="rsc/img/hallelbranco.jpg" width="100px" height="100px" alt="logo">
-        </div>
-        -->
+        <img src="rsc/img/fundo8.jpg" width="100%" height="100%" alt="fundo" style="filter: grayscale(100%); z-index:0;">
+
     </div>
 
 
@@ -103,7 +97,7 @@
 
                 <p style="color: white; font-weight: regular; font-size: 24px; ">CARISMA</p>
 
-                <p style="color: white; font-weight: bold; font-size: 18px;"> REGATAR ALMAS PARA DEUS, ATRAVÉS DO LOUVOR, DA FORMAÇÃO E DO AMOR POR EXCELÊNCIA.</p>
+                <p class="descricao" style="color: white; font-weight: bold; font-size: 18px;"> REGATAR ALMAS PARA DEUS, ATRAVÉS DO LOUVOR, DA FORMAÇÃO E DO AMOR POR EXCELÊNCIA.</p>
 
                 <br>
                 <br>
@@ -120,7 +114,7 @@
 
                 <p style="color: black; font-weight: bold; font-size: 24px; ">ASSOCIAÇÃO</p>
 
-                <p style="color: black; font-weight: regular; font-size: 18px;">TORNE-SE UM ASSOCIADO DA
+                <p class="descricao" style="color: black; font-weight: regular; font-size: 18px;">TORNE-SE UM ASSOCIADO DA
                     <em>COMUNIDADE HALLEL</em> E TENHA ACESSO À:</p>
                 <br>
                 <div class="row">
@@ -167,7 +161,7 @@
                 <br>
 
                 <a href="pagamento.html" style="text-decoration: none;">
-                    <input class="btnPadrao" type="button" value="MOSTRAR-ME">
+                    <input class="btnPadrao" type="button" value="ASSOCIAR-ME">
                 </a>
 
                 <br>
@@ -300,30 +294,77 @@
         </p>
     </div>
 
-    <div style="background-color: white" id="formacoes">
+    <div style="background-color: white" id="oracao">
         <div class="container">
             <center>
                 <br>
                 <br>
 
+                <p style="color: black; font-weight: bold; font-size: 24px; ">PEÇA UMA ORAÇÃO</p>
+
+            </center>
+            <form name="oracao">
                 <div class="row">
-                    <div class="col-md-6">
-                        <p class="d-flex justify-content-start align-items-center" style="color: black">
-                            <button class="marcador"></button> &nbsp
-                            <b>FORMAÇÕES</b>
+
+
+
+
+
+                    <div class="col-md-2">
+                        <p></p>
+                    </div>
+
+                    <div class="col-md-8">
+                        <p class="tituloInputs">Nome<span style="color: #720100">*</span><br>
+                            <input class="input1" type="text" placeholder="Digite seu nome" required>
                         </p>
                     </div>
 
-                    <div class="col-md-6">
-                        <P class="d-flex justify-content-end align-items-center">
-                            <button class="btnPadrao">Mostrar mais</button>
-                        </P>
+                    <div class="col-md-2">
+                        <p></p>
                     </div>
-                </div>
 
-                <br>
-                <br>
-            </center>
+
+
+
+                    <div class="col-md-2">
+                        <p></p>
+                    </div>
+
+                    <div class="col-md-8">
+                        <p class="tituloInputs">Email<span style="color: #720100">*</span><br>
+                            <input class="input1" type="email" placeholder="Digite seu email" required>
+                        </p>
+                    </div>
+
+                    <div class="col-md-2">
+                        <p></p>
+                    </div>
+
+                    <div class="col-md-2">
+                        <p></p>
+                    </div>
+
+                    <div class="col-md-8">
+                        <p class="tituloInputs">Telefone (opcional)<br>
+                            <input class="input1" type="tel" placeholder="Digite seu telefone" pattern="([0-9]{3})[0-9]{5}-[0-9]{4}" required>
+                        </p>
+                    </div>
+
+                    <div class="col-md-2">
+                        <p></p>
+                    </div>
+
+                </div>
+                <center>
+                    <input type="submit" class="btnInverso">
+                </center>
+            </form>
+
+
+            <br>
+            <br>
+
         </div>
 
     </div>
@@ -333,12 +374,11 @@
 
     <!-- Inicio do Footer -->
     <footer class="page-footer font-small pt-3 rodape container-fluid">
+        <br>
         <div class="row">
             <div class="col-md-6">
                 <!-- Content -->
-                <h5 class="text-uppercase">
-                    <span>Conheça nossa comunidade</span>
-                </h5>
+                <p style="color: #9F9F9F">CONHEÇA A COMUNIDADE</p>
                 <p>
                     <a href="#">Nossa história</a>
                 </p>
@@ -348,20 +388,18 @@
             </div>
 
             <div class="col-md-6 text-right">
-                <p>
-                    Rua Leonardo Malcher, n° 194 - Bairro: Aparecida - Manaus - AM-Brasil
-                    <span class="fa fa-map-marker" style="font-size: 25px; color: aliceblue"></span>
-                </p>
+                <p  style="color: #9F9F9F">CONTATOS</p>
                 <p>
                     comunidadehallel95@gmail.com
-                    <span class="fa fa-envelope" style="font-size: 25px; color: aliceblue"></span>
+                    <i class="fas fa-envelope"></i>
                 </p>
                 <p>
                     (92) 3085-1787
-                    <span class="fa fa-phone" style="font-size: 25px;  color: aliceblue"></span>
+                    <span class="fa fa-phone"></span>
                 </p>
             </div>
         </div>
+        <br>
     </footer>
     <!-- Fim do Footer -->
 
@@ -371,6 +409,4 @@
     <script type="text/javascript" src="js/index.js"></script>
 
 
-</body>
-
-</html>
+</body></html>

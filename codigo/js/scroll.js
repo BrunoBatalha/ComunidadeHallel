@@ -1,11 +1,29 @@
 var intervalo;
 
-function scrollDireita(){
-  intervalo = setInterval(function(){ document.getElementById('scroller').scrollLeft += 3}  , 5);
+function scrollDireitaFormacoes() {
+    intervalo = setInterval(function () {
+        document.getElementById('sliderFormacoes').scrollLeft += 3
+    }, 5);
 };
-function scrollEsquerda(){
-  intervalo = setInterval(function(){ document.getElementById('scroller').scrollLeft -= 3 }  , 5);
+
+function scrollEsquerdaFormacoes() {
+    intervalo = setInterval(function () {
+        document.getElementById('sliderFormacoes').scrollLeft -= 3
+    }, 5);
 };
-function clearScroll(){
-  clearInterval(intervalo);
+
+function scrollDireitaEventos() {
+    intervalo = setInterval(function () {
+        document.getElementById('sliderEventos').scrollLeft += 3
+    }, 5);
+};
+
+function scrollEsquerdaEventos() {
+    intervalo = setInterval(function () {
+        document.getElementById('sliderEventos').scrollLeft -= 3
+    }, 5);
+};
+
+function clearScroll() {
+    clearInterval(intervalo);
 };

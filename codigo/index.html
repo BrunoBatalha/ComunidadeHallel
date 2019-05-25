@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/rodape.css">
     <link rel="stylesheet" href="css/carrossel.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-
+    <link rel="stylesheet" href="css/scroll.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
 </head>
@@ -83,7 +83,8 @@
 
 
     <div id="inicio" style="height: 65%;">
-        <img src="rsc/img/fundo8.jpg" width="100%" height="100%" alt="fundo" style="filter: grayscale(100%); z-index:0;">
+        <img src="rsc/img/fundo8.jpg" width="100%" height="100%" alt="fundo"
+            style="filter: grayscale(100%); z-index:0;">
 
     </div>
 
@@ -97,7 +98,8 @@
 
                 <p style="color: white; font-weight: regular; font-size: 24px; ">CARISMA</p>
 
-                <p class="descricao" style="color: white; font-weight: bold; font-size: 18px;"> REGATAR ALMAS PARA DEUS, ATRAVÉS DO LOUVOR, DA FORMAÇÃO E DO AMOR POR EXCELÊNCIA.</p>
+                <p class="descricao" style="color: white; font-weight: bold; font-size: 18px;"> REGATAR ALMAS PARA DEUS,
+                    ATRAVÉS DO LOUVOR, DA FORMAÇÃO E DO AMOR POR EXCELÊNCIA.</p>
 
                 <br>
                 <br>
@@ -114,7 +116,8 @@
 
                 <p style="color: black; font-weight: bold; font-size: 24px; ">ASSOCIAÇÃO</p>
 
-                <p class="descricao" style="color: black; font-weight: regular; font-size: 18px;">TORNE-SE UM ASSOCIADO DA
+                <p class="descricao" style="color: black; font-weight: regular; font-size: 18px;">TORNE-SE UM ASSOCIADO
+                    DA
                     <em>COMUNIDADE HALLEL</em> E TENHA ACESSO À:</p>
                 <br>
                 <div class="row">
@@ -172,57 +175,290 @@
     </div>
 
     <div style="background-color: black" id="eventos">
-        <div class="container">
-            <center>
-                <br>
-                <br>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <p class="d-flex justify-content-start align-items-center" style="color: white">
-                            <button class="marcador"></button> &nbsp
-                            <b>EVENTOS</b>
-                        </p>
-                    </div>
-
-                    <div class="col-md-6">
-                        <P class="d-flex justify-content-end align-items-center">
-                            <button class="btnPadrao">Mostrar mais</button>
-                        </P>
-                    </div>
+        <div class="container  pb-5">
+            <div class="row pt-5">
+                <div class="col-md-6">
+                    <p class="d-flex justify-content-start align-items-center" style="color: white">
+                        <button class="marcador"></button> &nbsp
+                        <b>EVENTOS</b>
+                    </p>
                 </div>
 
-                <br>
-                <br>
-            </center>
+                <div class="col-md-6">
+                    <P class="d-flex justify-content-end align-items-center">
+                        <button class="btnPadrao">Mostrar mais</button>
+                    </P>
+                </div>
+            </div>
+
+            <div class="contain">
+                <div class="slider" style="height: 300px;">
+                    <span onmouseover="scrollEsquerda()" onmouseout="clearScroll()" class="handle handlePrev active">
+                        <i class="my-auto fa fa-caret-left" aria-hidden="true"></i>
+                    </span>
+
+                    <div id="scroller" class="row h-100">
+                        <div class="row__inner" id="exibe">
+                            <div class="gui-card">
+                                <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <div class="gui-card__media">
+                                                <img class="gui-card__img objectImage" src="rsc/img/fundo.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="back">
+                                            <div class="gui-card__details">
+                                                <br>
+                                                <br>
+                                                <p style="font-size: 15px; color: #8d6d48"></p>
+                                                <p style="font-size: 12px; color: rgb(255, 255, 255, 0.5)"> </p>
+                                                <div class="gui-card__title">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gui-card">
+                                <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <div class="gui-card__media">
+                                                <img class="gui-card__img objectImage" src="rsc/img/fundo2.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="back">
+                                            <div class="gui-card__details">
+                                                <br>
+                                                <br>
+                                                <p style="font-size: 15px; color: #8d6d48"></p>
+                                                <p style="font-size: 12px; color: rgb(255, 255, 255, 0.5)"> </p>
+                                                <div class="gui-card__title">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gui-card">
+                                <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <div class="gui-card__media">
+                                                <img class="gui-card__img objectImage" src="rsc/img/fundo3.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="back">
+                                            <div class="gui-card__details">
+                                                <br>
+                                                <br>
+                                                <p style="font-size: 15px; color: #8d6d48"></p>
+                                                <p style="font-size: 12px; color: rgb(255, 255, 255, 0.5)"> </p>
+                                                <div class="gui-card__title">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="gui-card">
+                                <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <div class="gui-card__media">
+                                                <img class="gui-card__img objectImage" src="rsc/img/fundo4.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="back">
+                                            <div class="gui-card__details">
+                                                <br>
+                                                <br>
+                                                <p style="font-size: 15px; color: #8d6d48"></p>
+                                                <p style="font-size: 12px; color: rgb(255, 255, 255, 0.5)"> </p>
+                                                <div class="gui-card__title">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="gui-card">
+                                <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <div class="gui-card__media">
+                                                <img class="gui-card__img objectImage" src="rsc/img/fundo5.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="back">
+                                            <div class="gui-card__details">
+                                                <br>
+                                                <br>
+                                                <p style="font-size: 15px; color: #8d6d48"></p>
+                                                <p style="font-size: 12px; color: rgb(255, 255, 255, 0.5)"> </p>
+                                                <div class="gui-card__title">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span onmouseover="scrollDireita()" onmouseout="clearScroll()" class="handle handleNext active">
+                        <i class="my-auto fa fa-caret-right" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+
         </div>
 
     </div>
 
     <div style="background-color: white" id="formacoes">
-        <div class="container">
-            <center>
-                <br>
-                <br>
+        <div class="container pb-5">
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <p class="d-flex justify-content-start align-items-center" style="color: black">
-                            <button class="marcador"></button> &nbsp
-                            <b>FORMAÇÕES</b>
-                        </p>
-                    </div>
-
-                    <div class="col-md-6">
-                        <P class="d-flex justify-content-end align-items-center">
-                            <button class="btnPadrao">Mostrar mais</button>
-                        </P>
-                    </div>
+            <div class="row pt-5">
+                <div class="col-md-6">
+                    <p class="d-flex justify-content-start align-items-center" style="color: black">
+                        <button class="marcador"></button> &nbsp
+                        <b>FORMAÇÕES</b>
+                    </p>
                 </div>
 
-                <br>
-                <br>
-            </center>
+                <div class="col-md-6">
+                    <P class="d-flex justify-content-end align-items-center">
+                        <button class="btnPadrao">Mostrar mais</button>
+                    </P>
+                </div>
+            </div>
+            <div class="contain">
+                <div class="slider" style="height: 300px;">
+                    <span onmouseover="scrollEsquerda()" onmouseout="clearScroll()" class="handle handlePrev active">
+                        <i class="my-auto fa fa-caret-left" aria-hidden="true"></i>
+                    </span>
+
+                    <div id="scroller" class="row h-100">
+                        <div class="row__inner" id="exibe">
+                            <div class="gui-card">
+                                <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <div class="gui-card__media">
+                                                <img class="gui-card__img objectImage" src="rsc/img/fundo.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="back">
+                                            <div class="gui-card__details">
+                                                <br>
+                                                <br>
+                                                <p style="font-size: 15px; color: #8d6d48"></p>
+                                                <p style="font-size: 12px; color: rgb(255, 255, 255, 0.5)"> </p>
+                                                <div class="gui-card__title">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gui-card">
+                                <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <div class="gui-card__media">
+                                                <img class="gui-card__img objectImage" src="rsc/img/fundo2.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="back">
+                                            <div class="gui-card__details">
+                                                <br>
+                                                <br>
+                                                <p style="font-size: 15px; color: #8d6d48"></p>
+                                                <p style="font-size: 12px; color: rgb(255, 255, 255, 0.5)"> </p>
+                                                <div class="gui-card__title">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gui-card">
+                                <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <div class="gui-card__media">
+                                                <img class="gui-card__img objectImage" src="rsc/img/fundo3.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="back">
+                                            <div class="gui-card__details">
+                                                <br>
+                                                <br>
+                                                <p style="font-size: 15px; color: #8d6d48"></p>
+                                                <p style="font-size: 12px; color: rgb(255, 255, 255, 0.5)"> </p>
+                                                <div class="gui-card__title">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="gui-card">
+                                <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <div class="gui-card__media">
+                                                <img class="gui-card__img objectImage" src="rsc/img/fundo4.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="back">
+                                            <div class="gui-card__details">
+                                                <br>
+                                                <br>
+                                                <p style="font-size: 15px; color: #8d6d48"></p>
+                                                <p style="font-size: 12px; color: rgb(255, 255, 255, 0.5)"> </p>
+                                                <div class="gui-card__title">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="gui-card">
+                                <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <div class="gui-card__media">
+                                                <img class="gui-card__img objectImage" src="rsc/img/fundo5.jpg">
+                                            </div>
+                                        </div>
+                                        <div class="back">
+                                            <div class="gui-card__details">
+                                                <br>
+                                                <br>
+                                                <p style="font-size: 15px; color: #8d6d48"></p>
+                                                <p style="font-size: 12px; color: rgb(255, 255, 255, 0.5)"> </p>
+                                                <div class="gui-card__title">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <span onmouseover="scrollDireita()" onmouseout="clearScroll()" class="handle handleNext active">
+                        <i class="my-auto fa fa-caret-right" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -305,11 +541,6 @@
             </center>
             <form name="oracao">
                 <div class="row">
-
-
-
-
-
                     <div class="col-md-2">
                         <p></p>
                     </div>
@@ -323,8 +554,6 @@
                     <div class="col-md-2">
                         <p></p>
                     </div>
-
-
 
 
                     <div class="col-md-2">
@@ -346,8 +575,10 @@
                     </div>
 
                     <div class="col-md-8">
-                        <p class="tituloInputs">Telefone <span style="color: rgb(189, 189, 189); font-weight: 100; letter-spacing: 0px;">(opcional)</span><br>
-                            <input class="input1" type="tel" placeholder="Digite seu telefone" pattern="([0-9]{3})[0-9]{5}-[0-9]{4}" required>
+                        <p class="tituloInputs">Telefone <span
+                                style="color: rgb(189, 189, 189); font-weight: 100; letter-spacing: 0px;">(opcional)</span><br>
+                            <input class="input1" type="tel" placeholder="Digite seu telefone"
+                                pattern="([0-9]{3})[0-9]{5}-[0-9]{4}" required>
                         </p>
                     </div>
 
@@ -402,7 +633,7 @@
             </div>
 
             <div class="col-md-6 text-right">
-                <p  style="color: #9F9F9F">CONTATOS</p>
+                <p style="color: #9F9F9F">CONTATOS</p>
                 <p>
                     comunidadehallel95@gmail.com
                     <i class="fas fa-envelope"></i>
@@ -421,6 +652,8 @@
     <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/scroll.js"></script>
 
+</body>
 
-</body></html>
+</html>

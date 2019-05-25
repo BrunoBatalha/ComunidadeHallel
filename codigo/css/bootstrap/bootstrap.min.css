@@ -5,6 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
+    --wine: #720100;
     --blue: #007bff;
     --indigo: #6610f2;
     --purple: #6f42c1;
@@ -5191,7 +5192,7 @@ tbody.collapse.show {
 
 .page-link:focus {
     z-index: 2;
-    outline: 0;
+    outline: 0;.
     box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25)
 }
 
@@ -6582,6 +6583,11 @@ button.close {
 .align-text-top {
     vertical-align: text-top !important
 }
+
+.bg-black {
+    background-color: #000 !important
+}
+
 
 .bg-primary {
     background-color: #007bff !important
@@ -9759,6 +9765,14 @@ button.bg-dark:hover {
 
 .font-italic {
     font-style: italic !important
+}
+
+.text-black {
+    color: #000 !important
+}
+
+.text-wine {
+    color: #720100 !important
 }
 
 .text-white {

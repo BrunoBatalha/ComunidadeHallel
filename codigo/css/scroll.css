@@ -11,11 +11,11 @@
 
 
 .slider .handle.handlePrev {
-    left: 5px;
+    left: -10%;
 }
 
 .slider .handle.handleNext {
-    right: 5px;
+    right: -10%;
 }
 
 .slider .handle.active {
@@ -23,13 +23,13 @@
 }
 
 .slider .handle {
-    background: rgba(20, 20, 20, 0.26);
+    background: transparent;
     position: absolute;
     top: 0;
     height: 100%;
     bottom: 0;
     z-index: 2;
-    width: 5%;
+    width: 6%;
     text-align: center;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -41,7 +41,6 @@
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
-    color: #fff;
 }
 
 span .fa {
@@ -62,15 +61,11 @@ span .fa {
 
 .gui-card {
     display: inline-block;
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 90%;
     margin-right: 20px;
     font-size: 20px;
-    cursor: pointer;
-    transition: 450ms all;
-    -webkit-transition: 450ms all;
-    -webkit-transform-origin: center left;
-    transform-origin: center left;
+    
 }
 
 /* O container geral define a perspectiva */
@@ -83,13 +78,13 @@ span .fa {
 .flip-container.hover .flipper {
     transform: rotateY(180deg);
 } */
-
+/* 
 .flip-container,
 .front,
 .back {
     width: 100%;
     height: 300px;
-}
+} */
 
 
 /* define a velocidade da transição */
@@ -102,29 +97,29 @@ span .fa {
 
 
 /* esconde o verso durante a animação */
-
+/* 
 .front,
 .back {
     backface-visibility: hidden;
     position: absolute;
     top: 0;
     left: 0;
-}
+} */
 
 /* frente posicionada sobre o verso */
-.front {
+/* .front {
     z-index: 2;
-}
+} */
 
 /* verso inicialmente escondido */
-.back {
+/* .back {
     transform: rotateY(180deg);
     background-color: #720100;
-}
+} */
 
 .objectImage {
     width: 100%;
-    height: 300px;
+    height: 250px;
 }
 
 
@@ -139,8 +134,10 @@ span .fa {
     height: 0;
     transition: .5s ease;
     opacity: 0.8;
+    white-space: initial;
+
 }
 
 .aparecer:hover .overlay {
-    height: 40%;
+    height: 50%;
 }

@@ -6,6 +6,7 @@
  */
 :root {
     --wine: #720100;
+    --wineDark: #380504;
     --blue: #007bff;
     --indigo: #6610f2;
     --purple: #6f42c1;
@@ -2808,6 +2809,19 @@ fieldset:disabled a.btn {
     pointer-events: none
 }
 
+.btn-wine{
+    color: #fff;
+    background-color: #720100;
+    border-color: #720100
+}
+
+.btn-wine:hover{
+    color: #fff;
+    background-color: #380504;
+    border-color: #380504
+}
+
+
 .btn-primary {
     color: #fff;
     background-color: #007bff;
@@ -3110,6 +3124,18 @@ fieldset:disabled a.btn {
 .btn-dark:not(:disabled):not(.disabled):active:focus,
 .show>.btn-dark.dropdown-toggle:focus {
     box-shadow: 0 0 0 .2rem rgba(52, 58, 64, .5)
+}
+
+.btn-outline-wine{
+    color: #fff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #720100
+}
+.btn-outline-wine:hover{
+    color: #fff;
+    background-color: #380504;
+    border-color: #380504;
 }
 
 .btn-outline-primary {
@@ -6582,6 +6608,10 @@ button.close {
 
 .align-text-top {
     vertical-align: text-top !important
+}
+
+.bg-wine{
+    background-color: #720100 !important
 }
 
 .bg-black {

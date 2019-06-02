@@ -14,87 +14,44 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="css/scroll.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 </head>
 
 <body>
     <!-- Inicio do header -->
-    <header class="container-fluid " style="background-color: #000000;">
-        
+    <header class="container-fluid cabecalho">
+        <!-- Barra de Navegação -->
+        <nav class="row bg-wine h-100">
+            <!-- Imagem Comunidade Hallel -->
+            <div class="col-md-3 mx-auto">
+                <img class="d-flex align-items-center my-4 mx-auto" src="rsc/img/nome-topo.png" style="width: 200px;">
+            </div>
+        </nav>
+
     </header>
     <!-- Fim do header -->
 
-
-    <div class="w3-top">
-        <div class="cabecalho row">
-            <div class="col-md-4">
-
-            </div>
-
-            <!-- Imagem Comunidade Hallel -->
-            <div class="col-md-4">
-                <center>
-                    <br>
-                    <img class="d-flex align-items-center" src="rsc/img/nome-topo.png" style="width: 200px;">
-                    <br>
-                </center>
-            </div>
-
-            <!-- Redes sociais -->
-            <div class="col-md-4">
+    <div class="container-fluid fundo">
+        <div class="h-100 d-flex align-items-end">
+            <div class="row w-100">
+                <div class="col-md-6">
+                    <h1 class="text-uppercase text-white pb-4 pl-4 font-weight-bold">Bem vindo,<br>Administrador</h1>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-wine rounded-0 text-uppercase mx-4" type="button">Fazer login</button>
+                    <button  class="btn btn-outline-wine rounded-0 text-uppercase" type="button">Cadastrar-se</button>
+                </div>
 
             </div>
-
         </div>
 
-        <!-- Barra de Navegação -->
-        <nav class="barraNav navbar-expand-md" id="navbar">
-            <!-- Recolher navbar -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barraDeNavegacao">
-                <span class="fa fa-bars" style="color: white; font-size: 25px;"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="barraDeNavegacao" style="color: white; font-size: 14px;">
-
-                <!-- Link da navbar -->
-
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#inicio">INÍCIO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#associacao">ASSOCIAÇÃO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#eventos">EVENTOS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#formacoes">FORMAÇÕES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#loja">LOJA</a>
-                    </li>
-
-                </ul>
-            </div>
-        </nav>
     </div>
 
-    <!-- Header with full-height image -->
-    <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-        <div class="w3-display-left">
-            <div id="info" class="w3-text-white" style="padding:48px">
-                <h2 id="titPrincipal">BEM VINDO,<br>
-                    ADMINISTRADOR</h2>
-            </div>
-        </div>
-    </header>
 
     <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/scroll.js"></script>
 
 </body>
 

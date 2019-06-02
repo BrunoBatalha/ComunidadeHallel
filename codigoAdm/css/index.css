@@ -240,5 +240,18 @@ html {
     align-items: center;
     letter-spacing: 0.5em;
     color: white;
-    
+
+}
+
+.fundo {
+    position: relative;
+    z-index: 0;
+     background-image: url("../rsc/img/fundo8.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
+}
+
+button{
+    width: 40%
 }

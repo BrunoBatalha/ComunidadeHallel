@@ -6755,6 +6755,10 @@ button.bg-dark:hover {
     border-left: 0 !important
 }
 
+.border-white{
+    border-color: #fff !important
+}
+
 .border-primary {
     border-color: #007bff !important
 }

@@ -9,10 +9,7 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/barraDeNavegacao.css">
-    <link rel="stylesheet" href="css/rodape.css">
-    <link rel="stylesheet" href="css/carrossel.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="css/scroll.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
 </head>
@@ -32,25 +29,55 @@
     <!-- Fim do header -->
 
     <div class="container-fluid fundo">
-        <div class="h-100 d-flex align-items-end" id="boasVindas">
+        <div class="h-100 d-flex align-items-end " id="parteInferior">
             <div class="row w-100">
-                <div class="col-md-6">
+                <div class="col-md-6 animacao-boasvindas" id="boasvindas">
                     <h1 class="text-uppercase text-white pb-4 pl-4 font-weight-bold">Bem vindo,<br>Administrador</h1>
                 </div>
                 <div class="col-md-6 mt-4">
-                    <button class="btn btn-wine rounded-0 text-uppercase mx-4" type="button" id="btnFzrLogin">Fazer
+                    <button class="btn btn-wine rounded-0 text-uppercase mx-4 animacao-botaoLogin" type="button"
+                        id="btnFzrLogin">Fazer
                         login</button>
-                    <button class="btn btn-outline-wine rounded-0 text-uppercase" type="button">Cadastrar-se</button>
+                    <button class="btn btn-outline-wine rounded-0 text-uppercase animacao-botaoCadastrar" type="button"
+                        id="btnCadastrar">Cadastrar-se</button>
                 </div>
             </div>
         </div>
-        <div class="d-none align-items-center justify-content-center h-100" id="telaLogin">
+        <div class="d-none align-items-center justify-content-center h-100 animacao-login" id="telaLogin">
+            <div id="voltar">
+                <button class="btn btn-outline-wine" type="button" style="width: 50px"><i
+                        class="fas fa-backspace"></i></button>
+            </div>
             <div class="quadradoEscuro">
                 <div class="bg-wine text-uppercase text-white d-flex align-items-center justify-content-center"
                     style="height: 50px;">
                     <h6>Fazer login</h6>
                 </div>
+                <div class="pt-5 d-flex justify-content-center align-items-center">
+                    <form method="post" class="w-75">
+                        <div class="form-group ">
+                            <label for="email">Email<span class="text-wine font-weight-bold"> *</span></label>
+                            <input
+                                class="form-control text-white bg-transparent borda-inferior border-info border-white rounded-0"
+                                type="text" id="email" placeholder="Digite seu email">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha<span class="text-wine font-weight-bold"> *</span></label>
+                            <input
+                                class="form-control text-white  bg-transparent borda-inferior border-info border-white rounded-0"
+                                type="password" id="senha" placeholder="Digite sua senha">
+                            <figcaption class="figure-caption text-right"><a href="#" class="text-white">Esqueceu sua
+                                    senha?</a></figcaption>
+                        </div>
+                        <div class="form-group text-center pt-5">
+                            <input class="btn btn-wine rounded-0" type="submit" value="LOGIN" style="width: 200px;font-family: 'Montserrat', sans-serif;
+                            letter-spacing: 0.2em">
+                            <p class="pt-2"><a href="#" class="text-white pt-2">Não possui cadastro?</a></p>
+                        </div>
+                    </form>
+                </div>
             </div>
+
         </div>
     </div>
 
@@ -60,11 +87,36 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script>
         $('#btnFzrLogin').on('click', function () {
-            $('#boasVindas').removeClass('d-flex');
-            $('#boasVindas').addClass('d-none');
+            $('#boasvindas').addClass('animacao-boasvindas-hide');
+            $('#btnFzrLogin, #btnCadastrar').addClass('animacao-botoes-hide');
+            $('#telaLogin').addClass('animacao-login');
+            setTimeout(function () {
+                $('#boasvindas').removeClass('animacao-boasvindas, animacao-boasvindas-hide');
+                $('#btnFzrLogin').removeClass('animacao-botaoLogin, animacao-botoes-hide');
+                $('#btnCadastrar').removeClass('animacao-botaoCadastrar, animacao-botoes-hide');
 
-            $('#telaLogin').removeClass('d-none');
-            $('#telaLogin').addClass('d-flex');
+                $('#parteInferior').removeClass('d-flex');
+                $('#parteInferior').addClass('d-none');
+
+                $('#telaLogin').removeClass('d-none');
+                $('#telaLogin').addClass('d-flex');
+                console.log('oi');
+            }, 1000);
+        })
+
+        $('#voltar > button').on('click', function () {
+            $('#telaLogin').addClass('animacao-login-hide');
+            setTimeout(function () {
+                $('#boasvindas').addClass('animacao-boasvindas');
+                $('#btnFzrLogin').addClass('animacao-botaoLogin');
+                $('#btnCadastrar').addClass('animacao-botaoCadastrar');
+
+                $('#telaLogin').removeClass('d-flex');
+                $('#telaLogin').removeClass('animacao-login-hide');
+                $('#telaLogin').addClass('d-none');
+                $('#parteInferior').removeClass('d-none');
+                $('#parteInferior').addClass('d-flex');
+            }, 1000);
         })
     </script>
 </body>

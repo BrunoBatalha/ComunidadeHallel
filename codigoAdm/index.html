@@ -32,27 +32,41 @@
     <!-- Fim do header -->
 
     <div class="container-fluid fundo">
-        <div class="h-100 d-flex align-items-end">
+        <div class="h-100 d-flex align-items-end" id="boasVindas">
             <div class="row w-100">
                 <div class="col-md-6">
                     <h1 class="text-uppercase text-white pb-4 pl-4 font-weight-bold">Bem vindo,<br>Administrador</h1>
                 </div>
                 <div class="col-md-6 mt-4">
-                    <button class="btn btn-wine rounded-0 text-uppercase mx-4" type="button">Fazer login</button>
-                    <button  class="btn btn-outline-wine rounded-0 text-uppercase" type="button">Cadastrar-se</button>
+                    <button class="btn btn-wine rounded-0 text-uppercase mx-4" type="button" id="btnFzrLogin">Fazer
+                        login</button>
+                    <button class="btn btn-outline-wine rounded-0 text-uppercase" type="button">Cadastrar-se</button>
                 </div>
-
             </div>
         </div>
-
-
+        <div class="d-none align-items-center justify-content-center h-100" id="telaLogin">
+            <div class="quadradoEscuro">
+                <div class="bg-wine text-uppercase text-white d-flex align-items-center justify-content-center"
+                    style="height: 50px;">
+                    <h6>Fazer login</h6>
+                </div>
+            </div>
+        </div>
     </div>
 
 
     <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script>
+        $('#btnFzrLogin').on('click', function () {
+            $('#boasVindas').removeClass('d-flex');
+            $('#boasVindas').addClass('d-none');
 
+            $('#telaLogin').removeClass('d-none');
+            $('#telaLogin').addClass('d-flex');
+        })
+    </script>
 </body>
 
 </html>

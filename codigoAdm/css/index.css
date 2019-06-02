@@ -21,7 +21,7 @@ body,
 html {
     height: 100%;
     font-family: 'Montserrat', sans-serif;
-    letter-spacing: 0.4em
+    letter-spacing: 1em
 }
 
 .bgimg-1 {
@@ -253,5 +253,15 @@ html {
 }
 
 button{
-    width: 40%
+    width: 40%;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.4em
+}
+
+.quadradoEscuro{
+    position: relative;
+    top: 50px;
+    width: 60%;
+    height: 70%;
+    background-color: rgba(0, 0, 0, 0.95);;
 }

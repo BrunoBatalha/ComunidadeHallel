@@ -1,244 +1,176 @@
-.titulo {
-    /* background-color:#000; */
-    background-color: rgb(0, 0, 0);
-    color: #ffffff;
-}
-
-a {
-    color: #ffffff;
-}
-
-a:hover {
-    color: #720100;
-    text-decoration: none;
-}
-
-.tit {
-    font-size: 20px;
-}
-
 body,
 html {
     height: 100%;
+}
+
+.fundo {
+    position: relative;
+    z-index: 0;
+    background-image: url("../rsc/img/fundo8.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
+}
+
+button {
+    width: 40%;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.4em;
+}
+
+h1,
+h6 {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.4em
 }
 
-.bgimg-1 {
-    background-position: center;
-    background-size: cover;
-    background-image: url("/rsc/img/fundo8.jpg");
-    min-height: 100%;
+a {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.2em
 }
 
-.w3-bar .w3-button {
-    padding: 16px;
+label {
+    color: #fff;
 }
 
-.page-footer {
-    letter-spacing: 0;
+::placeholder {
+    color: #fff;
+    opacity: 0.5;
 }
 
-.descricao {
-    letter-spacing: 0.3em;
+.quadradoEscuro {
+    position: relative;
+    top: 50px;
+    width: 60%;
+    height: 70%;
+    background-color: rgba(0, 0, 0, 0.95);
+    ;
 }
 
-.parallax {
-    background-image: url("rsc/img/fundo8.jpg");
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+.borda-inferior {
+    border: none;
+    border-bottom: 1px solid;
 }
 
-.btnPadrao {
-    background-color: #720100;
-    color: white;
-    letter-spacing: 0.1px;
-    border-width: 0px;
-    cursor: pointer;
-    height: 40px;
-    width: 30%;
-    transition: all 0.3s ease;
+.voltar {
+    position: absolute;
+    bottom: 20px;
 
 }
 
-.btnPadrao:hover {
-    border-width: 2px;
-    border-color: #720100;
-    background-color: transparent;
-    color: #720100;
-    font-weight: bold;
+
+/* Animações */
+
+.animacao-login {
+    position: relative;
+    animation-name: animacaoLoginShow;
+    animation-duration: 1s
 }
 
-.btnInverso {
-    background-color: #000;
-    color: white;
-    letter-spacing: 0.1px;
-    border-width: 2px;
-    border-color: #000;
-    cursor: pointer;
-    height: 40px;
-    width: 30%;
-    transition: all 0.3s ease;
+.animacao-boasvindas {
+    position: relative;
+    animation-name: animacaoBoasVindasShow;
+    animation-duration: 1s
 }
 
-.btnInverso:hover {
-    border-width: 2px;
-    border-color: #000;
-    background-color: transparent;
-    color: #000;
-    font-weight: bold;
+.animacao-botaoLogin {
+    position: relative;
+    animation-name: animacaoBotaoShow;
+    animation-duration: 1.5s
 }
 
-.card {
-    background-color: white;
-    border-color: transparent;
+.animacao-botaoCadastrar {
+    position: relative;
+    animation-name: animacaoBotaoShow;
+    animation-duration: 3s
 }
 
-.card:hover {
-    background: #00000015;
-    cursor: pointer;
-
+.animacao-boasvindas-hide {
+    position: relative;
+    animation-name: animacaoBoasVindasHide;
+    animation-duration: 1s
 }
 
-.cardPreto {
-    background-color: rgb(0, 0, 0);
-    border-color: transparent;
-    color: white
+.animacao-botoes-hide {
+    position: relative;
+    animation-name: animacaoBotaoHide;
+    animation-duration: 1s
 }
 
-.cardPreto:hover {
-    color: #720100;
-    cursor: pointer;
+.animacao-login-hide {
+    position: relative;
+    animation-name: animacaoLoginHide;
+    animation-duration: 1s
 }
 
-.marcador {
-    height: 30px;
-    width: 15px;
-    background-color: #720100;
-    border-width: 0px;
-}
-
-.marcadorMidia {
-    height: 10px;
-    width: 30%;
-    background-color: #720100;
-    border-width: 0px;
-    animation: close-animation 2s;
-}
-
-
-.marcadorMidiaAbriu {
-    height: 10px;
-    width: 70%;
-    background-color: #720100;
-    border-width: 0px;
-    animation: open-animation 1s;
-}
-
-@keyframes open-animation {
+@keyframes animacaoLoginShow {
     from {
-        width: 30%;
+        right: 100px;
+        opacity: 0
     }
 
     to {
-
-        width: 70%;
+        right: 0;
+        opacity: 1
     }
 }
 
-@keyframes close-animation {
+@keyframes animacaoBoasVindasShow {
     from {
-        width: 70%;
+        right: 100px;
+        opacity: 0
     }
 
     to {
-        width: 30%;
+        right: 0px;
+        opacity: 1
     }
 }
 
-.alinhaTitulo {
-    float: left;
+@keyframes animacaoBotaoShow {
+    from {
+        left: 100px;
+        opacity: 0
+    }
+
+    to {
+        left: 0;
+        opacity: 1
+    }
 }
 
-.btnVariavel {
-    background-color: #000000;
-    color: white;
-    letter-spacing: 0.1px;
-    border-width: 0px;
-    cursor: pointer;
-    height: 30px;
-    width: 30%;
+@keyframes animacaoBoasVindasHide {
+    from {
+        right: 0px;
+        opacity: 1
+    }
+
+    to {
+        right: 100px;
+        opacity: 0
+    }
 }
 
-.btnVariavel:hover {
-    border-width: 2px;
-    border-color: #000000;
-    background-color: transparent;
-    color: #000000;
-    font-weight: bold;
+@keyframes animacaoBotaoHide {
+    from {
+        left: 0px;
+        opacity: 1
+    }
+
+    to {
+        left: 100px;
+        opacity: 0
+    }
 }
 
-.tituloInputs {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17px;
-    letter-spacing: 0.2em;
-}
+@keyframes animacaoLoginHide {
+    from {
+        right: 0px;
+        opacity: 1
+    }
 
-.input1 {
-    width: 100%;
-    border-width: 0px;
-    border-bottom-width: 1px;
-    border-color: lightgray;
-    font-size: 14px;
-    line-height: 17px;
-    letter-spacing: 0.2em;
-    padding-bottom: 7px;
-    margin-top: 8px;
-    transition: all 0.5s ease;
-}
-
-.input1:focus {
-    -webkit-box-shadow: 0px 0px 0px 0px #00c64b;
-    -moz-box-shadow: 0px 0px 0px 0px #00c64b;
-    box-shadow: 0px 0px 0px 0px #00c64b;
-    border-bottom: 1px solid #720100;
-    outline: none;
-
-}
-
-.text1 {
-    width: 100%;
-    border-width: 1px;
-    border-color: lightgray;
-    font-size: 14px;
-    line-height: 17px;
-    letter-spacing: 0.2em;
-    padding-bottom: 7px;
-    margin-top: 8px;
-    transition: all 0.5s ease;
-}
-
-.text1:focus {
-    -webkit-box-shadow: 1px 1px 1px 1px #720100;
-    -moz-box-shadow: 0px 0px 0px 0px #720100;
-    box-shadow: 0px 0px 0px 0px #720100;
-    border-bottom: 1px solid #720100;
-    outline: none;
-
-}
-
-#titPrincipal {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 44px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.5em;
-    color: white;
-    
+    to {
+        right: 100px;
+        opacity: 0
+    }
 }

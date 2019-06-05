@@ -1,0 +1,15 @@
+
+.borda-inferior {
+    border: none;
+    border-bottom: 1px solid;
+}
+
+.font-personalizada-4{
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.4em
+}
+
+.font-personalizada-2 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.2em
+}

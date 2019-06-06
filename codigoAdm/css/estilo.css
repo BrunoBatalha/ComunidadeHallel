@@ -1,4 +1,4 @@
-.font-personalizada-4{
+.font-personalizada-4 {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.4em
 }
@@ -6,4 +6,20 @@
 .font-personalizada-2 {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.2em
+}
+
+@media only screen and (max-width: 768px) {
+    .font-personalizada-2 {
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 0.1em;
+        font-size: 10px;
+
+    }
+
+    .font-personalizada-4 {
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 0.2em;
+        font-size: 19px;
+
+    }
 }

@@ -47,11 +47,6 @@ label {
     ;
 }
 
-.borda-inferior {
-    border: none;
-    border-bottom: 1px solid;
-}
-
 .voltar {
     position: absolute;
     bottom: 20px;

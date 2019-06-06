@@ -2808,6 +2808,18 @@ fieldset:disabled a.btn {
     pointer-events: none
 }
 
+.btn-black{
+    color: #fff;
+    background-color: #000;
+    border-color: #000
+}
+
+.btn-black:hover{
+    color: #fff;
+    background-color: rgb(53, 53, 53);
+    border-color:rgb(53, 53, 53);;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #007bff;

@@ -4,24 +4,9 @@
     color: #ffffff;
 }
 
-a {
-    color: #ffffff;
-}
-
-a:hover {
-    color: #720100;
-    text-decoration: none;
-}
 
 .tit {
     font-size: 20px;
-}
-
-body,
-html {
-    height: 100%;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 0.4em
 }
 
 .page-footer {

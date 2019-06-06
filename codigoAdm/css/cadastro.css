@@ -1,5 +1,12 @@
-#labelAlterar{
-    position: absolute;
+#localAlteracao {
+  position: relative;
+}
+#fotoPerfil {
+  display: block;
+  height: auto;
+}
+#labelAlterar {
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
@@ -8,18 +15,11 @@
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: #008CBA;
+  background-color: rgb(44, 44, 44,0.5);
 }
-#fotoPerfil{
-    display: block;
-    width: 100%;
-    height: auto;
+#localAlteracao:hover #labelAlterar {
+  opacity: 1;
 }
-
-#localAlteracao{
-    position: relative;
-  width: 50%;
-}
-#localAlteracao:hover .labelAlterar{
-    opacity: 1;
+#inputArquivo{
+  display: none
 }

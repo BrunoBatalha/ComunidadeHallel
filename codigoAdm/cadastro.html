@@ -51,14 +51,13 @@
             <div class="col-md-12 text-center">
                 <figure class="figure">
                     <h6 class="text-uppercase font-personalizada-4 py-5 font-weight-bold text-wine">Dados pessoais</h6>
-                    <div class="d-flex justify-content-center" id="localAlteracao">
+                    <div id="localAlteracao">
+                        <img src="rsc/img/perfil.png" class="figure-img img-fluid rounded-circle" id="fotoPerfil" width="300px" height="300px">
 
-                        <img src="rsc/img/perfil.png" class="figure-img img-fluid rounded-circle" width="200px"
-                            height="200px" id="fotoPerfil">
-
-                        <div id="labelAlterar">
-                            <label for='arquivo' style="width: 290px;">Alterar foto de perfil</label>
-                            <input type="file" class="open" id="arquivo" accept="image/png, image/jpeg" name="arquivo">
+                        <div id="labelAlterar" class="rounded-circle d-flex align-items-center justify-content-center">
+                            <label class="btn btn-black" for='inputArquivo'>Alterar foto de perfil</label>
+                            <input type="file" class="open" id="inputArquivo" accept="image/png, image/jpeg"
+                                name="inputArquivo">
                         </div>
                     </div>
                 </figure>
@@ -154,7 +153,20 @@
     <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-   
+    <script type="text/javascript">
+        function enviar_imagem(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#fotoPerfil').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#inputArquivo").change(function () {
+            enviar_imagem(this);
+        });
+    </script>
 </body>
 
 </html>

@@ -1,6 +1,15 @@
 #localAlteracao {
   position: relative;
 }
+
+a {
+  color: #ffffff;
+}
+
+a:hover {
+  color: #868686;
+  text-decoration: none;
+}
 #fotoPerfil {
   display: block;
   height: auto;

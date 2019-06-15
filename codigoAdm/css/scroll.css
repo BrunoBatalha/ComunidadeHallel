@@ -147,13 +147,21 @@ span .fa {
     transition: .5s ease;
     white-space: initial;
 }
-
+@keyframes btnEditAni{
+    from{
+        top: -100px;
+    }to{
+        top: 5px;
+    }
+}
 .aparecer:hover .overlay {
     height: 50%;
 }
 
 .aparecer:hover .overlay-edit {
     opacity: 1;
+    animation-name: btnEditAni;
+    animation-duration: 0.5s;
 }
 
 .aparecer p {

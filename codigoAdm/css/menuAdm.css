@@ -12,3 +12,7 @@
     height: 40px;
     background-color: #720100;
 }
+
+.menu-tabs .nav-tabs .nav-item, .nav-link{
+    border: none;
+}

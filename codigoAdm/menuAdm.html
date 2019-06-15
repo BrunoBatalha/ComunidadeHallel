@@ -33,11 +33,28 @@
     <!-- Fim do header -->
 
     <div class="container-fluid">
-        <div class="menu-tabs ">
+
+        <div>
             <div class="row">
+                <div class="col-md-12 d-flex justify-content-center pt-5">
+                    <img src="rsc/img/perfil.png" class="rounded-circle img-fluid">
+                </div>
+                <div class="col-md-12 d-flex justify-content-center">
+                    <h2 class="text-uppercase font-personalizada-4 font-weight-bold">Bem vindo, xxx</h2>
+                </div>
+                <div class="col-md-12 d-flex justify-content-center">
+                        <p class="font-personalizada-2">
+                            ESSE É SEU PAINEL DE ADMINISTRAÇÃO!
+                        </p>
+                    </div>
+            </div>
+        </div>
+
+        <div class="menu-tabs ">
+            <div class="row ">
                 <div class="col-md-12">
-                    <nav>
-                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                    <nav class="d-flex justify-content-center">
+                        <div class="nav nav-tabs nav-fill w-75 " id="nav-tab" role="tablist">
                             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab"
                                 href="#nav-eventos"><span class="text-black">Eventos</span></a>
                             <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"
@@ -49,26 +66,156 @@
                         </div>
                     </nav>
                 </div>
-                <div class="container-fluid bg-black mt-5 mb-5">
-                    <div class="container">
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active " id="nav-eventos" role="tabpanel"
+            </div>
+            <div class="row bg-black mt-5 mb-5">
+                <div class="container">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active " id="nav-eventos" role="tabpanel"
+                            aria-labelledby="nav-home-tab">
+                            <div class="container  pb-5">
+                                <div class="row pt-5">
+                                    <div class="col-md-6">
+                                        <p class="d-flex justify-content-start align-items-center">
+                                            <span class="retangulo "></span>
+                                            <b class="text-white pl-3 text-uppercase font-personalizada-4">
+                                                Eventos adicionados
+                                            </b>
+                                        </p>
+                                    </div>
+
+                                    <div
+                                        class="col-sm-6 d-flex justify-content-start justify-content-sm-end align-items-center">
+                                        <P class="d-flex justify-content-end align-items-center">
+                                            <button class="btn btn-wine font-personalizada-2 rounded-0">Mostrar
+                                                mais</button>
+                                        </P>
+                                    </div>
+                                </div>
+
+                                <div class="contain">
+                                    <div class="slider" style="height: 250px;">
+                                        <span onmouseover="scrollEsquerdaEventos()" onmouseout="clearScroll()"
+                                            class="handle handlePrev active">
+                                            <i class="my-auto fa fa-chevron-left text-white" aria-hidden="true"></i>
+                                        </span>
+
+                                        <div id="sliderEventos" class="row h-100">
+                                            <div class="row__inner" id="exibe">
+                                                <div class="gui-card">
+                                                    <div class="flip-container "
+                                                        ontouchstart="this.classList.toggle('hover')">
+                                                        <div class="flipper">
+                                                            <div class="front">
+                                                                <div class="gui-card__media aparecer">
+
+                                                                    <img class="gui-card__img objectImage"
+                                                                        src="rsc/img/fundo.jpg">
+
+                                                                    <button class="btn btn-wine overlay-edit rounded-0"
+                                                                        title="Editar">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </button>
+
+                                                                    <div class="overlay">
+
+                                                                        <p class="tituloCard">
+                                                                            O louvor como oração
+                                                                        </p>
+                                                                        <p class="dadosCard">
+                                                                            17 aulas
+                                                                            <br> Status: completo
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="gui-card">
+                                                    <div class="flip-container"
+                                                        ontouchstart="this.classList.toggle('hover')">
+                                                        <div class="flipper">
+                                                            <div class="front">
+                                                                <div class="gui-card__media aparecer">
+                                                                    <img class="gui-card__img objectImage"
+                                                                        src="rsc/img/fundo2.jpg">
+                                                                    <button class="btn btn-wine overlay-edit rounded-0"
+                                                                        title="Editar">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </button>
+                                                                    <div class="overlay">
+                                                                        <p class="tituloCard">
+                                                                            O louvor como oração
+                                                                        </p>
+                                                                        <p class="dadosCard">
+                                                                            17 aulas
+                                                                            <br> Status: completo
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="gui-card">
+                                                    <div class="flip-container"
+                                                        ontouchstart="this.classList.toggle('hover')">
+                                                        <div class="flipper">
+                                                            <div class="front">
+                                                                <div class="gui-card__media aparecer">
+                                                                    <img class="gui-card__img objectImage"
+                                                                        src="rsc/img/fundo3.jpg">
+                                                                    <button class="btn btn-wine overlay-edit rounded-0"
+                                                                        title="Editar">
+                                                                        <i class="fas fa-edit"></i>
+                                                                    </button>
+                                                                    <div class="overlay">
+                                                                        <p class="tituloCard">
+                                                                            O louvor como oração
+                                                                        </p>
+                                                                        <p class="dadosCard">
+                                                                            17 aulas
+                                                                            <br> Status: completo
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <span onmouseover="scrollDireitaEventos()" onmouseout="clearScroll()"
+                                            class="handle handleNext active">
+                                            <i class="my-auto fa fa-chevron-right text-white" aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-formacoes" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="tab-pane fade show active " id="nav-formacoes" role="tabpanel"
                                 aria-labelledby="nav-home-tab">
                                 <div class="container  pb-5">
                                     <div class="row pt-5">
-                                        <div class="col-md-6">
+                                        <div class="col-sm-6">
                                             <p class="d-flex justify-content-start align-items-center">
                                                 <span class="retangulo "></span>
                                                 <b class="text-white pl-3 text-uppercase font-personalizada-4">
-                                                    Eventos adicionados
+                                                    Formações adicionadas
                                                 </b>
                                             </p>
                                         </div>
 
-                                        <div class="col-md-6">
-                                            <P class="d-flex justify-content-end align-items-center">
-                                                <button class="btn btn-wine font-personalizada-2 rounded-0">Mostrar mais</button>
-                                            </P>
+                                        <div
+                                            class="col-sm-6 d-flex justify-content-start justify-content-sm-end align-items-center">
+                                            <p>
+                                                <button class="btn btn-wine font-personalizada-2 rounded-0">Mostrar
+                                                    mais</button>
+                                            </p>
+
                                         </div>
                                     </div>
 
@@ -179,23 +326,20 @@
 
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="nav-formacoes" role="tabpanel"
-                                aria-labelledby="nav-profile-tab">
-                                segundo
-                            </div>
-                            <div class="tab-pane fade" id="nav-blog" role="tabpanel" aria-labelledby="nav-contact-tab">
-                                terceiro
-                            </div>
-                            <div class="tab-pane fade" id="nav-pedidoOracao" role="tabpanel"
-                                aria-labelledby="nav-contact-tab">
-                                quarto
-                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-blog" role="tabpanel" aria-labelledby="nav-contact-tab">
+                            terceiro
+                        </div>
+                        <div class="tab-pane fade" id="nav-pedidoOracao" role="tabpanel"
+                            aria-labelledby="nav-contact-tab">
+                            quarto
                         </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
+
 
     </div>
 

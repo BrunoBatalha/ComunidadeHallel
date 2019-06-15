@@ -13,6 +13,29 @@ a:hover {
     text-decoration: none;
 }
 
+.tituloCard {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    margin-left: 5%;
+    margin-top: 5%;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.2em;
+    color: white;
+}
+
+.dadosCard {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    margin-left: 5%;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0.2em;
+    color: rgb(197, 197, 197);
+}
+
 .tit {
     font-size: 20px;
 }
@@ -215,5 +238,4 @@ html {
     box-shadow: 0px 0px 0px 0px #720100;
     border: 1px solid #720100;
     outline: none;
-   
 }

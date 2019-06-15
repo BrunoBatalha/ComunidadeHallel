@@ -6772,6 +6772,11 @@ button.bg-dark:hover {
     border-color: #fff !important
 }
 
+.border-black {
+    border-color: #000000 !important
+}
+
+
 .border-primary {
     border-color: #007bff !important
 }

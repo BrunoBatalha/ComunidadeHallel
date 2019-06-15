@@ -4,6 +4,14 @@
     color: #ffffff;
 }
 
+a {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #868686;
+    text-decoration: none;
+}
 
 .tit {
     font-size: 20px;
@@ -245,15 +253,6 @@ ol.step-progress-bar li span.content-stick {
     z-index: -1;
     margin-left: -50%;
 }
-
-/* Cores. Sinta-se livre para alterar. */
-
-/* Cor padrão.
-   Passado: #2dcd73 (verde) e branco.
-   Presente: #4c92d9 (azul) e branco.
-   Futuro: #dde2e3 (cinza claro) e #869398 (cinza escuro).
-*/
-
 
 ol.step-progress-bar li.step-present .content-stick {
     color: #2dcd73;

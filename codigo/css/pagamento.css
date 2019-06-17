@@ -209,7 +209,6 @@ a:hover {
     box-shadow: 0px 0px 0px 0px #720100;
     border-bottom: 1px solid #720100;
     outline: none;
-
 }
 
 
@@ -255,15 +254,15 @@ ol.step-progress-bar li span.content-stick {
 }
 
 ol.step-progress-bar li.step-present .content-stick {
-    color: #2dcd73;
-    background: #2dcd73;
+    color: #720100;
+    background: #720100;
     animation: animation-step 3s;
 }
 
 ol.step-progress-bar li.step-past *
  {
-    color: #2dcd73;
-    background: #2dcd73;
+    color: #720100;
+    background: #720100;
 }
 
 @keyframes animation-step{
@@ -278,8 +277,8 @@ ol.step-progress-bar li.step-past *
 }
 
 ol.step-progress-bar li.step-present * {
-    color: #720100;
-    background: #720100;
+    color: #000000;
+    background: #000000;
 }
 
 ol.step-progress-bar li .content-bullet {
@@ -336,4 +335,52 @@ ol.step-progress-bar.mid li {
 ol.step-progress-bar.mid li .content-stick {
     top: 18.5px; /* Metade do diâmetro. */
     height: 6px;
+}
+
+.container2 {
+    position: relative;
+    width: 100%;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.container2:hover .image {
+    opacity: 0.3;
+}
+
+.container2:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    color: black;
+    font-size: 16px;
+}
+
+.objectImage2 {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+input[id='arquivo'] {
+    display: none
 }

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Comunidade Hallel - Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/pagamento.css">
+    <link rel="stylesheet" href="css/barraDeNavegacao.css">
+    <link rel="stylesheet" href="css/rodape.css">
+    <link rel="stylesheet" href="css/carrossel.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+</head>
+
+<body>
+
+    <!-- Inicio do header -->
+    <header class="container-fluid " style="background-color: #000000;">
+        <div class="cabecalho row">
+
+            <div class="col-md-4">
+
+            </div>
+
+            <!-- Imagem Comunidade Hallel -->
+            <div class="col-md-4">
+                <center>
+                    <br>
+                    <img class="d-flex align-items-center" src="rsc/img/nome-topo.png" style="width: 200px;">
+                    <br>
+                </center>
+            </div>
+
+            <!-- Redes sociais -->
+            <div class="col-md-4">
+
+            </div>
+
+        </div>
+
+        <!-- Barra de Navegação -->
+        <nav class="barraNav navbar-expand-md" id="navbar">
+            <!-- Recolher navbar -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barraDeNavegacao">
+                <span class="fa fa-bars" style="color: white; font-size: 25px;"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="barraDeNavegacao" style="color: white; font-size: 14px;">
+
+                <!-- Link da navbar -->
+
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">INÍCIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#associacao">ASSOCIAÇÃO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#eventos">EVENTOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#formacoes">FORMAÇÕES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#loja">LOJA</a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Fim do header -->
+
+    <!-- Início do corpo -->
+    <div class="container">
+        <h5 class="text-uppercase text-center py-5 font-personalizada-4 font-weight-bold">Associação</h5>
+        <ol id="barra-controle-basico" class="mid">
+            <li>Dados pessoais</li>
+            <li>Dados religiosos</li>
+            <li>Dados bancários</li>
+            <li>Confirmação</li>
+        </ol>
+
+        <!--  <div id="controle-basico"></div> -->
+
+        <form id="form1" style="display:block">
+            <br>
+            <br>
+            <div class="row">
+
+                <div class="col-sm-12 text-center d-flex justify-content-center">
+
+                    <div class="container2 d-flex justify-content-center" style="width: 250px;">
+
+                        <img width="200px" height="200px" src='rsc/img/avatar2.png' class="img-circle image objectImage2" name="fotoPerfil" id="fotoPerfil">
+                        <div class="middle text" id="labelAlterar">
+                            <label for='arquivo' style="width: 290px;">Alterar foto</label>
+                            <input type="file" class="open" id="arquivo" accept="image/png, image/jpeg" name="arquivo">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <br>
+            <p style="text-align: center; color: black">Preencha os dados abaixo corretamente para se cadastrar.</p>
+            <br>
+            <div class="form-row">
+                <div class="form-group col-md-8 pr-5">
+                    <label class="font-weight-bold">Nome
+                        <span class="text-wine font-weight-bold"> *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu nome">
+                </div>
+                <div class="form-group col-md-4 ">
+                    <label class="font-weight-bold">Data de nascimento
+                        <span class="text-wine font-weight-bold">
+                            *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="date">
+                </div>
+                <div class="form-group col-md-6 pr-5">
+                    <label class="font-weight-bold">CPF
+                        <span class="text-wine font-weight-bold"> *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu CPF">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="font-weight-bold">RG
+                        <span class="text-wine font-weight-bold">
+                            *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu RG">
+                </div>
+                <div class="form-group col-md-6 pr-5">
+                    <label class="font-weight-bold">Nacionalidade
+                        <span class="text-wine font-weight-bold"> *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite sua nacionalidade">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="font-weight-bold">Naturalidade
+                        <span class="text-wine font-weight-bold">
+                            *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite sua naturalidade">
+                </div>
+                <div class="form-group col-md-8 pr-5">
+                    <label class="font-weight-bold">Endereco
+                        <span class="text-wine font-weight-bold"> *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu endereço">
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="font-weight-bold">CEP
+                        <span class="text-wine font-weight-bold">
+                            *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu CEP">
+                </div>
+                <div class="form-group col-md-6 pr-5">
+                    <label class="font-weight-bold">Telefone
+                        <span class="text-wine font-weight-bold"> *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu número de telefone">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="font-weight-bold">Celular
+                        <span class="text-wine font-weight-bold">
+                            *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu número de celular">
+                </div>
+                <div class="form-group col-md-6 pr-5">
+                    <label class="font-weight-bold">Email
+                        <span class="text-wine font-weight-bold"> *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu email">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="font-weight-bold">Profissão
+                        <span class="text-wine font-weight-bold">
+                            *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite sua profissão">
+                </div>
+            </div>
+        </form>
+        <form id="form2" style="display:none">
+            <p>Sou membro associado da Vocação Hallel: </p>
+            <div class="form-row">
+                <div class="form-group col-md-8 pr-5">
+                    <label class="font-weight-bold">Nome2
+                        <span class="text-wine font-weight-bold"> *</span>
+                    </label>
+                    <input class="input1 form-control rounded-0 text-black" type="text" placeholder="Digite seu nome">
+                </div>
+                <div class="form-group col-md-4 ">
+                    <label class="font-weight-bold">Data de nascimento2
+                        <span class="text-wine font-weight-bold">
+                            *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="date">
+                </div>
+                <div class="form-group col-md-7 pr-5">
+                    <label class="font-weight-bold">Email2
+                        <span class="text-wine font-weight-bold"> *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu email">
+                </div>
+                <div class="form-group col-md-5">
+                    <label class="font-weight-bold">Telefone2
+                        <span class="text-wine font-weight-bold">
+                            *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu telefone">
+                </div>
+            </div>
+
+        </form>
+        <form id="form3" style="display:none">
+            Etapa3
+            <div class="form-row">
+                <div class="form-group col-md-8 pr-5">
+                    <label class="font-weight-bold">Nome3
+                        <span class="text-wine font-weight-bold"> *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu nome">
+                </div>
+                <div class="form-group col-md-4 ">
+                    <label class="font-weight-bold">Data de nascimento3
+                        <span class="text-wine font-weight-bold">
+                            *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="date">
+                </div>
+                <div class="form-group col-md-7 pr-5">
+                    <label class="font-weight-bold">Email3
+                        <span class="text-wine font-weight-bold"> *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu email">
+                </div>
+                <div class="form-group col-md-5">
+                    <label class="font-weight-bold">Telefone3
+                        <span class="text-wine font-weight-bold">
+                            *</span>
+                    </label>
+                    <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu telefone">
+                </div>
+            </div>
+
+        </form>
+        <form id="form4" style="display:none">
+            <div class="form-row">
+                    <div class="form-group col-md-8 pr-5">
+                            <label class="font-weight-bold">Nome
+                                <span class="text-wine font-weight-bold"> *</span>
+                            </label>
+                            <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu nome">
+                        </div>
+                        <div class="form-group col-md-4 ">
+                            <label class="font-weight-bold">Data de nascimento
+                                <span class="text-wine font-weight-bold">
+                                    *</span>
+                            </label>
+                            <input class="form-control input1 rounded-0 text-black" type="date">
+                        </div>
+                        <div class="form-group col-md-6 pr-5">
+                            <label class="font-weight-bold">CPF
+                                <span class="text-wine font-weight-bold"> *</span>
+                            </label>
+                            <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu CPF">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-bold">RG
+                                <span class="text-wine font-weight-bold">
+                                    *</span>
+                            </label>
+                            <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu RG">
+                        </div>
+                        <div class="form-group col-md-6 pr-5">
+                            <label class="font-weight-bold">Nacionalidade
+                                <span class="text-wine font-weight-bold"> *</span>
+                            </label>
+                            <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite sua nacionalidade">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-bold">Naturalidade
+                                <span class="text-wine font-weight-bold">
+                                    *</span>
+                            </label>
+                            <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite sua naturalidade">
+                        </div>
+                        <div class="form-group col-md-8 pr-5">
+                            <label class="font-weight-bold">Endereco
+                                <span class="text-wine font-weight-bold"> *</span>
+                            </label>
+                            <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu endereço">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label class="font-weight-bold">CEP
+                                <span class="text-wine font-weight-bold">
+                                    *</span>
+                            </label>
+                            <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu CEP">
+                        </div>
+                        <div class="form-group col-md-6 pr-5">
+                            <label class="font-weight-bold">Telefone
+                                <span class="text-wine font-weight-bold"> *</span>
+                            </label>
+                            <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu número de telefone">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-bold">Celular
+                                <span class="text-wine font-weight-bold">
+                                    *</span>
+                            </label>
+                            <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu número de celular">
+                        </div>
+                        <div class="form-group col-md-6 pr-5">
+                            <label class="font-weight-bold">Email
+                                <span class="text-wine font-weight-bold"> *</span>
+                            </label>
+                            <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite seu email">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="font-weight-bold">Profissão
+                                <span class="text-wine font-weight-bold">
+                                    *</span>
+                            </label>
+                            <input class="form-control input1 rounded-0 text-black" type="text" placeholder="Digite sua profissão">
+                        </div>
+            </div>
+
+        </form>
+        <div class="row"></div>
+        <div class="form-row pt-5">
+            <div class="form-group col-md-6 text-right">
+                <button class="btn btn-black" id="btnAnterior">Anterior</button>
+            </div>
+            <div class="form-group col-md-6">
+                <button class="btn btn-black" id="btnProximo">Próximo</button>
+            </div>
+
+        </div>
+        <div class="text-center py-5">
+            <a href="index.html" class="font-personalizada-2 text-black text-center">Voltar a tela principal</a>
+        </div>
+
+        <br>
+        <br>
+
+
+    </div>
+    </div>
+    <!-- Fim do corpo -->
+
+
+    <!-- Inicio do Footer -->
+    <footer class="page-footer font-small pt-3 rodape container-fluid">
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Content -->
+                <p style="color: #9F9F9F">CONHEÇA A COMUNIDADE</p>
+                <p>
+                    <a href="#">Nossa história</a>
+                </p>
+                <p>
+                    <a href="#">Visite-nos</a>
+                </p>
+            </div>
+
+            <div class="col-md-6 text-right">
+                <p style="color: #9F9F9F">CONTATOS</p>
+                <p>
+                    comunidadehallel95@gmail.com
+                    <i class="fas fa-envelope"></i>
+                </p>
+                <p>
+                    (92) 3085-1787
+                    <span class="fa fa-phone"></span>
+                </p>
+            </div>
+        </div>
+        <br>
+    </footer>
+    <!-- Fim do Footer -->
+
+    <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/pagamento.js"></script>
+    <script type="text/javascript">
+        let formularioNmr = 0;
+
+        $('#btnProximo').click(function () {
+            if (formularioNmr == 0) {
+                $('#form1').css('display', 'none');
+                $('#form2').css('display', 'block');
+                formularioNmr++;
+            } else if (formularioNmr == 1) {
+                $('#form2').css('display', 'none');
+                $('#form3').css('display', 'block');
+                formularioNmr++;
+            } else if (formularioNmr == 2) {
+                $('#form3').css('display', 'none');
+                $('#form4').css('display', 'block');
+            }
+        });
+        $('#btnAnterior').click(function () {
+            if (formularioNmr == 2) {
+                $('#form4').css('display', 'none');
+                $('#form3').css('display', 'block');
+                formularioNmr--;
+            } else if (formularioNmr == 1) {
+                $('#form3').css('display', 'none');
+                $('#form2').css('display', 'block');
+                formularioNmr--;
+            } else if (formularioNmr == 0) {
+                $('#form2').css('display', 'none');
+                $('#form1').css('display', 'block');
+            }
+        })
+    </script>
+</body>
+
+</html>

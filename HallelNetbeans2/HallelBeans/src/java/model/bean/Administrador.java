@@ -6,26 +6,20 @@
 package model.bean;
 
 import java.io.Serializable;
-import java.util.Collection;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author Aluno
+ * @author Batalha
  */
 @Entity
 @Table(name = "administrador")
-@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Administrador.findAll", query = "SELECT a FROM Administrador a")
     , @NamedQuery(name = "Administrador.findByNome", query = "SELECT a FROM Administrador a WHERE a.nome = :nome")
@@ -44,10 +38,6 @@ public class Administrador implements Serializable {
     @Basic(optional = false)
     @Column(name = "senha")
     private String senha;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "administrador")
-    private Collection<Aula> aulaCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "administrador")
-    private Collection<Formacao> formacaoCollection;
 
     public Administrador() {
     }
@@ -86,24 +76,6 @@ public class Administrador implements Serializable {
         this.senha = senha;
     }
 
-    @XmlTransient
-    public Collection<Aula> getAulaCollection() {
-        return aulaCollection;
-    }
-
-    public void setAulaCollection(Collection<Aula> aulaCollection) {
-        this.aulaCollection = aulaCollection;
-    }
-
-    @XmlTransient
-    public Collection<Formacao> getFormacaoCollection() {
-        return formacaoCollection;
-    }
-
-    public void setFormacaoCollection(Collection<Formacao> formacaoCollection) {
-        this.formacaoCollection = formacaoCollection;
-    }
-
     @Override
     public int hashCode() {
         int hash = 0;
@@ -126,7 +98,7 @@ public class Administrador implements Serializable {
 
     @Override
     public String toString() {
-        return "dominio.Administrador[ nome=" + nome + " ]";
+        return "model.bean.Administrador[ nome=" + nome + " ]";
     }
     
 }

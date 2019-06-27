@@ -15,4 +15,12 @@ public class paginas  {
     public ModelAndView irCad(){
         return new ModelAndView("cadastro");
     }
+    @RequestMapping("/index")
+    public ModelAndView irIndex(){
+        return new ModelAndView("index");
+    }
+    @RequestMapping("/menuAdm")
+    public ModelAndView irMenuAdm(){
+        return new ModelAndView("menuAdm");
+    }
 }

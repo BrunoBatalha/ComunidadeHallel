@@ -9,7 +9,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css"/>" type="text/css">
+<!--        <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css"/>" type="text/css">-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="<c:url value="/resources/css/estilo.css"/>" type="text/css">
         <link rel="stylesheet" href="<c:url value="/resources/css/barraDeNavegacao.css"/>" type="text/css">
         <link rel="stylesheet" href="<c:url value="/resources/css/rodape.css"/>" type="text/css">
@@ -24,7 +25,7 @@
         <!-- Inicio do header -->
         <header class="container-fluid">
             <!-- Barra de Navegação -->
-            <nav class="row bg-wine h-100">
+            <nav class="row bg-wine h-100" style="background-color: #720100;">
                 <!-- Imagem Comunidade Hallel -->
                 <div class="col-md-3 mx-auto">
                     <img class="d-flex align-items-center my-4 mx-auto" src="<c:url value="/resources/img/nome-topo.png"/>" style="width: 200px;">
@@ -69,11 +70,11 @@
 
             </div>
 
-            <form>
+            <form method="post" action="cadastrarAdm">
                 <div class="form-row">
                     <div class="form-group col-md-8 ">
                         <label class="font-weight-bold">Nome<span class="text-wine font-weight-bold"> *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite seu nome">
+                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite seu nome" name="nome">
                     </div>
                     <div class="form-group col-md-4 ">
                         <label class="font-weight-bold">Data de nascimento<span class="text-wine font-weight-bold">
@@ -82,7 +83,7 @@
                     </div>
                     <div class="form-group col-md-7">
                         <label class="font-weight-bold">Email<span class="text-wine font-weight-bold"> *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite seu email">
+                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite seu email" name="email">
                     </div>
                     <div class="form-group col-md-5">
                         <label class="font-weight-bold">Telefone<span class="text-wine font-weight-bold"> *</span></label>
@@ -95,7 +96,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label class="font-weight-bold">Senha<span class="text-wine font-weight-bold"> *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="password" placeholder="Digite sua senha">
+                        <input class="form-control borda-inferior rounded-0 text-black" type="password" placeholder="Digite sua senha" name="senha">
                         <figcaption class="figure-caption text-wine">Sua senha deve conter no minímo 6 dígitos</figcaption>
                     </div>
                     <div class="form-group col-md-6">

@@ -20,7 +20,7 @@ public class GeraEntityManager {
         EntityManager entityManager = null;
         try {
             //Obtém o factory a partir da unidade de persistência.
-            factory = Persistence.createEntityManagerFactory("AgendaWebPU");
+            factory = Persistence.createEntityManagerFactory("HallelBeansPU");
             //Cria um entity manager.
             entityManager = factory.createEntityManager();
             //Fecha o factory para liberar os recursos utilizado.

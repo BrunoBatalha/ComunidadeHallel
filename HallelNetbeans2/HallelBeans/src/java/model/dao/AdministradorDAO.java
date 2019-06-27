@@ -10,7 +10,6 @@ import model.bean.Administrador;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-import model.bean.Usuario;
 import org.springframework.dao.DataAccessException;
 
 /**
@@ -30,6 +29,12 @@ public class AdministradorDAO {
         this.senha = senha;
         em = GeraEntityManager.getEntityManager();
     }
+    public AdministradorDAO(){
+        em = GeraEntityManager.getEntityManager();
+    }
+       
+    
+        
     
     public Administrador gravar(Administrador administrador) throws DataAccessException{
          try {
@@ -71,10 +76,8 @@ public class AdministradorDAO {
         return em.find(Administrador.class, nome);
     }
     
-    public List obterTodos(String nome) throws DataAccessException{
-        Query qry = em.createQuery("SELECT a FROM ADMINISTRADOR a WHERE a.nome =: nome");
-        qry.setParameter("nome", nome);
-        
+    public List obterTodos() throws DataAccessException{
+        Query qry = em.createQuery("SELECT a FROM Administrador a ");
         return qry.getResultList();
     }
     
@@ -84,5 +87,5 @@ public class AdministradorDAO {
         qry.setParameter("email", "%" + email + "%");
         return qry.getResultList();
     }
-    
+   
 }

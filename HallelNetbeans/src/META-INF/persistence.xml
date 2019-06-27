@@ -6,6 +6,13 @@
     <class>dominio.Usuario</class>
     <class>dominio.Endereco</class>
     <class>dominio.Contato</class>
+    <class>dominio.Aula</class>
+    <class>dominio.Administrador</class>
+    <class>dominio.Formacao</class>
+    <class>dominio.Cria</class>
+    <class>dominio.Evento</class>
+    <class>dominio.Matricula</class>
+    <class>dominio.Inscreve</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/agenda?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

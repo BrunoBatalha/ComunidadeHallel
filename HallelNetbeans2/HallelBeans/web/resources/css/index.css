@@ -13,7 +13,7 @@ a:hover {
 }
 
 .fundo {
-    background-image: url(../rsc/img/fundo8.jpg);
+    background-image: url(../img/fundo8.jpg);
     position: fixed;
     height: 100%;
     background-position: center;

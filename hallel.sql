@@ -51,9 +51,10 @@ create table cria(
     nomeAdm varchar(100) not null,
     tituloEv varchar(100) not null,
     horaC time not null,
-    primary key (dataC, nomeAdm, tituloEv));
-    
-        
+    primary key (dataC, nomeAdm, tituloEv),
+    foreign key (nomeAdm) references administrador(nome),
+    foreign key (tituloEv) references evento(nome));
+            
 create table evento(
 	titulo varchar(100) not null,
     dataEv date not null,
@@ -81,14 +82,3 @@ create table matricula(
     primary key (CPFUsu, nomeForm, dataI),
     foreign key (CPFUsu) references usuario(CPF),
     foreign key (nomeForm) references formacao(nome));
-    
-
-    
-
-    
-
-    
-
-    
-
-

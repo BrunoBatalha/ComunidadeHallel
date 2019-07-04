@@ -1,6 +1,8 @@
 package controller;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import model.bean.Evento;
@@ -13,10 +15,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class EventoController {
 
     @RequestMapping("cadastrarEvt")
-    public ModelAndView cadastrarAdm(Evento evt) {
+    public ModelAndView cadastrarAdm(Evento evt) throws ParseException {
         EventoDAO eDao = new EventoDAO();
+
+      
         eDao.gravar(evt);
-        return new ModelAndView("cadastroEvento");
+        return new ModelAndView("menuAdm");
     }
 
 }

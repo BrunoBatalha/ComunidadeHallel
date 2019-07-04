@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="model.bean.Evento"%>
+<%@page import="model.dao.EventoDAO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -74,14 +77,14 @@
                 <div class="row bg-black mt-5 mb-5" style="background-color: #000">
                     <div class="container">
                         <div class="tab-content" id="nav-tabContent">
+
                             <div class="tab-pane fade show active " id="nav-eventos" role="tabpanel"
                                  aria-labelledby="nav-home-tab">
+
+
+
                                 <div class="container  pb-5">
 
-                                    <a href="cadastroEvento">
-                                        <button class="btn btn-outline-wine rounded-0 text-uppercase animacao-botaoCadastrar"
-                                                type="button" id="btnCadastrar">Cadastrar evento</button>
-                                    </a>
 
 
                                     <div class="row pt-5">
@@ -97,8 +100,11 @@
                                         <div
                                             class="col-sm-6 d-flex justify-content-start justify-content-sm-end align-items-center">
                                             <P class="d-flex justify-content-end align-items-center">
-                                                <button class="btn btn-wine font-personalizada-2 rounded-0">Mostrar
-                                                    mais</button>
+                                                <a href="cadastroEvento">
+                                                    <button class="btn btn-outline-wine rounded-0 text-uppercase animacao-botaoCadastrar"
+                                                            type="button" id="btnCadastrar" style="color: white;">Cadastrar evento</button>
+                                                </a>
+
                                             </P>
                                         </div>
                                     </div>
@@ -112,6 +118,15 @@
 
                                             <div id="sliderEventos" class="row h-100">
                                                 <div class="row__inner" id="exibe">
+
+                                                    <%
+                                                        EventoDAO eDao = new EventoDAO();
+                                                        List<Evento> listEvento = eDao.obterTodos();
+
+                                                        for (Evento eventos : listEvento) {
+
+                                                    %>
+
                                                     <div class="gui-card">
                                                         <div class="flip-container "
                                                              ontouchstart="this.classList.toggle('hover')">
@@ -129,12 +144,10 @@
 
                                                                         <div class="overlay">
 
-                                                                            <p class="tituloCard">
-                                                                                O louvor como oração
-                                                                            </p>
                                                                             <p class="dadosCard">
-                                                                                17 aulas
-                                                                                <br> Status: completo
+                                                                                Nome: <%= eventos.getTitulo()%><br>
+                                                                                Descrição: <%= eventos.getDescricao()%><br>
+                                                                                Data: <%= eventos.getDataEv()%>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -142,66 +155,13 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="gui-card">
-                                                        <div class="flip-container"
-                                                             ontouchstart="this.classList.toggle('hover')">
-                                                            <div class="flipper">
-                                                                <div class="front">
-                                                                    <div class="gui-card__media aparecer">
 
-                                                                        <img class="gui-card__img objectImage"
-                                                                             src="<c:url value="/resources/img/fundo.jpg"/>">
+                                                    <%
 
-                                                                        <button class="btn btn-wine overlay-edit rounded-0"
-                                                                                title="Editar">
-                                                                            <i class="fas fa-edit"></i>
-                                                                        </button>
+                                                        }
 
-                                                                        <div class="overlay">
+                                                    %>
 
-                                                                            <p class="tituloCard">
-                                                                                O louvor como oração
-                                                                            </p>
-                                                                            <p class="dadosCard">
-                                                                                17 aulas
-                                                                                <br> Status: completo
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gui-card">
-                                                        <div class="flip-container"
-                                                             ontouchstart="this.classList.toggle('hover')">
-                                                            <div class="flipper">
-                                                                <div class="front">
-                                                                    <div class="gui-card__media aparecer">
-
-                                                                        <img class="gui-card__img objectImage"
-                                                                             src="<c:url value="/resources/img/fundo.jpg"/>">
-
-                                                                        <button class="btn btn-wine overlay-edit rounded-0"
-                                                                                title="Editar">
-                                                                            <i class="fas fa-edit"></i>
-                                                                        </button>
-
-                                                                        <div class="overlay">
-
-                                                                            <p class="tituloCard">
-                                                                                O louvor como oração
-                                                                            </p>
-                                                                            <p class="dadosCard">
-                                                                                17 aulas
-                                                                                <br> Status: completo
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
 

@@ -23,4 +23,8 @@ public class paginas  {
     public ModelAndView irMenuAdm(){
         return new ModelAndView("menuAdm");
     }
+    @RequestMapping("/cadastroEvento")
+    public ModelAndView irCadEvento(){
+        return new ModelAndView("cadastroEvento");
+    }
 }

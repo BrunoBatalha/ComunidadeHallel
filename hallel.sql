@@ -1,9 +1,9 @@
 create schema if not exists hallel;
 
+drop table if exists cria;
 drop table if exists matricula;
 drop table if exists inscreve;
 drop table if exists evento;
-drop table if exists cria;
 drop table if exists aula;
 drop table if exists formacao;
 drop table if exists administrador;
@@ -45,24 +45,14 @@ create table aula(
     primary key (nome, nomeForm, nomeAdm),
     foreign key (nomeForm) references formacao(nome),
     foreign key (nomeAdm) references administrador(nome));
-    
-create table cria(
-	dataC date not null,
-    nomeAdm varchar(100) not null,
-    tituloEv varchar(100) not null,
-    horaC time not null,
-    primary key (dataC, nomeAdm, tituloEv),
-    foreign key (nomeAdm) references administrador(nome),
-    foreign key (tituloEv) references evento(nome));
-            
+                
 create table evento(
 	titulo varchar(100) not null,
     dataEv date not null,
     descricao varchar(300) not null,
     localEv varchar(100) not null,
-    horaEv time not null,
-    inscritos int not null,
-    primary key(titulo, dataEv));
+    inscritos int null,
+    primary key(titulo));
     
 create table inscreve(
 	dataInsc date not null,
@@ -82,3 +72,12 @@ create table matricula(
     primary key (CPFUsu, nomeForm, dataI),
     foreign key (CPFUsu) references usuario(CPF),
     foreign key (nomeForm) references formacao(nome));
+    
+    create table cria(
+	dataC date not null,
+    nomeAdm varchar(100) not null,
+    tituloEv varchar(100) not null,
+    horaC time not null,
+    primary key (dataC, nomeAdm, tituloEv),
+    foreign key (nomeAdm) references administrador(nome),
+    foreign key (tituloEv) references evento(titulo));

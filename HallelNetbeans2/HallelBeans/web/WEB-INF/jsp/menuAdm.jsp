@@ -77,6 +77,13 @@
                             <div class="tab-pane fade show active " id="nav-eventos" role="tabpanel"
                                  aria-labelledby="nav-home-tab">
                                 <div class="container  pb-5">
+
+                                    <a href="cadastroEvento">
+                                        <button class="btn btn-outline-wine rounded-0 text-uppercase animacao-botaoCadastrar"
+                                                type="button" id="btnCadastrar">Cadastrar evento</button>
+                                    </a>
+
+
                                     <div class="row pt-5">
                                         <div class="col-md-6">
                                             <p class="d-flex justify-content-start align-items-center">
@@ -139,7 +146,7 @@
                                                         <div class="flip-container"
                                                              ontouchstart="this.classList.toggle('hover')">
                                                             <div class="flipper">
-                                                               <div class="front">
+                                                                <div class="front">
                                                                     <div class="gui-card__media aparecer">
 
                                                                         <img class="gui-card__img objectImage"

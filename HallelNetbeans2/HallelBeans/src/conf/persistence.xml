@@ -4,6 +4,7 @@
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <class>model.bean.Administrador</class>
     <class>model.bean.Usuario</class>
+    <class>model.bean.Evento</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hallel?zeroDateTimeBehavior=convertToNull"/>

@@ -4,6 +4,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import model.bean.Administrador;
 import model.dao.AdministradorDAO;
+import model.dao.GenericoDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -12,9 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class AdministradorController {
 
     @RequestMapping("cadastrarAdm")
-    public ModelAndView cadastrarAdm(Administrador adm) {
+    public ModelAndView cadastrarAdm(Administrador adm) throws Exception {
         AdministradorDAO aDao = new AdministradorDAO();
-        aDao.gravar(adm);
+        aDao.salvarOuAtualizar(adm);
         return new ModelAndView("cadastro");
     }
 

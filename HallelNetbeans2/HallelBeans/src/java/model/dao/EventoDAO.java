@@ -5,7 +5,7 @@
  */
 package model.dao;
 
-import entitymanager.GeraEntityManager;
+import entitymanager.ConnectionFactory;
 import java.util.Date;
 import model.bean.Evento;
 import java.util.List;
@@ -30,12 +30,12 @@ public class EventoDAO {
         this.dataEv = dataEv;
         this.descricao = descricao;
         this.localEv = localEv;
-        em = GeraEntityManager.getEntityManager();
+        em = ConnectionFactory.getEntityManager();
     }
     
      
     public EventoDAO(){
-        em = GeraEntityManager.getEntityManager();
+        em = ConnectionFactory.getEntityManager();
     }
            
     public Evento gravar(Evento evento) throws DataAccessException{

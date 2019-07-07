@@ -10,106 +10,125 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Batalha
+ * @author Glenda Batalha
  */
 @Entity
 @Table(name = "evento")
-@XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Evento.findAll", query = "SELECT e FROM Evento e")
-    , @NamedQuery(name = "Evento.findByTitulo", query = "SELECT e FROM Evento e WHERE e.titulo = :titulo")
-    , @NamedQuery(name = "Evento.findByDataEv", query = "SELECT e FROM Evento e WHERE e.dataEv = :dataEv")
-    , @NamedQuery(name = "Evento.findByDescricao", query = "SELECT e FROM Evento e WHERE e.descricao = :descricao")
-    , @NamedQuery(name = "Evento.findByLocalEv", query = "SELECT e FROM Evento e WHERE e.localEv = :localEv")
-    , @NamedQuery(name = "Evento.findByInscritos", query = "SELECT e FROM Evento e WHERE e.inscritos = :inscritos")})
+    , @NamedQuery(name = "Evento.findByIdEvento", query = "SELECT e FROM Evento e WHERE e.idEvento = :idEvento")
+    , @NamedQuery(name = "Evento.findByNomeEvento", query = "SELECT e FROM Evento e WHERE e.nomeEvento = :nomeEvento")
+    , @NamedQuery(name = "Evento.findByDataEvento", query = "SELECT e FROM Evento e WHERE e.dataEvento = :dataEvento")
+    , @NamedQuery(name = "Evento.findByHoraEvento", query = "SELECT e FROM Evento e WHERE e.horaEvento = :horaEvento")
+})
 public class Evento implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "titulo")
-    private String titulo;
+    @Column(name = "idEvento")
+    private Integer idEvento;
     @Basic(optional = false)
-    @Column(name = "dataEv")
+    @Column(name = "nomeEvento")
+    private String nomeEvento;
+    @Basic(optional = false)
+    @Lob
+    @Column(name = "descricaoEvento")
+    private String descricaoEvento;
+    @Basic(optional = false)
+    @Column(name = "dataEvento")
     @Temporal(TemporalType.DATE)
-    private Date dataEv;
+    private Date dataEvento;
     @Basic(optional = false)
-    @Column(name = "descricao")
-    private String descricao;
-    @Basic(optional = false)
-    @Column(name = "localEv")
-    private String localEv;
-    @Column(name = "inscritos")
-    private Integer inscritos;
+    @Column(name = "horaEvento")
+    @Temporal(TemporalType.TIME)
+    private Date horaEvento;
+    @JoinColumn(name = "idAdm", referencedColumnName = "idAdm")
+    @ManyToOne(optional = false)
+    private Administrador idAdm;
 
     public Evento() {
     }
 
-    public Evento(String titulo) {
-        this.titulo = titulo;
+    public Evento(Integer idEvento) {
+        this.idEvento = idEvento;
     }
 
-    public Evento(String titulo, Date dataEv, String descricao, String localEv) {
-        this.titulo = titulo;
-        this.dataEv = dataEv;
-        this.descricao = descricao;
-        this.localEv = localEv;
+    public Evento(Integer idEvento, String nomeEvento, String descricaoEvento, Date dataEvento, Date horaEvento) {
+        this.idEvento = idEvento;
+        this.nomeEvento = nomeEvento;
+        this.descricaoEvento = descricaoEvento;
+        this.dataEvento = dataEvento;
+        this.horaEvento = horaEvento;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public Integer getIdEvento() {
+        return idEvento;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setIdEvento(Integer idEvento) {
+        this.idEvento = idEvento;
     }
 
-    public Date getDataEv() {
-        return dataEv;
+    public String getNomeEvento() {
+        return nomeEvento;
     }
 
-    public void setDataEv(Date dataEv) {
-        this.dataEv = dataEv;
+    public void setNomeEvento(String nomeEvento) {
+        this.nomeEvento = nomeEvento;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getDescricaoEvento() {
+        return descricaoEvento;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDescricaoEvento(String descricaoEvento) {
+        this.descricaoEvento = descricaoEvento;
     }
 
-    public String getLocalEv() {
-        return localEv;
+    public Date getDataEvento() {
+        return dataEvento;
     }
 
-    public void setLocalEv(String localEv) {
-        this.localEv = localEv;
+    public void setDataEvento(Date dataEvento) {
+        this.dataEvento = dataEvento;
     }
 
-    public Integer getInscritos() {
-        return inscritos;
+    public Date getHoraEvento() {
+        return horaEvento;
     }
 
-    public void setInscritos(Integer inscritos) {
-        this.inscritos = inscritos;
+    public void setHoraEvento(Date horaEvento) {
+        this.horaEvento = horaEvento;
+    }
+
+    public Administrador getIdAdm() {
+        return idAdm;
+    }
+
+    public void setIdAdm(Administrador idAdm) {
+        this.idAdm = idAdm;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (titulo != null ? titulo.hashCode() : 0);
+        hash += (idEvento != null ? idEvento.hashCode() : 0);
         return hash;
     }
 
@@ -120,7 +139,7 @@ public class Evento implements Serializable {
             return false;
         }
         Evento other = (Evento) object;
-        if ((this.titulo == null && other.titulo != null) || (this.titulo != null && !this.titulo.equals(other.titulo))) {
+        if ((this.idEvento == null && other.idEvento != null) || (this.idEvento != null && !this.idEvento.equals(other.idEvento))) {
             return false;
         }
         return true;
@@ -128,7 +147,7 @@ public class Evento implements Serializable {
 
     @Override
     public String toString() {
-        return "model.bean.Evento[ titulo=" + titulo + " ]";
+        return "model.bean.Evento[ idEvento=" + idEvento + " ]";
     }
-    
+
 }

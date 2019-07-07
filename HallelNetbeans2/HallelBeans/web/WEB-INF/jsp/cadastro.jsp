@@ -73,8 +73,8 @@
             <form method="post" action="cadastrarAdm">
                 <div class="form-row">
                     <div class="form-group col-md-8 ">
-                        <label class="font-weight-bold">Nome<span class="text-wine font-weight-bold"> *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite seu nome" name="nome">
+                        <label class="font-weight-bold">Login<span class="text-wine font-weight-bold"> *</span></label>
+                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite seu nome" name="login">
                     </div>
                     <div class="form-group col-md-4 ">
                         <label class="font-weight-bold">Data de nascimento<span class="text-wine font-weight-bold">

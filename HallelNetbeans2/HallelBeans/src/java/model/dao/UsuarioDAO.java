@@ -5,7 +5,7 @@
  */
 package model.dao;
 
-import entitymanager.GeraEntityManager;
+import entitymanager.ConnectionFactory;
 import java.util.Date;
 import model.bean.Usuario;
 import java.util.List;
@@ -38,11 +38,11 @@ public class UsuarioDAO {
         this.dataNasc = dataNasc;
         this.bairro = bairro;
         this.senha = senha;
-        em = GeraEntityManager.getEntityManager();
+        em = ConnectionFactory.getEntityManager();
     }
 
     public UsuarioDAO() {
-        em = GeraEntityManager.getEntityManager();
+        em = ConnectionFactory.getEntityManager();
     }
 
     public Usuario gravar(Usuario usuario) throws DataAccessException {

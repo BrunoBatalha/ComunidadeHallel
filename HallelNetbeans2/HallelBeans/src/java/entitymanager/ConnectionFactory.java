@@ -13,7 +13,7 @@ import javax.persistence.Persistence;
  *
  * @author Glenda Batalha
  */
-public class GeraEntityManager {
+public class ConnectionFactory {
 
     public static EntityManager getEntityManager() {
         EntityManagerFactory factory = null;
@@ -24,7 +24,9 @@ public class GeraEntityManager {
             //Cria um entity manager.
             entityManager = factory.createEntityManager();
             //Fecha o factory para liberar os recursos utilizado.
-        } finally {
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally {
 //            factory.close();
         }
         return entityManager;

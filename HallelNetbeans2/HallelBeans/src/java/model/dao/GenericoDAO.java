@@ -1,7 +1,9 @@
 package model.dao;
 
-import entitymanager.ConnectionFactory;
+import conexao.ConnectionFactory;
+import java.util.List;
 import javax.persistence.EntityManager;
+import org.springframework.dao.DataAccessException;
 
 public class GenericoDAO<T extends EntidadeBase> {
 
@@ -29,7 +31,7 @@ public class GenericoDAO<T extends EntidadeBase> {
             em.getTransaction().commit();
         } catch (Exception e) {
             em.getTransaction().rollback();
-            throw new Exception("Erro ao salvar : "+e);
+            throw new Exception("Erro ao salvar : " + e);
         } finally {
             em.close();
         }
@@ -44,9 +46,11 @@ public class GenericoDAO<T extends EntidadeBase> {
             em.getTransaction().commit();
         } catch (Exception e) {
             em.getTransaction().rollback();
-            throw new Exception("Erro ao excluir: "+e);
+            throw new Exception("Erro ao excluir: " + e);
         } finally {
             em.close();
         }
     }
+
+   
 }

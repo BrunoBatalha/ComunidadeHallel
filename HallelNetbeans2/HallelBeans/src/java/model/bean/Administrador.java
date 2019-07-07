@@ -27,12 +27,12 @@ import model.dao.EntidadeBase;
 @Entity
 @Table(name = "administrador")
 @NamedQueries({
-    @NamedQuery(name = "Administrador.obterTodos", query = "SELECT a FROM Administrador a")
-    , @NamedQuery(name = "Administrador.obterPorId", query = "SELECT a FROM Administrador a WHERE a.idAdm = :idAdm")
-    , @NamedQuery(name = "Administrador.obterPorLogin", query = "SELECT a FROM Administrador a WHERE a.login = :login")
-    , @NamedQuery(name = "Administrador.obterPorEmail", query = "SELECT a FROM Administrador a WHERE a.email = :email")
-    , @NamedQuery(name = "Administrador.obterPorSenha", query = "SELECT a FROM Administrador a WHERE a.senha = :senha")
-    , @NamedQuery(name = "Administrador.obterLoginSenha", query = "SELECT a FROM Administrador a WHERE a.senha = :senha AND a.login = :login")
+    @NamedQuery(name = "Administrador.findAll", query = "SELECT a FROM Administrador a")
+    , @NamedQuery(name = "Administrador.findByIdAdm", query = "SELECT a FROM Administrador a WHERE a.idAdm = :idAdm")
+    , @NamedQuery(name = "Administrador.findByLogin", query = "SELECT a FROM Administrador a WHERE a.login = :login")
+    , @NamedQuery(name = "Administrador.findByEmail", query = "SELECT a FROM Administrador a WHERE a.email = :email")
+    , @NamedQuery(name = "Administrador.findBySenha", query = "SELECT a FROM Administrador a WHERE a.senha = :senha")
+    , @NamedQuery(name = "Administrador.findByLoginSenha", query = "SELECT a FROM Administrador a WHERE a.senha = :senha AND a.login = :login")
 })
 public class Administrador implements EntidadeBase {
 

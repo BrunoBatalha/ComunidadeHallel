@@ -67,10 +67,10 @@
                     <div class="d-flex justify-content-center align-items-center h-100">
                         <form method="post" class="w-75" action="logarAdm">
                             <div class="form-group ">
-                                <label for="email">Email<span class="text-wine font-weight-bold"> *</span></label>
+                                <label for="login">Login<span class="text-wine font-weight-bold"> *</span></label>
                                 <input
                                     class="form-control text-white bg-transparent borda-inferior border-info border-white rounded-0"
-                                    type="text" id="email" name="email" placeholder="Digite seu email">
+                                    type="text" id="login" name="login" placeholder="Digite seu login">
                             </div>
                             <div class="form-group">
                                 <label for="senha">Senha<span class="text-wine font-weight-bold"> *</span></label>

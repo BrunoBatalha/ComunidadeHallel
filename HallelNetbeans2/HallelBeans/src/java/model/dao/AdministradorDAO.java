@@ -5,12 +5,13 @@
  */
 package model.dao;
 
-import entitymanager.ConnectionFactory;
+import conexao.ConnectionFactory;
 import java.util.ArrayList;
 import model.bean.Administrador;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.swing.JOptionPane;
 import org.springframework.dao.DataAccessException;
 
 public class AdministradorDAO extends GenericoDAO<Administrador> {
@@ -19,10 +20,14 @@ public class AdministradorDAO extends GenericoDAO<Administrador> {
         EntityManager em = ConnectionFactory.getEntityManager();
         List<Administrador> administradores;
         try {
-            Query qry = em.createQuery("Administrador.obterTodos");
+            Query qry = em.createNamedQuery("Administrador.findAll",Administrador.class);
             administradores = qry.getResultList();
+            
         } catch (Exception e) {
             administradores = new ArrayList<>();
+            e.printStackTrace();
+            
+            JOptionPane.showConfirmDialog(null, administradores);
         } finally {
             em.close();
         }
@@ -33,7 +38,7 @@ public class AdministradorDAO extends GenericoDAO<Administrador> {
         EntityManager em = ConnectionFactory.getEntityManager();
         List<Administrador> administradores;
         try {
-            Query qry = em.createQuery("Administrador.obterLoginSenha");
+            Query qry = em.createNamedQuery("Administrador.obterLoginSenha");
             qry.setParameter("login", login);
             qry.setParameter("senha", senha);
             administradores = qry.getResultList();

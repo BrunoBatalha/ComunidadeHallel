@@ -5,7 +5,7 @@
  */
 package model.dao;
 
-import entitymanager.ConnectionFactory;
+import conexao.ConnectionFactory;
 import java.util.Date;
 import model.bean.Usuario;
 import java.util.List;

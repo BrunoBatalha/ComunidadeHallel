@@ -1,6 +1,8 @@
 package controller;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.bean.Administrador;
 import model.dao.AdministradorDAO;
@@ -13,9 +15,13 @@ import org.springframework.web.servlet.ModelAndView;
 public class AdministradorController {
 
     @RequestMapping("cadastrarAdm")
-    public ModelAndView cadastrarAdm(Administrador adm) throws Exception {
+    public ModelAndView cadastrarAdm(Administrador adm) {
         AdministradorDAO aDao = new AdministradorDAO();
-        aDao.salvarOuAtualizar(adm);
+        try {
+            aDao.salvarOuAtualizar(adm);
+        } catch (Exception ex) {
+            Logger.getLogger(AdministradorController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return new ModelAndView("cadastro");
     }
 
@@ -23,9 +29,11 @@ public class AdministradorController {
     public ModelAndView logarAdm(Administrador adm) {
         AdministradorDAO aDao = new AdministradorDAO();
         List<Administrador> listAdm = aDao.obterTodos();
-        for (Administrador administrador : listAdm) {
-            if (administrador.getEmail().equals(adm.getEmail())
-                    && administrador.getSenha().equals(adm.getSenha())) {
+        
+        for (Administrador a : listAdm) {
+               JOptionPane.showMessageDialog(null, a.getLogin());
+            if (a.getLogin().equals(adm.getLogin())
+                    && a.getSenha().equals(adm.getSenha())) {
                     return new ModelAndView("menuAdm");
             }
         }

@@ -38,82 +38,46 @@
 
                 <div class="col-md-12">
                     <h3 class="text-uppercase text-center font-weight-bold font-personalizada-4 py-5">Cadastro
-                        de<br>administrador</h3>
+                        de<br>evento</h3>
                 </div>
 
-                <div class="col-md-12 d-flex justify-content-center">
-                    <div class="col-md-5">
-                        <label class="font-weight-bold">Tipo<span class="text-wine font-weight-bold"> *</span></label>
-                        <select class="form-control rounded-0 borda-inferior">
-                            <option selected>Selectione o tipo...</option>
-                            <option>Tipo 2</option>
-                            <option>Tipo 3</option>
-                            <option>Tipo 4</option>
-                        </select>
-                    </div>
-                </div>
 
-                <div class="col-md-12 text-center">
-                    <figure class="figure">
-                        <h6 class="text-uppercase font-personalizada-4 py-5 font-weight-bold text-wine">Dados pessoais</h6>
-                        <div id="localAlteracao">
-                            <img src="<c:url value="/resources/img/perfil.png"/>" class="figure-img img-fluid rounded-circle" id="fotoPerfil" width="300px" height="300px">
-
-                            <div id="labelAlterar" class="rounded-circle d-flex align-items-center justify-content-center">
-                                <label class="btn btn-black" for='inputArquivo'>Alterar foto de perfil</label>
-                                <input type="file" class="open" id="inputArquivo" accept="image/png, image/jpeg"
-                                       name="inputArquivo">
-                            </div>
-                        </div>
-                    </figure>
-                </div>
+                <!--                <div class="col-md-12 text-center">
+                                    <figure class="figure">
+                                        <h6 class="text-uppercase font-personalizada-4 py-5 font-weight-bold text-wine">Dados pessoais</h6>
+                                        <div id="localAlteracao">
+                                            <img src="<c:url value="/resources/img/perfil.png"/>" class="figure-img img-fluid rounded-circle" id="fotoPerfil" width="300px" height="300px">
+                
+                                            <div id="labelAlterar" class="rounded-circle d-flex align-items-center justify-content-center">
+                                                <label class="btn btn-black" for='inputArquivo'>Alterar foto de perfil</label>
+                                                <input type="file" class="open" id="inputArquivo" accept="image/png, image/jpeg"
+                                                       name="inputArquivo">
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>-->
 
             </div>
 
-            <form method="post" action="cadastrarAdm">
+            <form method="post" action="cadastrarEvt">
                 <div class="form-row">
                     <div class="form-group col-md-8 ">
-                        <label class="font-weight-bold">Nome<span class="text-wine font-weight-bold"> *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite seu nome" name="nome">
+                        <label class="font-weight-bold">Titulo<span class="text-wine font-weight-bold"> *</span></label>
+                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite o titulo do evento" name="titulo">
                     </div>
                     <div class="form-group col-md-4 ">
-                        <label class="font-weight-bold">Data de nascimento<span class="text-wine font-weight-bold">
+                        <label class="font-weight-bold">Data<span class="text-wine font-weight-bold">
                                 *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="date">
+                        <input class="form-control borda-inferior rounded-0 text-black form-control dataEv" type="text" name="dataEv" id="dataEv">
                     </div>
                     <div class="form-group col-md-7">
-                        <label class="font-weight-bold">Email<span class="text-wine font-weight-bold"> *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite seu email" name="email">
+                        <label class="font-weight-bold">Local<span class="text-wine font-weight-bold"> *</span></label>
+                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite o endereço do evento" name="localEv">
                     </div>
                     <div class="form-group col-md-5">
-                        <label class="font-weight-bold">Telefone<span class="text-wine font-weight-bold"> *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite seu telefone">
+                        <label class="font-weight-bold">Descrição<span class="text-wine font-weight-bold"> *</span></label>
+                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite uma descrição para o evento" name="descricao">
                     </div>
-                </div>
-                <div class="form-group text-center">
-                    <h6 class="text-uppercase font-personalizada-4 py-3 font-weight-bold text-wine">Dados de acesso</h6>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label class="font-weight-bold">Senha<span class="text-wine font-weight-bold"> *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="password" placeholder="Digite sua senha" name="senha">
-                        <figcaption class="figure-caption text-wine">Sua senha deve conter no minímo 6 dígitos</figcaption>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label class="font-weight-bold">Confirmar senha<span class="text-wine font-weight-bold">
-                                *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="password"
-                               placeholder="Confirme sua senha">
-                        <figcaption class="figure-caption text-wine">Sua senha deve conter no minímo 6 dígitos</figcaption>
-                    </div>
-                </div>
-                <div class="form-group  pt-5 ml-3">
-                    <input class="form-check-input rounded-0 " type="checkbox" id="checkPolitica">
-                    <label class="form-check-label" for="checkPolitica">
-                        Asseguro a veracidade dos dados informados nesse formulário e me afirmo conhecedor dos <a href="#"
-                                                                                                                  class="text-wine">termos de uso</a>
-                        e da <a href="#" class="text-wine">política de responsabilidade</a> da Comunidade Hallel.
-                    </label>
                 </div>
                 <div class="form-group text-center">
                     <input type="submit" class="btn btn-black font-personalizada-2 text-uppercase rounded-0"
@@ -158,6 +122,8 @@
         <script type="text/javascript" src="<c:url value="/resources/js/jquery-3.4.0.min.js"/>"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script type="text/javascript" src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://digitalbush.com/wp-content/uploads/2014/10/jquery.maskedinput.js"></script>
         <script type="text/javascript">
             function enviar_imagem(input) {
                 if (input.files && input.files[0]) {
@@ -171,6 +137,7 @@
             $("#inputArquivo").change(function () {
                 enviar_imagem(this);
             });
+            jQuery(".dataEv").mask("99/99/9999");
         </script>
     </body>
 

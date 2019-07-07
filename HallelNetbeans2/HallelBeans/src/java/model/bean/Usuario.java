@@ -6,25 +6,21 @@
 package model.bean;
 
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author Aluno
+ * @author Carol
  */
 @Entity
 @Table(name = "usuario")
@@ -68,10 +64,6 @@ public class Usuario implements Serializable {
     @Basic(optional = false)
     @Column(name = "senha")
     private String senha;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
-    private Collection<Matricula> matriculaCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
-    private Collection<Inscreve> inscreveCollection;
 
     public Usuario() {
     }
@@ -155,24 +147,6 @@ public class Usuario implements Serializable {
         this.senha = senha;
     }
 
-    @XmlTransient
-    public Collection<Matricula> getMatriculaCollection() {
-        return matriculaCollection;
-    }
-
-    public void setMatriculaCollection(Collection<Matricula> matriculaCollection) {
-        this.matriculaCollection = matriculaCollection;
-    }
-
-    @XmlTransient
-    public Collection<Inscreve> getInscreveCollection() {
-        return inscreveCollection;
-    }
-
-    public void setInscreveCollection(Collection<Inscreve> inscreveCollection) {
-        this.inscreveCollection = inscreveCollection;
-    }
-
     @Override
     public int hashCode() {
         int hash = 0;
@@ -195,7 +169,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "dominio.Usuario[ cpf=" + cpf + " ]";
+        return "model.bean.Usuario[ cpf=" + cpf + " ]";
     }
     
 }

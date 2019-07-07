@@ -6,7 +6,8 @@
 package model.dao;
 
 import entitymanager.GeraEntityManager;
-import model.bean.Administrador;
+import java.util.Date;
+import model.bean.Evento;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -16,53 +17,54 @@ import org.springframework.dao.DataAccessException;
  *
  * @author Aluno
  */
-public class AdministradorDAO {
+public class EventoDAO {
     
     public EntityManager em;
-    private String nome;
-    private String email;
-    private String senha;
+    private String titulo;
+    private Date dataEv;
+    private String descricao;
+    private String localEv;
     
-    public AdministradorDAO(String nome, String email, String senha){
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
+    public EventoDAO(String titulo, Date dataEv, String descricao, String localEv){
+        this.titulo = titulo;
+        this.dataEv = dataEv;
+        this.descricao = descricao;
+        this.localEv = localEv;
         em = GeraEntityManager.getEntityManager();
     }
-    public AdministradorDAO(){
+    
+     
+    public EventoDAO(){
         em = GeraEntityManager.getEntityManager();
     }
-       
-    
-        
-    
-    public Administrador gravar(Administrador administrador) throws DataAccessException{
+           
+    public Evento gravar(Evento evento) throws DataAccessException{
          try {
             em.getTransaction().begin();
-            System.out.println("Salvando a usuario.");
+            System.out.println("Salvando a evento.");
             // Verifica se o usuario ainda não está salva no banco de dados.
-            if (administrador.getNome()== null) {
+            if (evento.getTitulo()== null) {
                 //Salva os dados do usuario.
-                em.persist(administrador);
+                em.persist(evento);
             } else {
                 //Atualiza ou adiciona os dados do usuario.
-                administrador = em.merge(administrador);
+                evento = em.merge(evento);
             }
             // Finaliza a transação.
             em.getTransaction().commit();
         } finally {
             em.close();
         }
-        return administrador;
+        return evento;
     }
     
-    public void excluir(Administrador administrador) throws DataAccessException{
+    public void excluir(Evento evento) throws DataAccessException{
          try {
             // Inicia uma transação com o banco de dados.
             em.getTransaction().begin();
             // Consulta a pessoa na base de dados através do seu ID.
-            Administrador removerAdm = em.find(Administrador.class, administrador.getNome());
-            System.out.println("Excluindo os dados de: " + removerAdm.getNome());
+            Evento removerAdm = em.find(Evento.class, evento.getTitulo());
+            System.out.println("Excluindo os dados de: " + removerAdm.getTitulo());
             // Remove a pessoa da base de dados.
             em.remove(removerAdm);
             // Finaliza a transação.
@@ -72,12 +74,12 @@ public class AdministradorDAO {
         }
     }
     
-    public Administrador carregar(String nome)throws DataAccessException{
-        return em.find(Administrador.class, nome);
+    public Evento carregar(String nome)throws DataAccessException{
+        return em.find(Evento.class, nome);
     }
     
     public List obterTodos() throws DataAccessException{
-        Query qry = em.createQuery("SELECT a FROM Administrador a ");
+        Query qry = em.createQuery("SELECT a FROM Evento a ");
         return qry.getResultList();
     }
     

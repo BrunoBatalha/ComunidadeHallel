@@ -1003,6 +1003,10 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${libs.jpa2-persistence.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${libs.MySQLDriver.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${libs.hibernate4-persistence.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+<<<<<<< HEAD
+=======
+        <copyfiles files="${file.reference.jandex-2.1.1.Final.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+>>>>>>> da12f0f6da88f48870b3688a9e5c5e9e28c72fc5
         <mkdir dir="${build.web.dir}/META-INF"/>
         <manifest file="${build.web.dir}/META-INF/MANIFEST.MF" mode="update"/>
     </target>
@@ -1013,6 +1017,10 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${libs.jpa2-persistence.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${libs.MySQLDriver.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${libs.hibernate4-persistence.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
+<<<<<<< HEAD
+=======
+        <copyfiles files="${file.reference.jandex-2.1.1.Final.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
+>>>>>>> da12f0f6da88f48870b3688a9e5c5e9e28c72fc5
     </target>
     <target depends="init" if="dist.ear.dir" name="-clean-webinf-lib">
         <delete dir="${build.web.dir}/WEB-INF/lib"/>

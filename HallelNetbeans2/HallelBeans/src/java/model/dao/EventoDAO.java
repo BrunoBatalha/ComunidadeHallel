@@ -6,7 +6,7 @@
 package model.dao;
 
 import conexao.ConnectionFactory;
-import java.util.Date;
+import java.util.ArrayList;
 import model.bean.Evento;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -27,5 +27,21 @@ public class EventoDAO extends GenericoDAO<Evento>{
         qry.setParameter("email", "%" + email + "%");
         eventos = qry.getResultList();
         return eventos;
+    }
+    
+    public List obterTodos() throws DataAccessException {
+        EntityManager em = ConnectionFactory.getEntityManager();
+        List<Evento> administradores;
+        try {
+            Query qry = em.createNamedQuery("Evento.findAll",Evento.class);
+            administradores = qry.getResultList();
+            
+        } catch (Exception e) {
+            administradores = new ArrayList<>();
+            e.printStackTrace();
+        } finally {
+            em.close();
+        }
+        return administradores;
     }
 }

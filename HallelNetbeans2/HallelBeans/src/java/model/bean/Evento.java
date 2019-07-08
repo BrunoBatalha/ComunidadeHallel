@@ -22,6 +22,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import model.dao.EntidadeBase;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
@@ -35,7 +36,7 @@ import model.dao.EntidadeBase;
     , @NamedQuery(name = "Evento.findByNomeEvento", query = "SELECT e FROM Evento e WHERE e.nomeEvento = :nomeEvento")
     , @NamedQuery(name = "Evento.findByDataEvento", query = "SELECT e FROM Evento e WHERE e.dataEvento = :dataEvento")
     , @NamedQuery(name = "Evento.findByHoraEvento", query = "SELECT e FROM Evento e WHERE e.horaEvento = :horaEvento")
-})
+    , @NamedQuery(name = "Evento.findByLocalEvento", query = "SELECT e FROM Evento e WHERE e.localEvento = :localEvento")})
 public class Evento implements EntidadeBase {
 
     private static final long serialVersionUID = 1L;
@@ -54,11 +55,16 @@ public class Evento implements EntidadeBase {
     @Basic(optional = false)
     @Column(name = "dataEvento")
     @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date dataEvento;
     @Basic(optional = false)
     @Column(name = "horaEvento")
     @Temporal(TemporalType.TIME)
+    @DateTimeFormat(pattern="HH:mm")
     private Date horaEvento;
+    @Basic(optional = false)
+    @Column(name = "localEvento")
+    private String localEvento;
     @JoinColumn(name = "idAdm", referencedColumnName = "idAdm")
     @ManyToOne(optional = false)
     private Administrador idAdm;
@@ -70,15 +76,15 @@ public class Evento implements EntidadeBase {
         this.idEvento = idEvento;
     }
 
-    public Evento(Integer idEvento, String nomeEvento, String descricaoEvento, Date dataEvento, Date horaEvento) {
+    public Evento(Integer idEvento, String nomeEvento, String descricaoEvento, Date dataEvento, Date horaEvento, String localEvento) {
         this.idEvento = idEvento;
         this.nomeEvento = nomeEvento;
         this.descricaoEvento = descricaoEvento;
         this.dataEvento = dataEvento;
         this.horaEvento = horaEvento;
+        this.localEvento = localEvento;
     }
-    
-    @Override
+
     public Integer getId() {
         return idEvento;
     }
@@ -119,6 +125,14 @@ public class Evento implements EntidadeBase {
         this.horaEvento = horaEvento;
     }
 
+    public String getLocalEvento() {
+        return localEvento;
+    }
+
+    public void setLocalEvento(String localEvento) {
+        this.localEvento = localEvento;
+    }
+
     public Administrador getIdAdm() {
         return idAdm;
     }
@@ -151,5 +165,5 @@ public class Evento implements EntidadeBase {
     public String toString() {
         return "model.bean.Evento[ idEvento=" + idEvento + " ]";
     }
-
+    
 }

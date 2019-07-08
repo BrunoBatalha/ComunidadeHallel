@@ -145,9 +145,9 @@
                                                                         <div class="overlay">
 
                                                                             <p class="dadosCard">
-                                                                                Nome: <%= eventos.getTitulo()%><br>
-                                                                                Descrição: <%= eventos.getDescricao()%><br>
-                                                                                Data: <%= eventos.getDataEv()%>
+                                                                                Nome: <%= eventos.getNomeEvento()%><br>
+                                                                                Descrição: <%= eventos.getDescricaoEvento()%><br>
+                                                                                Data: <%= eventos.getDataEvento()%>
                                                                             </p>
                                                                         </div>
                                                                     </div>

@@ -32,8 +32,7 @@ import model.dao.EntidadeBase;
     , @NamedQuery(name = "Administrador.findByLogin", query = "SELECT a FROM Administrador a WHERE a.login = :login")
     , @NamedQuery(name = "Administrador.findByEmail", query = "SELECT a FROM Administrador a WHERE a.email = :email")
     , @NamedQuery(name = "Administrador.findBySenha", query = "SELECT a FROM Administrador a WHERE a.senha = :senha")
-    , @NamedQuery(name = "Administrador.findByLoginSenha", query = "SELECT a FROM Administrador a WHERE a.senha = :senha AND a.login = :login")
-})
+    , @NamedQuery(name = "Administrador.findByLoginSenha", query = "SELECT a FROM Administrador a WHERE a.senha = :senha AND a.login = :login")})
 public class Administrador implements EntidadeBase {
 
     private static final long serialVersionUID = 1L;
@@ -67,13 +66,12 @@ public class Administrador implements EntidadeBase {
         this.email = email;
         this.senha = senha;
     }
-
     @Override
     public Integer getId() {
         return idAdm;
     }
 
-    public void setId(Integer idAdm) {
+    public void setIdAdm(Integer idAdm) {
         this.idAdm = idAdm;
     }
 
@@ -133,5 +131,5 @@ public class Administrador implements EntidadeBase {
     public String toString() {
         return "model.bean.Administrador[ idAdm=" + idAdm + " ]";
     }
-
+    
 }

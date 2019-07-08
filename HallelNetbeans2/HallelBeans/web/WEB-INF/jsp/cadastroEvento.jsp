@@ -22,6 +22,7 @@
     </head>
 
     <body>
+       
         <!-- Inicio do header -->
         <header class="container-fluid">
             <!-- Barra de Navegação -->
@@ -62,21 +63,25 @@
             <form method="post" action="cadastrarEvt">
                 <div class="form-row">
                     <div class="form-group col-md-8 ">
-                        <label class="font-weight-bold">Titulo<span class="text-wine font-weight-bold"> *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite o titulo do evento" name="titulo">
+                        <label class="font-weight-bold">Nome do evento<span class="text-wine font-weight-bold"> *</span></label>
+                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite o titulo do evento" name="nomeEvento">
                     </div>
                     <div class="form-group col-md-4 ">
                         <label class="font-weight-bold">Data<span class="text-wine font-weight-bold">
                                 *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black form-control dataEv" type="text" name="dataEv" id="dataEv">
+                        <input class="form-control borda-inferior rounded-0 text-black form-control dataEv" type="text" name="dataEvento" id="dataEvento">
                     </div>
                     <div class="form-group col-md-7">
                         <label class="font-weight-bold">Local<span class="text-wine font-weight-bold"> *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite o endereço do evento" name="localEv">
+                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite o endereço do evento" name="localEvento">
                     </div>
                     <div class="form-group col-md-5">
                         <label class="font-weight-bold">Descrição<span class="text-wine font-weight-bold"> *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite uma descrição para o evento" name="descricao">
+                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite uma descrição para o evento" name="descricaoEvento">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label class="font-weight-bold">Horário<span class="text-wine font-weight-bold horaEv"> *</span></label>
+                        <input class="form-control borda-inferior rounded-0 text-black" type="time" name="horaEvento">
                     </div>
                 </div>
                 <div class="form-group text-center">
@@ -138,6 +143,7 @@
                 enviar_imagem(this);
             });
             jQuery(".dataEv").mask("99/99/9999");
+           
         </script>
     </body>
 

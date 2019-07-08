@@ -17,7 +17,7 @@ public class EventoController {
     @RequestMapping("cadastrarEvt")
     public ModelAndView cadastrarEvento(Evento evt, HttpSession session) throws Exception {
         EventoDAO eDao = new EventoDAO();
-        Integer id = (Integer)session.getAttribute("admLogado");
+        Integer id = (Integer)session.getAttribute("idAdm");
         Administrador adm = new Administrador(id);
         JOptionPane.showConfirmDialog(null, id);
         evt.setIdAdm(adm);

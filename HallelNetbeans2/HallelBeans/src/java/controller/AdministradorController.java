@@ -29,7 +29,8 @@ public class AdministradorController {
 
         for (Administrador a : listAdm) {
             if (a.getLogin().equals(adm.getLogin()) && a.getSenha().equals(adm.getSenha())) {
-                session.setAttribute("admLogado", a.getId());
+                session.setAttribute("idAdm", a.getId());
+                session.setAttribute("loginAdm", a.getLogin());
                 return new ModelAndView("menuAdm");
             }
         }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 08-Jul-2019 às 00:43
+-- Generation Time: 09-Jul-2019 às 23:42
 -- Versão do servidor: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -55,7 +55,32 @@ CREATE TABLE `evento` (
   `descricaoEvento` text NOT NULL,
   `dataEvento` date NOT NULL,
   `horaEvento` time NOT NULL,
-  `idAdm` int(11) NOT NULL
+  `idAdm` int(11) NOT NULL,
+  `localEvento` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `evento`
+--
+
+INSERT INTO `evento` (`idEvento`, `nomeEvento`, `descricaoEvento`, `dataEvento`, `horaEvento`, `idAdm`, `localEvento`) VALUES
+(1, 'asda', 'asda', '2200-12-12', '12:12:00', 1, '21212'),
+(2, 'evetnto', 'desc', '2001-09-22', '12:50:00', 1, 'local'),
+(3, 'evento top', 'asda', '2001-09-22', '19:50:00', 12, 'local');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pedidooracao`
+--
+
+CREATE TABLE `pedidooracao` (
+  `idPedido` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `mensagem` text NOT NULL,
+  `visualizado` tinyint(1) NOT NULL DEFAULT '0',
+  `idAdm` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -76,7 +101,14 @@ ALTER TABLE `administrador`
 ALTER TABLE `evento`
   ADD PRIMARY KEY (`idEvento`),
   ADD UNIQUE KEY `nomeEvento` (`nomeEvento`),
-  ADD KEY `FK_idAdm` (`idAdm`);
+  ADD KEY `FK_evento_adm` (`idAdm`) USING BTREE;
+
+--
+-- Indexes for table `pedidooracao`
+--
+ALTER TABLE `pedidooracao`
+  ADD PRIMARY KEY (`idPedido`),
+  ADD KEY `FK_pedido_adm` (`idAdm`) USING BTREE;
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -92,7 +124,13 @@ ALTER TABLE `administrador`
 -- AUTO_INCREMENT for table `evento`
 --
 ALTER TABLE `evento`
-  MODIFY `idEvento` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEvento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `pedidooracao`
+--
+ALTER TABLE `pedidooracao`
+  MODIFY `idPedido` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
@@ -103,6 +141,12 @@ ALTER TABLE `evento`
 --
 ALTER TABLE `evento`
   ADD CONSTRAINT `FK_idAdm` FOREIGN KEY (`idAdm`) REFERENCES `administrador` (`idAdm`);
+
+--
+-- Limitadores para a tabela `pedidooracao`
+--
+ALTER TABLE `pedidooracao`
+  ADD CONSTRAINT `FK_pedido` FOREIGN KEY (`idAdm`) REFERENCES `administrador` (`idAdm`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

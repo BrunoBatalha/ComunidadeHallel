@@ -38,7 +38,7 @@ public class AdministradorDAO extends GenericoDAO<Administrador> {
         EntityManager em = ConnectionFactory.getEntityManager();
         List<Administrador> administradores;
         try {
-            Query qry = em.createNamedQuery("Administrador.findByLoginSenha");
+            Query qry = em.createNamedQuery("Administrador.findByLoginSenha",Administrador.class);
             qry.setParameter("login", login);
             qry.setParameter("senha", senha);
             administradores = qry.getResultList();

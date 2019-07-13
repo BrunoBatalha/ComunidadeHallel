@@ -9,7 +9,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css"/>" type="text/css">
+<!--        <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css"/>" type="text/css">-->
         <link rel="stylesheet" href="<c:url value="/resources/css/estilo.css"/>" type="text/css">
         <link rel="stylesheet" href="<c:url value="/resources/css/barraDeNavegacao.css"/>" type="text/css">
         <link rel="stylesheet" href="<c:url value="/resources/css/rodape.css"/>" type="text/css">

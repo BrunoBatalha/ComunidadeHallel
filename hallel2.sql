@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Jul-2019 às 23:42
+-- Generation Time: 12-Jul-2019 às 03:01
 -- Versão do servidor: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -51,12 +51,12 @@ INSERT INTO `administrador` (`idAdm`, `login`, `email`, `senha`) VALUES
 
 CREATE TABLE `evento` (
   `idEvento` int(11) NOT NULL,
-  `nomeEvento` varchar(100) NOT NULL,
-  `descricaoEvento` text NOT NULL,
+  `nomeEvento` varchar(100) CHARACTER SET utf8 COLLATE utf8_swedish_ci NOT NULL,
+  `descricaoEvento` text CHARACTER SET utf8 COLLATE utf8_swedish_ci NOT NULL,
   `dataEvento` date NOT NULL,
   `horaEvento` time NOT NULL,
   `idAdm` int(11) NOT NULL,
-  `localEvento` varchar(200) NOT NULL
+  `localEvento` varchar(200) CHARACTER SET utf8 COLLATE utf8_swedish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -66,7 +66,9 @@ CREATE TABLE `evento` (
 INSERT INTO `evento` (`idEvento`, `nomeEvento`, `descricaoEvento`, `dataEvento`, `horaEvento`, `idAdm`, `localEvento`) VALUES
 (1, 'asda', 'asda', '2200-12-12', '12:12:00', 1, '21212'),
 (2, 'evetnto', 'desc', '2001-09-22', '12:50:00', 1, 'local'),
-(3, 'evento top', 'asda', '2001-09-22', '19:50:00', 12, 'local');
+(3, 'evento top', 'asda', '2001-09-22', '19:50:00', 12, 'local'),
+(5, 'Evento Bacana2', 'Rolê tooopp', '2001-09-22', '03:00:00', 1, 'local1'),
+(6, 'BrunoÃ´', 'bemtÃ´tooo', '2001-09-09', '05:05:00', 1, 'loÃ¢cla');
 
 -- --------------------------------------------------------
 
@@ -76,9 +78,9 @@ INSERT INTO `evento` (`idEvento`, `nomeEvento`, `descricaoEvento`, `dataEvento`,
 
 CREATE TABLE `pedidooracao` (
   `idPedido` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
+  `nome` varchar(100) CHARACTER SET utf8 COLLATE utf8_swedish_ci NOT NULL,
   `email` varchar(100) NOT NULL,
-  `mensagem` text NOT NULL,
+  `mensagem` text CHARACTER SET utf8 COLLATE utf8_swedish_ci NOT NULL,
   `visualizado` tinyint(1) NOT NULL DEFAULT '0',
   `idAdm` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -124,7 +126,7 @@ ALTER TABLE `administrador`
 -- AUTO_INCREMENT for table `evento`
 --
 ALTER TABLE `evento`
-  MODIFY `idEvento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idEvento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pedidooracao`

@@ -11,7 +11,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-                <!--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+        <!--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
         <link rel="stylesheet" href="<c:url value="/resources/css/boostrap.css"/>">
         <link rel="stylesheet" href="<c:url value="/resources/css/index.css"/>">
         <link rel="stylesheet" href="<c:url value="/resources/css/formularios.css"/>">
@@ -74,24 +74,18 @@
                         </nav>
                     </div>
                 </div>
-                <div class="row bg-black mt-5 mb-5" style="background-color: #000">
-                    <div class="container">
+                <div class="row  mt-5 mb-5" >
+                    <div class="w-100">
                         <div class="tab-content" id="nav-tabContent">
 
                             <div class="tab-pane fade show active " id="nav-eventos" role="tabpanel"
                                  aria-labelledby="nav-home-tab">
-
-
-
-                                <div class="container  pb-5">
-
-
-
+                                <div class="container border pb-5">
                                     <div class="row pt-5">
                                         <div class="col-md-6">
                                             <p class="d-flex justify-content-start align-items-center">
                                                 <span class="retangulo "></span>
-                                                <b class="text-white pl-3 text-uppercase font-personalizada-4">
+                                                <b class=" pl-3 text-uppercase font-personalizada-4">
                                                     Eventos adicionados
                                                 </b>
                                             </p>
@@ -101,8 +95,8 @@
                                             class="col-sm-6 d-flex justify-content-start justify-content-sm-end align-items-center">
                                             <P class="d-flex justify-content-end align-items-center">
                                                 <a href="cadastroEvento">
-                                                    <button class="btn btn-outline-wine rounded-0 text-uppercase animacao-botaoCadastrar"
-                                                            type="button" id="btnCadastrar" style="color: white;">Cadastrar evento</button>
+                                                    <button class="btn btn-wine btn-block rounded-0 text-uppercase animacao-botaoCadastrar"
+                                                            type="button" id="btnCadastrar" >Cadastrar evento</button>
                                                 </a>
 
                                             </P>
@@ -113,61 +107,44 @@
                                         <div class="slider" style="height: 250px;">
                                             <span onmouseover="scrollEsquerdaEventos()" onmouseout="clearScroll()"
                                                   class="handle handlePrev active">
-                                                <i class="my-auto fa fa-chevron-left text-white" aria-hidden="true"></i>
+                                                <i class="my-auto fa fa-chevron-left " aria-hidden="true"></i>
                                             </span>
 
                                             <div id="sliderEventos" class="row h-100">
                                                 <div class="row__inner" id="exibe">
+                                                    <c:forEach items="${eventos}" var="eventos">
+                                                        <div class="gui-card">
+                                                            <div class="flip-container "
+                                                                 ontouchstart="this.classList.toggle('hover')">
+                                                                <div class="flipper">
+                                                                    <div class="front">
+                                                                        <div class="gui-card__media aparecer">
+                                                                            <img class="gui-card__img objectImage"
+                                                                                 src="<c:url value="/resources/img/fundo.jpg"/>">
+                                                                            <button class="btn btn-wine overlay-edit rounded-0"
+                                                                                    title="Editar">
+                                                                                <i class="fas fa-edit"></i>
+                                                                            </button>
+                                                                            <div class="overlay">
 
-                                                    <%
-                                                        EventoDAO eDao = new EventoDAO();
-                                                        List<Evento> listEvento = eDao.obterTodos();
-
-                                                        for (Evento eventos : listEvento) {
-
-                                                    %>
-
-                                                    <div class="gui-card">
-                                                        <div class="flip-container "
-                                                             ontouchstart="this.classList.toggle('hover')">
-                                                            <div class="flipper">
-                                                                <div class="front">
-                                                                    <div class="gui-card__media aparecer">
-
-                                                                        <img class="gui-card__img objectImage"
-                                                                             src="<c:url value="/resources/img/fundo.jpg"/>">
-
-                                                                        <button class="btn btn-wine overlay-edit rounded-0"
-                                                                                title="Editar">
-                                                                            <i class="fas fa-edit"></i>
-                                                                        </button>
-
-                                                                        <div class="overlay">
-
-                                                                            <p class="dadosCard">
-                                                                                Nome: <%= eventos.getNomeEvento()%><br>
-                                                                                Descrição: <%= eventos.getDescricaoEvento()%><br>
-                                                                                Data: <%= eventos.getDataEvento()%>
-                                                                            </p>
+                                                                                <p class="dadosCard">
+                                                                                    Nome: ${eventos.nomeEvento}<br>
+                                                                                    Descrição: ${eventos.descricaoEvento}<br>
+                                                                                    Data: ${eventos.dataEvento}
+                                                                                </p>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-
-                                                    <%
-
-                                                        }
-
-                                                    %>
-
+                                                    </c:forEach>
                                                 </div>
                                             </div>
 
                                             <span onmouseover="scrollDireitaEventos()" onmouseout="clearScroll()"
                                                   class="handle handleNext active">
-                                                <i class="my-auto fa fa-chevron-right text-white" aria-hidden="true"></i>
+                                                <i class="my-auto fa fa-chevron-right " aria-hidden="true"></i>
                                             </span>
                                         </div>
                                     </div>
@@ -311,7 +288,32 @@
                             </div>
                             <div class="tab-pane fade" id="nav-pedidoOracao" role="tabpanel"
                                  aria-labelledby="nav-contact-tab">
-                                quarto
+                                <div class="container ">
+                                    <table class="table  table-striped table-hover">
+                                        <tr>
+                                            <th scope="col">Id</th>                                            
+                                            <th scope="col">Nome</th>                                            
+                                            <th scope="col">Email</th>                                            
+                                            <th scope="col">Mensagem</th>                                          
+                                            <th scope="col">Visualizado</th>                                            
+                                        </tr>  
+                                        <c:forEach items="${pedidos}" var="pedidos">
+                                            <tr>
+                                                <td scope="row">${pedidos.id}</td>
+                                                <td>${pedidos.nome}</td>
+                                                <td>${pedidos.email}</td>
+                                                <td>${pedidos.mensagem}</td>
+                                                <c:if test="${pedidos.visualizado eq false}">
+                                                    <td>Não visualizado</td>
+                                                </c:if>
+                                                <c:if test="${pedidos.visualizado eq true}">
+                                                    <td>Visualizado</td>
+                                                </c:if>
+                                            </tr>  
+                                        </c:forEach>
+                                    </table>
+
+                                </div>
                             </div>
                         </div>
                     </div>

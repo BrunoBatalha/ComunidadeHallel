@@ -1,3 +1,7 @@
+body {
+    font-size: 13px;
+}
+
 a {
     color: white;
 }
@@ -67,6 +71,32 @@ a:hover {
     padding-left: 10px;
 }
 
-.col-sem-lateral- {
+.col-sem-lateral {
     padding-right: 0px;
+}
+
+.col-borda-menor {
+    padding: 5px
+}
+
+.titulo {
+    font-size: 16px;
+    width: 100%;
+    border-bottom: solid;
+    border-bottom-width: 1px;
+}
+
+.tituloevento {
+    font-weight: bold;
+    margin: 0px
+}
+
+.local,
+.data {
+    margin: 0px;
+}
+
+.prox-evento {
+    margin-top: 10px;
+    font-size: 14px
 }

@@ -77,7 +77,7 @@
                            value="Finalizar" style="width: 20%">
                 </div>
                 <div class="form-group text-center py-3">
-                    <a href="index.html" class="font-personalizada-2 text-black">Voltar a tela principal</a>
+                    <a href="menuAdm" class="font-personalizada-2 text-black">Voltar a tela principal</a>
                 </div>
             </form>
         </div>

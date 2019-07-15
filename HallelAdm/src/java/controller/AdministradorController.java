@@ -25,16 +25,16 @@ public class AdministradorController {
         Administrador adm2 = aDao.obterLoginSenha(adm.getLogin(), adm.getSenha());
         if (adm2 == null) {
             return "index";
-        }else{
+        } else {
             session.setAttribute("idAdm", adm2.getId());
             session.setAttribute("loginAdm", adm2.getLogin());
-            
+
             PedidoOracaoDAO pdao = new PedidoOracaoDAO();
             EventoDAO edao = new EventoDAO();
-            model.addAttribute("pedidos",pdao.obterTodos());
-            model.addAttribute("eventos",edao.obterTodos());
+            model.addAttribute("pedidos", pdao.obterTodos());
+            model.addAttribute("eventos", edao.obterTodos());
             return "menu/menuAdm";
         }
-        
+
     }
 }

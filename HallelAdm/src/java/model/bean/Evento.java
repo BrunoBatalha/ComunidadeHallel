@@ -5,7 +5,6 @@
  */
 package model.bean;
 
-import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -65,6 +64,9 @@ public class Evento implements EntidadeBase {
     @Basic(optional = false)
     @Column(name = "localEvento")
     private String localEvento;
+    @Lob
+    @Column(name = "imagem")
+    private byte[] imagem;
     @JoinColumn(name = "idAdm", referencedColumnName = "idAdm")
     @ManyToOne(optional = false)
     private Administrador idAdm;
@@ -131,6 +133,14 @@ public class Evento implements EntidadeBase {
 
     public void setLocalEvento(String localEvento) {
         this.localEvento = localEvento;
+    }
+
+    public byte[] getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(byte[] imagem) {
+        this.imagem = imagem;
     }
 
     public Administrador getIdAdm() {

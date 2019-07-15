@@ -5,10 +5,8 @@ import javax.swing.JOptionPane;
 import model.bean.Administrador;
 import model.bean.Evento;
 import model.dao.EventoDAO;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller

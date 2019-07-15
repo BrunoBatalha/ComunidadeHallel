@@ -13,10 +13,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import org.springframework.dao.DataAccessException;
 
-/**
- *
- * @author Aluno
- */
+
 public class EventoDAO extends GenericoDAO<Evento>{
        
     public List obterPorNome(String nome, String email){

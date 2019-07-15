@@ -32,7 +32,7 @@
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
-                <prop key="index">indexController</prop>
+                <prop key="index.htm">indexController</prop>
             </props>
         </property>
     </bean>

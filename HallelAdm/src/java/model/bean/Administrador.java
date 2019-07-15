@@ -66,7 +66,7 @@ public class Administrador implements EntidadeBase {
         this.email = email;
         this.senha = senha;
     }
-    @Override
+
     public Integer getId() {
         return idAdm;
     }
@@ -131,5 +131,5 @@ public class Administrador implements EntidadeBase {
     public String toString() {
         return "model.bean.Administrador[ idAdm=" + idAdm + " ]";
     }
-    
+
 }

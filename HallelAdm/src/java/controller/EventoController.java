@@ -1,26 +1,23 @@
 package controller;
 
 import javax.servlet.http.HttpSession;
-import javax.swing.JOptionPane;
 import model.bean.Administrador;
 import model.bean.Evento;
 import model.dao.EventoDAO;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class EventoController {
 
-    @RequestMapping("cadastrarEvt")
-    public ModelAndView cadastrarEvento(Evento evt, HttpSession session) throws Exception {
+    @RequestMapping(value="addEvento", method = RequestMethod.POST)
+    public String addEvento(Evento evt, HttpSession session) throws Exception {
         EventoDAO eDao = new EventoDAO();
         Integer id = (Integer)session.getAttribute("idAdm");
         Administrador adm = new Administrador(id);
         evt.setIdAdm(adm);
         eDao.salvarOuAtualizar(evt);
-        return new ModelAndView("menuAdm");
+        return "menu/evento/adicionar";
     }
 }

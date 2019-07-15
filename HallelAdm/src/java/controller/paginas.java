@@ -5,26 +5,34 @@
  */
 package controller;
 
+import javax.servlet.http.HttpSession;
+import model.bean.Administrador;
+import model.bean.Evento;
+import model.dao.EventoDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.portlet.ModelAndView;
 
 @Controller
-public class paginas  {
-    @RequestMapping("/cadastro")
-    public ModelAndView irCad(){
-        return new ModelAndView("cadastro");
-    }
+public class paginas {
+
     @RequestMapping("/index")
-    public ModelAndView irIndex(){
-        return new ModelAndView("index");
+    public String index() {
+        return "index";
     }
+
+    @RequestMapping("/cadastro")
+    public String cadastro() {
+        return "administrador/cadastro";
+    }
+
     @RequestMapping("/menuAdm")
-    public ModelAndView irMenuAdm(){
-        return new ModelAndView("menuAdm");
+    public String menuAdm() {
+        return "menu/menuAdm";
     }
-    @RequestMapping("/cadastroEvento")
-    public ModelAndView irCadEvento(){
-        return new ModelAndView("cadastroEvento");
+
+    @RequestMapping("/adicionar")
+    public String adicionar() {
+        return "menu/evento/adicionar";
     }
+   
 }

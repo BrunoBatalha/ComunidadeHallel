@@ -94,7 +94,7 @@
                                         <div
                                             class="col-sm-6 d-flex justify-content-start justify-content-sm-end align-items-center">
                                             <P class="d-flex justify-content-end align-items-center">
-                                                <a href="cadastroEvento">
+                                                <a href="adicionar">
                                                     <button class="btn btn-wine btn-block rounded-0 text-uppercase animacao-botaoCadastrar"
                                                             type="button" id="btnCadastrar" >Cadastrar evento</button>
                                                 </a>
@@ -176,108 +176,7 @@
                                         </div>
 
                                         <div class="contain">
-                                            <div class="slider" style="height: 250px;">
-                                                <span onmouseover="scrollEsquerdaEventos()" onmouseout="clearScroll()"
-                                                      class="handle handlePrev active">
-                                                    <i class="my-auto fa fa-chevron-left text-white" aria-hidden="true"></i>
-                                                </span>
 
-                                                <div id="sliderEventos" class="row h-100">
-                                                    <div class="row__inner" id="exibe">
-                                                        <div class="gui-card">
-                                                            <div class="flip-container "
-                                                                 ontouchstart="this.classList.toggle('hover')">
-                                                                <div class="flipper">
-                                                                    <div class="front">
-                                                                        <div class="gui-card__media aparecer">
-
-                                                                            <img class="gui-card__img objectImage"
-                                                                                 src="rsc/img/fundo.jpg">
-
-                                                                            <button
-                                                                                class="btn btn-wine overlay-edit rounded-0"
-                                                                                title="Editar">
-                                                                                <i class="fas fa-edit"></i>
-                                                                            </button>
-
-                                                                            <div class="overlay">
-
-                                                                                <p class="tituloCard">
-                                                                                    O louvor como oração
-                                                                                </p>
-                                                                                <p class="dadosCard">
-                                                                                    17 aulas
-                                                                                    <br> Status: completo
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="gui-card">
-                                                            <div class="flip-container"
-                                                                 ontouchstart="this.classList.toggle('hover')">
-                                                                <div class="flipper">
-                                                                    <div class="front">
-                                                                        <div class="gui-card__media aparecer">
-                                                                            <img class="gui-card__img objectImage"
-                                                                                 src="rsc/img/fundo2.jpg">
-                                                                            <button
-                                                                                class="btn btn-wine overlay-edit rounded-0"
-                                                                                title="Editar">
-                                                                                <i class="fas fa-edit"></i>
-                                                                            </button>
-                                                                            <div class="overlay">
-                                                                                <p class="tituloCard">
-                                                                                    O louvor como oração
-                                                                                </p>
-                                                                                <p class="dadosCard">
-                                                                                    17 aulas
-                                                                                    <br> Status: completo
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="gui-card">
-                                                            <div class="flip-container"
-                                                                 ontouchstart="this.classList.toggle('hover')">
-                                                                <div class="flipper">
-                                                                    <div class="front">
-                                                                        <div class="gui-card__media aparecer">
-                                                                            <img class="gui-card__img objectImage"
-                                                                                 src="rsc/img/fundo3.jpg">
-                                                                            <button
-                                                                                class="btn btn-wine overlay-edit rounded-0"
-                                                                                title="Editar">
-                                                                                <i class="fas fa-edit"></i>
-                                                                            </button>
-                                                                            <div class="overlay">
-                                                                                <p class="tituloCard">
-                                                                                    O louvor como oração
-                                                                                </p>
-                                                                                <p class="dadosCard">
-                                                                                    17 aulas
-                                                                                    <br> Status: completo
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <span onmouseover="scrollDireitaEventos()" onmouseout="clearScroll()"
-                                                      class="handle handleNext active">
-                                                    <i class="my-auto fa fa-chevron-right text-white"
-                                                       aria-hidden="true"></i>
-                                                </span>
-                                            </div>
                                         </div>
 
                                     </div>
@@ -325,39 +224,13 @@
         </div>
 
 
-        <!-- Inicio do Footer -->
-        <footer class="page-footer font-small pt-3 rodape container-fluid">
-            <br>
-            <div class="row ">
-                <div class="col-md-6 text-center text-md-left">
-                    <!-- Content -->
-                    <p style="color: #9F9F9F">CONHEÇA A COMUNIDADE</p>
-                    <p>
-                        <a href="#">Nossa história</a>
-                    </p>
-                    <p>
-                        <a href="#">Visite-nos</a>
-                    </p>
-                </div>
+        <%@include  file="../footer.jsp" %>
 
-                <div class="col-md-6 text-center text-md-right">
-                    <p style="color: #9F9F9F">CONTATOS</p>
-                    <p>
-                        comunidadehallel95@gmail.com
-                        <i class="fas fa-envelope"></i>
-                    </p>
-                    <p>
-                        (92) 3085-1787
-                        <span class="fa fa-phone"></span>
-                    </p>
-                </div>
-            </div>
-            <br>
-        </footer>
-        <!-- Fim do Footer -->
-        <!--        <script type="text/javascript" src="c:url value="/resources/js/jquery-3.4.0.min.js"/>"</script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-                <script type="text/javascript" src="c:url value="/resources/js/bootstrap.min.js"/>"</script>-->
+        <!--        
+        <script type="text/javascript" src="c:url value="/resources/js/jquery-3.4.0.min.js"/>"</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script type="text/javascript" src="c:url value="/resources/js/bootstrap.min.js"/>"</script>
+        -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

@@ -42,25 +42,9 @@
                         de<br>evento</h3>
                 </div>
 
-
-                <!--                <div class="col-md-12 text-center">
-                                    <figure class="figure">
-                                        <h6 class="text-uppercase font-personalizada-4 py-5 font-weight-bold text-wine">Dados pessoais</h6>
-                                        <div id="localAlteracao">
-                                            <img src="<c:url value="/resources/img/perfil.png"/>" class="figure-img img-fluid rounded-circle" id="fotoPerfil" width="300px" height="300px">
-                
-                                            <div id="labelAlterar" class="rounded-circle d-flex align-items-center justify-content-center">
-                                                <label class="btn btn-black" for='inputArquivo'>Alterar foto de perfil</label>
-                                                <input type="file" class="open" id="inputArquivo" accept="image/png, image/jpeg"
-                                                       name="inputArquivo">
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>-->
-
             </div>
 
-            <form method="post" action="cadastrarEvt">
+            <form method="post" action="addEvento"  >
                 <div class="form-row">
                     <div class="form-group col-md-8 ">
                         <label class="font-weight-bold">Nome do evento<span class="text-wine font-weight-bold"> *</span></label>
@@ -83,6 +67,10 @@
                         <label class="font-weight-bold">Horário<span class="text-wine font-weight-bold horaEv"> *</span></label>
                         <input class="form-control borda-inferior rounded-0 text-black" type="time" name="horaEvento">
                     </div>
+                    <div class="form-group col-md-5">
+                        <label class="font-weight-bold">Imagem<span class="text-wine font-weight-bold horaEv"> *</span></label>
+                        <input class="form-control borda-inferior rounded-0 text-black" type="file" name="imagem">
+                    </div>
                 </div>
                 <div class="form-group text-center">
                     <input type="submit" class="btn btn-black font-personalizada-2 text-uppercase rounded-0"
@@ -94,36 +82,8 @@
             </form>
         </div>
 
-        <!-- Inicio do Footer -->
-        <footer class="page-footer font-small pt-3 rodape container-fluid">
-            <br>
-            <div class="row ">
-                <div class="col-md-6 text-center text-md-left">
-                    <!-- Content -->
-                    <p style="color: #9F9F9F">CONHEÇA A COMUNIDADE</p>
-                    <p>
-                        <a href="#">Nossa história</a>
-                    </p>
-                    <p>
-                        <a href="#">Visite-nos</a>
-                    </p>
-                </div>
-
-                <div class="col-md-6 text-center text-md-right">
-                    <p style="color: #9F9F9F">CONTATOS</p>
-                    <p>
-                        comunidadehallel95@gmail.com
-                        <i class="fas fa-envelope"></i>
-                    </p>
-                    <p>
-                        (92) 3085-1787
-                        <span class="fa fa-phone"></span>
-                    </p>
-                </div>
-            </div>
-            <br>
-        </footer>
-        <!-- Fim do Footer -->
+        <%@include file="../../footer.jsp" %>
+        
         <script type="text/javascript" src="<c:url value="/resources/js/jquery-3.4.0.min.js"/>"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script type="text/javascript" src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>

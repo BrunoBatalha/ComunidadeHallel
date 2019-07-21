@@ -1,3 +1,9 @@
+.cortar1 {
+    width: 50px;
+    height: 200px;
+    object-fit: cover;
+}
+
 body {
     font-size: 13px;
 }
@@ -36,6 +42,7 @@ a:hover {
     z-index: 10;
     padding-top: 20px;
     padding-bottom: 20px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .cortar1 {
@@ -100,21 +107,8 @@ a:hover {
     font-size: 14px
 }
 
-.marcador {
-    color: black;
-    background-color: white;
-    padding: 3px 10px;
-}
-
-.titulo-imagens {
-    font-weight: bold;
-    color: white;
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-.descricao-imagens {
-    color: rgb(168, 168, 168);
-    font-size: 14px;
-    margin-bottom: 0px
+.contralizar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
 }

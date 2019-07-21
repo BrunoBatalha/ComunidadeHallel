@@ -1,5 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -8,12 +7,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="stylesheet" href="<c:url value="/resources/css/boostrap.css"/>">
-        <link rel="stylesheet" href="<c:url value="/resources/css/index.css"/>">
-        <link rel="stylesheet" href="<c:url value="/resources/css/barraDeNavegacao.css"/>">
-        <link rel="stylesheet" href="<c:url value="/resources/css/rodape.css"/>">
-        <link rel="stylesheet" href="<c:url value="/resources/css/carrossel.css"/>">
-        <link rel="stylesheet" href="<c:url value="/resources/css/scroll.css"/>">
+        <link rel="stylesheet" href="<c:url value="resources/css/bootstrap.css"/>">
+        <link rel="stylesheet" href="<c:url value="resources/css/index.css"/>">
+        <link rel="stylesheet" href="<c:url value="resources/css/barraDeNavegacao.css"/>">
+        <link rel="stylesheet" href="<c:url value="resources/css/rodape.css"/>">
+        <link rel="stylesheet" href="<c:url value="resources/css/carrossel.css"/>">
+        <link rel="stylesheet" href="<c:url value="resources/css/scroll.css"/>">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
@@ -21,10 +20,12 @@
 
     <body>
         <!-- Inicio do header -->
-        <header class="container-fluid " style="background-color: #000000;">
+        <header class="container-fluid" style="background-color: #ffffff;">
             <div class="cabecalho row">
 
                 <div class="col-md-4">
+
+
 
                 </div>
 
@@ -32,7 +33,7 @@
                 <div class="col-md-4">
                     <center>
                         <br>
-                        <img class="d-flex align-items-center" src="rsc/img/nome-topo.png" style="width: 200px;">
+                        <img class="d-flex align-items-center" src="<c:url value="resources/rsc/img/fundo9.jpg"/>" style="width: 170px; margin-bottom: 20px">
                         <br>
                     </center>
                 </div>
@@ -40,15 +41,29 @@
                 <!-- Redes sociais -->
                 <div class="col-md-4">
 
+                    <table style="height: 100%;">
+                        <tbody>
+                            <tr>
+
+                                <td class="align-middle">
+
+                                    <a href="#"><button type="button" class="btn btn-dark">Cadastrar</button></a>
+                                    <a href="#"><button type="button" class="btn btn-outline-dark" data-toggle="modal"
+                                                        data-target="#exampleModal">Login</button></a>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
             </div>
 
-            <!-- Barra de Navega√ß√£o -->
+            <!-- Barra de NavegaÁ„o -->
             <nav class="barraNav navbar-expand-md" id="navbar">
                 <!-- Recolher navbar -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barraDeNavegacao">
-                    <span class="fa fa-bars" style="color: white; font-size: 25px;"></span>
+                    <span class="fa fa-bars" style="color: rgb(0, 0, 0); font-size: 25px;"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="barraDeNavegacao" style="color: white; font-size: 14px;">
@@ -57,532 +72,262 @@
 
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link" href="#inicio">IN√çCIO</a>
+                            <a class="nav-link nav-i" href="#">INÕCIO</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#associacao">ASSOCIA√á√ÉO</a>
+                            <a class="nav-link nav-i" href="associacao.html">ASSOCIA«√O</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#eventos">EVENTOS</a>
+                            <a class="nav-link nav-i" href="formacoes.html">FORMA«’ES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#formacoes">FORMA√á√ïES</a>
+                            <a class="nav-link nav-i" href="evento.html">EVENTOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#loja">LOJA</a>
+                            <a class="nav-link nav-i" href="quemsomos.html">QUEM SOMOS?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-i" href="liturgiadiaria.html">LITURGIA DI¡RIA</a>
                         </li>
 
                     </ul>
+
+
                 </div>
+
             </nav>
         </header>
         <!-- Fim do header -->
 
-        <!-- In√≠cio do home -->
-        <div id="inicio" style="height: 65%;">
-            <img src="rsc/img/fundo8.jpg" width="100%" height="100%" alt="fundo"
-                 style="filter: grayscale(100%); z-index:0;">
-        </div>
+        <!-- Modal -->
 
-        <div style="background-color: rgb(0, 0, 0)">
-            <div class="container">
-                <center>
-                    <br>
-                    <br>
-
-                    <p style="color: rgb(255, 255, 255); font-weight: regular; font-size: 24px; ">CARISMA</p>
-
-                    <p class="descricao" style="color: rgb(255, 255, 255); font-weight: bold; font-size: 18px;"> REGATAR ALMAS PARA DEUS,
-                        ATRAV√âS DO LOUVOR, DA FORMA√á√ÉO E DO AMOR POR EXCEL√äNCIA.</p>
-
-                    <br>
-                    <br>
-                </center>
-            </div>
-
-        </div>
-
-        <div style="background-color: white" id="associacao">
-            <div class="container">
-                <center>
-                    <br>
-                    <br>
-
-                    <p style="color: black; font-weight: bold; font-size: 24px; ">ASSOCIA√á√ÉO</p>
-
-                    <p class="descricao" style="color: black; font-weight: regular; font-size: 18px;">TORNE-SE UM ASSOCIADO
-                        DA
-                        <em>COMUNIDADE HALLEL</em> E TENHA ACESSO √Ä:</p>
-                    <br>
-                    <div class="row">
-
-                        <div class="col-md-2">
-
-                        </div>
-
-                        <div class="col-md-4">
-
-                            <div class="card text-center">
-                                <div class="card-body">
-                                    <br>
-                                    <img src="rsc/img/laptop.png" alt="aula" height="150px" width="150px">
-                                    <br>
-                                    <p>ACESSO ILIMITADO AS
-                                        <span style="color: #720100;">FORMA√á√ïES</span>
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card text-center">
-                                <div class="card-body">
-                                    <br>
-                                    <img src="rsc/img/desconto.png" alt="aula" height="150px" width="150px">
-                                    <br>
-                                    <p>√ìTIMOS DESCONTOS NA
-                                        <span style="color: #720100;">LOJA HALLEL</span>
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-2">
-
-                        </div>
-
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 5%">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
+                    <div class="modal-body">
+                        <div class="col-auto">
+                            <label class="sr-only" for="inlineFormInputGroup">Nome de usu·rio</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fas fa-user"></i></div>
+                                </div>
+                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Insira seu nome de usu·rio">
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <label class="sr-only" for="inlineFormInputGroup">Senha</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fas fa-key"></i></div>
+                                </div>
+                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Insira sua senha">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <a href="principal.html"><button type="button" class="btn btn-primary">Login</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                    <br>
+        <!-- Fim do modal -->
 
-                    <a href="pagamento.html" style="text-decoration: none;">
-                        <input class="btnPadrao" type="button" value="ASSOCIAR-ME">
+        <!-- InÌcio do home -->
+
+        <br>
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-6 col-sem-margem col-lateral-direita">
+                    <a href="exibirEvento.html">
+                        <div class="zoom">
+                            <img src="<c:url value="resources/rsc/img/fundo9.jpg"/>" class="img-responsive cortar1">
+                            <div class="text-item">
+                                <span class="marcador">NotÌcia</span>
+                                <p class="titulo-imagens">Louvor a Deus</p>
+                                <p class="descricao-imagens">Descricao bacana que nos inspira a louvar a Deus e agradecer e essas coisas. AmÈm.</p>
+                            </div>
+                        </div>
                     </a>
-
-                    <br>
-                    <br>
-                </center>
-            </div>
-
-        </div>
-
-        <div style="background-color: rgb(255, 255, 255)" id="eventos">
-            <div class="container  pb-5">
-                <div class="row pt-5">
-                    <div class="col-md-6">
-                        <p class="d-flex justify-content-start align-items-center" style="color: rgb(0, 0, 0)">
-                            <button class="marcador"></button> &nbsp
-                            <b>EVENTOS</b>
-                        </p>
-                    </div>
-
-                    <div class="col-md-6">
-                        <P class="d-flex justify-content-end align-items-center">
-                            <button class="btnPadrao">Mostrar mais</button>
-                        </P>
-                    </div>
                 </div>
 
-                <div class="contain">
-                    <div class="slider" style="height: 250px;">
-                        <span onmouseover="scrollEsquerdaEventos()" onmouseout="clearScroll()"
-                              class="handle handlePrev active">
-                            <i class="my-auto fa fa-caret-left text-black" aria-hidden="true"></i>
-                        </span>
+                <div class="col-md-6 col-sem-margem ">
 
-                        <div id="sliderEventos" class="row h-100">
-                            <div class="row__inner" id="exibe">
-                                <div class="gui-card">
-                                    <div class="flip-container " ontouchstart="this.classList.toggle('hover')">
-                                        <div class="flipper">
-                                            <div class="front">
-                                                <div class="gui-card__media aparecer">
+                    <div class="col-md-12 col-sem-margem">
+                        <div class="zoom mx-auto">
+                            <img src="<c:url value="resources/rsc/img/fundo9.jpg"/>" class="img-responsive cortar2">
+                            <div class="text-item">
 
-                                                    <img class="gui-card__img objectImage" src="rsc/img/fundo.jpg">
+                            </div>
+                        </div>
+                    </div>
 
-                                                    <div class="overlay">
 
-                                                        <p class="tituloCard">
-                                                            O louvor como ora√ß√£o
-                                                        </p>
-                                                        <p class="dadosCard">
-                                                            17 aulas
-                                                            <br> Status: completo
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                    <div class="col-md-12 col-margem col-sem-margem-bottom">
+                        <div class="row">
+                            <div class="col-md-6 col-margem col-sem-margem-bottom col-lateral-esquerda">
+                                <div class="zoom">
+                                    <img src="<c:url value="resources/rsc/img/fundo9.jpg"/>" class="img-responsive cortar2">
+                                    <div class="text-item">
+
                                     </div>
                                 </div>
-                                <div class="gui-card">
-                                    <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
-                                        <div class="flipper">
-                                            <div class="front">
-                                                <div class="gui-card__media aparecer">
-                                                    <img class="gui-card__img objectImage" src="rsc/img/fundo2.jpg">
-                                                    <div class="overlay">
-                                                        <p class="tituloCard">
-                                                            O louvor como ora√ß√£o
-                                                        </p>
-                                                        <p class="dadosCard">
-                                                            17 aulas
-                                                            <br> Status: completo
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gui-card">
-                                    <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
-                                        <div class="flipper">
-                                            <div class="front">
-                                                <div class="gui-card__media aparecer">
-                                                    <img class="gui-card__img objectImage" src="rsc/img/fundo3.jpg">
-                                                    <div class="overlay">
-                                                        <p class="tituloCard">
-                                                            O louvor como ora√ß√£o
-                                                        </p>
-                                                        <p class="dadosCard">
-                                                            17 aulas
-                                                            <br> Status: completo
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gui-card">
-                                    <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
-                                        <div class="flipper">
-                                            <div class="front">
-                                                <div class="gui-card__media aparecer">
-                                                    <img class="gui-card__img objectImage" src="rsc/img/fundo4.jpg">
-                                                    <div class="overlay">
-                                                        <p class="tituloCard">
-                                                            O louvor como ora√ß√£o
-                                                        </p>
-                                                        <p class="dadosCard">
-                                                            17 aulas
-                                                            <br> Status: completo
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gui-card">
-                                    <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
-                                        <div class="flipper">
-                                            <div class="front">
-                                                <div class="gui-card__media aparecer">
-                                                    <img class="gui-card__img objectImage" src="rsc/img/fundo5.jpg">
-                                                    <div class="overlay">
-                                                        <p class="tituloCard">
-                                                            O louvor como ora√ß√£o
-                                                        </p>
-                                                        <p class="dadosCard">
-                                                            17 aulas
-                                                            <br> Status: completo
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+
+                            </div>
+                            <div class="col-md-6 col-margem col-sem-margem-bottom">
+                                <div class="zoom">
+                                    <img src="<c:url value="resources/rsc/img/fundo9.jpg"/>" class="img-responsive cortar2">
+                                    <div class="text-item">
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <span onmouseover="scrollDireitaEventos()" onmouseout="clearScroll()"
-                              class="handle handleNext active">
-                            <i class="my-auto fa fa-caret-right text-black" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div style="background-color: white" id="formacoes">
-            <div class="container pb-5">
-
-                <div class="row pt-5">
-                    <div class="col-md-6">
-                        <p class="d-flex justify-content-start align-items-center" style="color: black">
-                            <button class="marcador"></button> &nbsp
-                            <b>FORMA√á√ïES</b>
-                        </p>
                     </div>
 
-                    <div class="col-md-6">
-                        <P class="d-flex justify-content-end align-items-center">
-                            <button class="btnPadrao">Mostrar mais</button>
-                        </P>
-                    </div>
-                </div>
-                <div class="contain">
-                    <div class="slider" style="height: 250px;">
-                        <span onmouseover="scrollEsquerdaFormacoes()" onmouseout="clearScroll()"
-                              class="handle handlePrev active">
-                            <i class="my-auto fa fa-caret-left text-black" aria-hidden="true"></i>
-                        </span>
-
-                        <div id="sliderFormacoes" class="row h-100">
-                            <div class="row__inner" id="exibe">
-                                <div class="gui-card">
-                                    <div class="flip-container " ontouchstart="this.classList.toggle('hover')">
-                                        <div class="flipper">
-                                            <div class="front">
-                                                <div class="gui-card__media aparecer">
-
-                                                    <img class="gui-card__img objectImage" src="rsc/img/fundo.jpg">
-
-                                                    <div class="overlay">
-
-                                                        <p class="tituloCard">
-                                                            O louvor como ora√ß√£o
-                                                        </p>
-                                                        <p class="dadosCard">
-                                                            17 aulas
-                                                            <br> Status: completo
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gui-card">
-                                    <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
-                                        <div class="flipper">
-                                            <div class="front">
-                                                <div class="gui-card__media aparecer">
-                                                    <img class="gui-card__img objectImage" src="rsc/img/fundo2.jpg">
-                                                    <div class="overlay">
-                                                        <p class="tituloCard">
-                                                            O louvor como ora√ß√£o
-                                                        </p>
-                                                        <p class="dadosCard">
-                                                            17 aulas
-                                                            <br> Status: completo
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gui-card">
-                                    <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
-                                        <div class="flipper">
-                                            <div class="front">
-                                                <div class="gui-card__media aparecer">
-                                                    <img class="gui-card__img objectImage" src="rsc/img/fundo3.jpg">
-                                                    <div class="overlay">
-                                                        <p class="tituloCard">
-                                                            O louvor como ora√ß√£o
-                                                        </p>
-                                                        <p class="dadosCard">
-                                                            17 aulas
-                                                            <br> Status: completo
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gui-card">
-                                    <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
-                                        <div class="flipper">
-                                            <div class="front">
-                                                <div class="gui-card__media aparecer">
-                                                    <img class="gui-card__img objectImage" src="rsc/img/fundo4.jpg">
-                                                    <div class="overlay">
-                                                        <p class="tituloCard">
-                                                            O louvor como ora√ß√£o
-                                                        </p>
-                                                        <p class="dadosCard">
-                                                            17 aulas
-                                                            <br> Status: completo
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gui-card">
-                                    <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
-                                        <div class="flipper">
-                                            <div class="front">
-                                                <div class="gui-card__media aparecer">
-                                                    <img class="gui-card__img objectImage" src="rsc/img/fundo5.jpg">
-                                                    <div class="overlay">
-                                                        <p class="tituloCard">
-                                                            O louvor como ora√ß√£o
-                                                        </p>
-                                                        <p class="dadosCard">
-                                                            17 aulas
-                                                            <br> Status: completo
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <span onmouseover="scrollDireitaFormacoes()" onmouseout="clearScroll()"
-                              class="handle handleNext active">
-                            <i class="my-auto fa fa-caret-right" aria-hidden="true"></i>
-                        </span>
-                    </div>
                 </div>
             </div>
 
-        </div>
+            <br>
 
-        <div style="background-color: black" id="loja">
+            <div class="row">
 
-            <button class="marcadorMidia mt-5" id="marcadorEsquerdo"></button>
+                <div class="col-md-9">
 
-            <div class="container">
-                <center>
-                    <br>
-                    <br>
+                    <p class="titulo">Eventos</p>
 
                     <div class="row">
+                        <c:forEach items="${eventos}" var="eventos"  begin="1" end="4" step="1">
+                            <div class="col-md-3 col-borda-menor">
 
-                        <div class="col-md-2">
+                                <a href="#">
+                                    <div class="zoom">
+                                        <img src="<c:url value="resources/rsc/img/fundo9.jpg"/>" class="img-responsive cortar2">
+                                        <div class="text-item">
+                                            <p class="dadosCard">
+                                                Nome: ${eventos.nomeEvento}<br>
+                                                DescriÁ„o: ${eventos.descricaoEvento}<br>
+                                                Data: ${eventos.dataEvento}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
 
-                        </div>
+                            </div> 
+                        </c:forEach>
 
-                        <div class="col-md-3" id="radio">
-
-                            <div class="cardPreto text-center">
-                                <div class="card-body">
-                                    <br>
-                                    <img src="rsc/img/radio.png" alt="aula" height="150px" width="150px">
-                                    <br>
-                                    <p>
-                                        <b>R√ÅDIO</b> HALLEL</span>
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <div class="col-md-2">
-
-                        </div>
-
-                        <div class="col-md-3" id="tv">
-
-                            <div class="cardPreto text-center">
-                                <div class="card-body">
-                                    <br>
-                                    <img src="rsc/img/monitor.png" alt="aula" height="150px" width="150px">
-                                    <br>
-                                    <p>
-                                        <b>TV</b> HALLEL</span>
-                                    </p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-2">
-
-                        </div>
 
                     </div>
 
-                    <br>
-                    <br>
-                    <br>
-                </center>
+                </div>
+
+                <div class="col-md-3">
+
+                    <p class="titulo">Mais prÛximos</p>
+                    <c:forEach items="${eventos}" var="eventos"  begin="5" end="7" >
+                        <div class="prox-evento">
+                            <p class="tituloevento"><b>${eventos.nomeEvento}</b></p>
+                            <p class="local">Local: ${eventos.localEvento}</p>
+                            <p class="data">Data: ${eventos.dataEvento}</p>
+                        </div>
+                    </c:forEach>
+
+                </div>
             </div>
-            <p align="right">
 
-                <button class="marcadorMidia mb-5" id="marcadorDireito"></button>
-            </p>
-        </div>
+            <br>
 
-        <div style="background-color: rgb(255, 255, 255)" id="oracao">
-            <div class="container">
-                <center>
-                    <br>
-                    <br>
+            <div class="row">
 
-                    <p style="color: black; font-weight: bold; font-size: 24px; ">PE√áA UMA ORA√á√ÉO</p>
+                <div class="col-md-12">
 
-                </center>
-                
-                <form  method="post" action="enviarPedido">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <p></p>
+                    <p class="titulo">FormaÁıes</p>
+
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="<c:url value="resources/rsc/img/fundo9.jpg"/>" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="<c:url value="resources/rsc/img/fundo9.jpg"/>" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="<c:url value="resources/rsc/img/fundo9.jpg"/>" alt="Third slide">
+                            </div>
                         </div>
-
-                        <div class="col-md-8">
-                            <p class="tituloInputs">Nome <span style="color: #720100">*</span><br>
-                                <input class="input1" type="text" placeholder="Digite seu nome"  name="nome" required>
-                            </p>
-                        </div>
-                        <div class="col-md-2"><p></p></div>
-                        <div class="col-md-2"><p></p></div>
-                        
-                        <div class="col-md-8">
-                            <p class="tituloInputs">Email <span style="color: #720100">*</span><br>
-                                <input class="input1" type="email" placeholder="Digite seu email" name="email" required>
-                            </p>
-                        </div>
-
-                        <div class="col-md-2"><p></p></div>
-                        <div class="col-md-2"><p></p></div>
-                        
-                        <div class="col-md-8">
-                            <p class="tituloInputs">Telefone <span
-                                    style="color: rgb(189, 189, 189); font-weight: 100; letter-spacing: 0px;">(opcional)</span><br>
-                                <input class="input1" type="tel" placeholder="Digite seu telefone"
-                                       pattern="([0-9]{3})[0-9]{5}-[0-9]{4}" >
-                            </p>
-                        </div>
-
-                        <div class="col-md-2"><p></p></div>
-                        <div class="col-md-2"><p></p></div>
-
-                        <div class="col-md-8">
-                            <p class="tituloInputs">Seu pedido <span style="color: #720100">*</span><br>
-                                <textarea class="text1" type="text" placeholder="Digite sua mensagem" name="mensagem" required></textarea>
-                            </p>
-                        </div>
-                        <div class="col-md-2"><p></p></div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
-                    <center>
-                        <input type="submit" class="btnInverso" value="enviar">
-                    </center>
-                </form>
-
-
-                <br>
-                <br>
+                </div>
 
             </div>
 
+            <br>
+
+            <div class="row">
+
+
+
+                <div class="col-md-9">
+
+                    <div class="titulo">Pedidos de oraÁ„o</div>
+
+
+                    <br>
+                    <form method="post" action="enviarPedido">
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Nome</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Insira seu nome" name="nome">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Email</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Insira seu email (Ex: nome@exemplo.com)" name="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Seu pedido</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="mensagem"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-info">Enviar</button>
+
+                    </form>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <p class="titulo">DoaÁıes</p>
+
+                </div>
+
+            </div>
         </div>
 
+
+
+        <br>
 
         <!-- Fim do home -->
 
@@ -590,18 +335,28 @@
         <footer class="page-footer font-small pt-3 rodape container-fluid">
             <br>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <!-- Content -->
-                    <p style="color: #9F9F9F">CONHE√áA A COMUNIDADE</p>
+                    <p style="color: #9F9F9F">CONHE«A A COMUNIDADE</p>
                     <p>
-                        <a href="#">Nossa hist√≥ria</a>
+                        <a href="#">Nossa histÛria</a>
                     </p>
                     <p>
                         <a href="#">Visite-nos</a>
                     </p>
                 </div>
 
-                <div class="col-md-6 text-right">
+                <div class="col-md-4">
+
+                    <center>
+                        <br>
+                        <img class="d-flex align-items-center" src="<c:url value="resources/rsc/img/fundo9.jpg"/>" style="width: 100px;">
+                        <br>
+                    </center>
+
+                </div>
+
+                <div class="col-md-4 text-right">
                     <p style="color: #9F9F9F">CONTATOS</p>
                     <p>
                         comunidadehallel95@gmail.com
@@ -617,10 +372,11 @@
         </footer>
         <!-- Fim do Footer -->
 
-        <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/scroll.js"></script>
 
+        <script type="text/javascript" src="<c:url value="resources/js/jquery-3.4.0.min.js"/>"></script>
+        <script type="text/javascript" src="<c:url value="resources/js/bootstrap.min.js"/>"></script>
+        <script type="text/javascript" src="<c:url value="resources/js/index.min.js"/>"></script>
+        <script type="text/javascript" src="<c:url value="resources/js/scroll.min.js"/>"></script>
     </body>
 
+</html>

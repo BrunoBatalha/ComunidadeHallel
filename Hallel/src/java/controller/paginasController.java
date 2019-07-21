@@ -1,8 +1,12 @@
 package controller;
 
+import java.util.List;
+import model.bean.Evento;
 import model.bean.Pedidooracao;
+import model.dao.EventoDAO;
 import model.dao.PedidoOracaoDAO;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -10,7 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class paginasController {
     
     @RequestMapping("/index")
-    public ModelAndView index(){
+    public ModelAndView index(Model model){
+        EventoDAO edao = new EventoDAO();
+        model.addAttribute("eventos", edao.obterTodos());
         return new ModelAndView("index");
     }
     @RequestMapping("enviarPedido")

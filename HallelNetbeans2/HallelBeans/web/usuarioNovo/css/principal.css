@@ -91,14 +91,13 @@ input[id='arquivo'] {
     background-color: beige;
     height: 100%;
     text-align: center;
-    padding: 10px
+    padding-left: 3%
 }
 
 .perfil {
-    margin-top: 5%;
+    margin-top: 20%;
 }
 
-.tab-pane:active,
-{
-    background-color: #720100;
+.exibicao {
+    padding: 5%
 }

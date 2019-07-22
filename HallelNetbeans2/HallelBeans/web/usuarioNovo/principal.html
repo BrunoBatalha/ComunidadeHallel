@@ -20,53 +20,77 @@
 
 <body>
 
-    <header class="side-header">
 
-        <a href="#">
-            <div class="top">
-                <img alt="perfil" src="rsc/img/avatar2.png" class="rounded-circle">
-            </div>
-        </a>
+    <div class="row" style="height: 100%">
 
-        <nav class="navbar-side">
+        <div class="col-md-3 painel" style="height: 100%;">
+
+            <img alt="foto" src="rsc/img/avatar2.png" class="objectImage2 perfil">
+            <br><br>
+
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><i class="fas fa-heart"></i>&nbspInício</a>
-                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i class="fas fa-heart"></i>&nbspMeus eventos</a>
-                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fas fa-heart"></i>&nbspFormações</a>
-                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i class="fas fa-heart"></i>&nbspConfigurações</a>
+                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
             </div>
 
 
-        </nav>
+            <br><br>
+            <a href="#"><button type="button" class="btn btn-dark" data-toggle="modal" data-target="#sair">Sair</button>
+            </a>
 
-    </header>
+        </div>
 
-    <!-- corpo-->
-
-    <div class="body-wrapper row">
-
-        <div class="content-wrapper">
+        <div class="col-md-9 exibicao">
 
             <div class="tab-content" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
-                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">1</div>
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+
+                    <p>aaaaaaaaaaa</p>
+
+
+                </div>
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                    3</div>
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    4</div>
             </div>
 
         </div>
 
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="sair" tabindex="-1" role="dialog" aria-labelledby="sair" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sair">Deseja mesmo sair?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Ficamos tristes em ver você ir ;-;
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Sair</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Fim do corpo-->
 
-    <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/scroll.js"></script>
-    <script type="text/javascript" src="js/principal.js"></script>
+    <script type="text/javascript " src="js/jquery-3.4.0.min.js "></script>
+    <script type="text/javascript " src="js/bootstrap.min.js "></script>
+    <script type="text/javascript " src="js/index.js "></script>
+    <script type="text/javascript " src="js/scroll.js "></script>
+    <script type="text/javascript " src="js/principal.js "></script>
 
 </body>
 

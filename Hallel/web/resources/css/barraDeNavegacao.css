@@ -30,11 +30,6 @@ a:active {
     margin: 0px 20px;
 }
 
-@include media-breakpoint-up(md) {
-    html {
-        font-size: 1.4rem;
-    }
-}
 
 a:hover {
     text-decoration: none !important;

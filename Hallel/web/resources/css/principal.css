@@ -1,6 +1,6 @@
 body {
-    overflow-x: hidden;
-    color: black
+   overflow-x: hidden;
+    color: black;
 }
 
 .container2 {
@@ -40,8 +40,8 @@ body {
 }
 
 .objectImage2 {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
@@ -82,250 +82,49 @@ input[id='arquivo'] {
     background-color: #720100;
 }
 
-
-/* Side bar do usuário*/
-
-@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: rgb(220, 20, 60, 0.6);
-    -webkit-text-size-adjust: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.painel {
+    background-color: #000000;
+    text-align: center;
+    padding-left: 3%;
+   
 }
 
-* {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
+html,
+body,
+.painel{
+    height: 100%;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    height: auto;
+.perfil {
+    margin-top: 20%;
+}
+
+
+.exibicao {
+    padding: 5%;
+    height: 100%;
     width: 100%;
-    background: #fff;
-    color: #4a5568;
-    font-size: 62.5%;
-    font-variant-ligatures: normal;
-    font-kerning: normal;
-    overflow-x: hidden;
-    font-family: 'Questrial', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    font-weight: 500;
+    overflow: auto;
 }
 
-img {
-    max-width: 100%;
-}
-
-.body-wrapper {
-    width: 100%;
-    position: absolute;
-}
-
-
-/* Flex area */
-
-.row {
-    display: -ms-flexbox;
-    display: flex;
-}
-
-
-/* Flex end */
-
-.side-header {
-    position: fixed;
-    width: 20%;
-    height: 100vh;
-    padding: 1rem 2em;
-    overflow-x: hidden;
-    background: #edf2f7;
-    z-index: 2;
-}
-
-.menu-open .side-header {
-    z-index: 0;
-    width: 0%;
-    visibility: hidden;
-    opacity: 0;
-}
-
-.navbar-side {
-    margin-top: 2rem;
-    height: 450px;
-    position: relative;
-    width: 100%;
-}
-
-.top {
-    font-size: 35px;
-    font-weight: bolder;
-}
-
-.navbar-side ul li {
-    width: 100%;
-    padding: 4px 1em;
-    display: block;
-    transition: background 0.3s ease-in-out;
-}
-
-.navbar-side ul li:hover,
-.navbar-side ul li.active {
-    background: rgb(255, 255, 255, 0.7);
-}
-
-.bottom {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-.navbar-side a {
-    font-weight: bold;
-    font-size: 14px;
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.navbar-side ul li a .svg-space {
-    width: 60px;
-}
-
-.navbar-side ul li a .svg-space svg {
-    width: 40px;
-    height: 40px;
-    margin-bottom: -12px;
-}
-
-.footer {
-    position: absolute;
-    border: 0;
-    left: 0;
-    padding: 0 2rem;
-    margin: 2rem 0;
-}
-
-.content-wrapper {
-    width: 80%;
-    height: 200vh;
-    padding: 0 2rem;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.menu-open .content-wrapper,
-.menu-open .top-header {
-    width: 100%;
-}
-
-.top-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 75px;
-    width: 80%;
-    position: fixed;
-    background: #fff;
-    top: 0;
-    right: 0;
-    padding: 0 2rem;
-    z-index: 99;
-}
-
-.top-header .menu-btn,
-.top-header .icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    cursor: pointer;
-    padding: 12px;
-    transition: background 0.3s ease-in-out;
-}
-
-.top-header .menu-btn:hover {
-    background: #edf2f7;
-}
-
-.navbar-top li {
-    display: inline-block;
-    margin-left: 20px;
-}
-
-.sp-btn {
-    padding: 10px 40px;
-    background: #4a5568;
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
     color: #fff;
-    border-radius: 3px;
+    background-color: #464646
 }
 
-input {
-    padding: 9px 10px;
-    width: 400px;
+#v-pills-home-tab{
+    color: white;
 }
 
-.hero-slider {
-    margin-top: 80px;
-    width: 100%;
-    height: 400px;
-    background: #edf2f7;
-    background-image: url(https://i.redd.it/p7droq2aitm21.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+#v-pills-profile-tab{
+    color: white;
 }
 
-main {
-    width: 100%;
-    margin: 2rem 0;
+#v-pills-messages-tab{
+    color: white;
 }
 
-h2 {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.game-list {
-    -webkit-column-count­: 5;
-    -moz-column-count: 5;
-    column-count: 5;
-    -webkit-column-gap: 10px;
-    -moz-column-gap: 10px;
-    column-gap: 10px;
-    -webkit-column-width­: 20%;
-    -moz-column-width: 20%;
-    column-width: 20%;
-    position: relative;
-    margin-top: 2em;
-}
-
-.game {
-    height: auto;
-    overflow: hidden;
-}
-
-
-/* Barra de rolagem */
-
-::-webkit-scrollbar-track {
-    background-color: #F4F4F4;
-}
-
-::-webkit-scrollbar {
-    width: 6px;
-    background: #F4F4F4;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #dad7d7;
+#v-pills-settings-tab{
+    color: white;
 }

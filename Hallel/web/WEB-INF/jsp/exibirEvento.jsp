@@ -1,22 +1,22 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Comunidade Hallel - Home</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <title>Comunidade Hallel - Home</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/exibirEvento.css">
-    <link rel="stylesheet" href="css/rodape.css">
-    <link rel="stylesheet" href="css/carrossel.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="css/scroll.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css"/>">
+        <link rel="stylesheet" href="<c:url value="/resources/css/principal.css"/>">
+        <link rel="stylesheet" href="<c:url value="/resources/css/barraDeNavegacao.css"/>">
+        <link rel="stylesheet" href="<c:url value="/resources/css/rodape.css"/>">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
-</head>
+    </head>
 
-<body>
+    <body>
     <!-- Inicio do header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Hallel</a>
@@ -27,13 +27,13 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">InÃ­cio</a>
+                    <a class="nav-link" href="index.html">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="associacao.html">AssociaÃ§Ã£o</a>
+                    <a class="nav-link" href="associacao.html">Associação</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="formacoes.html">FormaÃ§Ãµes</a>
+                    <a class="nav-link" href="formacoes.html">Formações</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Eventos</a>
@@ -42,7 +42,7 @@
                     <a class="nav-link" href="quemsomos.html">Quem somos?</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="liturgiadiaria.html">Liturgia diÃ¡ria</a>
+                    <a class="nav-link" href="liturgiadiaria.html">Liturgia diária</a>
                 </li>
             </ul>
             <span class="navbar-text">
@@ -68,13 +68,13 @@
                 </div>
                 <div class="modal-body">
                     <div class="col-auto">
-                        <label class="sr-only" for="inlineFormInputGroup">Nome de usuÃ¡rio</label>
+                        <label class="sr-only" for="inlineFormInputGroup">Nome de usuário</label>
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="fas fa-user"></i></div>
                             </div>
                             <input type="text" class="form-control" id="inlineFormInputGroup"
-                                placeholder="Insira seu nome de usuÃ¡rio">
+                                placeholder="Insira seu nome de usuário">
                         </div>
                     </div>
                     <div class="col-auto">
@@ -98,7 +98,7 @@
 
     <!-- Fim do modal -->
 
-    <!-- InÃ­cio do home -->
+    <!-- Início do home -->
 
     <br>
 
@@ -145,9 +145,9 @@
         <div class="row">
             <div class="col-md-4">
                 <!-- Content -->
-                <p style="color: #9F9F9F">CONHEÃ‡A A COMUNIDADE</p>
+                <p style="color: #9F9F9F">CONHEÇA A COMUNIDADE</p>
                 <p>
-                    <a href="#">Nossa histÃ³ria</a>
+                    <a href="#">Nossa história</a>
                 </p>
                 <p>
                     <a href="#">Visite-nos</a>
@@ -180,10 +180,11 @@
     </footer>
     <!-- Fim do Footer -->
 
-    <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/evento.js"></script>
-    <script type="text/javascript" src="js/scroll.js"></script>
-</body>
+
+        <script type="text/javascript" src="<c:url value="resources/js/jquery-3.4.0.min.js"/>"></script>
+        <script type="text/javascript" src="<c:url value="resources/js/bootstrap.min.js"/>"></script>
+        <script type="text/javascript" src="<c:url value="resources/js/principal.min.js"/>"></script>
+        <script type="text/javascript" src="<c:url value="resources/js/scroll.min.js"/>"></script>
+    </body>
 
 </html>

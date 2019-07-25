@@ -1,24 +1,22 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <title>Comunidade Hallel - Home</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <title>Comunidade Hallel - Home</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/principal.css">
-    <link rel="stylesheet" href="css/barraDeNavegacao.css">
-    <link rel="stylesheet" href="css/rodape.css">
-    <link rel="stylesheet" href="css/carrossel.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="css/scroll.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css"/>">
+        <link rel="stylesheet" href="<c:url value="/resources/css/principal.css"/>">
+        <link rel="stylesheet" href="<c:url value="/resources/css/barraDeNavegacao.css"/>">
+        <link rel="stylesheet" href="<c:url value="/resources/css/rodape.css"/>">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
-</head>
+    </head>
 
-<body>
+    <body>
 
 
     <div class="row" style="height: 100%">
@@ -29,10 +27,10 @@
             <br><br>
 
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">InÃ­cio</a>
-                <a class="nav-link " id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Meus eventos</a>
-                <a class="nav-link " id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Minhas formaÃ§Ãµes</a>
-                <a class="nav-link " id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">ConfiguraÃ§Ãµes</a>
+                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Início</a>
+                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Meus eventos</a>
+                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Minhas formações</a>
+                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Configurações</a>
             </div>
 
             <br><br><br>
@@ -266,7 +264,7 @@
 
                 </div>
                 <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                    <h3> FormaÃ§Ãµes </h3>
+                    <h3> Formações </h3>
                     <div class="row">
 
                         <div class="col-md-3 col-borda-menor">
@@ -393,7 +391,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Ficamos tristes em ver vocÃª ir ;-;
+                    Ficamos tristes em ver você ir ;-;
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -406,12 +404,11 @@
 
     <!-- Fim do corpo-->
 
-    <script type="text/javascript " src="js/jquery-3.4.0.min.js "></script>
-    <script type="text/javascript " src="js/bootstrap.min.js "></script>
-    <script type="text/javascript " src="js/index.js "></script>
-    <script type="text/javascript " src="js/scroll.js "></script>
-    <script type="text/javascript " src="js/principal.js "></script>
 
-</body>
+        <script type="text/javascript" src="<c:url value="resources/js/jquery-3.4.0.min.js"/>"></script>
+        <script type="text/javascript" src="<c:url value="resources/js/bootstrap.min.js"/>"></script>
+        <script type="text/javascript" src="<c:url value="resources/js/principal.min.js"/>"></script>
+        <script type="text/javascript" src="<c:url value="resources/js/scroll.min.js"/>"></script>
+    </body>
 
 </html>

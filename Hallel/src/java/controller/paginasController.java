@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import model.bean.Evento;
 import model.bean.Pedidooracao;
@@ -18,7 +20,10 @@ public class paginasController {
     @RequestMapping("/index")
     public ModelAndView index(Model model) {
         EventoDAO edao = new EventoDAO();
-        model.addAttribute("eventos", edao.obterTodos());
+        List<Evento> ordenada = new ArrayList<>();
+        List<Evento> todosEvnts =  edao.obterTodos();
+        Collections.reverse(todosEvnts);
+        model.addAttribute("eventos",todosEvnts);
         return new ModelAndView("index");
     }
 

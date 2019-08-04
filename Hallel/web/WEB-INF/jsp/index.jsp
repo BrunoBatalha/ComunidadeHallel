@@ -185,7 +185,7 @@
                 <p class="titulo">Eventos</p>
 
                 <div class="row">
-                    <c:forEach items="${eventos}" var="eventos"  begin="1" end="4" step="1">
+                    <c:forEach items="${eventos}" var="eventos"  begin="0" end="3" step="1">
                         <div class="col-md-3 col-borda-menor">
                             <a href="#">
                                 <div class="zoom">
@@ -193,7 +193,7 @@
                                     <div class="text-item dadosCard">
                                         <p>
                                             <a href="exibirEvento?id=${eventos.id}">Nome: ${eventos.nomeEvento}</a><br>
-                                            Descrição: ${eventos.descricaoEvento}<br>
+                                            Local ${eventos.localEvento}<br>
                                             Data: ${eventos.dataEvento}
                                         </p>
                                     </div>
@@ -207,7 +207,7 @@
             <div class="col-md-3">
 
                 <p class="titulo">Mais próximos</p>
-                <c:forEach items="${eventos}" var="eventos"  begin="5" end="7" >
+                <c:forEach items="${eventos}" var="eventos"  begin="4" end="6" >
                     <div class="prox-evento">
                         <p class="tituloevento"><b>${eventos.nomeEvento}</b></p>
                         <p class="local">Local: ${eventos.localEvento}</p>

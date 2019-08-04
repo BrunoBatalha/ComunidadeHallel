@@ -1,3 +1,4 @@
+<%@page import="model.bean.Pedidooracao"%>
 <%@page import="java.util.List"%>
 <%@page import="model.bean.Evento"%>
 <%@page import="model.dao.EventoDAO"%>
@@ -38,7 +39,7 @@
             </nav>
         </header>
         <!-- Fim do header -->
-        
+
         <div class="container-fluid">
 
             <div>
@@ -187,8 +188,8 @@
                             </div>
                             <div class="tab-pane fade" id="nav-pedidoOracao" role="tabpanel"
                                  aria-labelledby="nav-contact-tab">
-                                <div class="container ">
-                                    <table class="table  table-striped table-hover">
+                                <div class="container">
+                                    <table class="table  table-striped table-hover " >
                                         <tr>
                                             <th scope="col">Id</th>                                            
                                             <th scope="col">Nome</th>                                            
@@ -197,11 +198,12 @@
                                             <th scope="col">Visualizado</th>                                            
                                         </tr>  
                                         <c:forEach items="${pedidos}" var="pedidos">
-                                            <tr>
+
+                                            <tr date-id="${pedidos.id}" class="botaotbl">
                                                 <td scope="row">${pedidos.id}</td>
-                                                <td>${pedidos.nome}</td>
-                                                <td>${pedidos.email}</td>
-                                                <td>${pedidos.mensagem}</td>
+                                                <td id="n${pedidos.id}" date-id="${pedidos.nome}">${pedidos.nome}</td>
+                                                <td >${pedidos.email}</td>
+                                                <td id="mensagem+${pedidos.id}"  date-id="${pedidos.mensagem}">${pedidos.mensagem}</td>
                                                 <c:if test="${pedidos.visualizado eq false}">
                                                     <td>Não visualizado</td>
                                                 </c:if>
@@ -211,18 +213,42 @@
                                             </tr>  
                                         </c:forEach>
                                     </table>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
-
         </div>
 
+        <div class="modal fade" id="informacoes" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Nova mensagem</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label text-black">Nome</label>
+                                <input type="text" class="form-control" id="nome-modal">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label text-black">Mensagem:</label>
+                                <textarea class="form-control" id="mensagem-modal"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-success">Visualizado</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <%@include  file="../footer.jsp" %>
 
@@ -235,6 +261,18 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script type="text/javascript" src="<c:url value="/resources/js/scroll.js"/>"></script>
+        <script type="text/javascript">
+            $('.botaotbl').on('click', function () {
+                var idLinha = $(this).attr('date-id');
+                console.log(id);
+                var nome = $('#n+'+idLinha).attr('date-id');
+                console.log(nome);
+                var mensagem = $('#mensagem+'+idLinha).text();
+                $("#nome-modal").text(nome);
+                $("#mensagem-modal").val(mensagem);
+                $("#informacoes").modal();
+            });
+        </script>
     </body>
 
 </html>

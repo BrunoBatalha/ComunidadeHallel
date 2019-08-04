@@ -43,7 +43,7 @@ public class AdministradorDAO extends GenericoDAO<Administrador> {
         } catch (Exception e) {
             adm = null;
         } finally {
-            
+            em.close();
         }
         return adm;
     }

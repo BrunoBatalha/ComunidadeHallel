@@ -22,7 +22,7 @@
     </head>
 
     <body>
-       
+
         <!-- Inicio do header -->
         <header class="container-fluid">
             <!-- Barra de Navegação -->
@@ -45,7 +45,7 @@
             </div>
 
             <form method="post" action="addEvento"  >
-                <div class="form-row">
+                <div class="form-row d-flex justify-content-center">
                     <div class="form-group col-md-8 ">
                         <label class="font-weight-bold">Nome do evento<span class="text-wine font-weight-bold"> *</span></label>
                         <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite o titulo do evento" name="nomeEvento">
@@ -59,10 +59,7 @@
                         <label class="font-weight-bold">Local<span class="text-wine font-weight-bold"> *</span></label>
                         <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite o endereço do evento" name="localEvento">
                     </div>
-                    <div class="form-group col-md-5">
-                        <label class="font-weight-bold">Descrição<span class="text-wine font-weight-bold"> *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite uma descrição para o evento" name="descricaoEvento">
-                    </div>
+                    
                     <div class="form-group col-md-5">
                         <label class="font-weight-bold">Horário<span class="text-wine font-weight-bold horaEv"> *</span></label>
                         <input class="form-control borda-inferior rounded-0 text-black" type="time" name="horaEvento">
@@ -71,11 +68,17 @@
                         <label class="font-weight-bold">Imagem<span class="text-wine font-weight-bold horaEv"> *</span></label>
                         <input class="form-control borda-inferior rounded-0 text-black" type="file" name="imagem">
                     </div>
+                    <div class="form-group col-md-5">
+                        <label class="font-weight-bold">Descrição<span class="text-wine font-weight-bold"> *</span></label>
+                        <textarea  class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite uma descrição para o evento" name="descricaoEvento"></textarea>
+                    </div>
                 </div>
+                
                 <div class="form-group text-center">
                     <input type="submit" class="btn btn-black font-personalizada-2 text-uppercase rounded-0"
                            value="Finalizar" style="width: 20%">
                 </div>
+                
                 <div class="form-group text-center py-3">
                     <a href="menuAdm" class="font-personalizada-2 text-black">Voltar a tela principal</a>
                 </div>
@@ -83,12 +86,19 @@
         </div>
 
         <%@include file="../../footer.jsp" %>
-        
+
         <script type="text/javascript" src="<c:url value="/resources/js/jquery-3.4.0.min.js"/>"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script type="text/javascript" src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="http://digitalbush.com/wp-content/uploads/2014/10/jquery.maskedinput.js"></script>
+        <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+        <script>
+            CKEDITOR.replace('descricaoEvento');
+            CKEDITOR.config.height = '500'
+            CKEDITOR.config.resize_enabled = false;
+            CKEDITOR.config.toolbarCanCollapse = true;
+        </script>
         <script type="text/javascript">
             function enviar_imagem(input) {
                 if (input.files && input.files[0]) {
@@ -103,7 +113,7 @@
                 enviar_imagem(this);
             });
             jQuery(".dataEv").mask("99/99/9999");
-           
+
         </script>
     </body>
 

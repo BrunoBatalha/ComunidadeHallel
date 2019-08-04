@@ -189,10 +189,10 @@
                         <div class="col-md-3 col-borda-menor">
                             <a href="#">
                                 <div class="zoom">
-                                    <img src="<c:url value="resources/img/fundo.jpg"/>" class="img-responsive cortar2">
-                                    <div class="text-item">
-                                        <p class="dadosCard">
-                                            Nome: ${eventos.nomeEvento}<br>
+                                    <img src="<c:url value="resources/img/fundo9.jpg"/>" class="img-responsive cortar2">
+                                    <div class="text-item dadosCard">
+                                        <p>
+                                            <a href="exibirEvento?id=${eventos.id}">Nome: ${eventos.nomeEvento}</a><br>
                                             Descrição: ${eventos.descricaoEvento}<br>
                                             Data: ${eventos.dataEvento}
                                         </p>
@@ -282,46 +282,16 @@
         </div>
     </div>
 
-
-
     <br>
-
     <!-- Fim do home -->
 
     <!-- Inicio do Footer -->
-    <footer class="page-footer font-small pt-3 rodape container-fluid">
-        <br>
-        <div class="row">
-            <div class="col-md-4">
-                <!-- Content -->
-                <p style="color: #9F9F9F">CONHEÇA A COMUNIDADE</p>
-                <p>
-                    <a href="#">Nossa história</a>
-                </p>
-                <p>
-                    <a href="#">Visite-nos</a>
-                </p>
-            </div>
-            <div class="col-md-4">
+    <%@include file="footer.jsp" %>
+    <!-- Fim do Footer -->
+    <script type="text/javascript" src="<c:url value="resources/js/jquery-3.4.0.min.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="resources/js/bootstrap.min.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="resources/js/index.min.js"/>"></script>
+    <script type="text/javascript" src="<c:url value="resources/js/scroll.min.js"/>"></script>
+</body>
 
-                <center>
-                    <br>
-                    <img class="d-flex align-items-center" src="<c:url value="resources/img/fundo9.jpg"/>" style="width: 100px;">
-                    <br>
-                </center>
-
-            </div>
-
-            <div class="col-md-4 text-right">
-                <p style="color: #9F9F9F">CONTATOS</p>
-                <p>
-                    comunidadehallel95@gmail.com
-                    </footer>
-                    <!-- Fim do Footer -->
-                    <script type="text/javascript" src="<c:url value="resources/js/jquery-3.4.0.min.js"/>"></script>
-                    <script type="text/javascript" src="<c:url value="resources/js/bootstrap.min.js"/>"></script>
-                    <script type="text/javascript" src="<c:url value="resources/js/index.min.js"/>"></script>
-                    <script type="text/javascript" src="<c:url value="resources/js/scroll.min.js"/>"></script>
-                    </body>
-
-                    </html> 
+</html> 

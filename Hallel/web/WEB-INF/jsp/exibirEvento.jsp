@@ -112,15 +112,15 @@
         <div class="row">
 
             <div class="col-md-4">
-                <img src="rsc/img/fundo9.jpg" class="img-responsive"
+                <img src="resources/img/fundo9.jpg" class="img-responsive"
                     style="object-fit: cover; width: 100%; height: 200px;">
             </div>
 
             <div class="col-md-8">
 
-                <p><b>Nome do evento:</b> aaaaaa</p>
-                <p><b>Local:</b> bbbbbbb</p>
-                <p><b>Data:</b> cccccccccccc</p>
+                <p><b>Nome do evento:</b> ${evento.nomeEvento}</p>
+                <p><b>Local:</b> ${evento.localEvento}</p>
+                <p><b>Data:</b> ${evento.dataEvento}</p>
 
             </div>
 
@@ -130,7 +130,7 @@
 
         <div class="col-md-12">
 
-            <p>descricao</p>
+            <p>${evento.descricaoEvento}</p>
 
         </div>
     </div>

@@ -21,6 +21,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import model.dao.EntidadeBase;
 
 /**
  *
@@ -35,7 +36,7 @@ import javax.persistence.TemporalType;
     , @NamedQuery(name = "Evento.findByDataEvento", query = "SELECT e FROM Evento e WHERE e.dataEvento = :dataEvento")
     , @NamedQuery(name = "Evento.findByHoraEvento", query = "SELECT e FROM Evento e WHERE e.horaEvento = :horaEvento")
     , @NamedQuery(name = "Evento.findByLocalEvento", query = "SELECT e FROM Evento e WHERE e.localEvento = :localEvento")})
-public class Evento implements Serializable {
+public class Evento implements EntidadeBase {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -81,7 +82,8 @@ public class Evento implements Serializable {
         this.localEvento = localEvento;
     }
 
-    public Integer getIdEvento() {
+    @Override
+    public Integer getId() {
         return idEvento;
     }
 
@@ -161,5 +163,7 @@ public class Evento implements Serializable {
     public String toString() {
         return "model.bean.Evento[ idEvento=" + idEvento + " ]";
     }
+
+    
     
 }

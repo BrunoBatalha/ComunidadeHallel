@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="<c:url value="/resources/css/formularios.css"/>" type="text/css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" >
-
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
 
     <body>
@@ -44,41 +44,44 @@
 
             </div>
 
-            <form method="post" action="addEvento"  >
-                <div class="form-row d-flex justify-content-center">
-                    <div class="form-group col-md-8 ">
+            <form method="post" action="addEvento">
+                <div class="form-row">
+                    <div class="col-sm-8">
                         <label class="font-weight-bold">Nome do evento<span class="text-wine font-weight-bold"> *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite o titulo do evento" name="nomeEvento">
+                        <input class="form-control  rounded-0 text-black" type="text" placeholder="Digite o titulo do evento" name="nomeEvento">
                     </div>
-                    <div class="form-group col-md-4 ">
+                    <div class="col-sm-4">
                         <label class="font-weight-bold">Data<span class="text-wine font-weight-bold">
                                 *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black form-control dataEv" type="text" name="dataEvento" id="dataEvento">
-                    </div>
-                    <div class="form-group col-md-7">
-                        <label class="font-weight-bold">Local<span class="text-wine font-weight-bold"> *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite o endereço do evento" name="localEvento">
-                    </div>
-                    
-                    <div class="form-group col-md-5">
-                        <label class="font-weight-bold">Horário<span class="text-wine font-weight-bold horaEv"> *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="time" name="horaEvento">
-                    </div>
-                    <div class="form-group col-md-5">
-                        <label class="font-weight-bold">Imagem<span class="text-wine font-weight-bold horaEv"> *</span></label>
-                        <input class="form-control borda-inferior rounded-0 text-black" type="file" name="imagem">
-                    </div>
-                    <div class="form-group col-md-5">
-                        <label class="font-weight-bold">Descrição<span class="text-wine font-weight-bold"> *</span></label>
-                        <textarea  class="form-control borda-inferior rounded-0 text-black" type="text" placeholder="Digite uma descrição para o evento" name="descricaoEvento"></textarea>
+                        <input class="form-control  rounded-0 text-black form-control dataEv" type="text" name="dataEvento" id="dataEvento">
                     </div>
                 </div>
-                
+                <div class="form-row">
+                    <div class="col-sm-8">
+                        <label class="font-weight-bold">Local<span class="text-wine font-weight-bold"> *</span></label>
+                        <input class="form-control rounded-0 text-black" type="text" placeholder="Digite o endereço do evento" name="localEvento">
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label class="font-weight-bold">Horário<span class="text-wine font-weight-bold horaEv"> *</span></label>
+                        <input class="form-control text-black" type="time" name="horaEvento">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold">Imagem<span class="text-wine font-weight-bold horaEv"> *</span></label>
+                    <input class="form-control  text-black" type="file" name="imagem">
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-bold">Descrição<span class="text-wine font-weight-bold"> *</span></label>
+                    <textarea  class="form-control rounded-0 text-black" type="text" placeholder="Digite uma descrição para o evento" name="descricaoEvento"></textarea>
+                </div>
+
                 <div class="form-group text-center">
-                    <input type="submit" class="btn btn-black font-personalizada-2 text-uppercase rounded-0"
+                    <input type="submit" class="btn btn-secondary"
                            value="Finalizar" style="width: 20%">
                 </div>
-                
+
                 <div class="form-group text-center py-3">
                     <a href="menuAdm" class="font-personalizada-2 text-black">Voltar a tela principal</a>
                 </div>

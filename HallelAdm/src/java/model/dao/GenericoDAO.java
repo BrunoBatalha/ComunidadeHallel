@@ -31,7 +31,6 @@ public class GenericoDAO<T extends EntidadeBase> {
             em.getTransaction().commit();
         } catch (Exception e) {
             em.getTransaction().rollback();
-            throw new Exception("Erro ao salvar : " + e);
         } finally {
             em.close();
         }

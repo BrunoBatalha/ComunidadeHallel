@@ -1,5 +1,6 @@
 body {
     overflow-x: hidden;
+    color: black;
 }
 
 .container2 {
@@ -39,8 +40,8 @@ body {
 }
 
 .objectImage2 {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
@@ -81,3 +82,47 @@ input[id='arquivo'] {
     background-color: #720100;
 }
 
+.painel {
+    background-color: #000000;
+    text-align: center;
+    padding-left: 3%;
+}
+
+html,
+body,
+.painel {
+    height: 100%;
+}
+
+.perfil {
+    margin-top: 20%;
+}
+
+.exibicao {
+    padding: 5%;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #464646
+}
+
+#v-pills-home-tab {
+    color: white;
+}
+
+#v-pills-profile-tab {
+    color: white;
+}
+
+#v-pills-messages-tab {
+    color: white;
+}
+
+#v-pills-settings-tab {
+    color: white;
+}

@@ -341,23 +341,22 @@
 
 
                 <br>
-                <form>
+                 <form action="javascript:alertou();">
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nome</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Insira seu nome">
+                        <input type="text" class="form-control" id="nome" placeholder="Insira seu nome">
                     </div>
 
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Email</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Insira seu email (Ex: nome@exemplo.com)">
+                        <input type="email" class="form-control" id="email" placeholder="Insira seu email (Ex: nome@exemplo.com)">
                     </div>
 
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Seu pedido</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" id="pedido" rows="3"></textarea>
                     </div>
-                    <button type="button" class="btn btn-info">Enviar</button>
-
+                    <button type="button" id="btn_enviar" class="btn btn-info">Enviar</button>
                 </form>
 
             </div>
@@ -422,6 +421,13 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/scroll.js"></script>
+     <script type="text/javascript">
+        function alertou() {
+            console.log("entrou")
+        }
+
+    
+    </script>
 </body>
 
 </html>

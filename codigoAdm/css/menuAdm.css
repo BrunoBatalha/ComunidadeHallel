@@ -1,9 +1,0 @@
-tr:hover {
-    background-color: gray;
-}
-
-.omitir {
-    width: 40%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}

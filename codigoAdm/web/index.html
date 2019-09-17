@@ -1,133 +1,236 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-    <head>
-        <title>Comunidade Hallel - Home</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <title>Comunidade Hallel - Cadastro</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="stylesheet" href="../rsc/css/boostrap.css"/>
-        <link rel="stylesheet" href="../rsc/css/index.css"/>
-        <link rel="stylesheet" href="../rsc/css/formularios.css"/>
-        <link rel="stylesheet" href="../rsc/css/estilo.css"/>
-        <link rel="stylesheet" href="../rsc/css/barraDeNavegacao.css"/>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <!--        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="../rsc/css/boostrap.css" type="text/css">
+    <link rel="stylesheet" href="../rsc/css/index.css" type="text/css">
+    <link rel="stylesheet" href="../rsc/css/formularios.css" type="text/css">
+    <link rel="stylesheet" href="../rsc/css/estilo.css" type="text/css">
+    <link rel="stylesheet" href="../rsc/css/barraDeNavegacao.css">
+    <link rel="stylesheet" href="../rsc/css/rodape.css" type="text/css">
+    <link rel="stylesheet" href="../rsc/css/menuAdm.css" type="text/css">
+    <link rel="stylesheet" href="../rsc/css/scroll.css" type="text/css">
 
-    </head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
-    <body>
-        <!-- Inicio do header -->
-        <header class="container-fluid cabecalho">
-            <!-- Barra de Navegação -->
-            <nav class="row bg-wine h-100" style="background-color: #720100;">
-                <!-- Imagem Comunidade Hallel -->
-                <div class="col-md-3 mx-auto">
-                    <img class="d-flex align-items-center my-4 mx-auto" src="../rsc/img/nome-topo.png" style="width: 200px;">
-                </div>
-            </nav>
-        </header>
-        <!-- Fim do header -->
-        <!-- Fundo -->
-        <!-- Fundo -->
-        <div class="container-fluid fundo"></div>
-        <!-- /Fundo -->
-        <div class="container-fluid fundo">
-            <div class="h-100 d-flex align-items-end " id="parteInferior">
-                <div class="row w-100">
-                    <div class="col-md-6 animacao-boasvindas" id="boasvindas">
-                        <h1 class="text-uppercase text-white pb-4 pl-4 font-weight-bold">Bem vindo,<br>Administrador</h1>
-                    </div>
-                    <div class="col-md-6 mt-4 pl-sm-5">
-                        <button class="btn btn-wine rounded-0 text-uppercase mx-4 animacao-botaoLogin" type="button"
-                                id="btnFzrLogin">Fazer
-                            login</button>
-                        <a href="cadastro.html">
-                            <button class="btn btn-outline-wine rounded-0 text-uppercase animacao-botaoCadastrar"
-                                    type="button" id="btnCadastrar">Cadastrar-se</button>
-                        </a>
-                    </div>
-                </div>
+</head>
+
+<body>
+    <!-- Inicio do header -->
+    <header class="container-fluid">
+        <!-- Barra de Navegação -->
+        <nav class="row bg-wine h-100" style="background-color: #720100;">
+            <!-- Imagem Comunidade Hallel -->
+            <div class="col-md-3 mx-auto">
+                <img class="d-flex align-items-center my-4 mx-auto" src="../rsc/img/nome-topo.png" style="width: 200px;">
             </div>
-            <div class="d-none align-items-center justify-content-center h-100 animacao-login" id="telaLogin">
-                <div id="voltar">
-                    <button class="btn btn-outline-wine" type="button" style="width: 50px"><i
-                            class="fas fa-backspace"></i></button>
-                </div>
-                <div class="quadradoEscuro">
-                    <div class="bg-wine text-uppercase text-white d-flex align-items-center justify-content-center"
-                         style="height: 50px;">
-                        <h6>Fazer login</h6>
-                    </div>
-                    <div class="d-flex justify-content-center align-items-center h-100">
-                        <form method="post" class="w-75" action="logarAdm">
-                            <div class="form-group ">
-                                <label for="login">Login<span class="text-wine font-weight-bold"> *</span></label>
-                                <input
-                                    class="form-control text-white bg-transparent borda-inferior border-info border-white rounded-0"
-                                    type="text" id="login" name="login" placeholder="Digite seu login">
-                            </div>
-                            <div class="form-group">
-                                <label for="senha">Senha<span class="text-wine font-weight-bold"> *</span></label>
-                                <input
-                                    class="form-control text-white  bg-transparent borda-inferior border-info border-white rounded-0"
-                                    type="password" id="senha" name="senha" placeholder="Digite sua senha">
-                                <figcaption class="figure-caption text-right"><a href="#" class="text-white">Esqueceu sua
-                                        senha?</a></figcaption>
-                            </div>
-                            <div class="form-group text-center pt-5">
-                                <input class="btn btn-wine rounded-0" type="submit" value="LOGIN" style="width: 200px;font-family: 'Montserrat', sans-serif;
-                                       letter-spacing: 0.2em">
-                                <p class="pt-2"><a href="#" class="text-white pt-2">Não possui cadastro?</a></p>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+        </nav>
+    </header>
+    <!-- Fim do header -->
 
+    <div class="container-fluid">
+
+        <div>
+            <div class="row">
+                <!--
+                <div class="col-md-12 d-flex justify-content-center pt-5">
+                    <img src="../rsc/img/perfil.png" class="rounded-circle img-fluid">
+                </div>
+                -->
+                <div class="col-md-12 d-flex justify-content-center pt-5">
+                    <h2 class="text-uppercase font-personalizada-4 font-weight-bold">Bem vindo, USERNAME></h2>
+                </div>
+                <div class="col-md-12 d-flex justify-content-center">
+                    <p class="font-personalizada-2">ESSE É SEU PAINEL DE ADMINISTRAÇÃO!</p>
+                </div>
             </div>
         </div>
 
+        <div class="menu-tabs ">
+            <div class="row ">
+                <div class="col-md-12">
+                    <nav class="d-flex justify-content-center">
+                        <div class="nav nav-tabs nav-fill w-75 " id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-eventos"><span class="text-black">Eventos</span></a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-formacoes"><span class="text-black">Formações</span></a>
+                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-blog"><span class="text-black">Blog</span></a>
+                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-pedidoOracao"><span class="text-black">Pedido de oração</span></a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="row  mt-5 mb-5">
+                <div class="w-100">
+                    <div class="tab-content" id="nav-tabContent">
 
-        <!--        <script type="text/javascript" src="c:url value="/resources/js/jquery-3.4.0.min.js"/>"</script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-                <script type="text/javascript" src="c:url value="/resources/js/bootstrap.min.js"/>"</script>-->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+                        <div class="tab-pane fade show active " id="nav-eventos" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="container border pb-5">
+                                <div class="row pt-5">
+                                    <div class="col-md-6">
+                                        <p class="d-flex justify-content-start align-items-center">
+                                            <span class="retangulo "></span>
+                                            <b class=" pl-3 text-uppercase font-personalizada-4">
+                                                Eventos adicionados
+                                            </b>
+                                        </p>
+                                    </div>
+
+                                    <div class="col-sm-6 d-flex justify-content-start justify-content-sm-end align-items-center">
+                                        <P class="d-flex justify-content-end align-items-center">
+                                            <a href="adicionar">
+                                                <button class="btn btn-wine btn-block rounded-0 text-uppercase animacao-botaoCadastrar" type="button" id="btnCadastrar">Cadastrar evento</button>
+                                            </a>
+
+                                        </P>
+                                    </div>
+                                </div>
+
+                                <div class="contain">
+                                    <div class="slider" style="height: 250px;">
+                                        <span onmouseover="scrollEsquerdaEventos()" onmouseout="clearScroll()" class="handle handlePrev active">
+                                            <i class="my-auto fa fa-chevron-left " aria-hidden="true"></i>
+                                        </span>
+
+                                        <div id="sliderEventos" class="row h-100">
+                                            <div class="row__inner" id="exibe">
+                                                <c:forEach items="${eventos}" var="eventos">
+                                                    <div class="gui-card">
+                                                        <div class="flip-container " ontouchstart="this.classList.toggle('hover')">
+                                                            <div class="flipper">
+                                                                <div class="front">
+                                                                    <div class="gui-card__media aparecer">
+                                                                        <img class="gui-card__img objectImage" src="<c:url value="/resources/img/fundo.jpg"/>"> <button class="btn btn-wine overlay-edit rounded-0" title="Editar">
+                                                                        <i class="fas fa-edit"></i>
+                                                                        </button>
+                                                                        <div class="overlay">
+
+                                                                            <p class="dadosCard">
+                                                                                Nome: ${eventos.nomeEvento}<br>
+                                                                                Descrição: ${eventos.descricaoEvento}<br>
+                                                                                Data: ${eventos.dataEvento}
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </c:forEach>
+                                            </div>
+                                        </div>
+
+                                        <span onmouseover="scrollDireitaEventos()" onmouseout="clearScroll()" class="handle handleNext active">
+                                            <i class="my-auto fa fa-chevron-right " aria-hidden="true"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-formacoes" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="tab-pane fade show active " id="nav-formacoes" role="tabpanel" aria-labelledby="nav-home-tab">
+                                <div class="container  pb-5">
+                                    <div class="row pt-5">
+                                        <div class="col-sm-6">
+                                            <p class="d-flex justify-content-start align-items-center">
+                                                <span class="retangulo "></span>
+                                                <b class="text-white pl-3 text-uppercase font-personalizada-4">
+                                                    Formações adicionadas
+                                                </b>
+                                            </p>
+                                        </div>
+
+                                        <div class="col-sm-6 d-flex justify-content-start justify-content-sm-end align-items-center">
+                                            <p>
+                                                <button class="btn btn-wine font-personalizada-2 rounded-0">Mostrar
+                                                    mais</button>
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="contain">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-blog" role="tabpanel" aria-labelledby="nav-contact-tab">
+                            terceiro
+                        </div>
+                        <div class="tab-pane fade" id="nav-pedidoOracao" role="tabpanel" aria-labelledby="nav-contact-tab">
+                            <div class="container">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Nome</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Pedido</th>
+                                            <th scope="col">Visualizado</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="usersList">
+                                       
+                                    </tbody>
+                                </table>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="informacoes" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Nova mensagem</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label text-black">Nome</label>
+                            <input type="text" class="form-control" id="nome-modal">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label text-black">Mensagem:</label>
+                            <textarea class="form-control" id="mensagem-modal"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-success">Visualizado</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--        
+        <script type="text/javascript" src="c:url value="/resources/js/jquery-3.4.0.min.js"/>"</script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script type="text/javascript">
-            $('#btnFzrLogin').on('click', function () {
-                $('#boasvindas').addClass('animacao-boasvindas-hide');
-                $('#btnFzrLogin, #btnCadastrar').addClass('animacao-botoes-hide');
-                $('#telaLogin').addClass('animacao-login');
-                setTimeout(function () {
-                    $('#boasvindas').removeClass('animacao-boasvindas, animacao-boasvindas-hide');
-                    $('#btnFzrLogin').removeClass('animacao-botaoLogin, animacao-botoes-hide');
-                    $('#btnCadastrar').removeClass('animacao-botaoCadastrar, animacao-botoes-hide');
-
-                    $('#parteInferior').removeClass('d-flex');
-                    $('#parteInferior').addClass('d-none');
-
-                    $('#telaLogin').removeClass('d-none');
-                    $('#telaLogin').addClass('d-flex');
-                    console.log('oi');
-                }, 1000);
-            })
-
-            $('#voltar > button').on('click', function () {
-                $('#telaLogin').addClass('animacao-login-hide');
-                setTimeout(function () {
-                    $('#boasvindas').addClass('animacao-boasvindas');
-                    $('#btnFzrLogin').addClass('animacao-botaoLogin');
-                    $('#btnCadastrar').addClass('animacao-botaoCadastrar');
-
-                    $('#telaLogin').removeClass('d-flex');
-                    $('#telaLogin').removeClass('animacao-login-hide');
-                    $('#telaLogin').addClass('d-none');
-                    $('#parteInferior').removeClass('d-none');
-                    $('#parteInferior').addClass('d-flex');
-                }, 1000);
-            })
-        </script>
-    </body>
+        <script type="text/javascript" src="c:url value="/resources/js/bootstrap.min.js"/>"</script>
+        -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script src="/rsc/js/firebase.js"></script>
+    <script type="text/javascript" src="/rsc/js/menuAdm.js" ></script>
+    
+</body>
 
 </html>

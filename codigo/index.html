@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="css/scroll.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
+
+
 </head>
 
 <body>
@@ -47,8 +49,7 @@
                             <td class="align-middle">
 
                                 <a href="#"><button type="button" class="btn btn-dark">Cadastrar</button></a>
-                                <a href="#"><button type="button" class="btn btn-outline-dark" data-toggle="modal"
-                                    data-target="#exampleModal">Login</button></a>
+                                <a href="#"><button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">Login</button></a>
                             </td>
 
                         </tr>
@@ -341,7 +342,7 @@
 
 
                 <br>
-                 <form action="javascript:alertou();">
+                <form action="javascript:criar();">
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nome</label>
                         <input type="text" class="form-control" id="nome" placeholder="Insira seu nome">
@@ -356,7 +357,7 @@
                         <label for="exampleFormControlTextarea1">Seu pedido</label>
                         <textarea class="form-control" id="pedido" rows="3"></textarea>
                     </div>
-                    <button type="button" id="btn_enviar" class="btn btn-info">Enviar</button>
+                    <input type="submit" id="btn_enviar" class="btn btn-info" valu="Enviar">
                 </form>
 
             </div>
@@ -421,13 +422,11 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/scroll.js"></script>
-     <script type="text/javascript">
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script src="js/firebase.js"></script>
+    <script type="text/javascript">
         function alertou() {
             console.log("entrou")
         }
-
-    
     </script>
-</body>
-
-</html>
+</body></html>

@@ -103,23 +103,19 @@
                     $('#boasvindas').removeClass('animacao-boasvindas, animacao-boasvindas-hide');
                     $('#btnFzrLogin').removeClass('animacao-botaoLogin, animacao-botoes-hide');
                     $('#btnCadastrar').removeClass('animacao-botaoCadastrar, animacao-botoes-hide');
-
                     $('#parteInferior').removeClass('d-flex');
                     $('#parteInferior').addClass('d-none');
-
                     $('#telaLogin').removeClass('d-none');
                     $('#telaLogin').addClass('d-flex');
                     console.log('oi');
                 }, 1000);
             })
-
             $('#voltar > button').on('click', function () {
                 $('#telaLogin').addClass('animacao-login-hide');
                 setTimeout(function () {
                     $('#boasvindas').addClass('animacao-boasvindas');
                     $('#btnFzrLogin').addClass('animacao-botaoLogin');
                     $('#btnCadastrar').addClass('animacao-botaoCadastrar');
-
                     $('#telaLogin').removeClass('d-flex');
                     $('#telaLogin').removeClass('animacao-login-hide');
                     $('#telaLogin').addClass('d-none');

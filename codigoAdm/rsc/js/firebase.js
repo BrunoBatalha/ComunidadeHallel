@@ -11,4 +11,3 @@
   firebase.initializeApp(firebaseConfig);
 
 const rootRef = firebase.database().ref();
-

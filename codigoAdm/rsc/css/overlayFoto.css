@@ -2,8 +2,11 @@
     position: relative;
   }
   #fotoPerfil {
-    display: block;
-    height: auto;
+    width: 750px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    
   }
   #labelAlterar {
     position: absolute;

@@ -1,133 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-    <head>
-        <title>Comunidade Hallel - Home</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    <title>Comunidade Hallel - Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="stylesheet" href="../rsc/css/boostrap.css"/>
-        <link rel="stylesheet" href="../rsc/css/index.css"/>
-        <link rel="stylesheet" href="../rsc/css/formularios.css"/>
-        <link rel="stylesheet" href="../rsc/css/estilo.css"/>
-        <link rel="stylesheet" href="../rsc/css/barraDeNavegacao.css"/>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="../rsc/css/edicoesBootstrap.css" />
 
-    </head>
 
-    <body>
-        <!-- Inicio do header -->
-        <header class="container-fluid cabecalho">
-            <!-- Barra de Navegação -->
-            <nav class="row bg-wine h-100" style="background-color: #720100;">
-                <!-- Imagem Comunidade Hallel -->
-                <div class="col-md-3 mx-auto">
-                    <img class="d-flex align-items-center my-4 mx-auto" src="../rsc/img/nome-topo.png" style="width: 200px;">
-                </div>
-            </nav>
-        </header>
-        <!-- Fim do header -->
-        <!-- Fundo -->
-        <!-- Fundo -->
-        <div class="container-fluid fundo"></div>
-        <!-- /Fundo -->
-        <div class="container-fluid fundo">
-            <div class="h-100 d-flex align-items-end " id="parteInferior">
-                <div class="row w-100">
-                    <div class="col-md-6 animacao-boasvindas" id="boasvindas">
-                        <h1 class="text-uppercase text-white pb-4 pl-4 font-weight-bold">Bem vindo,<br>Administrador</h1>
-                    </div>
-                    <div class="col-md-6 mt-4 pl-sm-5">
-                        <button class="btn btn-wine rounded-0 text-uppercase mx-4 animacao-botaoLogin" type="button"
-                                id="btnFzrLogin">Fazer
-                            login</button>
-                        <a href="cadastro.html">
-                            <button class="btn btn-outline-wine rounded-0 text-uppercase animacao-botaoCadastrar"
-                                    type="button" id="btnCadastrar">Cadastrar-se</button>
-                        </a>
-                    </div>
-                </div>
+</head>
+
+<body>
+
+    <header class="container-fluid px-0">
+        <nav class="navbar navbar-light bg-vinho">
+            <a class="navbar-brand text-center mx-auto" href="#">
+                <img src="../rsc/img/nome-topo.png" alt="logo-hallel" style="width: 200px;">
+            </a>
+        </nav>
+    </header>
+
+    <div class="container-fluid mt-5">
+        <div class="text-center">
+            <h2>Bem vindo, administrador!</h2>
+            <p>Aqui você pode gerenciar:</p>
+        </div>
+        <div class="row justify-content-center text-center mt-5">
+            <div class="col-sm-2">
+                <img src="../rsc/img/eventos.png" alt="eventos" style="width: 150px;">
+                <p>Eventos</p>
             </div>
-            <div class="d-none align-items-center justify-content-center h-100 animacao-login" id="telaLogin">
-                <div id="voltar">
-                    <button class="btn btn-outline-wine" type="button" style="width: 50px"><i
-                            class="fas fa-backspace"></i></button>
-                </div>
-                <div class="quadradoEscuro">
-                    <div class="bg-wine text-uppercase text-white d-flex align-items-center justify-content-center"
-                         style="height: 50px;">
-                        <h6>Fazer login</h6>
-                    </div>
-                    <div class="d-flex justify-content-center align-items-center h-100">
-                        <form method="post" class="w-75" action="logarAdm">
-                            <div class="form-group ">
-                                <label for="login">Login<span class="text-wine font-weight-bold"> *</span></label>
-                                <input
-                                    class="form-control text-white bg-transparent borda-inferior border-info border-white rounded-0"
-                                    type="text" id="login" name="login" placeholder="Digite seu login">
-                            </div>
-                            <div class="form-group">
-                                <label for="senha">Senha<span class="text-wine font-weight-bold"> *</span></label>
-                                <input
-                                    class="form-control text-white  bg-transparent borda-inferior border-info border-white rounded-0"
-                                    type="password" id="senha" name="senha" placeholder="Digite sua senha">
-                                <figcaption class="figure-caption text-right"><a href="#" class="text-white">Esqueceu sua
-                                        senha?</a></figcaption>
-                            </div>
-                            <div class="form-group text-center pt-5">
-                                <input class="btn btn-wine rounded-0" type="submit" value="LOGIN" style="width: 200px;font-family: 'Montserrat', sans-serif;
-                                       letter-spacing: 0.2em">
-                                <p class="pt-2"><a href="#" class="text-white pt-2">Não possui cadastro?</a></p>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
+            <div class="col-sm-2">
+                <img src="../rsc/img/formacao.png" alt="formacao" style="width: 150px;">
+                <p>Formações</p>
+            </div>
+            <div class="col-sm-2">
+                <img src="../rsc/img/noticias.png" alt="noticias" style="width: 150px;">
+                <p>Notícias</p>
+            </div>
+            <div class="col-sm-2">
+                <img src="../rsc/img/pedidos_de_oracao.png" alt="pedidos_de_oracao" style="width: 150px;">
+                <p>Pedidos de orações</p>
             </div>
         </div>
+        <h5 class="text-center my-4"><b>Para continuar</b></h5>
+        <div class="row justify-content-center">
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-vinho w-100" data-toggle="modal" data-target="#modal-login">Login</button>
+            </div>
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-vinho w-100" data-toggle="modal" data-target="#modal-cadastro">Cadastrar-se</button>
+            </div>
 
+        </div>
+        <br>
 
-        <!--        <script type="text/javascript" src="c:url value="/resources/js/jquery-3.4.0.min.js"/>"</script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-                <script type="text/javascript" src="c:url value="/resources/js/bootstrap.min.js"/>"</script>-->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script type="text/javascript">
-            $('#btnFzrLogin').on('click', function () {
-                $('#boasvindas').addClass('animacao-boasvindas-hide');
-                $('#btnFzrLogin, #btnCadastrar').addClass('animacao-botoes-hide');
-                $('#telaLogin').addClass('animacao-login');
-                setTimeout(function () {
-                    $('#boasvindas').removeClass('animacao-boasvindas, animacao-boasvindas-hide');
-                    $('#btnFzrLogin').removeClass('animacao-botaoLogin, animacao-botoes-hide');
-                    $('#btnCadastrar').removeClass('animacao-botaoCadastrar, animacao-botoes-hide');
+    </div>
 
-                    $('#parteInferior').removeClass('d-flex');
-                    $('#parteInferior').addClass('d-none');
+    <!-- Modal cadastro -->
+    <div class="modal fade" id="modal-cadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Cadastro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="javascript:cadastro()">
+                    <div class="modal-body">
 
-                    $('#telaLogin').removeClass('d-none');
-                    $('#telaLogin').addClass('d-flex');
-                    console.log('oi');
-                }, 1000);
-            })
+                        <div class="form-group">
+                            <label for="nome-cad">Nome</label>
+                            <input type="text" class="form-control" id="nome-cad" placeholder="Informe seu nome...">
+                        </div>
+                        <div class="form-group">
+                            <label for="email-cad">Email</label>
+                            <input type="text" class="form-control" id="email-cad" placeholder="Informe seu email...">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone-cad">Telefone</label>
+                            <input type="text" class="form-control" id="telefone-cad" placeholder="Informe seu telefone...">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha-cad">Senha</label>
+                            <input type="password" class="form-control" id="senha-cad" placeholder="Informe sua senha...">
+                        </div>
+                        <div class="form-group">
+                            <label for="confsenha-cad">Confirme sua senha</label>
+                            <input type="password" class="form-control" id="confsenha-cad" placeholder="Confirme sua senha...">
+                        </div>
 
-            $('#voltar > button').on('click', function () {
-                $('#telaLogin').addClass('animacao-login-hide');
-                setTimeout(function () {
-                    $('#boasvindas').addClass('animacao-boasvindas');
-                    $('#btnFzrLogin').addClass('animacao-botaoLogin');
-                    $('#btnCadastrar').addClass('animacao-botaoCadastrar');
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Voltar</button>
+                        <input type="submit" class="btn btn-vinho" value="Cadastrar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-                    $('#telaLogin').removeClass('d-flex');
-                    $('#telaLogin').removeClass('animacao-login-hide');
-                    $('#telaLogin').addClass('d-none');
-                    $('#parteInferior').removeClass('d-none');
-                    $('#parteInferior').addClass('d-flex');
-                }, 1000);
-            })
-        </script>
-    </body>
+    <!-- Modal login -->
+    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="javascript:login()">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="email-log">Email</label>
+                            <input type="text" class="form-control" id="email-log" placeholder="Informe seu email...">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha-log">Senha</label>
+                            <input type="password" class="form-control" id="senha-log" placeholder="Informe sua senha...">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-dismiss="modal">Voltar</button>
+                        <input type="submit" class="btn btn-vinho" value="Login">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
-</html>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script src="../rsc/js/firebase.js"></script>
+    <script src="../rsc/js/cadastro.js"></script>
+    <script src="../rsc/js/login.js"></script>
+</body></html>

@@ -47,8 +47,7 @@
                             <td class="align-middle">
 
                                 <a href="#"><button type="button" class="btn btn-dark">Cadastrar</button></a>
-                                <a href="#"><button type="button" class="btn btn-outline-dark" data-toggle="modal"
-                                    data-target="#exampleModal">Login</button></a>
+                                <a href="#"><button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">Login</button></a>
                             </td>
 
                         </tr>
@@ -205,56 +204,9 @@
 
                 <p class="titulo">Eventos</p>
 
-                <div class="row">
-
-                    <div class="col-md-3 col-borda-menor">
-
-                        <a href="#">
-                            <div class="zoom">
-                                <img src="rsc/img/fundo9.jpg" class="img-responsive cortar2">
-                                <div class="text-item">
-                                    <p>kjskfhasj</p>
-                                </div>
-                            </div>
-                        </a>
-
-                    </div>
-                    <div class="col-md-3 col-borda-menor">
+                <div class="row" id="destaque-eventos">
 
 
-                        <div class="zoom">
-                            <img src="rsc/img/fundo9.jpg" class="img-responsive cortar2">
-                            <div class="text-item">
-                                <p>kjskfhasj</p>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div class="col-md-3 col-borda-menor">
-
-
-                        <div class="zoom">
-                            <img src="rsc/img/fundo9.jpg" class="img-responsive cortar2">
-                            <div class="text-item">
-                                <p>kjskfhasj</p>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div class="col-md-3 col-borda-menor">
-
-
-                        <div class="zoom">
-                            <img src="rsc/img/fundo9.jpg" class="img-responsive cortar2">
-                            <div class="text-item">
-                                <p>kjskfhasj</p>
-                            </div>
-                        </div>
-
-
-                    </div>
 
                 </div>
 
@@ -264,28 +216,10 @@
 
                 <p class="titulo">Mais próximos</p>
 
-                <div class="prox-evento">
 
-                    <p class="tituloevento"><b>Retiro dos papas</b></p>
-                    <p class="local">Local: Sítio dos empoderados</p>
-                    <p class="data">Data: 25/08/2019</p>
-
-                </div>
-
-                <div class="prox-evento">
-
-                    <p class="tituloevento"><b>Retiro dos papas</b></p>
-                    <p class="local">Local: Sítio dos empoderados</p>
-                    <p class="data">Data: 25/08/2019</p>
-
-                </div>
-
-                <div class="prox-evento">
-
-                    <p class="tituloevento"><b>Retiro dos papas</b></p>
-                    <p class="local">Local: Sítio dos empoderados</p>
-                    <p class="data">Data: 25/08/2019</p>
-
+                <div id="proximos-eventos">
+                    
+                    
                 </div>
 
             </div>
@@ -341,7 +275,7 @@
 
 
                 <br>
-                 <form action="javascript:alertou();">
+                <form action="javascript:alertou();">
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nome</label>
                         <input type="text" class="form-control" id="nome" placeholder="Insira seu nome">
@@ -419,14 +353,18 @@
 
     <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    
+
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script src="js/firebase.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
     <script type="text/javascript" src="js/scroll.js"></script>
-     <script type="text/javascript">
+    <script type="text/javascript">
         function alertou() {
             console.log("entrou")
         }
 
-    
     </script>
 </body>
 

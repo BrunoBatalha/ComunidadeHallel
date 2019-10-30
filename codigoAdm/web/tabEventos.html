@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Comunidade Hallel - Cadastro</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="../rsc/css/cores.css" />
+    <link rel="stylesheet" href="../rsc/css/botoes.css" />
+
+
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-sm-12 row p-2">
+            <div class="col-sm-8">
+                <a href="pubEvento.html"><button class="btn btn-dark">Novo</button></a>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+
+        <div class="col-sm-8 col-12 container-individual">
+            <img src="../rsc/img/fundo.jpg" width="100%" height="100%" id="imagemGrande" />
+        </div>
+        <div class="col-sm-4 col-12 container-lista">
+
+            <div id="scrolltable">
+                <table class="table table-dark">
+                    <thead>
+                        <tr scope="col" colspan="2" style="text-align: center">
+                            <th>Eventos</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbEventsos">
+                        <tr>
+                            <td colspan="2">Nome</td>
+                            <td>Data</td>
+                            <td>Em destaque</td>
+                        </tr>
+                    <tbody id="tbEventos"></tbody>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row pt-5" id="campos">
+        <h3 class="col-sm-12 text-center text-uppercase" id="titulo"></h3>
+        <div id="detalhes" style="line-height:10px"></div>
+        <div class="col-sm-12 pt-3" id="descricao"></div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+
+    <script src="../rsc/js/firebase.js"></script>
+    <script type="text/javascript" src="../rsc/js/menuAdm.js"></script>
+
+</body>
+
+</html>

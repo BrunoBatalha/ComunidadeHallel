@@ -3,39 +3,36 @@ function cadastro() {
     console.log("entrou")
 
     var adm = {
-        email: $('#email').val(),
-        senha: $('#senha').val(),
-        nome: $('#nome').val(),
-        confsenha: $('#confsenha').val
+        email: $('#email-cad').val(),
+        senha: $('#senha-cad').val(),
+        nome: $('#nome-cad').val(),
+        telefone: $('#telefone-cad').val(),
+        confsenha: $('#confsenha-cad').val()
     }
-
-    console.log("passou1")
 
     let dados = {
         email: adm.email,
         senha: adm.senha,
-        nome: adm.nome
+        nome: adm.nome,
+        telefone: adm.email
     };
-
-    console.log("passou2")
 
     if (dados.senha.length >= 6) {
 
-        rootRef.child("administradores").child(dados.nome).set(dados);
+        firebase.auth()
+            .createUserWithEmailAndPassword(dados.email, dados.senha)
+            .then(function(result) {
+                rootRef.child("administradores").child(dados.nome).set(dados);
+                $('#modal-cadastro').modal('hide')
+                window.location.href = "menuAdm.html";
+            })
+            .catch(function(error) {
+                alert("Não foi possível concluir o cadastro: " + error.message)
+            });
 
-        firebase.auth().createUserWithEmailAndPassword(dados.email, dados.senha).catch(function (error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // ...
-        });
 
-        window.location.href = "index.html";
-
-        console.log("cadastrou");
-    }else{
-        console.log("deu pau no cadastro")
+    } else {
+        console.log("Não foi possível concluir.")
     }
-
 
 }

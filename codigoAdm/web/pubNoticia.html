@@ -28,19 +28,19 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h3 class=" text-center font-weight-bold mt-5">Cadastro de eventos</h3>
+                <h3 class=" text-center font-weight-bold mt-5">Publicar notícia</h3>
             </div>
         </div>
 
         <form class="mt-5" method="post" action="javascript:publicar()">
             <div class="form-row">
-                <div class="col-sm-5 row">
+                <div class="col-sm-5 h-50">
                     <div class="col-sm-12">
                         <figure class="figure">
                             <div id="localAlteracao">
                                 <img src="../rsc/img/retangulo-cinza.png" class="img-fluid rounded-0" id="fotoPerfil" width="300px" height="300px">
                                 <div id="labelAlterar" class="rounded-0 d-flex align-items-center justify-content-center">
-                                    <label class="btn btn-dark" for='inputArquivo'>Adicionar capa de evento</label>
+                                    <label class="btn btn-dark" for='inputArquivo'>Adicionar capa de notícia</label>
                                     <input type="file" class="open" id="inputArquivo" accept="image/png, image/jpeg" name="inputArquivo">
                                 </div>
                             </div>
@@ -51,37 +51,25 @@
                         <input class="form-control" type="text" placeholder="Digite o título do evento" id="titulo">
                     </div>
                     <div class="form-group col-sm-12">
-                        <label for="data" class="font-weight-bold">Data:</label>
-                        <input class="form-control" type="date" id="data">
-                    </div>
-                    <div class="form-group col-sm-12">
-                        <label for="local" class="font-weight-bold">Local:</label>
-                        <input class="form-control" type="text" placeholder="Informe o local do evento" id="local">
-                    </div>
-                    <div class="form-group col-sm-12">
-                        <label for="organizadores" class="font-weight-bold">Organizadores</label>
-                        <input class="form-control" type="text" placeholder="Quem são os responsáveis pelo evento ?" id="organizadores">
-                    </div>
-                    <div class="form-group col-sm-12">
-                        <label for="contato" class="font-weight-bold">Contato</label>
-                        <input class="form-control" type="text" placeholder="Informe o contato dos responsáveis" id="contato">
+                        <label for="autor" class="font-weight-bold">Autor:</label>
+                        <input class="form-control" type="text" id="autor" readonly>
                     </div>
                 </div>
                 <div class="col-sm-7 row">
                     <div class="col-sm-12">
                         <label for="chamada" class="font-weight-bold">Chamada</label>
-                        <input class="form-control" type="text" placeholder="Escreva algo para anunciar o evento" id="chamada">
+                        <input class="form-control" type="text" placeholder="Escreva algo para anunciar a notícia" id="chamada">
                     </div>
                     <div class="col-sm-12">
                         <fieldset class="" style="width: 100%">
                             <label class="font-weight-bold">Descrição<span class="text-wine font-weight-bold">
                                     *</span></label>
-                            <textarea class="form-control rounded-0 text-black" type="text" placeholder="Digite uma descrição para o evento" name="descricaoEvento" id="descricao"></textarea>
+                            <textarea class="form-control rounded-0 text-black" type="text" placeholder="Digite uma descrição para o evento" name="descricao" id="descricao"></textarea>
                         </fieldset>
                     </div>
                 </div>
                 <div class="col-sm-12 text-center pt-5">
-                    <input type="submit" class="btn btn-vinho text-uppercase" value="Finalizar">
+                    <input type="submit" class="btn btn-vinho text-uppercase" value="Publicar">
                 </div>
                 <div class="col-sm-12 text-center py-3">
                     <a href="menuAdm.html" class="font-personalizada-2 text-black">Voltar</a>
@@ -133,10 +121,10 @@
     <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
 
     <script type="text/javascript" src="../rsc/js/firebase.js"></script>
-    <script type="text/javascript" src="../rsc/js/pubEvento.js"></script>
+    <script type="text/javascript" src="../rsc/js/pubNoticia.js"></script>
 
     <script type="text/javascript">
-        CKEDITOR.replace('descricaoEvento');
+        CKEDITOR.replace('descricao');
         CKEDITOR.config.height = '500'
         CKEDITOR.config.resize_enabled = false;
         CKEDITOR.config.toolbarCanCollapse = true;

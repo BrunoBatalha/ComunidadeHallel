@@ -13,6 +13,7 @@ a:hover {
 
 .zoom {
     overflow: hidden;
+    position: relative;
 }
 
 .zoom img {
@@ -20,6 +21,17 @@ a:hover {
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
+}
+
+.zoom:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    background: linear-gradient(0deg,rgba(0,0,0,1),rgba(0,0,0,.5) 40%,rgba(0,0,0,0) 80%,rgba(0,0,0,0));
+    z-index: 1;
 }
 
 .zoom:hover img {
@@ -49,6 +61,13 @@ a:hover {
     width: 100%;
     height: 245px;
     object-fit: cover;
+}
+
+.objectImage {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .col-margem {
@@ -117,11 +136,14 @@ a:hover {
     font-weight: bold;
     color: white;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .descricao-imagens {
     color: rgb(168, 168, 168);
     font-size: 14px;
-    margin-bottom: 0px
+    max-width: 50ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

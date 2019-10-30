@@ -1,0 +1,21 @@
+.bg-vinho{
+    background-color: #720100;
+}
+
+.btn-vinho{
+    color: #fff;
+    background-color: #720100;
+    border-color: #720100
+}
+
+.btn-vinho:hover{
+    color: #fff;
+    background-color: #4a0101;
+    border-color: #4a0101
+}
+
+.btn-vinho.focus,
+.btn-vinho:focus {
+    box-shadow: 0 0 0 .2rem rgba(138, 3, 3, .5)
+}
+

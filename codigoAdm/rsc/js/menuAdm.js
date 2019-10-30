@@ -17,11 +17,12 @@ $(function () {
 
     exibirEventos()
     exibirNoticias()
-    
+
     $(document).on('click', '.td-clicavel', function (e) {
         e.preventDefault;
         procurarEvento($(this).text())
     });
+
     $(document).on('click', '.ck-destaque', function (e) {
         verificarCheckBoxes()
         $(this).parent().parent().addClass('bg-wine')
@@ -31,6 +32,16 @@ $(function () {
             removeDestaque($(this).val())
         }
     });
+
+
+    $("#btn-pesquisar").on("click", function () {
+        pesquisar()
+    });
+
+    $(document).on('click', '.btn-abrir-evento', function (e) {
+        $('#modal-evento').modal('show')
+    });
+
 
 });
 
@@ -91,8 +102,9 @@ function exibirEventos() {
         let cont = 0
         snapshot.forEach(function (item) {
 
+
             let divCol = $('<div class="col-sm-4 mb-3 justify-content-center"></div>');
-            let divCard = $('<div class="card w-80"></div>');
+            let divCard = $('<div class="card w-80 filterDiv ' + item.val().titulo + '"></div>');
             divCard.attr("style", "height:400px")
             let divBody = $('<div class="card-body"></div>');
             let h5Titulo = $('<h5 class="card-title"></h5>');
@@ -100,7 +112,21 @@ function exibirEventos() {
             let divFooter = $('<div class="card-footer"></div>');
             let small = $('<small class="text-muted"></small>');
 
-            let checkbox = $('<input type="checkbox" class="ck-destaque" value="' + item.val().nome + '" name="destaque">')
+            //drop
+            let div1 = $('<div class="dropdown"> </div>')
+            let a = $('<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>')
+            let dropme = $('<div class="dropdown-menu" aria-labelledby="dropdownMenuLink"></div>')
+            let item1 = $('<a class="dropdown-item" href="#">Visualizar evento</a>')
+            let item2 = $('<a class="dropdown-item" href="#">Adicionar aos destaques</a>')
+            let item3 = $('<a class="dropdown-item" href="#">Remover dos destaques</a>')
+
+            dropme.append(item1)
+            dropme.append(item2)
+            dropme.append(item3)
+
+            a.append(dropme)
+
+            div1.append(a)
 
             let img = document.createElement('img')
             img.setAttribute('class', 'imagem');
@@ -118,8 +144,13 @@ function exibirEventos() {
             let data = converteTimerStamp(item.val().atualizado);
             divFooter.append("Atualizado em " + data);
             divBody.append(h5Titulo)
+
             divBody.append(pText)
+          
+            divBody.append(div1)
             divFooter.append(small)
+
+
 
             divCard.append(img)
             divCard.append(divBody)
@@ -155,8 +186,6 @@ function exibirNoticias() {
             let divFooter = $('<div class="card-footer"></div>');
             let small = $('<small class="text-muted"></small>');
 
-            let checkbox = $('<input type="checkbox" class="ck-destaque" value="' + item.val().nome + '" name="destaque">')
-
             let img = document.createElement('img')
             img.setAttribute('class', 'imagem');
             img.setAttribute('class', 'card-img-top');
@@ -171,9 +200,10 @@ function exibirNoticias() {
             pText.append(item.val().chamada)
 
             let data = converteTimerStamp(item.val().atualizado);
-            divFooter.append("Atualizado em " + data + "<br>Autor: "+item.val().autor);
+            divFooter.append("Atualizado em " + data + "<br>Autor: " + item.val().autor);
             divBody.append(h5Titulo)
             divBody.append(pText)
+
             divFooter.append(small)
 
             divCard.append(img)
@@ -278,4 +308,24 @@ function converteTimerStamp(UNIX_timestamp) {
     var sec = a.getSeconds();
     var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
     return time;
+}
+
+
+
+function pesquisar() {
+
+    console.log("entrou")
+
+    var string = $('#pesquisa-evento').val()
+
+
+
+    var evento = string.split(" ")
+
+    for (i in evento) {
+        console.log(evento[i])
+    }
+
+    filterSelection(evento[0])
+
 }

@@ -65,13 +65,19 @@ label {
 
 }
 
-@media only screen and (max-width: 1060px){
-    #btnFzrLogin, #btnCadastrar, h1{
+@media only screen and (max-width: 1060px) {
+
+    #btnFzrLogin,
+    #btnCadastrar,
+    h1 {
         letter-spacing: 0em;
     }
 }
-@media only screen and (max-width: 770px){
-    #btnFzrLogin, #btnCadastrar{
+
+@media only screen and (max-width: 770px) {
+
+    #btnFzrLogin,
+    #btnCadastrar {
         letter-spacing: 0.1em;
         margin-bottom: 200px;
         margin-left: 10px;
@@ -81,43 +87,43 @@ label {
 
 /* Animações */
 
-@media only screen and (min-width: 766px){
+@media only screen and (min-width: 766px) {
     .animacao-login {
         position: relative;
         animation-name: animacaoLoginShow;
         animation-duration: 1s
     }
-    
+
     .animacao-boasvindas {
         position: relative;
         animation-name: animacaoBoasVindasShow;
         animation-duration: 1s
     }
-    
+
     .animacao-botaoLogin {
         position: relative;
         animation-name: animacaoBotaoShow;
         animation-duration: 1.5s
     }
-    
+
     .animacao-botaoCadastrar {
         position: relative;
         animation-name: animacaoBotaoShow;
         animation-duration: 3s
     }
-    
+
     .animacao-boasvindas-hide {
         position: relative;
         animation-name: animacaoBoasVindasHide;
         animation-duration: 1s
     }
-    
+
     .animacao-botoes-hide {
         position: relative;
         animation-name: animacaoBotaoHide;
         animation-duration: 1s
     }
-    
+
     .animacao-login-hide {
         position: relative;
         animation-name: animacaoLoginHide;

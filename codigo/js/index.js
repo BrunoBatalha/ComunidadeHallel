@@ -21,13 +21,12 @@ function criar() {
         pedido: $('#pedido').val()
     }
 
-    function writeUserData(nome, email, pedido, id) {
-        firebase.database().ref('users/' + id).set({
-            nome: nome,
-            email: email,
-            pedido: pedido
-        });
-    }
+    rootRef.child("pedidos").child(pedido.nome).set({
+        nome: pedido.nome,
+        email: pedido.email,
+        pedido: pedido.pedido,
+        visu: "não"
+    });
 
     console.log("cadastrou");
 }

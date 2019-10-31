@@ -30,7 +30,7 @@ a:hover {
     bottom: 0;
     left: 0;
     content: "";
-    background: linear-gradient(0deg,rgba(0,0,0,1),rgba(0,0,0,.5) 40%,rgba(0,0,0,0) 80%,rgba(0,0,0,0));
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5) 40%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0));
     z-index: 1;
 }
 
@@ -38,6 +38,7 @@ a:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+    cursor: pointer
 }
 
 .text-item {
@@ -97,8 +98,6 @@ a:hover {
     padding: 5px;
 }
 
-
-
 .titulo {
     font-size: 16px;
     width: 100%;
@@ -132,6 +131,7 @@ a:hover {
     color: white;
     font-size: 16px;
     margin-top: 15px;
+    cursor: pointer
 }
 
 .descricao-imagens {

@@ -7,7 +7,7 @@ var stgNoticias = storageRef.child('noticias')
 var arrayEventos = []
 var arrayChecados = []
 
-$(function () {
+$(function() {
 
     const nomeAdm = sessionStorage.getItem("NOME_ADM")
 
@@ -18,12 +18,12 @@ $(function () {
     exibirEventos()
     exibirNoticias()
 
-    $(document).on('click', '.td-clicavel', function (e) {
+    $(document).on('click', '.td-clicavel', function(e) {
         e.preventDefault;
         procurarEvento($(this).text())
     });
 
-    $(document).on('click', '.ck-destaque', function (e) {
+    $(document).on('click', '.ck-destaque', function(e) {
         verificarCheckBoxes()
         $(this).parent().parent().addClass('bg-wine')
         if ($(this).is(':checked')) {
@@ -34,11 +34,11 @@ $(function () {
     });
 
 
-    $("#btn-pesquisar").on("click", function () {
+    $("#btn-pesquisar").on("click", function() {
         pesquisar()
     });
 
-    $(document).on('click', '.btn-abrir-evento', function (e) {
+    $(document).on('click', '.btn-abrir-evento', function(e) {
         $('#modal-evento').modal('show')
     });
 
@@ -48,8 +48,8 @@ $(function () {
 
 
 function mostrarPedidos() {
-    $("tr").click(function () {
-        $(this).find('td').each(function (i) {
+    $("tr").click(function() {
+        $(this).find('td').each(function(i) {
             $th = $("thead th")[i];
             if (jQuery($th).text() == "Nome") {
                 $("#nome").val($(this).html());
@@ -64,10 +64,10 @@ function mostrarPedidos() {
 
     var userList = document.getElementById('usersList')
 
-    rootRef.child("pedidos").on('value', function (snapshot) {
+    rootRef.child("pedidos").on('value', function(snapshot) {
 
         usersList.innerHTML = '';
-        snapshot.forEach(function (item) {
+        snapshot.forEach(function(item) {
 
             var tr = document.createElement('tr');
 
@@ -99,10 +99,10 @@ function mostrarPedidos() {
 }
 
 function exibirEventos() {
-    refEvento.on('value', function (snapshot) {
+    refEvento.on('value', function(snapshot) {
         $('#cards-eventos').html('')
         let cont = 0
-        snapshot.forEach(function (item) {
+        snapshot.forEach(function(item) {
 
 
             let divCol = $('<div class="col-sm-4 mb-3  justify-content-center"></div>');
@@ -118,35 +118,37 @@ function exibirEventos() {
             let div1 = $('<div class="dropdown"></div>')
             let a = $('<a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>')
             let dropme = $('<div class="dropdown-menu" aria-labelledby="dropdownMenuLink"></div>')
-            let tituloCodificado = item.val().titulo.replace(' ','&')
-            let item1 = $('<a class="dropdown-item f" href="exibirEvento.html?e='+tituloCodificado+'">Visualizar evento</a>')
-            let item2 = $('<button class="dropdown-item btn-add-destaque" data-name="'+item.val().titulo+'">Adicionar aos destaques</button>')
-            let item3 = $('<button class="dropdown-item btn-rem-destaque" data-name="'+item.val().titulo+'">Remover dos destaques</button>')
-           
-            if(item.val().destaque){
+            let tituloCodificado = item.val().titulo.replace(' ', '&')
+
+            let item2 = $('<button class="dropdown-item btn-add-destaque" data-name="' + item.val().titulo + '">Adicionar aos destaques</button>')
+            let item3 = $('<button class="dropdown-item btn-rem-destaque" data-name="' + item.val().titulo + '">Remover dos destaques</button>')
+
+            if (item.val().destaque) {
                 divCard.addClass("border border-danger");
                 item2.addClass('rounded border border-danger')
-            }else{
+            } else {
                 divCard.addClass("border border-dark");
                 item3.addClass('rounded border border-danger')
             }
-            
-            $('.btn-add-destaque').click(function(){
+
+            $('.btn-add-destaque').click(function() {
                 let titulo = $(this).data("name");
                 addDestaque(titulo)
             })
-            $('.btn-rem-destaque').click(function(){
+            $('.btn-rem-destaque').click(function() {
                 let titulo = $(this).data("name");
                 removeDestaque(titulo)
             })
-            
-            dropme.append(item1)
+
+
             dropme.append(item2)
             dropme.append(item3)
 
             a.append(dropme)
 
             div1.append(a)
+
+            let linkver = $('<a href="exibirEvento.html?e=' + tituloCodificado + '"><i class="fas fa-edit  text-dark"></i></a>')
 
             let img = document.createElement('img')
             img.setAttribute('class', 'imagem');
@@ -166,8 +168,22 @@ function exibirEventos() {
             divBody.append(h5Titulo)
 
             divBody.append(pText)
-          
-            divBody.append(div1)
+
+
+
+            let divrow = $('<div class="row px-0"></div>')
+            let divcol1 = $('<div class="col-sm-6 text-left"></div>')
+            let divcol2 = $('<div class="col-sm-6 text-right"></div>')
+
+
+            divcol1.append(div1)
+            divcol2.append(linkver)
+
+            divrow.append(divcol1)
+            divrow.append(divcol2)
+
+            divBody.append(divrow)
+
             divFooter.append(small)
 
             divCard.append(img)
@@ -175,12 +191,12 @@ function exibirEventos() {
             divCard.append(divFooter)
 
             divCol.append(divCard)
-            /*
-            if (item.val().destaque) {
-                checkbox.prop('checked', true)
-                tr.addClass('bg-wine')
-            }
-            */
+                /*
+                if (item.val().destaque) {
+                    checkbox.prop('checked', true)
+                    tr.addClass('bg-wine')
+                }
+                */
 
             $('#cards-eventos').append(divCol)
             arrayEventos[cont++] = item.val().nome
@@ -191,9 +207,9 @@ function exibirEventos() {
 }
 
 function exibirNoticias() {
-    refNoticias.on('value', function (snapshot) {
+    refNoticias.on('value', function(snapshot) {
         $('#cards-noticias').html('')
-        snapshot.forEach(function (item) {
+        snapshot.forEach(function(item) {
 
             let divCol = $('<div class="col-sm-4 mb-3 justify-content-center"></div>');
             let divCard = $('<div class="card w-80"></div>');
@@ -229,12 +245,12 @@ function exibirNoticias() {
             divCard.append(divFooter)
 
             divCol.append(divCard)
-            /*
-            if (item.val().destaque) {
-                checkbox.prop('checked', true)
-                tr.addClass('bg-wine')
-            }
-            */
+                /*
+                if (item.val().destaque) {
+                    checkbox.prop('checked', true)
+                    tr.addClass('bg-wine')
+                }
+                */
 
             $('#cards-noticias').append(divCol)
         });
@@ -245,9 +261,9 @@ function exibirNoticias() {
 function procurarEvento(nome) {
     stgEvento.child(nome + "/foto")
         .getDownloadURL()
-        .then(function (url) {
+        .then(function(url) {
             $('#imagemGrande').attr('src', url)
-        }).catch(function (error) {
+        }).catch(function(error) {
             console.log(error.message)
         })
     $('#titulo').text('')
@@ -274,7 +290,7 @@ function verificarCheckBoxes() {
     var Marcados = 0;
     var objCheck = document.getElementsByName('destaque');
     console.log(objCheck)
-    //Percorrendo os checks para ver quantos foram selecionados:
+        //Percorrendo os checks para ver quantos foram selecionados:
     for (var iLoop = 0; iLoop < objCheck.length; iLoop++) {
         //Se o número máximo de checkboxes ainda não tiver sido atingido, continua a verificação:
         if (Marcados <= CheckMaximo) {
@@ -298,8 +314,8 @@ function verificarCheckBoxes() {
 
 }
 
-function destacaEventoDestaque(titulo){
-    
+function destacaEventoDestaque(titulo) {
+
 }
 
 function addDestaque(eventoDest) {

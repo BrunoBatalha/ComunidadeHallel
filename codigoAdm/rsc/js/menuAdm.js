@@ -105,7 +105,7 @@ function exibirEventos() {
         snapshot.forEach(function (item) {
 
 
-            let divCol = $('<div class="col-sm-4 mb-3 justify-content-center"></div>');
+            let divCol = $('<div class="col-sm-4 mb-3  justify-content-center"></div>');
             let divCard = $('<div class="card w-80 filterDiv ' + item.val().titulo + '"></div>');
             divCard.attr("style", "height:400px")
             let divBody = $('<div class="card-body"></div>');
@@ -119,10 +119,27 @@ function exibirEventos() {
             let a = $('<a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>')
             let dropme = $('<div class="dropdown-menu" aria-labelledby="dropdownMenuLink"></div>')
             let tituloCodificado = item.val().titulo.replace(' ','&')
-            let item1 = $('<a class="dropdown-item" href="exibirEvento.html?e='+tituloCodificado+'">Visualizar evento</a>')
-            let item2 = $('<button class="dropdown-item">Adicionar aos destaques</button>')
-            let item3 = $('<a class="dropdown-item" href="#">Remover dos destaques</a>')
-       
+            let item1 = $('<a class="dropdown-item f" href="exibirEvento.html?e='+tituloCodificado+'">Visualizar evento</a>')
+            let item2 = $('<button class="dropdown-item btn-add-destaque" data-name="'+item.val().titulo+'">Adicionar aos destaques</button>')
+            let item3 = $('<button class="dropdown-item btn-rem-destaque" data-name="'+item.val().titulo+'">Remover dos destaques</button>')
+           
+            if(item.val().destaque){
+                divCard.addClass("border border-danger");
+                item2.addClass('rounded border border-danger')
+            }else{
+                divCard.addClass("border border-dark");
+                item3.addClass('rounded border border-danger')
+            }
+            
+            $('.btn-add-destaque').click(function(){
+                let titulo = $(this).data("name");
+                addDestaque(titulo)
+            })
+            $('.btn-rem-destaque').click(function(){
+                let titulo = $(this).data("name");
+                removeDestaque(titulo)
+            })
+            
             dropme.append(item1)
             dropme.append(item2)
             dropme.append(item3)
@@ -133,7 +150,7 @@ function exibirEventos() {
 
             let img = document.createElement('img')
             img.setAttribute('class', 'imagem');
-            img.setAttribute('class', 'card-img-top');
+            img.setAttribute('class', 'card-img-top zoom');
             img.height = 200;
             if (item.val().URLdownloadImg != null) {
                 img.src = item.val().URLdownloadImg
@@ -249,10 +266,7 @@ function procurarEvento(nome) {
             $('#detalhes').append(p2)
             $('#detalhes').append(p3)
             $('#detalhes').append(p4)
-
-
         })
-
 }
 
 function verificarCheckBoxes() {
@@ -284,9 +298,13 @@ function verificarCheckBoxes() {
 
 }
 
-function addDestaque(eventoCk) {
+function destacaEventoDestaque(titulo){
+    
+}
+
+function addDestaque(eventoDest) {
     console.log('Destaque add')
-    refEvento.child(eventoCk)
+    refEvento.child(eventoDest)
         .update({
             "destaque": true
         })
@@ -315,17 +333,10 @@ function converteTimerStamp(UNIX_timestamp) {
 
 
 function pesquisar() {
-
-    console.log("entrou")
-
     var string = $('#pesquisa-evento').val()
-
     var evento = string.split(" ")
-
     for (i in evento) {
         console.log(evento[i])
     }
-
     filterSelection(evento[0])
-
 }

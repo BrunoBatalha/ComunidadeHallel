@@ -45,6 +45,8 @@ $(function () {
 
 });
 
+
+
 function mostrarPedidos() {
     $("tr").click(function () {
         $(this).find('td').each(function (i) {
@@ -116,11 +118,11 @@ function exibirEventos() {
             let div1 = $('<div class="dropdown"></div>')
             let a = $('<a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>')
             let dropme = $('<div class="dropdown-menu" aria-labelledby="dropdownMenuLink"></div>')
-            let tituloEvento = item.val().titulo.replace(' ','&')
-            let item1 = $('<a class="dropdowsn-item" href="exibirEvento.html?e='+tituloEvento+'">Visualizar evento</a>')
-            let item2 = $('<a class="dropdown-item" href="#">Adicionar aos destaques</a>')
+            let tituloCodificado = item.val().titulo.replace(' ','&')
+            let item1 = $('<a class="dropdown-item" href="exibirEvento.html?e='+tituloCodificado+'">Visualizar evento</a>')
+            let item2 = $('<button class="dropdown-item">Adicionar aos destaques</button>')
             let item3 = $('<a class="dropdown-item" href="#">Remover dos destaques</a>')
-
+       
             dropme.append(item1)
             dropme.append(item2)
             dropme.append(item3)
@@ -283,6 +285,7 @@ function verificarCheckBoxes() {
 }
 
 function addDestaque(eventoCk) {
+    console.log('Destaque add')
     refEvento.child(eventoCk)
         .update({
             "destaque": true
@@ -316,8 +319,6 @@ function pesquisar() {
     console.log("entrou")
 
     var string = $('#pesquisa-evento').val()
-
-
 
     var evento = string.split(" ")
 

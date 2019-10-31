@@ -116,7 +116,7 @@ function exibirEventos() {
 
             //drop
             let div1 = $('<div class="dropdown"></div>')
-            let a = $('<a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>')
+            let a = $('<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>')
             let dropme = $('<div class="dropdown-menu" aria-labelledby="dropdownMenuLink"></div>')
             let tituloCodificado = item.val().titulo.replace(' ', '&')
 
@@ -165,24 +165,26 @@ function exibirEventos() {
 
             let data = converteTimerStamp(item.val().atualizado);
             divFooter.append("Atualizado em " + data);
-            divBody.append(h5Titulo)
-
-            divBody.append(pText)
-
-
 
             let divrow = $('<div class="row px-0"></div>')
-            let divcol1 = $('<div class="col-sm-6 text-left"></div>')
-            let divcol2 = $('<div class="col-sm-6 text-right"></div>')
+            let divcol1 = $('<div class="col-sm-10 text-left"></div>')
+            let divcol2 = $('<div class="col-sm-2 text-right"></div>')
 
 
-            divcol1.append(div1)
+            divcol1.append(h5Titulo)
             divcol2.append(linkver)
 
             divrow.append(divcol1)
             divrow.append(divcol2)
 
             divBody.append(divrow)
+
+            divBody.append(pText)
+
+
+            divBody.append(div1)
+
+
 
             divFooter.append(small)
 

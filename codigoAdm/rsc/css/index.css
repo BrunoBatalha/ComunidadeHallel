@@ -62,11 +62,9 @@ label {
 .voltar {
     position: absolute;
     bottom: 20px;
-
 }
 
 @media only screen and (max-width: 1060px) {
-
     #btnFzrLogin,
     #btnCadastrar,
     h1 {
@@ -75,7 +73,6 @@ label {
 }
 
 @media only screen and (max-width: 770px) {
-
     #btnFzrLogin,
     #btnCadastrar {
         letter-spacing: 0.1em;
@@ -93,37 +90,31 @@ label {
         animation-name: animacaoLoginShow;
         animation-duration: 1s
     }
-
     .animacao-boasvindas {
         position: relative;
         animation-name: animacaoBoasVindasShow;
         animation-duration: 1s
     }
-
     .animacao-botaoLogin {
         position: relative;
         animation-name: animacaoBotaoShow;
         animation-duration: 1.5s
     }
-
     .animacao-botaoCadastrar {
         position: relative;
         animation-name: animacaoBotaoShow;
         animation-duration: 3s
     }
-
     .animacao-boasvindas-hide {
         position: relative;
         animation-name: animacaoBoasVindasHide;
         animation-duration: 1s
     }
-
     .animacao-botoes-hide {
         position: relative;
         animation-name: animacaoBotaoHide;
         animation-duration: 1s
     }
-
     .animacao-login-hide {
         position: relative;
         animation-name: animacaoLoginHide;
@@ -131,13 +122,11 @@ label {
     }
 }
 
-
 @keyframes animacaoLoginShow {
     from {
         right: 100px;
         opacity: 0
     }
-
     to {
         right: 0;
         opacity: 1
@@ -149,7 +138,6 @@ label {
         right: 100px;
         opacity: 0
     }
-
     to {
         right: 0px;
         opacity: 1
@@ -161,7 +149,6 @@ label {
         left: 100px;
         opacity: 0
     }
-
     to {
         left: 0;
         opacity: 1
@@ -173,7 +160,6 @@ label {
         right: 0px;
         opacity: 1
     }
-
     to {
         right: 100px;
         opacity: 0
@@ -185,7 +171,6 @@ label {
         left: 0px;
         opacity: 1
     }
-
     to {
         left: 100px;
         opacity: 0
@@ -197,7 +182,6 @@ label {
         right: 0px;
         opacity: 1
     }
-
     to {
         right: 100px;
         opacity: 0
@@ -230,5 +214,4 @@ label {
     box-shadow: 0px 0px 0px 0px #00c64b;
     border-bottom: 1px solid #720100;
     outline: none;
-
 }

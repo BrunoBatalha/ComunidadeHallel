@@ -4,7 +4,7 @@ var stgNoticias = storageRef.child('noticias')
 var arrayEventos = []
 var arrayChecados = []
 
-$(function () {
+$(function() {
 
     const nomeAdm = sessionStorage.getItem("NOME_ADM")
 
@@ -15,7 +15,7 @@ $(function () {
     exibirEventos()
     exibirNoticias()
 
-    $(document).on('click', '.td-clicavel', function (e) {
+    $(document).on('click', '.td-clicavel', function(e) {
         e.preventDefault;
         procurarEvento($(this).text())
     });
@@ -27,8 +27,8 @@ $(function () {
 
 
 function mostrarPedidos() {
-    $("tr").click(function () {
-        $(this).find('td').each(function (i) {
+    $("tr").click(function() {
+        $(this).find('td').each(function(i) {
             $th = $("thead th")[i];
             if (jQuery($th).text() == "Nome") {
                 $("#nome").val($(this).html());
@@ -43,10 +43,10 @@ function mostrarPedidos() {
 
     var userList = document.getElementById('usersList')
 
-    rootRef.child("pedidos").on('value', function (snapshot) {
+    rootRef.child("pedidos").on('value', function(snapshot) {
 
         usersList.innerHTML = '';
-        snapshot.forEach(function (item) {
+        snapshot.forEach(function(item) {
 
             var tr = document.createElement('tr');
 
@@ -78,10 +78,10 @@ function mostrarPedidos() {
 }
 
 function exibirEventos() {
-    refEventos.on('value', function (snapshot) {
+    refEvento.on('value', function(snapshot) {
         $('#cards-eventos').html('')
         let cont = 0
-        snapshot.forEach(function (item) {
+        snapshot.forEach(function(item) {
 
 
             let divCol = $('<div class="col-sm-6 col-md-4 col-xl-3 mb-3  justify-content-center"></div>');
@@ -179,9 +179,9 @@ function exibirEventos() {
 }
 
 function exibirNoticias() {
-    refNoticias.on('value', function (snapshot) {
+    refNoticias.on('value', function(snapshot) {
         $('#cards-noticias').html('')
-        snapshot.forEach(function (item) {
+        snapshot.forEach(function(item) {
 
             let divCol = $('<div class="col-sm-6 col-md-4 col-xl-3 mb-3 justify-content-center"></div>');
             let divCard = $('<div class="card w-80"></div>');
@@ -268,9 +268,9 @@ function exibirNoticias() {
 function procurarEvento(nome) {
     stgEvento.child(nome + "/foto")
         .getDownloadURL()
-        .then(function (url) {
+        .then(function(url) {
             $('#imagemGrande').attr('src', url)
-        }).catch(function (error) {
+        }).catch(function(error) {
             console.log(error.message)
         })
     $('#titulo').text('')

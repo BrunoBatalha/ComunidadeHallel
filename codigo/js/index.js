@@ -3,7 +3,6 @@ var stgEvento = storageRef.child('eventos')
 
 var database = firebase.database();
 
-
 $(document).ready(function() {
     destaqueEventos()
 

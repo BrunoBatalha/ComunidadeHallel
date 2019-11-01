@@ -78,7 +78,7 @@ function mostrarPedidos() {
 }
 
 function exibirEventos() {
-    refEvento.on('value', function(snapshot) {
+    refEventos.on('value', function(snapshot) {
         $('#cards-eventos').html('')
         let cont = 0
         snapshot.forEach(function(item) {

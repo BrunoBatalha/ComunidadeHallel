@@ -31,7 +31,7 @@ function mostrarEventos() {
             titulo.addClass('titulo-imagens');
             chamada.addClass('descricao-imagens');
 
-            stgEvento.child(item.val().nome + "/foto")
+            stgEvento.child(item.val().titulo + "/foto")
                 .getDownloadURL()
                 .then(function(url) {
                     img.src = url
@@ -41,7 +41,7 @@ function mostrarEventos() {
                 });
 
             marcador.append("Evento");
-            titulo.append(item.val().nome);
+            titulo.append(item.val().titulo);
             chamada.append(item.val().chamada);
 
             divtext.append(marcador);

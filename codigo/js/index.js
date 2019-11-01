@@ -3,10 +3,11 @@ var stgEvento = storageRef.child('eventos')
 
 var database = firebase.database();
 
-$(document).ready(function () {
+
+$(document).ready(function() {
     destaqueEventos()
 
-    $(document).on('click', '.titulo-imagens', function (e) {
+    $(document).on('click', '.titulo-imagens', function(e) {
         e.preventDefault;
         clicouevento($(this).text());
     });
@@ -35,10 +36,10 @@ function destaqueEventos() {
 
     console.log("entrou destaques");
 
-    refEvento.on('value', function (snapshot) {
+    refEvento.on('value', function(snapshot) {
         $('#destaque-eventos').html('')
-        $('#procimos-eventos').html('')
-        snapshot.forEach(function (item) {
+        $('#proximos-eventos').html('')
+        snapshot.forEach(function(item) {
 
             if (item.val().destaque == true) {
 
@@ -62,18 +63,19 @@ function destaqueEventos() {
                 titulo.addClass('titulo-imagens');
                 chamada.addClass('descricao-imagens');
 
-                stgEvento.child(item.val().nome + "/foto")
+                stgEvento.child(item.val().titulo + "/foto")
                     .getDownloadURL()
-                    .then(function (url) {
+                    .then(function(url) {
                         img.src = url
                         divimg.append(img)
-                    }).catch(function (error) {
-
+                    }).catch(function(error) {
+                        img.src = "rsc/img/retangulo-cinza.png"
+                        divimg.append(img)
                     });
 
 
-                marcador.append("Notícias");
-                titulo.append(item.val().nome);
+                marcador.append("Evento");
+                titulo.append(item.val().titulo);
                 chamada.append(item.val().chamada);
 
                 divtext.append(marcador);
@@ -124,16 +126,16 @@ function destaqueEventos() {
                     plocal.addClass('local');
                     pdata.addClass('data');
 
-                    ptitulo.append("nome: " +item.val().nome);
-                    plocal.append("local: " +item.val().local);
-                    pdata.append("data: " +item.val().data);
+                    ptitulo.append(item.val().titulo);
+                    plocal.append("Local: " + item.val().local);
+                    pdata.append("Data: " + item.val().data);
 
                     divtudo.append(ptitulo);
                     divtudo.append(plocal);
                     divtudo.append(pdata);
-                    
+
                     $('#proximos-eventos').append(divtudo);
-                   
+
 
                 }
 
@@ -148,15 +150,16 @@ function destaqueEventos() {
 
 }
 
-function clicouevento(nome) {
-    stgEvento.child(nome + "/foto")
+function clicouevento(titulo) {
+    console.log("cganou")
+    stgEvento.child(titulo + "/foto")
         .getDownloadURL()
-        .then(function (url) {
+        .then(function(url) {
             localStorage.setItem("imagem", url);
             console.log(url);
-            refEvento.orderByChild('nome').equalTo(nome)
+            refEvento.orderByChild('titulo').equalTo(titulo)
                 .once('child_added', item => {
-                    localStorage.setItem("titulo", item.val().nome);
+                    localStorage.setItem("titulo", item.val().titulo);
                     localStorage.setItem("descricao", item.val().descricao);
                     localStorage.setItem("local", item.val().local);
                     localStorage.setItem("data", item.val().data);
@@ -165,7 +168,20 @@ function clicouevento(nome) {
                     localStorage.setItem("contato", item.val().contato)
                 })
             window.location.href = "exibirEvento.html";
-        }).catch(function (error) {
+        }).catch(function(error) {
+            localStorage.setItem("imagem", "rsc/img/retangulo-cinza.png");
+            console.log(url);
+            refEvento.orderByChild('titulo').equalTo(titulo)
+                .once('child_added', item => {
+                    localStorage.setItem("titulo", item.val().titulo);
+                    localStorage.setItem("descricao", item.val().descricao);
+                    localStorage.setItem("local", item.val().local);
+                    localStorage.setItem("data", item.val().data);
+                    localStorage.setItem("local", item.val().local);
+                    localStorage.setItem("organizadores", item.val().organizadores);
+                    localStorage.setItem("contato", item.val().contato)
+                })
+            window.location.href = "exibirEvento.html";
             console.log(error.message)
         })
 

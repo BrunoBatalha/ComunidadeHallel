@@ -12,3 +12,5 @@
 
 const rootRef = firebase.database().ref();
 const storageRef = firebase.storage().ref();
+const refEventos = rootRef.child("eventos");
+const refNoticias = rootRef.child("noticias");

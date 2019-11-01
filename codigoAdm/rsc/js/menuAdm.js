@@ -1,7 +1,4 @@
-var refEvento = rootRef.child("eventos")
 var stgEvento = storageRef.child('eventos')
-
-var refNoticias = rootRef.child("noticias")
 var stgNoticias = storageRef.child('noticias')
 
 var arrayEventos = []
@@ -23,24 +20,6 @@ $(function () {
         procurarEvento($(this).text())
     });
 
-    $(document).on('click', '.ck-destaque', function (e) {
-        verificarCheckBoxes()
-        $(this).parent().parent().addClass('bg-wine')
-        if ($(this).is(':checked')) {
-            addDestaque($(this).val())
-        } else {
-            removeDestaque($(this).val())
-        }
-    });
-
-
-    $("#btn-pesquisar").on("click", function () {
-        pesquisar()
-    });
-
-    $(document).on('click', '.btn-abrir-evento', function (e) {
-        $('#modal-evento').modal('show')
-    });
 
 
 });
@@ -99,41 +78,65 @@ function mostrarPedidos() {
 }
 
 function exibirEventos() {
-    refEvento.on('value', function (snapshot) {
+    refEventos.on('value', function (snapshot) {
         $('#cards-eventos').html('')
         let cont = 0
         snapshot.forEach(function (item) {
 
 
-            let divCol = $('<div class="col-sm-4 mb-3 justify-content-center"></div>');
+            let divCol = $('<div class="col-sm-6 col-md-4 col-xl-3 mb-3  justify-content-center"></div>');
             let divCard = $('<div class="card w-80 filterDiv ' + item.val().titulo + '"></div>');
-            divCard.attr("style", "height:400px")
             let divBody = $('<div class="card-body"></div>');
             let h5Titulo = $('<h5 class="card-title"></h5>');
             let pText = $('<p class="card-text"></p>');
             let divFooter = $('<div class="card-footer"></div>');
             let small = $('<small class="text-muted"></small>');
 
-            //drop
+            //Dropdown
             let div1 = $('<div class="dropdown"></div>')
-            let a = $('<a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>')
-            let dropme = $('<div class="dropdown-menu" aria-labelledby="dropdownMenuLink"></div>')
-            let tituloCodificado = item.val().titulo.replace(' ','&')
-            let item1 = $('<a class="dropdown-item" href="exibirEvento.html?e='+tituloCodificado+'">Visualizar evento</a>')
-            let item2 = $('<button class="dropdown-item">Adicionar aos destaques</button>')
-            let item3 = $('<a class="dropdown-item" href="#">Remover dos destaques</a>')
-       
-            dropme.append(item1)
+            let a = $('<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>')
+            let dropme = $('<div class="dropdown-menu my-0 py-0" aria-labelledby="dropdownMenuLink"></div>')
+            let item2 = $('<button class="dropdown-item btn-add-destaque-evt" data-name="' + item.val().titulo + '">Adicionar aos destaques</button>')
+            let item3 = $('<button class="dropdown-item btn-rem-destaque-evt" data-name="' + item.val().titulo + '">Remover dos destaques</button>')
+            
+
+            $('.btn-add-destaque-evt').unbind("click").click(function () {
+                let titulo = $(this).data("name");
+                console.log($(this)[0])
+                let ref = refEventos.child(titulo)
+                setDestaque(true, ref)
+            });
+
+            $('.btn-rem-destaque-evt').unbind("click").click(function () {
+                let titulo = $(this).data("name");
+                let ref = refEventos.child(titulo)
+                setDestaque(false, ref)
+            });
+
+
+            let divrow = $('<div class="row px-0"></div>')
+            let divcol1 = $('<div class="col-sm-10 text-left"></div>')
+            let divcol2 = $('<div class="col-sm-2 text-right"></div>')
+
+            if (item.val().destaque) {
+                divCard.addClass("border border-danger");
+                item2.addClass('rounded border border-danger')
+            } else {
+                divCard.addClass("border border-dark");
+                item3.addClass('rounded border border-danger')
+            }
+
+
             dropme.append(item2)
             dropme.append(item3)
 
             a.append(dropme)
-
             div1.append(a)
+
 
             let img = document.createElement('img')
             img.setAttribute('class', 'imagem');
-            img.setAttribute('class', 'card-img-top');
+            img.setAttribute('class', 'card-img-top zoom');
             img.height = 200;
             if (item.val().URLdownloadImg != null) {
                 img.src = item.val().URLdownloadImg
@@ -146,11 +149,21 @@ function exibirEventos() {
 
             let data = converteTimerStamp(item.val().atualizado);
             divFooter.append("Atualizado em " + data);
-            divBody.append(h5Titulo)
 
+
+            divcol1.append(h5Titulo)
+
+            let tituloCodificado = item.val().titulo.replace(' ', '&')
+            let linkver = $('<a href="exibirEvento.html?e=' + tituloCodificado + '"><i class="fas fa-edit  text-dark"></i></a>')
+            divcol2.append(linkver)
+
+            divrow.append(divcol1)
+            divrow.append(divcol2)
+
+            divBody.append(divrow)
             divBody.append(pText)
-          
             divBody.append(div1)
+
             divFooter.append(small)
 
             divCard.append(img)
@@ -158,16 +171,8 @@ function exibirEventos() {
             divCard.append(divFooter)
 
             divCol.append(divCard)
-            /*
-            if (item.val().destaque) {
-                checkbox.prop('checked', true)
-                tr.addClass('bg-wine')
-            }
-            */
 
             $('#cards-eventos').append(divCol)
-            arrayEventos[cont++] = item.val().nome
-            verificarCheckBoxes()
         });
 
     });
@@ -178,14 +183,57 @@ function exibirNoticias() {
         $('#cards-noticias').html('')
         snapshot.forEach(function (item) {
 
-            let divCol = $('<div class="col-sm-4 mb-3 justify-content-center"></div>');
+            let divCol = $('<div class="col-sm-6 col-md-4 col-xl-3 mb-3 justify-content-center"></div>');
             let divCard = $('<div class="card w-80"></div>');
-            divCard.attr("style", "height:400px")
             let divBody = $('<div class="card-body"></div>');
             let h5Titulo = $('<h5 class="card-title"></h5>');
+            h5Titulo.append(item.val().titulo)
             let pText = $('<p class="card-text"></p>');
+            pText.append(item.val().chamada)
             let divFooter = $('<div class="card-footer"></div>');
             let small = $('<small class="text-muted"></small>');
+
+            //Dropdown
+            let div1 = $('<div class="dropdown"></div>')
+            let a = $('<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>')
+            let dropme = $('<div class="dropdown-menu my-0 py-0" aria-labelledby="dropdownMenuLink"></div>')
+            let item2 = $('<button class="dropdown-item btn-add-destaque-not" data-name="' + item.val().titulo + '">Adicionar aos destaques</button>')
+            let item3 = $('<button class="dropdown-item btn-rem-destaque-not" data-name="' + item.val().titulo + '">Remover dos destaques</button>')
+
+            $('.btn-add-destaque-not').unbind("click").click(function () {
+                let titulo = $(this).data("name");
+                let ref = refNoticias.child(titulo)
+                setDestaque(true, ref)
+            });
+
+            $('.btn-rem-destaque-not').unbind("click").click(function () {
+                let titulo = $(this).data("name");
+                let ref = refNoticias.child(titulo)
+                setDestaque(false, ref)
+            });
+
+            dropme.append(item2)
+            dropme.append(item3)
+            a.append(dropme)
+
+            let divrow = $('<div class="row px-0"></div>')
+            let divcol1 = $('<div class="col-sm-10 text-left"></div>')
+            divcol1.append(h5Titulo)
+            let divcol2 = $('<div class="col-sm-2 text-right"></div>')
+            let tituloCodificado = item.val().titulo.replace(' ', '&')
+            let linkver = $('<a href="exibirEvento.html?e=' + tituloCodificado + '"><i class="fas fa-edit  text-dark"></i></a>')
+            divcol2.append(linkver)
+
+            divrow.append(divcol1)
+            divrow.append(divcol2)
+
+            if (item.val().destaque) {
+                divCard.addClass("border border-danger");
+                item2.addClass('rounded border border-danger')
+            } else {
+                divCard.addClass("border border-dark");
+                item3.addClass('rounded border border-danger')
+            }
 
             let img = document.createElement('img')
             img.setAttribute('class', 'imagem');
@@ -197,14 +245,12 @@ function exibirNoticias() {
                 img.src = "../rsc/img/retangulo-cinza.png"
             }
 
-            h5Titulo.append(item.val().titulo)
-            pText.append(item.val().chamada)
-
             let data = converteTimerStamp(item.val().atualizado);
             divFooter.append("Atualizado em " + data + "<br>Autor: " + item.val().autor);
-            divBody.append(h5Titulo)
-            divBody.append(pText)
 
+            divBody.append(divrow)
+            divBody.append(pText)
+            divBody.append(a)
             divFooter.append(small)
 
             divCard.append(img)
@@ -212,12 +258,6 @@ function exibirNoticias() {
             divCard.append(divFooter)
 
             divCol.append(divCard)
-            /*
-            if (item.val().destaque) {
-                checkbox.prop('checked', true)
-                tr.addClass('bg-wine')
-            }
-            */
 
             $('#cards-noticias').append(divCol)
         });
@@ -236,7 +276,7 @@ function procurarEvento(nome) {
     $('#titulo').text('')
     $('#descricao').text('')
     $('#detalhes').html('')
-    refEvento.orderByChild('titulo').equalTo(nome)
+    refEventos.orderByChild('titulo').equalTo(nome)
         .once('child_added', snap => {
             $('#titulo').text(snap.val().nome)
             $('#descricao').html(snap.val().descricao)
@@ -249,54 +289,13 @@ function procurarEvento(nome) {
             $('#detalhes').append(p2)
             $('#detalhes').append(p3)
             $('#detalhes').append(p4)
-
-
-        })
-
-}
-
-function verificarCheckBoxes() {
-    var CheckMaximo = 3;
-    var Marcados = 0;
-    var objCheck = document.getElementsByName('destaque');
-    console.log(objCheck)
-    //Percorrendo os checks para ver quantos foram selecionados:
-    for (var iLoop = 0; iLoop < objCheck.length; iLoop++) {
-        //Se o número máximo de checkboxes ainda não tiver sido atingido, continua a verificação:
-        if (Marcados <= CheckMaximo) {
-            if (objCheck[iLoop].checked) {
-                Marcados++;
-            }
-            //Habilitando todos os checkboxes, pois o máximo ainda não foi alcançado.
-            for (var i = 0; i < objCheck.length; i++) {
-                objCheck[i].disabled = false;
-            }
-            //Caso contrário, desabilitar o checkbox;
-            //Nesse caso, é necessário percorrer todas as opções novamente, desabilitando as não checadas;
-        } else {
-            for (var i = 0; i < objCheck.length; i++) {
-                if (objCheck[i].checked == false) {
-                    objCheck[i].disabled = true;
-                }
-            }
-        }
-    }
-
-}
-
-function addDestaque(eventoCk) {
-    console.log('Destaque add')
-    refEvento.child(eventoCk)
-        .update({
-            "destaque": true
         })
 }
 
-function removeDestaque(eventoCk) {
-    refEvento.child(eventoCk)
-        .update({
-            "destaque": false
-        })
+function setDestaque(estado, ref) {
+    ref.update({
+        "destaque": estado
+    })
 }
 
 function converteTimerStamp(UNIX_timestamp) {
@@ -315,17 +314,10 @@ function converteTimerStamp(UNIX_timestamp) {
 
 
 function pesquisar() {
-
-    console.log("entrou")
-
     var string = $('#pesquisa-evento').val()
-
     var evento = string.split(" ")
-
     for (i in evento) {
         console.log(evento[i])
     }
-
     filterSelection(evento[0])
-
 }

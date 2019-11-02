@@ -1,34 +1,17 @@
-var stgEvento = storageRef.child('eventos')
-var stgNoticias = storageRef.child('noticias')
-
-var arrayEventos = []
-var arrayChecados = []
-
-$(function() {
-
+$(function () {
     const nomeAdm = sessionStorage.getItem("NOME_ADM")
-
     $('#bemvindo').html("Bem vindo, " + nomeAdm + "!")
-
     mostrarPedidos()
-
     exibirEventos()
     exibirNoticias()
-
-    $(document).on('click', '.td-clicavel', function(e) {
-        e.preventDefault;
-        procurarEvento($(this).text())
-    });
-
-
 
 });
 
 
 
 function mostrarPedidos() {
-    $("tr").click(function() {
-        $(this).find('td').each(function(i) {
+    $("tr").click(function () {
+        $(this).find('td').each(function (i) {
             $th = $("thead th")[i];
             if (jQuery($th).text() == "Nome") {
                 $("#nome").val($(this).html());
@@ -43,10 +26,10 @@ function mostrarPedidos() {
 
     var userList = document.getElementById('usersList')
 
-    rootRef.child("pedidos").on('value', function(snapshot) {
+    rootRef.child("pedidos").on('value', function (snapshot) {
 
         usersList.innerHTML = '';
-        snapshot.forEach(function(item) {
+        snapshot.forEach(function (item) {
 
             var tr = document.createElement('tr');
 
@@ -69,21 +52,15 @@ function mostrarPedidos() {
             tr.appendChild(td4);
 
             userList.appendChild(tr);
-
         });
-
     });
-
-
 }
 
 function exibirEventos() {
-    refEventos.on('value', function(snapshot) {
+    refEventos.on('value', function (snapshot) {
         $('#cards-eventos').html('')
-        let cont = 0
-        snapshot.forEach(function(item) {
-
-
+        snapshot.forEach(function (item) {
+            console.log("item.val().titulo: " + item.val().titulo);
             let divCol = $('<div class="col-sm-6 col-md-4 col-xl-3 mb-3  justify-content-center"></div>');
             let divCard = $('<div class="card w-80 filterDiv ' + item.val().titulo + '"></div>');
             let divBody = $('<div class="card-body"></div>');
@@ -92,64 +69,21 @@ function exibirEventos() {
             let divFooter = $('<div class="card-footer"></div>');
             let small = $('<small class="text-muted"></small>');
 
-            //Dropdown
+            /*Dropdown*/
             let div1 = $('<div class="dropdown"></div>')
-            let a = $('<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>')
-            let dropme = $('<div class="dropdown-menu my-0 py-0" aria-labelledby="dropdownMenuLink"></div>')
-            let item2 = $('<button class="dropdown-item btn-add-destaque-evt" data-name="' + item.val().titulo + '">Adicionar aos destaques</button>')
-            let item3 = $('<button class="dropdown-item btn-rem-destaque-evt" data-name="' + item.val().titulo + '">Remover dos destaques</button>')
-            
-
-            $('.btn-add-destaque-evt').unbind("click").click(function () {
-                let titulo = $(this).data("name");
-                console.log($(this)[0])
-                let ref = refEventos.child(titulo)
-                setDestaque(true, ref)
-            });
-
-            $('.btn-rem-destaque-evt').unbind("click").click(function () {
-                let titulo = $(this).data("name");
-                let ref = refEventos.child(titulo)
-                setDestaque(false, ref)
-            });
-
+            let dropdown = criarDropdown(item.val().titulo, item.val().destaque, divCard)
+            let img = criarImagem(item.val().URLdownloadImg)
+            div1.append(dropdown)
 
             let divrow = $('<div class="row px-0"></div>')
             let divcol1 = $('<div class="col-sm-10 text-left"></div>')
             let divcol2 = $('<div class="col-sm-2 text-right"></div>')
-
-            if (item.val().destaque) {
-                divCard.addClass("border border-danger");
-                item2.addClass('rounded border border-danger')
-            } else {
-                divCard.addClass("border border-dark");
-                item3.addClass('rounded border border-danger')
-            }
-
-
-            dropme.append(item2)
-            dropme.append(item3)
-
-            a.append(dropme)
-            div1.append(a)
-
-
-            let img = document.createElement('img')
-            img.setAttribute('class', 'imagem');
-            img.setAttribute('class', 'card-img-top zoom');
-            img.height = 200;
-            if (item.val().URLdownloadImg != null) {
-                img.src = item.val().URLdownloadImg
-            } else {
-                img.src = "../rsc/img/retangulo-cinza.png"
-            }
 
             h5Titulo.append(item.val().titulo)
             pText.append(item.val().chamada)
 
             let data = converteTimerStamp(item.val().atualizado);
             divFooter.append("Atualizado em " + data);
-
 
             divcol1.append(h5Titulo)
 
@@ -172,16 +106,27 @@ function exibirEventos() {
 
             divCol.append(divCard)
 
+            $('.btn-add-destaque-evt').on("click", function () {
+                let titulo = $(this).data("name");
+                console.log($(this)[0])
+                let ref = refEventos.child(titulo)
+                setDestaque(true, ref)
+            });
+
+            $('.btn-rem-destaque-evt').on("click", function () {
+                let titulo = $(this).data("name");
+                let ref = refEventos.child(titulo)
+                setDestaque(false, ref)
+            });
             $('#cards-eventos').append(divCol)
         });
-
     });
 }
 
 function exibirNoticias() {
-    refNoticias.on('value', function(snapshot) {
+    refNoticias.on('value', function (snapshot) {
         $('#cards-noticias').html('')
-        snapshot.forEach(function(item) {
+        snapshot.forEach(function (item) {
 
             let divCol = $('<div class="col-sm-6 col-md-4 col-xl-3 mb-3 justify-content-center"></div>');
             let divCard = $('<div class="card w-80"></div>');
@@ -265,31 +210,37 @@ function exibirNoticias() {
     });
 }
 
-function procurarEvento(nome) {
-    stgEvento.child(nome + "/foto")
-        .getDownloadURL()
-        .then(function(url) {
-            $('#imagemGrande').attr('src', url)
-        }).catch(function(error) {
-            console.log(error.message)
-        })
-    $('#titulo').text('')
-    $('#descricao').text('')
-    $('#detalhes').html('')
-    refEventos.orderByChild('titulo').equalTo(nome)
-        .once('child_added', snap => {
-            $('#titulo').text(snap.val().nome)
-            $('#descricao').html(snap.val().descricao)
-            var p1 = $('<p>' + snap.val().data + '</p>');
-            var p2 = $('<p>' + snap.val().organizadores + '</p>');
-            var p3 = $('<p>' + snap.val().local + '</p>');
-            var p4 = $('<p>' + snap.val().contato + '</p>');
+function criarDropdown(titulo, destaque,card) {
+    let a = $('<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>')
+    let dropme = $('<div class="dropdown-menu my-0 py-0" aria-labelledby="dropdownMenuLink"></div>')
+    let item2 = $('<button class="dropdown-item btn-add-destaque-evt" data-name="' + titulo + '">Adicionar aos destaques</button>')
+    let item3 = $('<button class="dropdown-item btn-rem-destaque-evt" data-name="' + titulo + '">Remover dos destaques</button>')
 
-            $('#detalhes').append(p1)
-            $('#detalhes').append(p2)
-            $('#detalhes').append(p3)
-            $('#detalhes').append(p4)
-        })
+    if (destaque) {
+        card.addClass("border border-danger");
+        item2.addClass('rounded border border-danger')
+    } else {
+        card.addClass("border border-dark");
+        item3.addClass('rounded border border-danger')
+    }
+
+    dropme.append(item2)
+    dropme.append(item3)
+    a.append(dropme)
+    return a
+}
+
+function criarImagem(url) {
+    let img = document.createElement('img')
+    img.setAttribute('class', 'imagem');
+    img.setAttribute('class', 'card-img-top zoom');
+    img.height = 200;
+    if (url != null) {
+        img.src = url
+    } else {
+        img.src = "../rsc/img/retangulo-cinza.png"
+    }
+    return img
 }
 
 function setDestaque(estado, ref) {
@@ -311,8 +262,6 @@ function converteTimerStamp(UNIX_timestamp) {
     return time;
 }
 
-
-
 function pesquisar() {
     var string = $('#pesquisa-evento').val()
     var evento = string.split(" ")
@@ -321,3 +270,37 @@ function pesquisar() {
     }
     filterSelection(evento[0])
 }
+
+/* TODO: utilizar isso em formações
+    $(document).on('click', '.td-clicavel', function (e) {
+        e.preventDefault;
+        procurarEvento($(this).text())
+    });
+
+function procurarEvento(nome) {
+    stgEvento.child(nome + "/foto")
+        .getDownloadURL()
+        .then(function (url) {
+            $('#imagemGrande').attr('src', url)
+        }).catch(function (error) {
+            console.log(error.message)
+        })
+    $('#titulo').text('')
+    $('#descricao').text('')
+    $('#detalhes').html('')
+    refEventos.orderByChild('titulo').equalTo(nome)
+        .once('child_added', snap => {
+            $('#titulo').text(snap.val().nome)
+            $('#descricao').html(snap.val().descricao)
+            var p1 = $('<p>' + snap.val().data + '</p>');
+            var p2 = $('<p>' + snap.val().organizadores + '</p>');
+            var p3 = $('<p>' + snap.val().local + '</p>');
+            var p4 = $('<p>' + snap.val().contato + '</p>');
+
+            $('#detalhes').append(p1)
+            $('#detalhes').append(p2)
+            $('#detalhes').append(p3)
+            $('#detalhes').append(p4)
+        })
+}
+*/

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     const nomeAdm = sessionStorage.getItem("NOME_ADM")
     $('#bemvindo').html("Bem vindo, " + nomeAdm + "!")
     mostrarPedidos()
@@ -20,34 +20,23 @@ function mostrarPedidos() {
         });
 
     })
-
     var userList = document.getElementById('usersList')
-
     rootRef.child("pedidos").on('value', function (snapshot) {
-
         usersList.innerHTML = '';
         snapshot.forEach(function (item) {
-
             var tr = document.createElement('tr');
-
             var td1 = document.createElement('td');
             var td2 = document.createElement('td');
             var td3 = document.createElement('td');
             var td4 = document.createElement('td');
-
             td1.append(item.val().nome);
-
             td2.append(item.val().email);
-
             td3.append(item.val().pedido);
-
             td4.append(item.val().visu);
-
             tr.appendChild(td1);
             tr.appendChild(td2);
             tr.appendChild(td3);
             tr.appendChild(td4);
-
             userList.appendChild(tr);
         });
     });
@@ -64,7 +53,7 @@ function exibicaoEventos() {
             let pText = $('<p class="card-text"></p>');
             let divFooter = $('<div class="card-footer"></div>');
             let small = $('<small class="text-muted"></small>');
-            
+
             /*Dropdown*/
             let div1 = $('<div class="dropdown"></div>')
             let dropdown = criarDropdown(item.val().titulo, item.val().destaque, divCard)
@@ -188,7 +177,7 @@ function exibirNoticias() {
     });
 }
 
-function iniciarBotoes(ref){
+function iniciarBotoes(ref) {
     $('.btn-add-destaque-evt').on("click", function () {
         let titulo = $(this).data("name");
         let r = ref.child(titulo)

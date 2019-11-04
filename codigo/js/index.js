@@ -6,11 +6,11 @@ var stgNoticia = storageRef.child('noticias')
 
 var database = firebase.database();
 
-$(document).ready(function() {
+$(document).ready(function () {
     destaqueEventos()
     destaqueNoticias()
 
-    $(document).on('click', '.titulo-imagens', function(e) {
+    $(document).on('click', '.titulo-imagens', function (e) {
         e.preventDefault;
         clicouevento($(this).text());
     });
@@ -39,10 +39,10 @@ function destaqueEventos() {
 
     console.log("entrou destaques");
 
-    refEvento.on('value', function(snapshot) {
+    refEvento.on('value', function (snapshot) {
         $('#destaque-eventos').html('')
         $('#proximos-eventos').html('')
-        snapshot.forEach(function(item) {
+        snapshot.forEach(function (item) {
 
             if (item.val().destaque == true) {
 
@@ -68,10 +68,10 @@ function destaqueEventos() {
 
                 stgEvento.child(item.val().titulo + "/foto")
                     .getDownloadURL()
-                    .then(function(url) {
+                    .then(function (url) {
                         img.src = url
                         divimg.append(img)
-                    }).catch(function(error) {
+                    }).catch(function (error) {
                         img.src = "rsc/img/retangulo-cinza.png"
                         divimg.append(img)
                     });
@@ -157,30 +157,30 @@ function destaqueEventos() {
 function destaqueNoticias() {
 
     console.log("entrou noticias");
-    
+
     var quadradomaior = "";
     var quadradomedio = "";
     var quadradomenor1 = "";
     var quadradomenor2 = "";
-            
 
-    refNoticia.on('value', function(snapshot) {
+
+    refNoticia.on('value', function (snapshot) {
         $('#destaque-noticias').html('')
-        snapshot.forEach(function(item) {
+        snapshot.forEach(function (item) {
 
-            
+
             if (item.val().destaque == true) {
-                
+
                 console.log("entrou primeiro if")
-                
-                if(quadradomaior == ""){
-                    
+
+                if (quadradomaior == "") {
+
                     console.log("quadrado maior")
-                    
+
                     let divcolmaior = $('<div class="col-md-6 col-sem-margem col-lateral-direita"></div>');
                     let amaior = $('<a href="#"></a>');
                     let divzoommaior = $('<div class="zoom"></div>')
-                    
+
                     let imgmaior = document.createElement('img')
                     imgmaior.setAttribute('class', 'img-responsive cortar1');
                     if (item.val().URLdownloadImg != null) {
@@ -188,12 +188,12 @@ function destaqueNoticias() {
                     } else {
                         imgmaior.src = "../rsc/img/retangulo-cinza.png"
                     }
-                
+
                     let divtextamior = $('<div class="text-item"></div>')
                     let spanmaior = $('<span class="marcador"></span>')
                     let titulomaior = $('<p class="titulo-imagens"></p>')
-                    let descricaomaior = $('<p class="descricao-imagens"></p>')  
-                    
+                    let descricaomaior = $('<p class="descricao-imagens"></p>')
+
                     spanmaior.append("Notícia");
                     titulomaior.append(item.val().titulo);
                     descricaomaior.append(item.val().chamada);
@@ -206,121 +206,116 @@ function destaqueNoticias() {
                     divzoommaior.append(divtextamior);
 
                     amaior.append(divzoommaior);
-                    
+
                     divcolmaior.append(amaior);
-                    
+
                     quadradomaior = item.val().titulo
-                    
+
                     console.log(quadradomaior)
 
                     $('#destaque-noticias').append(divcolmaior);
-                    
-                    
+
+
                 }
-                    
-                    
+
+
                 let divcolfora = $('<div class="col-md-6 col-sem-margem"></div>')
-                  
-                    if(quadradomedio == "" && quadradomaior != item.val().titulo){
-                        
-                        console.log("entroumedio")
-                        
-                        let divcolmedio = $('<div class="col-md-12 col-sem-margem"></div>');
-                        let amedio = $('<a href="#"></a>');
-                        let divzoommedio = $('<div class="zoom mx-auto"></div>')
-                    
-                        let imgmedio = document.createElement('img')
-                        imgmedio.setAttribute('class', 'img-responsive cortar2');
-                        if (item.val().URLdownloadImg != null) {
-                            imgmedio.src = item.val().URLdownloadImg
-                        } else {
-                            imgmedio.src = "../rsc/img/retangulo-cinza.png"
-                        }
-                    
-                        let divtextmedio = $('<div class="text-item"></div>')
-                        let spanmedio = $('<span class="marcador"></span>')
-                        let titulomedio = $('<p class="titulo-imagens"></p>')
-                        let descricaomedio = $('<p class="descricao-imagens"></p>')  
-                    
-                        spanmedio.append("Notícia");
-                        titulomedio.append(item.val().titulo);
-                        descricaomedio.append(item.val().chamada);
-                        divtextmedio.append(spanmedio);
-                        divtextmedio.append(titulomedio);
-                        divtextmedio.append(descricaomedio);
 
-                        divzoommedio.append(imgmedio);
-                        divzoommedio.append(divtextmedio);
+                if (quadradomedio == "" && quadradomaior != item.val().titulo) {
 
-                        amedio.append(divzoommedio);
-                    
-                        divcolmedio.append(amedio);
-                        
-                        divcolfora.append(divcolmedio)
-                        
-                        quadradomedio = item.val().titulo;
-                       
-                        console.log(quadradomedio)
-                        
+                    console.log("entroumedio")
+
+                    let divcolmedio = $('<div class="col-md-12 col-sem-margem"></div>');
+                    let amedio = $('<a href="#"></a>');
+                    let divzoommedio = $('<div class="zoom mx-auto"></div>')
+
+                    let imgmedio = document.createElement('img')
+                    imgmedio.setAttribute('class', 'img-responsive cortar2');
+                    if (item.val().URLdownloadImg != null) {
+                        imgmedio.src = item.val().URLdownloadImg
+                    } else {
+                        imgmedio.src = "../rsc/img/retangulo-cinza.png"
                     }
-                
-                 
-                    if(quadradomenor1 == "" && quadradomedio != item.val().titulo && quadradomaior != item.val().titulo){
-                            
-                        console.log("entroumenor1")
-                        
-                        let divcolmenor1 = $('<div class="col-md-6 col-margem col-sem-margem-bottom col-lateral-esquerda"></div>');
-                        let amenor1 = $('<a href="#"></a>');
-                        let divzoommenor1 = $('<div class="zoom mx-auto"></div>')
-                    
-                        let imgmenor1 = document.createElement('img')
-                        imgmenor1.setAttribute('class', 'img-responsive cortar2');
-                        if (item.val().URLdownloadImg != null) {
-                            imgmenor1.src = item.val().URLdownloadImg
-                        } else {
-                            imgmenor1.src = "../rsc/img/retangulo-cinza.png"
-                        }
-                    
-                        let divtextmenor1 = $('<div class="text-item"></div>')
-                        let spanmenor1 = $('<span class="marcador"></span>')
-                        let titulomenor1 = $('<p class="titulo-imagens"></p>')
-                        let descricaomenor1 = $('<p class="descricao-imagens"></p>')  
-                    
-                        spanmenor1.append("Notícia");
-                        titulomenor1.append(item.val().titulo);
-                        descricaomenor1.append(item.val().chamada);
-                        divtextmenor1.append(spanmenor1);
-                        divtextmenor1.append(titulomenor1);
-                        divtextmenor1.append(descricaomenor1);
 
-                        divzoommenor1.append(imgmenor1);
-                        divzoommenor1.append(divtextmenor1);
+                    let divtextmedio = $('<div class="text-item"></div>')
+                    let spanmedio = $('<span class="marcador"></span>')
+                    let titulomedio = $('<p class="titulo-imagens"></p>')
+                    let descricaomedio = $('<p class="descricao-imagens"></p>')
 
-                        amenor1.append(divzoommenor1);
-                    
-                        divcolmenor1.append(amenor1);
-                        
-                        let divmenores = $('<div class="col-md-12 col-margem col-sem-margem-bottom"></div>')
-                        divmenores.append(divcolmenor1)
-                                                
-                        divcolfora.append(divmenores)
-                    
-                        quadradomenor1 = item.val().titulo;
-                        
-                        console.log(quadradomenor1)
-                        
-                        
-                    
+                    spanmedio.append("Notícia");
+                    titulomedio.append(item.val().titulo);
+                    descricaomedio.append(item.val().chamada);
+                    divtextmedio.append(spanmedio);
+                    divtextmedio.append(titulomedio);
+                    divtextmedio.append(descricaomedio);
+
+                    divzoommedio.append(imgmedio);
+                    divzoommedio.append(divtextmedio);
+
+                    amedio.append(divzoommedio);
+
+                    divcolmedio.append(amedio);
+
+                    divcolfora.append(divcolmedio)
+
+                    quadradomedio = item.val().titulo;
+
+                    console.log(quadradomedio)
+
+                    $('#destaque-noticias').append(divcolfora);
+
+                }
+
+
+                if (quadradomenor1 == "" && quadradomedio != item.val().titulo && quadradomaior != item.val().titulo) {
+
+                    console.log("entroumenor1")
+
+                    let divcolmenor1 = $('<div class="col-md-6 col-margem col-sem-margem-bottom col-lateral-esquerda"></div>');
+                    let amenor1 = $('<a href="#"></a>');
+                    let divzoommenor1 = $('<div class="zoom mx-auto"></div>')
+
+                    let imgmenor1 = document.createElement('img')
+                    imgmenor1.setAttribute('class', 'img-responsive cortar2');
+                    if (item.val().URLdownloadImg != null) {
+                        imgmenor1.src = item.val().URLdownloadImg
+                    } else {
+                        imgmenor1.src = "../rsc/img/retangulo-cinza.png"
                     }
-                
-                        
-                    
-                    $('#destaque-noticias').append(divcolfora);                  
-                   
+
+                    let divtextmenor1 = $('<div class="text-item"></div>')
+                    let spanmenor1 = $('<span class="marcador"></span>')
+                    let titulomenor1 = $('<p class="titulo-imagens"></p>')
+                    let descricaomenor1 = $('<p class="descricao-imagens"></p>')
+
+                    spanmenor1.append("Notícia");
+                    titulomenor1.append(item.val().titulo);
+                    descricaomenor1.append(item.val().chamada);
+                    divtextmenor1.append(spanmenor1);
+                    divtextmenor1.append(titulomenor1);
+                    divtextmenor1.append(descricaomenor1);
+
+                    divzoommenor1.append(imgmenor1);
+                    divzoommenor1.append(divtextmenor1);
+
+                    amenor1.append(divzoommenor1);
+
+                    divcolmenor1.append(amenor1);
+
+                    let divmenores = $('<div class="col-md-12 col-margem col-sem-margem-bottom"></div>')
+                    divmenores.append(divcolmenor1)
+
+                    divcolfora.append(divmenores)
+
+                    quadradomenor1 = item.val().titulo;
+
+                    console.log(quadradomenor1)
+
+                    $('#destaque-noticias').append(divcolfora);
+
+                }
+
             }
-
-           
-
 
         });
 
@@ -334,7 +329,7 @@ function clicouevento(titulo) {
     console.log("cganou")
     stgEvento.child(titulo + "/foto")
         .getDownloadURL()
-        .then(function(url) {
+        .then(function (url) {
             localStorage.setItem("imagem", url);
             console.log(url);
             refEvento.orderByChild('titulo').equalTo(titulo)
@@ -348,7 +343,7 @@ function clicouevento(titulo) {
                     localStorage.setItem("contato", item.val().contato)
                 })
             window.location.href = "exibirEvento.html";
-        }).catch(function(error) {
+        }).catch(function (error) {
             localStorage.setItem("imagem", "rsc/img/retangulo-cinza.png");
             console.log(url);
             refEvento.orderByChild('titulo').equalTo(titulo)

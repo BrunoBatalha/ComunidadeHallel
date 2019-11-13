@@ -1,5 +1,7 @@
 //Form para cadastro de associados
 
+
+
 $(document).ready(function () {
 
     $('.form-wizard-wrapper').find('.form-wizard-link').click(function () {
@@ -60,6 +62,15 @@ $(document).ready(function () {
     $('.salvar').click(function () {
         criar()
     });
+
+    $('#input-outro-valor').hide();
+    $('#contribuicao-ass').change(function () {
+        if ($('#contribuicao-ass').val() == 'Outro valor') {
+            $('#input-outro-valor').show();
+        } else {
+            $('#input-outro-valor').hide();
+        }
+    });
 });
 
 
@@ -71,12 +82,30 @@ var database = firebase.database();
 
 function criar() {
 
+    var e = document.getElementById("contribuicao-ass");
+    var valorcontribuicao = e.options[e.selectedIndex].text;
+
+    if(valorcontribuicao == 'Outro valor'){
+        valorcontribuicao = $('#input-outro-valor').val()
+    }
+
     var associado = {
         primeiroNome: $('#primeiro-nome-ass').val(),
         segundoNome: $('#primeiro-nome-ass').val(),
         email: $('#email-ass').val(),
         telefone: $('#telefone-ass').val(),
+        cpf: $('#cpf-ass').val(),
+        rg: $('#rg-ass').val(),
+        datadenascimento: $('#dataNasc-ass').val(),
+        profissao: $('#profissao-ass').val(),
+        nacionalidade: $('#nacionalidade-ass').val(),
+        naturalidade: $('#naturalidade-ass').val(),
+        cep: $('#cep-ass').val(),
+        endereco: $('#endereco-ass').val(),
         senha: $('#senha-ass').val(),
+        numerocartao: $('#nmrCartao-ass').val(),
+        validade: $('#validade-ass').val(),
+        CVV: $('#CVV-ass').val()
     }
 
     rootRef.child("associados").child(associado.primeiroNome).set({
@@ -84,7 +113,19 @@ function criar() {
         segundoNome: associado.segundoNome,
         email: associado.email,
         telefone: associado.telefone,
-        senha: associado.senha
+        cpf: associado.cpf,
+        rg: associado.rg,
+        datadenascimento: associado.datadenascimento,
+        profissao: associado.profissao,
+        nacionalidade: associado.nacionalidade,
+        naturalidade: associado.naturalidade,
+        cep: associado.cep,
+        endereco: associado.endereco,
+        senha: associado.senha,
+        numero: associado.numerocartao,
+        validade: associado.validade,
+        CVV: associado.CVV,
+        contribuicao: `R$${valorcontribuicao}`
     });
 
     console.log("cadastrou associado");

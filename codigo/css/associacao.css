@@ -63,7 +63,7 @@ label {
     position: relative;
     padding-top: 8px;
     z-index: 1;
-    margin-top: 100px
+    margin-top: 80px
 }
 
 .form-wizard-wrapper .form-wizardmove-button {
@@ -168,7 +168,7 @@ label {
 .form-wizard-content-wrapper {
     position: relative;
     background-color: #fff;
-    height: 380px;
+    height: 800px;
 }
 
 .text-field {

@@ -5,10 +5,8 @@ $('#inputArquivo').change(function (e) {
     console.log(arquivo)
 })
 
-console.log($('#inputArquivo')[0].file)
 
 function publicar() {
-
     let evento = {
         titulo: $('#titulo').val(),
         data: $('#data').val(),

@@ -141,6 +141,8 @@ function exibirNoticias() {
 
             if (item.val().destaque) {
                 divCard.addClass("border border-danger");
+                divCard.attr("style", "border-width: 200px");
+
                 item2.addClass('rounded border border-danger')
             } else {
                 divCard.addClass("border border-dark");

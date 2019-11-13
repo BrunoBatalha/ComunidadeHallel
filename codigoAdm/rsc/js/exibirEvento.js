@@ -2,6 +2,9 @@ var refEvento = rootRef.child("eventos")
 $(function () {
     let titulo = getTituloEvento(window.location.href);
     exibir(titulo);
+    $('#editarEvento').click(function(){
+        window.location = "editEvento.html?e="+titulo
+    })
 })
 
 function getTituloEvento(url) {
@@ -25,7 +28,5 @@ function exibir(titulo) {
             } else {
                 $('#imagem').attr('src', '../rsc/img/retangulo-cinza.png')
             }
-
         })
-
 }

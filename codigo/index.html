@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap_lux.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/barraDeNavegacao.css">
     <link rel="stylesheet" href="css/rodape.css">
@@ -19,88 +19,48 @@
 
 <body>
     <!-- Inicio do header -->
-    <header class="container" style="background-color: #ffffff;">
-        <div class="cabecalho row">
 
-            <div class="col-md-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">HALLEL</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-
-
-            </div>
-
-            <!-- Imagem Comunidade Hallel -->
-            <div class="col-md-4">
-                <center>
-                    <br>
-                    <img class="d-flex align-items-center" src="rsc/img/hallelpreto.jpg" style="width: 170px; margin-bottom: 20px">
-                    <br>
-                </center>
-            </div>
-
-            <!-- Redes sociais -->
-            <div class="col-md-4">
-
-                <table style="height: 100%;">
-                    <tbody>
-                        <tr>
-
-                            <td class="align-middle">
-
-                                <a href="#">
-                                    <button type="button" class="btn btn-dark">Cadastrar</button>
-                                </a>
-                                <a href="#">
-                                    <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#exampleModal">Login</button>
-                                </a>
-                            </td>
-
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Início
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="associacao.html">Associação</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="formacoes.html">Formações</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="evento.html">Eventos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sobreNos.html">Quem somos?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Liturgia diária</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <a href="#">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="button" style="margin-right: 6px" data-toggle="modal" data-target="#exampleModal">Login</button>
+                </a>
+                <a href="#">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="button">Cadastrar</button>
+                </a>
+            </form>
         </div>
+    </nav>
 
-        <!-- Barra de Navegação -->
-        <nav class="barraNav navbar-expand-md" id="navbar">
-            <!-- Recolher navbar -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barraDeNavegacao">
-                <span class="fa fa-bars" style="color: rgb(0, 0, 0); font-size: 25px;"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="barraDeNavegacao" style="color: white; font-size: 14px;">
-
-                <!-- Link da navbar -->
-
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a class="nav-link nav-i" href="#">INÍCIO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-i" href="associacao.html">ASSOCIAÇÃO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-i" href="formacoes.html">FORMAÇÕES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-i" href="evento.html">EVENTOS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-i" href="quemsomos.html">QUEM SOMOS?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-i" href="liturgiadiaria.html">LITURGIA DIÁRIA</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link nav-i" href="loja.html">LOJA HALLEL</a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </nav>
-    </header>
     <!-- Fim do header -->
 
     <!-- Modal -->
@@ -234,12 +194,9 @@
 
         <div class="row">
 
-
-
             <div class="col-md-9">
 
                 <div class="titulo">Pedidos de oração</div>
-
 
                 <br>
                 <form action="javascript:criar();">
@@ -250,14 +207,15 @@
 
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Insira seu email (Ex: nome@exemplo.com)">
+                        <input type="email" class="form-control" id="email" placeholder="Insira seu email">
+                        <small id="emailHelp" class="form-text text-muted">Exemplo: nome@exemplo.com</small>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Seu pedido</label>
-                        <textarea class="form-control" id="pedido" rows="3"></textarea>
+                        <textarea class="form-control" id="pedido" rows="3" placeholder="Faça seu pedido"></textarea>
                     </div>
-                    <input type="submit" id="btn_enviar" class="btn btn-info">
+                    <input type="submit" id="btn_enviar" class="btn btn-primary float-right">
                 </form>
 
             </div>

@@ -64,11 +64,14 @@ $(document).ready(function () {
     });
 
     $('#input-outro-valor').hide();
+    document.getElementById("texto-outro-valor").style.display = 'none';
     $('#contribuicao-ass').change(function () {
         if ($('#contribuicao-ass').val() == 'Outro valor') {
             $('#input-outro-valor').show();
+            document.getElementById("texto-outro-valor").style.display = 'block';
         } else {
             $('#input-outro-valor').hide();
+            document.getElementById("texto-outro-valor").style.display = 'none';
         }
     });
 });
@@ -85,7 +88,7 @@ function criar() {
     var e = document.getElementById("contribuicao-ass");
     var valorcontribuicao = e.options[e.selectedIndex].text;
 
-    if(valorcontribuicao == 'Outro valor'){
+    if (valorcontribuicao == 'Outro valor') {
         valorcontribuicao = $('#input-outro-valor').val()
     }
 

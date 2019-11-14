@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap_lux.min.css">
     <link rel="stylesheet" href="css/associacao.css">
     <link rel="stylesheet" href="css/rodape.css">
     <link rel="stylesheet" href="css/carrossel.css">
@@ -18,43 +18,48 @@
 
 <body>
     <!-- Inicio do header -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Hallel</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">HALLEL</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarText">
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Início</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Início
+                        <span class="sr-only">(current)</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="associacao.html">Associação</a>
+                    <a class="nav-link" href="#">Associação</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="formacoes.html">Formações</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Eventos</a>
+                    <a class="nav-link" href="evento.html">Eventos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="quemsomos.html">Quem somos?</a>
+                    <a class="nav-link" href="sobreNos.html">Quem somos?</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="liturgiadiaria.html">Liturgia diária</a>
+                    <a class="nav-link" href="#">Liturgia diária</a>
                 </li>
             </ul>
-            <span class="navbar-text">
+            <form class="form-inline my-2 my-lg-0">
                 <a href="#">
-                    <button type="button" class="btn btn-light">Cadastrar</button>
+                    <button class="btn btn-secondary my-2 my-sm-0" type="button" style="margin-right: 6px" data-toggle="modal" data-target="#exampleModal">Login</button>
                 </a>
                 <a href="#">
-                    <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#exampleModal">Login</button>
+                    <button class="btn btn-secondary my-2 my-sm-0" type="button">Cadastrar</button>
                 </a>
-            </span>
+            </form>
         </div>
     </nav>
+
     <!-- Fim do header -->
 
     <!-- Associação -->
@@ -208,7 +213,7 @@
                             <small id="quota-minima" class="form-text text-muted">Quota mínima (R$20,00)</small>
                         </div>
                         <div class="form-column">
-                            <label for="" id="texto-outro-valor">Informe o valor (caso queria doar outro valor):</label>
+                            <label for="" id="texto-outro-valor">Valor</label>
                             <input type="text" class="text-field" placeholder="Informe o valor" id="input-outro-valor">
                         </div>
 
@@ -228,18 +233,16 @@
                     <div class="form-row">
 
                         <div class="form-group form-check" style="margin-left: 16px; margin-top: 30px">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <input type="checkbox" class="form-check-input" id="recorrentes-box" required>
                             <label class="form-check-label" for="exampleCheck1">Estou ciente de que os pagamentos são recorrentes.</label>
                         </div>
                         <div class="form-group form-check" style="margin-left: 16px;">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <input type="checkbox" class="form-check-input" id="compromisso-box" required>
                             <label class="form-check-label" for="exampleCheck1">Declaro sob compromisso que as informações que preenchi nesta Ficha de Inscrição são verdadeiras,
                                 assim como declaro conhecer e cumprir os estatutos e regulamentos internos da Associação
                                 Civil e da Associação Pública de Fiéis.</label>
                         </div>
-                        
 
-                        
                         <div class="full-wdth clearfix">
                             <a href="javascript:;" class="form-wizard-previous-btn float-left">Anterior</a>
                             <a href="javascript:;" class="form-wizard-next-btn float-right salvar">Salvar</a>

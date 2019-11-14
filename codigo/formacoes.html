@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap_lux.min.css">
     <link rel="stylesheet" href="css/evento.css">
     <link rel="stylesheet" href="css/rodape.css">
     <link rel="stylesheet" href="css/carrossel.css">
@@ -18,39 +18,48 @@
 
 <body>
     <!-- Inicio do header -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Hallel</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">HALLEL</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarText">
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Início</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Início
+                        <span class="sr-only">(current)</span>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="associacao.html">Associação</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="formacoes.html">Formações</a>
+                    <a class="nav-link" href="#">Formações</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Eventos</a>
+                    <a class="nav-link" href="evento.html">Eventos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="quemsomos.html">Quem somos?</a>
+                    <a class="nav-link" href="sobreNos.html">Quem somos?</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="liturgiadiaria.html">Liturgia diária</a>
+                    <a class="nav-link" href="#">Liturgia diária</a>
                 </li>
             </ul>
-            <span class="navbar-text">
-                <a href="#"><button type="button" class="btn btn-light">Cadastrar</button></a>
-                <a href="#"><button type="button" class="btn btn-outline-light" data-toggle="modal"
-                        data-target="#exampleModal">Login</button></a>
-            </span>
+            <form class="form-inline my-2 my-lg-0">
+                <a href="#">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="button" style="margin-right: 6px" data-toggle="modal" data-target="#exampleModal">Login</button>
+                </a>
+                <a href="#">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="button">Cadastrar</button>
+                </a>
+            </form>
         </div>
     </nav>
+
     <!-- Fim do header -->
 
     <!-- Modal -->

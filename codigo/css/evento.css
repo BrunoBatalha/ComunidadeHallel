@@ -30,7 +30,7 @@ a:hover {
     bottom: 0;
     left: 0;
     content: "";
-    background: linear-gradient(0deg,rgba(0,0,0,1),rgba(0,0,0,.5) 40%,rgba(0,0,0,0) 80%,rgba(0,0,0,0));
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5) 40%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0));
     z-index: 1;
 }
 
@@ -38,17 +38,17 @@ a:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+    cursor: pointer
 }
 
 .text-item {
     position: absolute;
     left: 5%;
     right: 5%;
-    bottom: 20px;
+    bottom: 5px;
     z-index: 10;
     padding-top: 20px;
-    padding-bottom: 20px;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+   
 }
 
 .cortar1 {
@@ -95,7 +95,7 @@ a:hover {
 }
 
 .col-borda-menor {
-    padding: 5px
+    padding: 5px;
 }
 
 .titulo {
@@ -120,12 +120,6 @@ a:hover {
     font-size: 14px
 }
 
-.contralizar {
-    display: block;
-    margin-left: auto;
-    margin-right: auto
-}
-
 .marcador {
     color: black;
     background-color: white;
@@ -137,6 +131,8 @@ a:hover {
     color: white;
     font-size: 16px;
     margin-top: 15px;
+    cursor: pointer;
+    margin-bottom: 3px
 }
 
 .descricao-imagens {

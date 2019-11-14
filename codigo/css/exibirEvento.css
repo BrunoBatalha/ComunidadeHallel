@@ -8,14 +8,6 @@ body {
     font-size: 13px;
 }
 
-a {
-    color: white;
-}
-
-a:hover {
-    text-decoration: none;
-    color: #9b9b9b;
-}
 
 .zoom {
     overflow: hidden;
@@ -115,4 +107,8 @@ a:hover {
 
 .baixo{
     bottom: 0px
+}
+
+.bold{
+    font-weight: bolder;
 }

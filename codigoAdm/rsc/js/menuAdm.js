@@ -2,50 +2,56 @@ var key;
 
 $(document).ready(function () {
     const nomeAdm = sessionStorage.getItem("NOME_ADM")
-    $('#bemvindo').html("Bem vindo, " + nomeAdm + "!")
+    $('#bemvindo').html("Bem vindo(a), " + nomeAdm + "!")
     mostrarPedidos()
-    exibicaoEventos()
+    exibicaoEventos(false)
     exibirNoticias()
 });
 
-$(document).on('click','.visualizar',function(){
+$(document).on('click', '.visualizar', function () {
     key = $(this).data('name');
-    refPedidos.child(key).once('value', snap =>{
-        var pedido = snap.val();
+    refPedidos.child(key).once('value', snap => {
+        let pedido = snap.val();
         $('#informacoes #nome-modal').val(pedido.nome)
         $('#informacoes #mensagem-modal').val(pedido.pedido)
-        if(pedido.visualizado){
+        if (pedido.visualizado) {
             $('#btn-visualizou').addClass('disabled')
-        }else{
+        } else {
             $('#btn-visualizou').removeClass('disabled')
         }
     })
     $('#informacoes').modal('toggle')
-}) 
+})
 
-$(document).on('click','#btn-visualizou',function(){
-    refPedidos.child(key).update({visualizado: true})
+$(document).on('click', '#btn-visualizou', function () {
+    refPedidos.child(key).update({
+        visualizado: true
+    })
     $('#informacoes').modal('toggle')
 })
 
+$(document).on('input', '#pesquisa-evento', function () {
+    let valor = $(this).val()
+    pesquisar(valor)
+})
 
 function mostrarPedidos() {
-      refPedidos.on('value', function (snapshot) {
+    refPedidos.on('value', function (snapshot) {
         $('#usersList').html('')
         snapshot.forEach(function (item) {
-            var pedido_key = item.key
-            var pedido = item.val()
-            var tr = $('<tr></tr>')
-            var td1 = $('<td class="align-middle">'+pedido.nome+'</td>')
-            var td2 = $('<td class="align-middle">'+pedido.email+'</td>')
-            var td3 = $('<td class="align-middle">'+pedido.pedido+'</td>')
-            var td4 = $('<td class="text-center"></td>')
-            var btn = $('<button class="btn visualizar" data-name="'+pedido_key+'"></button>')
-            
-            if(pedido.visualizado){
+            let pedido_key = item.key
+            let pedido = item.val()
+            let tr = $('<tr></tr>')
+            let td1 = $('<td class="align-middle">' + pedido.nome + '</td>')
+            let td2 = $('<td class="align-middle">' + pedido.email + '</td>')
+            let td3 = $('<td class="align-middle">' + pedido.pedido + '</td>')
+            let td4 = $('<td class="text-center"></td>')
+            let btn = $('<button class="btn visualizar" data-name="' + pedido_key + '"></button>')
+
+            if (pedido.visualizado) {
                 btn.addClass('btn-success').html('Visualizado')
                 console.debug(pedido.visualizado)
-            }else{
+            } else {
                 btn.addClass('btn-danger').html('Não visualizado')
                 console.debug(pedido.visualizado)
             }
@@ -60,11 +66,14 @@ function mostrarPedidos() {
     });
 }
 
-function exibicaoEventos() {
+function exibicaoEventos(strFiltro) {
     refEventos.on('value', function (snapshot) {
-        $('#cards-eventos').html('')
+        if(!strFiltro){
+            $('#cards-eventos').html('')
+        }
         snapshot.forEach(function (item) {
-            let divCol = $('<div class="col-sm-6 col-md-4 col-xl-3 mb-3  justify-content-center"></div>');
+
+            let divCol = $('<div class="xx col-sm-6 col-md-4 col-xl-3 mb-3  justify-content-center"></div>');
             let divCard = $('<div class="card w-80 filterDiv ' + item.val().titulo + '"></div>');
             let divBody = $('<div class="card-body"></div>');
             let h5Titulo = $('<h5 class="card-title"></h5>');
@@ -103,7 +112,11 @@ function exibicaoEventos() {
             divCard.append(divFooter)
             divCol.append(divCard)
             iniciarBotoes(refEventos)
-            $('#cards-eventos').append(divCol)
+            if (strFiltro == item.val().titulo) {
+                $('#cards-eventos').append(divCol)
+            }else if (!strFiltro) {
+                $('#cards-eventos').append(divCol)
+            }
         });
     });
 }
@@ -245,28 +258,47 @@ function setDestaque(estado, ref) {
     ref.update({
         "destaque": estado
     })
+    pesquisar($('#pesquisa-evento').val())
 }
 
 function converteTimerStamp(UNIX_timestamp) {
-    var a = new Date(UNIX_timestamp);
-    var months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
-    var year = a.getFullYear();
-    var month = months[a.getMonth()];
-    var date = a.getDate();
-    var hour = a.getHours();
-    var min = a.getMinutes();
-    var sec = a.getSeconds();
-    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
+    let a = new Date(UNIX_timestamp);
+    let months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+    let year = a.getFullYear();
+    let month = months[a.getMonth()];
+    let date = a.getDate();
+    let hour = a.getHours();
+    let min = a.getMinutes();
+    let sec = a.getSeconds();
+    let time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
     return time;
 }
 
-function pesquisar() {
-    var string = $('#pesquisa-evento').val()
-    var evento = string.split(" ")
-    for (i in evento) {
-        console.log(evento[i])
+function pesquisar(strPesq) {
+    if (strPesq != "") {
+        let aba = 'eventos'
+        let ref;
+        switch (aba) {
+            case 'eventos': {
+                ref = refEventos.orderByChild('titulo');
+                break;
+            }
+        }
+
+        ref.startAt(strPesq)
+            .endAt(strPesq + '\uf8ff')
+            .once('value', function (snapshot) {
+                $('#cards-eventos').html('')
+                snapshot.forEach(function (item) {
+                    let pedido = item.val()
+                    console.debug(pedido)
+                    exibicaoEventos(pedido.titulo)
+                    //console.debug($('.xx:contains(' + pedido.titulo + ')').remove())
+                })
+            })
+    }else{
+        exibicaoEventos(false)
     }
-    filterSelection(evento[0])
 }
 
 /* TODO: utilizar isso em formações*/

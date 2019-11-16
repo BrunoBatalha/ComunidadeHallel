@@ -35,11 +35,11 @@ function mostrarPedidos() {
         snapshot.forEach(function (item) {
             var pedido_key = item.key
             var pedido = item.val()
-            var tr = $('<tr ></tr>')
-            var td1 = $('<td></td>')
-            var td2 = $('<td></td>')
-            var td3 = $('<td></td>')
-            var td4 = $('<td></td>')
+            var tr = $('<tr></tr>')
+            var td1 = $('<td class="align-middle">'+pedido.nome+'</td>')
+            var td2 = $('<td class="align-middle">'+pedido.email+'</td>')
+            var td3 = $('<td class="align-middle">'+pedido.pedido+'</td>')
+            var td4 = $('<td class="text-center"></td>')
             var btn = $('<button class="btn visualizar" data-name="'+pedido_key+'"></button>')
             
             if(pedido.visualizado){
@@ -50,9 +50,6 @@ function mostrarPedidos() {
                 console.debug(pedido.visualizado)
             }
 
-            td1.html(pedido.nome);
-            td2.html(pedido.email);
-            td3.html(pedido.pedido);
             td4.append(btn);
             tr.append(td1);
             tr.append(td2);

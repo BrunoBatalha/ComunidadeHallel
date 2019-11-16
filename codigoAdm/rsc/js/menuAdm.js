@@ -260,7 +260,7 @@ function setDestaque(estado, ref) {
     })
     pesquisar($('#pesquisa-evento').val())
 }
-
+ 
 function converteTimerStamp(UNIX_timestamp) {
     let a = new Date(UNIX_timestamp);
     let months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];

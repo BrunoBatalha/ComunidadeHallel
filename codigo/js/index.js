@@ -25,11 +25,11 @@ function criar() {
         pedido: $('#pedido').val()
     }
 
-    rootRef.child("pedidos").child(pedido.nome).set({
+    rootRef.child("pedidos").push().set({
         nome: pedido.nome,
         email: pedido.email,
         pedido: pedido.pedido,
-        visu: "não"
+        visualizado: false
     });
 
     console.log("cadastrou");

@@ -6,38 +6,37 @@ $(document).ready(function () {
     exibirNoticias()
 });
 
-function mostrarPedidos() {
-    $("tr").click(function () {
-        $(this).find('td').each(function (i) {
-            $th = $("thead th")[i];
-            if (jQuery($th).text() == "Nome") {
-                $("#nome").val($(this).html());
-            }
-            if (jQuery($th).text() == "Pedido") {
-                $("#pedido").val($(this).html());
-            }
-            $('#informacoes').modal('show')
-        });
+$(document).on('click','.visualizar',function(){
+    console.debug($(this).data('name'))
+}) 
 
-    })
-    var userList = document.getElementById('usersList')
-    rootRef.child("pedidos").on('value', function (snapshot) {
-        usersList.innerHTML = '';
+function mostrarPedidos() {
+      refPedidos.on('value', function (snapshot) {
+        $('#usersList').html('')
         snapshot.forEach(function (item) {
-            var tr = document.createElement('tr');
-            var td1 = document.createElement('td');
-            var td2 = document.createElement('td');
-            var td3 = document.createElement('td');
-            var td4 = document.createElement('td');
-            td1.append(item.val().nome);
-            td2.append(item.val().email);
-            td3.append(item.val().pedido);
-            td4.append(item.val().visu);
-            tr.appendChild(td1);
-            tr.appendChild(td2);
-            tr.appendChild(td3);
-            tr.appendChild(td4);
-            userList.appendChild(tr);
+            var pedido_key = item.key
+            var pedido = item.val()
+            var tr = $('<tr ></tr>')
+            var td1 = $('<td></td>')
+            var td2 = $('<td></td>')
+            var td3 = $('<td></td>')
+            var td4 = $('<td></td>')
+            var btn = $('<button class="btn visualizar" data-name="'+pedido_key+'"></button>')
+            if(pedido.visualizado){
+                btn.addClass('btn-success').html('Visualizado')
+            }else{
+                btn.addClass('btn-danger').html('Não visualizado')
+            }
+
+            td1.html(pedido.nome);
+            td2.html(pedido.email);
+            td3.html(pedido.pedido);
+            td4.append(btn);
+            tr.append(td1);
+            tr.append(td2);
+            tr.append(td3);
+            tr.append(td4);
+            $('#usersList').append(tr);
         });
     });
 }
@@ -68,7 +67,7 @@ function exibicaoEventos() {
             divFooter.append("Atualizado em " + data);
             divcol1.append(h5Titulo)
             let tituloCodificado = item.val().titulo.replace(' ', '&')
-            let linkver = $('<a href="exibirEvento.html?e=' + tituloCodificado + '"><i class="fas fa-edit  text-dark"></i></a>')
+            let linkver = $('<a href="exibirEvento.html?e=' + tituloCodificado + '" title="Editar"><i class="fas fa-edit  text-dark"></i></a>')
             divcol2.append(linkver)
             divrow.append(divcol1)
             divrow.append(divcol2)
@@ -133,7 +132,7 @@ function exibirNoticias() {
             divcol1.append(h5Titulo)
             let divcol2 = $('<div class="col-sm-2 text-right"></div>')
             let tituloCodificado = item.val().titulo.replace(' ', '&')
-            let linkver = $('<a href="exibirEvento.html?e=' + tituloCodificado + '"><i class="fas fa-edit  text-dark"></i></a>')
+            let linkver = $('<a href="exibirEvento.html?e=' + tituloCodificado + '"  title="Editar"><i class="fas fa-edit  text-dark"></i></a>')
             divcol2.append(linkver)
 
             divrow.append(divcol1)
@@ -251,7 +250,8 @@ function pesquisar() {
     filterSelection(evento[0])
 }
 
-/* TODO: utilizar isso em formações
+/* TODO: utilizar isso em formações*/
+/*
     $(document).on('click', '.td-clicavel', function (e) {
         e.preventDefault;
         procurarEvento($(this).text())

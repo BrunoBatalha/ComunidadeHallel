@@ -1,3 +1,5 @@
+var key;
+
 $(document).ready(function () {
     const nomeAdm = sessionStorage.getItem("NOME_ADM")
     $('#bemvindo').html("Bem vindo, " + nomeAdm + "!")
@@ -7,8 +9,25 @@ $(document).ready(function () {
 });
 
 $(document).on('click','.visualizar',function(){
-    console.debug($(this).data('name'))
+    key = $(this).data('name');
+    refPedidos.child(key).once('value', snap =>{
+        var pedido = snap.val();
+        $('#informacoes #nome-modal').val(pedido.nome)
+        $('#informacoes #mensagem-modal').val(pedido.pedido)
+        if(pedido.visualizado){
+            $('#btn-visualizou').addClass('disabled')
+        }else{
+            $('#btn-visualizou').removeClass('disabled')
+        }
+    })
+    $('#informacoes').modal('toggle')
 }) 
+
+$(document).on('click','#btn-visualizou',function(){
+    refPedidos.child(key).update({visualizado: true})
+    $('#informacoes').modal('toggle')
+})
+
 
 function mostrarPedidos() {
       refPedidos.on('value', function (snapshot) {
@@ -22,10 +41,13 @@ function mostrarPedidos() {
             var td3 = $('<td></td>')
             var td4 = $('<td></td>')
             var btn = $('<button class="btn visualizar" data-name="'+pedido_key+'"></button>')
+            
             if(pedido.visualizado){
                 btn.addClass('btn-success').html('Visualizado')
+                console.debug(pedido.visualizado)
             }else{
                 btn.addClass('btn-danger').html('Não visualizado')
+                console.debug(pedido.visualizado)
             }
 
             td1.html(pedido.nome);

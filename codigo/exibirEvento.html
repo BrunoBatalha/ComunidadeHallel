@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/bootstrap_lux.min.css">
     <link rel="stylesheet" href="css/rodape.css">
     <link rel="stylesheet" href="css/carrossel.css">
-    
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="css/scroll.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
@@ -21,8 +21,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#">HALLEL</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
-            aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -51,7 +50,7 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <a href="#">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="button" style="margin-right: 6px" data-toggle="modal" data-target="#exampleModal">Login</button>
+                    <button class="btn btn-secondary my-2 my-sm-0" type="button" style="margin-right: 6px">Login</button>
                 </a>
                 <a href="#">
                     <button class="btn btn-secondary my-2 my-sm-0" type="button">Cadastrar</button>
@@ -62,53 +61,7 @@
 
     <!-- Fim do header -->
 
-    <!-- Modal -->
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
-        style="margin-top: 5%">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="col-auto">
-                        <label class="sr-only" for="inlineFormInputGroup">Nome de usuário</label>
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <i class="fas fa-user"></i>
-                                </div>
-                            </div>
-                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Insira seu nome de usuário">
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <label class="sr-only" for="inlineFormInputGroup">Senha</label>
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <i class="fas fa-key"></i>
-                                </div>
-                            </div>
-                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Insira sua senha">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <a href="principal.html">
-                        <button type="button" class="btn btn-primary">Login</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Fim do modal -->
 
     <!-- Início do home -->
 
@@ -130,30 +83,32 @@
 
             <div class="col-md-4">
 
-                <p>
+                <p style="font-weight: bolder;">
                     <b>Nome do evento:</b>
                 </p>
-                <p id="nome-evento" class="bold">aaaaaa</p>
-                <p>
+                <p id="nome-evento">aaaaaa</p>
+                <p style="font-weight: bolder;">
                     <b>Local:</b>
                 </p>
-                <p id="local-evento" class="bold"> aaaaaa</p>
-                <p>
+                <p id="local-evento"> aaaaaa</p>
+                <p style="font-weight: bolder;">
                     <b>Data:</b>
                 </p>
-                <p id="data-evento" class="bold"> aaaaaa</p>
+                <p id="data-evento"> aaaaaa</p>
 
             </div>
             <div class="col-md-4">
 
-                <p>
+                <p style="font-weight: bolder;">
                     <b>Organizadores:</b>
                 </p>
-                <p id="organizadores-evento" class="bold">aaaaaa</p>
-                <p>
+                <p id="organizadores-evento">aaaaaa</p>
+                <p style="font-weight: bolder;">
                     <b>Contato:</b>
                 </p>
-                <p id="contato-evento" class="bold"> aaaaaa</p>
+                <p id="contato-evento"> aaaaaa</p>
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Inscrever-me</button>
 
             </div>
 
@@ -161,7 +116,7 @@
 
         <br>
 
-        <div class="col-md-12">
+        <div class=" col-md-12 ">
             <br>
             <br>
             <center>
@@ -176,40 +131,86 @@
 
     <!-- Fim do home -->
 
+    <!-- Modal de inscrição -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Inscrição</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form method="post" action="javascript:inscrever()">
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="nome-insc">Nome</label>
+                            <input type="text" class="form-control" id="nome-insc" placeholder="Insira seu nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="email-insc">Email</label>
+                            <input type="email" class="form-control" id="email-insc" placeholder="Insira seu email">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone-insc">Telefone</label>
+                            <input type="tel" class="form-control" id="telefone-insc" placeholder="Insira seu numero de telefone">
+                        </div>
+                        <div class="form-group">
+                            <label for="cpf-insc">CPF</label>
+                            <input type="text" class="form-control" id="cpf-insc" placeholder="Insira seu CPF">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#">
+                            <input type="submit" class="btn btn-primary" value="Inscrever-me">
+                        </a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fim do modal de inscrição -->
+
     <!-- Inicio do Footer -->
-    <footer class="page-footer font-small pt-3 rodape container-fluid">
+    <footer class="page-footer font-small pt-3 rodape container-fluid ">
         <br>
-        <div class="row">
-            <div class="col-md-4">
+        <div class="row ">
+            <div class="col-md-4 ">
                 <!-- Content -->
-                <p style="color: #9F9F9F">CONHEÇA A COMUNIDADE</p>
+                <p style="color: #9F9F9F ">CONHEÇA A COMUNIDADE</p>
                 <p>
-                    <a href="#">Nossa história</a>
+                    <a href="# ">Nossa história</a>
                 </p>
                 <p>
-                    <a href="#">Visite-nos</a>
+                    <a href="# ">Visite-nos</a>
                 </p>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4 ">
 
                 <center>
                     <br>
-                    <img class="d-flex align-items-center" src="rsc/img/hallelbranco.jpg" style="width: 100px;">
+                    <img class="d-flex align-items-center " src="rsc/img/hallelbranco.jpg " style="width: 100px; ">
                     <br>
                 </center>
 
             </div>
 
-            <div class="col-md-4 text-right">
-                <p style="color: #9F9F9F">CONTATOS</p>
+            <div class="col-md-4 text-right ">
+                <p style="color: #9F9F9F ">CONTATOS</p>
                 <p>
                     comunidadehallel95@gmail.com
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope "></i>
                 </p>
                 <p>
                     (92) 3085-1787
-                    <span class="fa fa-phone"></span>
+                    <span class="fa fa-phone "></span>
                 </p>
             </div>
         </div>
@@ -217,15 +218,15 @@
     </footer>
     <!-- Fim do Footer -->
 
-    <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript " src="js/jquery-3.4.0.min.js "></script>
+    <script type="text/javascript " src="js/bootstrap.min.js "></script>
 
-    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
-    <script src="js/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js "></script>
+    <script src="js/firebase.js "></script>
 
-    <script type="text/javascript" src="js/exibirEvento.js"></script>
-    <script type="text/javascript" src="js/scroll.js"></script>
+    <script type="text/javascript " src="js/exibirEvento.js "></script>
+    <script type="text/javascript " src="js/scroll.js "></script>
 </body>
 
 </html>

@@ -1,9 +1,11 @@
 var refEvento = rootRef.child("eventos")
-$(function () {
+var tituloEvento = ""
+
+$(function() {
     let titulo = getTituloEvento(window.location.href);
     exibir(titulo);
-    $('#editarEvento').click(function(){
-        window.location = "editEvento.html?e="+titulo
+    $('#editarEvento').click(function() {
+        window.location = "editEvento.html?e=" + titulo
     })
 })
 
@@ -16,6 +18,9 @@ function getTituloEvento(url) {
 function exibir(titulo) {
     refEvento.orderByChild('titulo').equalTo(titulo)
         .once('child_added', snap => {
+
+            tituloEvento = snap.val().titulo
+
             $('#titulo').html(snap.val().titulo);
             $('#data').html('<b>Data:</b> ' + snap.val().data);
             $('#descricao').html(snap.val().descricao);
@@ -29,4 +34,11 @@ function exibir(titulo) {
                 $('#imagem').attr('src', '../rsc/img/retangulo-cinza.png')
             }
         })
+}
+
+function inscricoes() {
+
+    localStorage.setItem("titulo", tituloEvento);
+    window.location.href = "exibirInscritos.html";
+
 }

@@ -8,7 +8,6 @@ body {
     font-size: 13px;
 }
 
-
 .zoom {
     overflow: hidden;
 }
@@ -105,10 +104,10 @@ body {
     margin-right: auto
 }
 
-.baixo{
+.baixo {
     bottom: 0px
 }
 
-.bold{
+.bold {
     font-weight: bolder;
 }

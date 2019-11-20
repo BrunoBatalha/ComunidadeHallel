@@ -17,7 +17,6 @@ body {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%;
-  
 }
 
 .full-wdth {
@@ -79,7 +78,6 @@ label {
     -ms-transition: all 0.5s cubic-bezier(0.29, 1.42, 0.79, 1) 0s;
     -o-transition: all 0.5s cubic-bezier(0.29, 1.42, 0.79, 1) 0s;
     transition: all 0.5s cubic-bezier(0.29, 1.42, 0.79, 1) 0s;
-
 }
 
 .form-wizard-wrapper ul {
@@ -91,7 +89,6 @@ label {
     position: relative;
     margin: 0;
     padding: 0;
-    
 }
 
 .form-wizard-wrapper ul li {
@@ -100,7 +97,6 @@ label {
     text-align: center;
     display: flex;
     justify-content: center;
-    
 }
 
 .form-wizard-wrapper ul li a {
@@ -155,7 +151,6 @@ label {
     color: #ffffff;
     display: inline-block;
     padding: 6px 26px;
-    
     margin-top: 20px;
     text-decoration: none;
 }
@@ -168,31 +163,23 @@ label {
 .form-wizard-content-wrapper {
     position: relative;
     background-color: #fff;
-    height: 800px;
+    height: 850px;
 }
 
 .text-field {
     display: block;
     width: 100%;
     padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .page-footer {
     margin-bottom: 0px;
 }
 
-.a-bot{
+.a-bot {
     color: #ffffff;
 }
 
-.a-bot:hover{
+.a-bot:hover {
     color: #797979;
 }

@@ -43,14 +43,18 @@
                     <p id="contato"></p>
                 </div>
                 <hr>
-                <div class="form-group col-sm-12">
-                    <a href="#" style="color:#999999;"><button class="btn btn-vinho btn-block">Visualizar inscrições</button></a>
-                </div>
+                <form action="javascript:inscricoes()">
+                    <div class="form-group col-sm-12">
+                        <input type="submit" class="btn btn-vinho btn-block" value="Visualizar inscrições">
+
+                    </div>
+                </form>
                 <div class="form-group col-sm-12">
                     <button id="editarEvento" class="btn btn-vinho btn-block">Editar evento</button>
                 </div>
                 <div class="form-group col-sm-12">
-                    <a href="#" style="color:#999999;"><button class="btn btn-vinho btn-block">Apagar evento</button></a>
+                    <a href="#" style="color:#999999;"><button class="btn btn-vinho btn-block">Apagar
+                            evento</button></a>
                 </div>
             </div>
             <div class="col-sm-7 row">
@@ -76,4 +80,6 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
     <script src="../rsc/js/firebase.js"></script>
     <script src="../rsc/js/exibirEvento.js"></script>
-</body></html>
+</body>
+
+</html>

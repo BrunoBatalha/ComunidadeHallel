@@ -1,5 +1,7 @@
 $(document).ready(function() {
     exibirEvento()
+
+    $('#confirmacao').hide();
 });
 var refEvento = rootRef.child("eventos")
 
@@ -43,6 +45,14 @@ function verificarExistenciaInscricao(inscricao) {
             alert("Este cpf já foi cadastrado")
         } else {
             enviarInscricao(inscricao)
+
+            $('nome-insc').val = ''
+            $('email-insc').val = ''
+            $('telefone-insc').val("")
+            $('cpf-insc').val("")
+
+            $('#confirmacao').show();
+        
         }
     })
 }

@@ -64,7 +64,9 @@ function atualizar() {
     if (arquivo == null) {
         refEventos.update(evento)
         alert('Evento atualizado com sucesso')
-        window.location = '../rsc/menuAdm.html'
+        window.location = '../web/menuAdm.html'
+        console.log(window.location)
+        alert('Evento atualizado com sucesso1')
     } else {
         stgEventos.put(arquivo).then(function (snapshot) {
             stgEventos.getDownloadURL().then(function (url) {
@@ -74,6 +76,8 @@ function atualizar() {
                 
                 alert('Evento atualizado com sucesso')
                 window.location = '../web/menuAdm.html'
+                console.log(window.location)
+                
             })
         }).catch(function (error) {
             alert('Ocorreu um erro: ' + error.message)

@@ -1,14 +1,15 @@
 var key;
 
-$(document).ready(function () {
+$(document).ready(function() {
     const nomeAdm = sessionStorage.getItem("NOME_ADM")
     $('#bemvindo').html("Bem vindo(a), " + nomeAdm + "!")
     mostrarPedidos()
     exibicaoEventos(false)
     exibirNoticias()
+    mostrarAssociados()
 });
 
-$(document).on('click', '.visualizar', function () {
+$(document).on('click', '.visualizar', function() {
     key = $(this).data('name');
     refPedidos.child(key).once('value', snap => {
         let pedido = snap.val();
@@ -23,22 +24,22 @@ $(document).on('click', '.visualizar', function () {
     $('#informacoes').modal('toggle')
 })
 
-$(document).on('click', '#btn-visualizou', function () {
+$(document).on('click', '#btn-visualizou', function() {
     refPedidos.child(key).update({
         visualizado: true
     })
     $('#informacoes').modal('toggle')
 })
 
-$(document).on('input', '#pesquisa-evento', function () {
+$(document).on('input', '#pesquisa-evento', function() {
     let valor = $(this).val()
     pesquisar(valor)
 })
 
 function mostrarPedidos() {
-    refPedidos.on('value', function (snapshot) {
+    refPedidos.on('value', function(snapshot) {
         $('#usersList').html('')
-        snapshot.forEach(function (item) {
+        snapshot.forEach(function(item) {
             let pedido_key = item.key
             let pedido = item.val()
             let tr = $('<tr></tr>')
@@ -66,12 +67,33 @@ function mostrarPedidos() {
     });
 }
 
+function mostrarAssociados() {
+    refAssociados.on('value', function(snapshot) {
+        $('#list-associados').html('')
+        snapshot.forEach(function(item) {
+            let associado_key = item.key
+            let associado = item.val()
+            let tr = $('<tr></tr>')
+            let td1 = $('<td class="align-middle">' + associado.primeiroNome + ' ' + associado.segundoNome + '</td>')
+            let td2 = $('<td class="align-middle">' + associado.email + '</td>')
+            let td3 = $('<td class="align-middle">' + associado.telefone + '</td>')
+            let td4 = $('<td class="align-middle">' + associado.contribuicao + '</td>')
+
+            tr.append(td1);
+            tr.append(td2);
+            tr.append(td3);
+            tr.append(td4);
+            $('#list-associados').append(tr);
+        });
+    });
+}
+
 function exibicaoEventos(strFiltro) {
-    refEventos.on('value', function (snapshot) {
-        if(!strFiltro){
+    refEventos.on('value', function(snapshot) {
+        if (!strFiltro) {
             $('#cards-eventos').html('')
         }
-        snapshot.forEach(function (item) {
+        snapshot.forEach(function(item) {
 
             let divCol = $('<div class="xx col-sm-6 col-md-4 col-xl-3 mb-3  justify-content-center"></div>');
             let divCard = $('<div class="card w-80 filterDiv ' + item.val().titulo + '"></div>');
@@ -114,7 +136,7 @@ function exibicaoEventos(strFiltro) {
             iniciarBotoes(refEventos)
             if (strFiltro == item.val().titulo) {
                 $('#cards-eventos').append(divCol)
-            }else if (!strFiltro) {
+            } else if (!strFiltro) {
                 $('#cards-eventos').append(divCol)
             }
         });
@@ -122,9 +144,9 @@ function exibicaoEventos(strFiltro) {
 }
 
 function exibirNoticias() {
-    refNoticias.on('value', function (snapshot) {
+    refNoticias.on('value', function(snapshot) {
         $('#cards-noticias').html('')
-        snapshot.forEach(function (item) {
+        snapshot.forEach(function(item) {
 
             let divCol = $('<div class="col-sm-6 col-md-4 col-xl-3 mb-3 justify-content-center"></div>');
             let divCard = $('<div class="card w-80"></div>');
@@ -143,13 +165,13 @@ function exibirNoticias() {
             let item2 = $('<button class="dropdown-item btn-add-destaque-not" data-name="' + item.val().titulo + '">Adicionar aos destaques</button>')
             let item3 = $('<button class="dropdown-item btn-rem-destaque-not" data-name="' + item.val().titulo + '">Remover dos destaques</button>')
 
-            $('.btn-add-destaque-not').unbind("click").click(function () {
+            $('.btn-add-destaque-not').unbind("click").click(function() {
                 let titulo = $(this).data("name");
                 let ref = refNoticias.child(titulo)
                 setDestaque(true, ref)
             });
 
-            $('.btn-rem-destaque-not').unbind("click").click(function () {
+            $('.btn-rem-destaque-not').unbind("click").click(function() {
                 let titulo = $(this).data("name");
                 let ref = refNoticias.child(titulo)
                 setDestaque(false, ref)
@@ -211,12 +233,12 @@ function exibirNoticias() {
 }
 
 function iniciarBotoes(ref) {
-    $('.btn-add-destaque-evt').on("click", function () {
+    $('.btn-add-destaque-evt').on("click", function() {
         let titulo = $(this).data("name");
         let r = ref.child(titulo)
         setDestaque(true, r)
     });
-    $('.btn-rem-destaque-evt').on("click", function () {
+    $('.btn-rem-destaque-evt').on("click", function() {
         let titulo = $(this).data("name");
         let r = ref.child(titulo)
         setDestaque(false, r)
@@ -260,7 +282,7 @@ function setDestaque(estado, ref) {
     })
     pesquisar($('#pesquisa-evento').val())
 }
- 
+
 function converteTimerStamp(UNIX_timestamp) {
     let a = new Date(UNIX_timestamp);
     let months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
@@ -279,24 +301,25 @@ function pesquisar(strPesq) {
         let aba = 'eventos'
         let ref;
         switch (aba) {
-            case 'eventos': {
-                ref = refEventos.orderByChild('titulo');
-                break;
-            }
+            case 'eventos':
+                {
+                    ref = refEventos.orderByChild('titulo');
+                    break;
+                }
         }
 
         ref.startAt(strPesq)
             .endAt(strPesq + '\uf8ff')
-            .once('value', function (snapshot) {
+            .once('value', function(snapshot) {
                 $('#cards-eventos').html('')
-                snapshot.forEach(function (item) {
+                snapshot.forEach(function(item) {
                     let pedido = item.val()
                     console.debug(pedido)
                     exibicaoEventos(pedido.titulo)
-                    //console.debug($('.xx:contains(' + pedido.titulo + ')').remove())
+                        //console.debug($('.xx:contains(' + pedido.titulo + ')').remove())
                 })
             })
-    }else{
+    } else {
         exibicaoEventos(false)
     }
 }

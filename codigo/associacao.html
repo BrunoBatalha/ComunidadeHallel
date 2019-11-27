@@ -126,25 +126,26 @@
                             <input type="text" class="text-field form-control" id="nacionalidade-ass" placeholder="Informe seu nacionalidade">
                         </div>
                         <div class="form-column mt-2">
-                            <label for="">Naturalidade</label>
-                            <input type="text" class="text-field form-control" id="naturalidade-ass" placeholder="Informe seu naturalidade">
-                        </div>
-                        <div class="form-column mt-2">
                             <label for="">CEP</label>
-                            <input type="text" class="text-field form-control" id="cep-ass" placeholder="Informe seu nacionalidade">
+                            <input type="text" class="text-field form-control" id="cep-ass" placeholder="Informe seu nacionalidade" onblur="pesquisacep(this.value);">
                         </div>
                         <div class="form-column mt-2">
-                            <label for="">Endereço</label>
-                            <input type="text" class="text-field form-control" id="endereco-ass" placeholder="Informe seu naturalidade">
+                            <label for="">Rua</label>
+                            <input type="text" class="text-field form-control" id="rua-ass" placeholder="Informe seu naturalidade">
                         </div>
                         <div class="form-column mt-2">
-                            <label for="">Senha</label>
-                            <input type="text" class="text-field form-control" id="senha-ass" placeholder="Informe uma senha">
+                            <label for="">Bairro</label>
+                            <input type="text" class="text-field form-control" id="bairro-ass" placeholder="Informe seu naturalidade">
                         </div>
                         <div class="form-column mt-2">
-                            <label for="">Confirme sua senha</label>
-                            <input type="text" class="text-field form-control" id="confirmeSenha-ass" placeholder="Informe sua senha novamente">
+                            <label for="">Cidade</label>
+                            <input type="text" class="text-field form-control" id="cidade-ass" placeholder="Informe seu naturalidade">
                         </div>
+                        <div class="form-column mt-2">
+                            <label for="">Estado</label>
+                            <input type="text" class="text-field form-control" id="estado-ass" placeholder="Informe seu naturalidade">
+                        </div>
+                        
 
                         <div style="margin-left: 15px">
                             <label for="">Sou membro associado da vocação Hallel:</label>
@@ -177,16 +178,8 @@
                     <h6>Dados financeiros</h6>
                     <div class="form-row">
                         <div class="form-column">
-                            <label for="">Nacionalidade</label>
-                            <input type="text" class="text-field form-control" placeholder="Informe sua nacionalidade">
-                        </div>
-                        <div class="form-column">
-                            <label for="">CPF</label>
-                            <input type="text" class="text-field form-control" placeholder="Informe seu CPF">
-                        </div>
-                        <div class="form-column">
-                            <label for="">Nome</label>
-                            <input type="text" class="text-field form-control" placeholder="Informe seu nome">
+                            <label for="">Nome completo</label>
+                            <input type="text" class="text-field form-control" placeholder="Informe seu nome completo">
                         </div>
                         <div class="form-column">
                             <label for="">Número do cartão</label>
@@ -230,6 +223,15 @@
                 <form action="#">
                     <h6>Compromisso</h6>
                     <div class="form-row">
+
+                        <div class="form-column mt-2">
+                            <label for="">Senha</label>
+                            <input type="text" class="text-field form-control" id="senha-ass" placeholder="Informe uma senha">
+                        </div>
+                        <div class="form-column mt-2">
+                            <label for="">Confirme sua senha</label>
+                            <input type="text" class="text-field form-control" id="confirmeSenha-ass" placeholder="Informe sua senha novamente">
+                        </div>
 
                         <div class="form-group form-check" style="margin-left: 16px; margin-top: 30px">
                             <input type="checkbox" class="form-check-input" id="recorrentes-box" required>

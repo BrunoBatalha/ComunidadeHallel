@@ -106,3 +106,16 @@
 	transform: scale(0.95);
 }
 
+.card-title{
+max-width: 60ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-text{
+    max-width: 50ch;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }

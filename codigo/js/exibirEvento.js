@@ -1,7 +1,37 @@
-$(document).ready(function() {
+$(document).ready(function () {
     exibirEvento()
 
     $('#confirmacao').hide();
+
+    console.log("entrou")
+
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+
+            rootRef.child("associados").on('value', function (snapshot) {
+                snapshot.forEach(function (item) {
+
+                    console.log(item.val().email)
+                    console.log(user.email)
+
+                    if (user.email == item.val().email) {
+
+                        console.log("oi")
+                        $('#nome-insc').val(item.val().primeiroNome + " " + item.val().segundoNome)
+                        $('#email-insc').val(item.val().email)
+                        $('#telefone-insc').val(item.val().telefone)
+                        $('#cpf-insc').val(item.val().cpf)
+                    }
+
+                });
+            });
+
+        } else {
+            console.log("não tem ninguém")
+        }
+    });
+
+
 });
 var refEvento = rootRef.child("eventos")
 
@@ -26,6 +56,7 @@ function exibirEvento() {
 
 
 function inscrever() {
+
     let inscricao = {
         nome: $('#nome-insc').val(),
         email: $('#email-insc').val(),
@@ -46,13 +77,13 @@ function verificarExistenciaInscricao(inscricao) {
         } else {
             enviarInscricao(inscricao)
 
-            $('nome-insc').val = ''
-            $('email-insc').val = ''
-            $('telefone-insc').val("")
-            $('cpf-insc').val("")
+            $('#nome-insc').val("")
+            $('#email-insc').val("")
+            $('#telefone-insc').val("")
+            $('#cpf-insc').val("")
 
             $('#confirmacao').show();
-        
+
         }
     })
 }

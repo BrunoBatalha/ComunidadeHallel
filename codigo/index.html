@@ -51,8 +51,8 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0" id="esquerdaNav">
-                
-                
+
+
             </form>
         </div>
     </nav>
@@ -71,38 +71,39 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <div class="col-auto">
-                        <label class="sr-only" for="inlineFormInputGroup">Nome de usuário</label>
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <i class="fas fa-user"></i>
+
+                <form action="javascript:login()">
+                    <div class="modal-body">
+                        <div class="col-auto">
+                            <label class="sr-only" for="inlineFormInputGroup">Nome de usuário</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-user"></i>
+                                    </div>
                                 </div>
+                                <input type="email" class="form-control" id="email-usuario"
+                                    placeholder="Insira seu nome de usuário">
                             </div>
-                            <input type="text" class="form-control" id="nome-usuario"
-                                placeholder="Insira seu nome de usuário">
+                        </div>
+                        <div class="col-auto">
+                            <label class="sr-only" for="inlineFormInputGroup">Senha</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-key"></i>
+                                    </div>
+                                </div>
+                                <input type="password" class="form-control" id="senha-usuario"
+                                    placeholder="Insira sua senha">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-auto">
-                        <label class="sr-only" for="inlineFormInputGroup">Senha</label>
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                    <i class="fas fa-key"></i>
-                                </div>
-                            </div>
-                            <input type="text" class="form-control" id="inlineFormInputGroup"
-                                placeholder="Insira sua senha">
-                        </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <input type="submit" class="btn btn-primary" value="Login">
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <a href="principal.html">
-                        <button type="button" class="btn btn-primary">Login</button>
-                    </a>
-                </div>
+                </form>
             </div>
         </div>
     </div>
@@ -260,6 +261,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
     <script src="js/firebase.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
 
     <script type="text/javascript" src="js/scroll.js"></script>
     <script type="text/javascript">

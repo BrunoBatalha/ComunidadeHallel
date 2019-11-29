@@ -15,21 +15,6 @@ $(document).ready(function () {
         clicouevento($(this).text());
     });
 
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            $('#esquerdaNav').html('')
-
-            console.log(user.email)
-            
-            let email = $('<p style="color: white">' + user.email + '</p>');
-
-            $('#esquerdaNav').append(email);
-        } else {
-            adicionarBtnLogin()
-        }
-    });
-
-
 });
 
 function criar() {
@@ -333,14 +318,3 @@ function dataAtualFormatada() {
         anoF = data.getFullYear();
     return diaF + "/" + mesF + "/" + anoF;
 }
-
-function adicionarBtnLogin() {
-
-    $('#esquerdaNav').html('')
-
-    let botao = $('<a href="#"><button class="btn btn-secondary my-2 my-sm-0" type="button" style="margin-right: 6px" data-toggle="modal" data-target="#exampleModal">Login</button></a>');
-
-    $('#esquerdaNav').append(botao);
-
-}
-

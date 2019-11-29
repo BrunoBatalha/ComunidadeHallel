@@ -95,7 +95,7 @@ function exibicaoEventos(strFiltro) {
         }
         snapshot.forEach(function(item) {
 
-            let divCol = $('<div class="xx col-sm-6 col-md-4 col-xl-3 mb-3  justify-content-center"></div>');
+            let divCol = $('<div class="xx col-sm-6 col-md-4 col-xl-4 mb-4  justify-content-center"></div>');
             let divCard = $('<div class="card w-80 filterDiv ' + item.val().titulo + '"></div>');
             let divBody = $('<div class="card-body"></div>');
             let h5Titulo = $('<h5 class="card-title"></h5>');
@@ -148,7 +148,7 @@ function exibirNoticias() {
         $('#cards-noticias').html('')
         snapshot.forEach(function(item) {
 
-            let divCol = $('<div class="col-sm-6 col-md-4 col-xl-3 mb-3 justify-content-center"></div>');
+            let divCol = $('<div class="col-sm-6 col-md-4 col-xl-4 mb-4 justify-content-center"></div>');
             let divCard = $('<div class="card w-80"></div>');
             let divBody = $('<div class="card-body"></div>');
             let h5Titulo = $('<h5 class="card-title"></h5>');

@@ -1,6 +1,9 @@
 $(document).ready(function () {
     exibirEvento()
-
+    
+    
+    
+    
     $('#confirmacao').hide();
 
     console.log("entrou")

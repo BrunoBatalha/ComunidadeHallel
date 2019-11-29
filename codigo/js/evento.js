@@ -4,7 +4,7 @@ var stgEvento = storageRef.child('eventos')
 $(document).ready(function () {
 
     mostrarEventos()
-
+    
 });
 
 function mostrarEventos() {

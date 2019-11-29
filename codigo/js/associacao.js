@@ -9,7 +9,10 @@ $(document).ready(function () {
         var innerWidth = $(this).innerWidth();
         $(this).addClass('active');
         var position = $(this).position();
-        $('.form-wizardmove-button').css({ "left": position.left, "width": innerWidth });
+        $('.form-wizardmove-button').css({
+            "left": position.left,
+            "width": innerWidth
+        });
         var attr = $(this).attr('data-attr');
         $('.form-wizard-content').each(function () {
             if ($(this).attr('data-tab-content') == attr) {
@@ -31,7 +34,10 @@ $(document).ready(function () {
                         $(this).addClass('active');
                         var innerWidth = $(this).innerWidth();
                         var position = $(this).position();
-                        $(document).find('.form-wizardmove-button').css({ "left": position.left, "width": innerWidth });
+                        $(document).find('.form-wizardmove-button').css({
+                            "left": position.left,
+                            "width": innerWidth
+                        });
                     } else {
                         $(this).removeClass('active');
                     }
@@ -51,7 +57,10 @@ $(document).ready(function () {
                         $(this).addClass('active');
                         var innerWidth = $(this).innerWidth();
                         var position = $(this).position();
-                        $(document).find('.form-wizardmove-button').css({ "left": position.left, "width": innerWidth });
+                        $(document).find('.form-wizardmove-button').css({
+                            "left": position.left,
+                            "width": innerWidth
+                        });
                     } else {
                         $(this).removeClass('active');
                     }
@@ -64,13 +73,16 @@ $(document).ready(function () {
     });
 
     $('#input-outro-valor').hide();
+    $('#quota-minima-2').hide();
     document.getElementById("texto-outro-valor").style.display = 'none';
     $('#contribuicao-ass').change(function () {
         if ($('#contribuicao-ass').val() == 'Outro valor') {
             $('#input-outro-valor').show();
+            $('#quota-minima-2').show();
             document.getElementById("texto-outro-valor").style.display = 'block';
         } else {
             $('#input-outro-valor').hide();
+            $('#quota-minima-2').hide();
             document.getElementById("texto-outro-valor").style.display = 'none';
         }
     });
@@ -88,8 +100,23 @@ function criar() {
     var e = document.getElementById("contribuicao-ass");
     var valorcontribuicao = e.options[e.selectedIndex].text;
 
-    if (valorcontribuicao == 'Outro valor') {
+    if (valorcontribuicao == 'R$20,00') {
+        valorcontribuicao = 20
+    }
+    if (valorcontribuicao == 'R$30,00') {
+        valorcontribuicao = 30
+    }
+    if (valorcontribuicao == 'RS40,00') {
+        valorcontribuicao == 40
+    }
+    if (valorcontribuicao == 'R$50,00') {
+        50
+    }
+    if (valorcontribuicao == 'Outro valor' && $('#input-outro-valor').val() > 20) {
         valorcontribuicao = $('#input-outro-valor').val()
+    } else {
+        $('#input-outro-valor').hide();
+        valorcontribuicao = 20
     }
 
     var associado = {
@@ -111,33 +138,71 @@ function criar() {
         senha: $('#senha-ass').val(),
         numerocartao: $('#nmrCartao-ass').val(),
         validade: $('#validade-ass').val(),
-        CVV: $('#CVV-ass').val()
+        CVV: $('#CVV-ass').val(),
+
     }
 
-    rootRef.child("associados").child(associado.primeiroNome).set({
-        primeiroNome: associado.primeiroNome,
-        segundoNome: associado.segundoNome,
-        email: associado.email,
-        telefone: associado.telefone,
-        cpf: associado.cpf,
-        rg: associado.rg,
-        datadenascimento: associado.datadenascimento,
-        profissao: associado.profissao,
-        nacionalidade: associado.nacionalidade,
-        naturalidade: associado.naturalidade,
-        cep: associado.cep,
-        rua: associado.rua,
-        bairro: associado.bairro,
-        cidade: associado.cidade,
-        estado: associado.estado,
-        senha: associado.senha,
-        numero: associado.numerocartao,
-        validade: associado.validade,
-        CVV: associado.CVV,
-        contribuicao: `R$${valorcontribuicao}`
-    });
+    if (associado.senha.length >= 6) {
 
-    console.log("cadastrou associado");
+        if (associado.senha == $('#confirmeSenha-ass').val()) {
+
+            //cria usuário no authentication
+            firebase.auth()
+                .createUserWithEmailAndPassword(associado.email, associado.senha)
+                .then(function (result) {
+
+                    // faz login no authentication
+                    firebase.auth().signInWithEmailAndPassword(associado.email, associado.senha)
+                    .then(function(result) {
+                        const refAss = rootRef.child('administradores').orderByChild('email').equalTo(associado.email)
+                        refAss.once('child_added', snap => {
+                            const nomeAssociado = snap.val().nome
+                            window.sessionStorage.setItem('nome_associado', nomeAssociado);
+                        })
+            
+                    })
+                    .catch(function(error) {
+                        alert("Não foi possível concluir o login: " + error.message)
+                    });
+                    
+                    //cria nó no database
+                    rootRef.child("associados").child(associado.cpf).set({
+                        primeiroNome: associado.primeiroNome,
+                        segundoNome: associado.segundoNome,
+                        email: associado.email,
+                        telefone: associado.telefone,
+                        cpf: associado.cpf,
+                        rg: associado.rg,
+                        datadenascimento: associado.datadenascimento,
+                        profissao: associado.profissao,
+                        nacionalidade: associado.nacionalidade,
+                        naturalidade: associado.naturalidade,
+                        cep: associado.cep,
+                        rua: associado.rua,
+                        bairro: associado.bairro,
+                        cidade: associado.cidade,
+                        estado: associado.estado,
+                        senha: associado.senha,
+                        numero: associado.numerocartao,
+                        validade: associado.validade,
+                        CVV: associado.CVV,
+                        contribuicao: `R$${valorcontribuicao}`
+                    });
+                    console.log("Cadastro realizado com sucesso!");
+                    window.location.href = "index.html";
+                })
+                .catch(function (error) {
+                    alert("Não foi possível concluir o cadastro: " + error.message)
+                });
+        } else {
+            alert("As senhas não coincidem!");
+        }
+
+    } else {
+        console.log("Senha muito pequena.")
+    }
+
+
 }
 
 function limpa_formulário_cep() {

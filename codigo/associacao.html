@@ -36,16 +36,13 @@
                     <a class="nav-link" href="#">Associação</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="formacoes.html">Formações</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="evento.html">Eventos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="sobreNos.html">Quem somos?</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Liturgia diária</a>
+                    <a class="nav-link" href="liturgiaDiaria.html">Liturgia diária</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -73,6 +70,11 @@
                 </a>
             </li>
             <li>
+                <a class="form-wizard-link active" href="javascript:;" data-attr="localidade">
+                    <span>Localidade</span>
+                </a>
+            </li>
+            <li>
                 <a class="form-wizard-link" href="javascript:;" data-attr="ads">
                     <span>Dados financeiros</span>
                 </a>
@@ -91,61 +93,135 @@
                     <div class="form-row">
                         <div class="form-column">
                             <label for="">Primeiro nome</label>
-                            <input type="text" class="text-field form-control" id="primeiro-nome-ass" placeholder="Informe seu primeiro nome">
+                            <input type="text" class="text-field form-control" id="primeiro-nome-ass" placeholder="Informe seu primeiro nome" required>
                         </div>
                         <div class="form-column">
                             <label for="">Último nome</label>
-                            <input type="text" class="text-field form-control" id="ultimo-nome-ass" placeholder="Informe seu último nome">
+                            <input type="text" class="text-field form-control" id="ultimo-nome-ass" placeholder="Informe seu último nome" required>
                         </div>
                         <div class="form-column mt-2">
                             <label for="">Email</label>
-                            <input type="email" class="text-field form-control" id="email-ass" placeholder="Informe seu email">
+                            <input type="email" class="text-field form-control" id="email-ass" placeholder="Informe seu email" required>
                         </div>
                         <div class="form-column mt-2">
                             <label for="">Número de telefone</label>
-                            <input type="text" class="text-field form-control" id="telefone-ass" placeholder="Informe seu número de telefone">
+                            <input type="text" class="text-field form-control" id="telefone-ass" placeholder="Informe seu número de telefone" required>
                         </div>
                         <div class="form-column mt-2">
                             <label for="">CPF</label>
-                            <input type="text" class="text-field form-control" id="cpf-ass" placeholder="Informe seu CPF">
+                            <input type="number" class="text-field form-control" id="cpf-ass" placeholder="Informe seu CPF" required>
                         </div>
                         <div class="form-column mt-2">
                             <label for="">RG</label>
-                            <input type="text" class="text-field form-control" id="rg-ass" placeholder="Informe seu RG">
+                            <input type="number" class="text-field form-control" id="rg-ass" placeholder="Informe seu RG" required>
                         </div>
                         <div class="form-column mt-2">
                             <label for="">Data de nascimento</label>
-                            <input type="text" class="text-field form-control" id="dataNasc-ass" placeholder="Informe sua data de nascimento">
+                            <input type="date" class="text-field form-control" id="dataNasc-ass" placeholder="Informe sua data de nascimento" required>
                         </div>
                         <div class="form-column mt-2">
                             <label for="">Profissão</label>
-                            <input type="text" class="text-field form-control" id="profissao-ass" placeholder="Informe sua profissão">
+                            <input type="text" class="text-field form-control" id="profissao-ass" placeholder="Informe sua profissão" required>
                         </div>
-                        <div class="form-column mt-2">
-                            <label for="">Nacionalidade</label>
-                            <input type="text" class="text-field form-control" id="nacionalidade-ass" placeholder="Informe seu nacionalidade">
+                                      
+                        <div class="full-wdth clearfix">
+                            <a href="javascript:;" class="form-wizard-next-btn btn btn-primary float-right">Próximo</a>
                         </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-wizard-content" data-tab-content="localidade">
+                <form action="#">
+                    <h6>Localidade</h6>
+                    <div class="form-row">
+
+                        
                         <div class="form-column mt-2">
                             <label for="">CEP</label>
-                            <input type="text" class="text-field form-control" id="cep-ass" placeholder="Informe seu nacionalidade" onblur="pesquisacep(this.value);">
+                            <input type="number" class="text-field form-control" id="cep-ass" placeholder="Informe seu CEP" onblur="pesquisacep(this.value);" required>
                         </div>
                         <div class="form-column mt-2">
                             <label for="">Rua</label>
-                            <input type="text" class="text-field form-control" id="rua-ass" placeholder="Informe seu naturalidade">
+                            <input type="text" class="text-field form-control" id="rua-ass" placeholder="Informe sua rua" required>
                         </div>
                         <div class="form-column mt-2">
                             <label for="">Bairro</label>
-                            <input type="text" class="text-field form-control" id="bairro-ass" placeholder="Informe seu naturalidade">
+                            <input type="text" class="text-field form-control" id="bairro-ass" placeholder="Informe seu bairro" required>
                         </div>
                         <div class="form-column mt-2">
                             <label for="">Cidade</label>
-                            <input type="text" class="text-field form-control" id="cidade-ass" placeholder="Informe seu naturalidade">
+                            <input type="text" class="text-field form-control" id="cidade-ass" placeholder="Informe sua cidade" required>
                         </div>
                         <div class="form-column mt-2">
                             <label for="">Estado</label>
-                            <input type="text" class="text-field form-control" id="estado-ass" placeholder="Informe seu naturalidade">
+                            <input type="text" class="text-field form-control" id="estado-ass" placeholder="Informe seu estado" required>
                         </div>
-                        
+                        <div class="form-column mt-2">
+                            <label for="">Nacionalidade</label>
+                            <input type="text" class="text-field form-control" id="nacionalidade-ass" placeholder="Informe sua nacionalidade" required>
+                        </div>
+
+                        <div class="full-wdth clearfix">
+                            <a href="javascript:;" class="form-wizard-previous-btn btn btn-secondary float-left">Anterior</a>
+                            <a href="javascript:;" class="form-wizard-next-btn float-right btn btn-primary salvar">Próximo</a>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-wizard-content" data-tab-content="ads">
+                <form action="#">
+                    <h6>Dados financeiros</h6>
+                    <div class="form-row">
+                        <div class="form-column">
+                            <label for="">Nome completo</label>
+                            <input type="text" class="text-field form-control" placeholder="Informe seu nome completo" required>
+                        </div>
+                        <div class="form-column">
+                            <label for="">Número do cartão</label>
+                            <input type="number" class="text-field form-control" id="nmrCartao-ass" placeholder="Informe o número do seu cartão de crédito" required>
+                        </div>
+                        <div class="form-column">
+                            <label for="">Validade</label>
+                            <input type="date" class="text-field form-control" id="validade-ass" placeholder="Informe a validade do seu cartão de crédito" required>
+                        </div>
+                        <div class="form-column">
+                            <label for="">CVV</label>
+                            <input type="number" class="text-field form-control" id="CVV-ass" placeholder="Informe o CVV do seu cartão de crédito" required>
+                        </div>
+                        <div class="form-column">
+                            <label for="">Sua contribuição mensal</label>
+                            <select id="contribuicao-ass" class="form-control" required>
+                                <option selected>R$20,00</option>
+                                <option>R$30,00</option>
+                                <option>R$40,00</option>
+                                <option>R$50,00</option>
+                                <option>Outro valor</option>
+                            </select>
+                            <small id="quota-minima" class="form-text text-muted">Quota mínima (R$20,00)</small>
+                        </div>
+                        <div class="form-column">
+                            <label for="" id="texto-outro-valor">Valor</label>
+                            <input type="number" class="text-field form-control" placeholder="Informe o valor" id="input-outro-valor">
+                            <small id="quota-minima-2" class="form-text text-muted">Quota mínima (R$20,00)</small>
+                        </div>
+
+                        <div class="full-wdth clearfix">
+                            <a href="javascript:;" class="form-wizard-previous-btn btn btn-secondary float-left">Anterior</a>
+                            <a href="javascript:;" class="form-wizard-next-btn btn btn-primary float-right">Próximo</a>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="form-wizard-content" data-tab-content="review">
+                <form action="#">
+                    <h6>Compromisso</h6>
+                    <div class="form-row">
 
                         <div style="margin-left: 15px">
                             <label for="">Sou membro associado da vocação Hallel:</label>
@@ -167,86 +243,32 @@
                                 <label class="form-check-label" for="inlineRadio3">Serviço</label>
                             </div>
                         </div>
-                        <div class="full-wdth clearfix">
-                            <a href="javascript:;" class="form-wizard-next-btn float-right">Próximo</a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="form-wizard-content" data-tab-content="ads">
-                <form action="#">
-                    <h6>Dados financeiros</h6>
-                    <div class="form-row">
-                        <div class="form-column">
-                            <label for="">Nome completo</label>
-                            <input type="text" class="text-field form-control" placeholder="Informe seu nome completo">
-                        </div>
-                        <div class="form-column">
-                            <label for="">Número do cartão</label>
-                            <input type="text" class="text-field form-control" id="nmrCartao-ass" placeholder="Informe o número do seu cartão de crédito">
-                        </div>
-                        <div class="form-column">
-                            <label for="">Validade</label>
-                            <input type="text" class="text-field form-control" id="validade-ass" placeholder="Informe a validade do seu cartão de crédito">
-                        </div>
-                        <div class="form-column">
-                            <label for="">CVV</label>
-                            <input type="text" class="text-field form-control" id="CVV-ass" placeholder="Informe o CVV do seu cartão de crédito">
-                        </div>
-                        <div class="form-column">
-                            <label for="">Sua contribuição mensal</label>
-                            <select id="contribuicao-ass" class="form-control">
-                                <option selected>R$20,00</option>
-                                <option>R$30,00</option>
-                                <option>R$40,00</option>
-                                <option>R$50,00</option>
-                                <option>Outro valor</option>
-                            </select>
-                            <small id="quota-minima" class="form-text text-muted">Quota mínima (R$20,00)</small>
-                        </div>
-                        <div class="form-column">
-                            <label for="" id="texto-outro-valor">Valor</label>
-                            <input type="text" class="text-field form-control" placeholder="Informe o valor" id="input-outro-valor">
-                        </div>
-
-                        <div class="full-wdth clearfix">
-                            <a href="javascript:;" class="form-wizard-previous-btn float-left">Anterior</a>
-                            <a href="javascript:;" class="form-wizard-next-btn float-right">Próximo</a>
-                        </div>
-
-                    </div>
-                </form>
-            </div>
-
-
-            <div class="form-wizard-content" data-tab-content="review">
-                <form action="#">
-                    <h6>Compromisso</h6>
-                    <div class="form-row">
-
-                        <div class="form-column mt-2">
-                            <label for="">Senha</label>
-                            <input type="text" class="text-field form-control" id="senha-ass" placeholder="Informe uma senha">
-                        </div>
-                        <div class="form-column mt-2">
-                            <label for="">Confirme sua senha</label>
-                            <input type="text" class="text-field form-control" id="confirmeSenha-ass" placeholder="Informe sua senha novamente">
-                        </div>
+                        <br>
+                        <br>
 
                         <div class="form-group form-check" style="margin-left: 16px; margin-top: 30px">
                             <input type="checkbox" class="form-check-input" id="recorrentes-box" required>
-                            <label class="form-check-label" for="exampleCheck1">Estou ciente de que os pagamentos são recorrentes.</label>
+                            <label class="form-check-label" for="exampleCheck1" required>Estou ciente de que os pagamentos são recorrentes.</label>
                         </div>
                         <div class="form-group form-check" style="margin-left: 16px;">
                             <input type="checkbox" class="form-check-input" id="compromisso-box" required>
-                            <label class="form-check-label" for="exampleCheck1">Declaro sob compromisso que as informações que preenchi nesta Ficha de Inscrição são verdadeiras,
+                            <label class="form-check-label" for="exampleCheck1" required>Declaro sob compromisso que as informações que preenchi nesta Ficha de Inscrição são verdadeiras,
                                 assim como declaro conhecer e cumprir os estatutos e regulamentos internos da Associação
                                 Civil e da Associação Pública de Fiéis.</label>
                         </div>
 
+                        <div class="form-column mt-2">
+                            <label for="">Senha</label>
+                            <input type="text" class="text-field form-control" id="senha-ass" placeholder="Informe uma senha" required>
+                        </div>
+                        <div class="form-column mt-2">
+                            <label for="">Confirme sua senha</label>
+                            <input type="text" class="text-field form-control" id="confirmeSenha-ass" placeholder="Informe sua senha novamente" required>
+                        </div>
+
                         <div class="full-wdth clearfix">
-                            <a href="javascript:;" class="form-wizard-previous-btn float-left">Anterior</a>
-                            <a href="javascript:;" class="form-wizard-next-btn float-right salvar">Salvar</a>
+                            <a href="javascript:;" class="form-wizard-previous-btn btn btn-secondary float-left">Anterior</a>
+                            <a href="javascript:;" class="btn btn-primary float-right salvar">Salvar</a>
                         </div>
 
                     </div>

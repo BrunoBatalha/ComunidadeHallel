@@ -67,7 +67,7 @@ label {
 
 .form-wizard-wrapper .form-wizardmove-button {
     position: absolute;
-    width: 260px;
+    width: 185px;
     left: 0;
     top: -4px;
     bottom: -4px;
@@ -145,25 +145,12 @@ label {
     margin: 0 0 10px;
 }
 
-.form-wizard-wrapper .form-wizard-content .form-wizard-next-btn,
-.form-wizard-wrapper .form-wizard-content .form-wizard-previous-btn {
-    background-color: #000;
-    color: #ffffff;
-    display: inline-block;
-    padding: 6px 26px;
-    margin-top: 20px;
-    text-decoration: none;
-}
 
-.form-wizard-wrapper .form-wizard-content .form-wizard-previous-btn {
-    background-color: #f1f1f1;
-    color: #000000;
-}
 
 .form-wizard-content-wrapper {
     position: relative;
     background-color: #fff;
-    height: 850px;
+    height: 500px;
 }
 
 .text-field {

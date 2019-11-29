@@ -10,20 +10,32 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 
-    <link rel="stylesheet" href="../rsc/css/edicoesBootstrap.css" />
+    <link rel="stylesheet" href="../rsc/css/bootstrap_lux.min.css" />
     <link rel="stylesheet" href="../rsc/css/rodape.css">
     <link rel="stylesheet" href="../rsc/css/overlayFoto.css">
 
 </head>
 
 <body>
-    <header class="container-fluid px-0">
-        <nav class="navbar navbar-light bg-vinho">
-            <a class="navbar-brand text-center mx-auto" href="#">
-                <img src="../rsc/img/nome-topo.png" alt="logo-hallel" style="width: 200px;">
-            </a>
-        </nav>
-    </header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="#">HALLEL</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="principal.html">Principal
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    
+                </div>
+            </nav>
 
     <div class="container">
         <div class="row">
@@ -34,7 +46,7 @@
 
         <form class="mt-5" method="post" action="javascript:publicar()">
             <div class="form-row">
-                <div class="col-sm-5 row">
+                <div class="col-sm-6 row">
                     <div class="col-sm-12">
                         <figure class="figure">
                             <div id="localAlteracao">
@@ -67,7 +79,7 @@
                         <input class="form-control" type="text" placeholder="Informe o contato dos responsáveis" id="contato">
                     </div>
                 </div>
-                <div class="col-sm-7 row">
+                <div class="col-sm-6 row">
                     <div class="col-sm-12">
                         <label for="chamada" class="font-weight-bold">Chamada</label>
                         <input class="form-control" type="text" placeholder="Escreva algo para anunciar o evento" id="chamada">
@@ -81,7 +93,7 @@
                     </div>
                 </div>
                 <div class="col-sm-12 text-center pt-5">
-                    <input type="submit" class="btn btn-vinho text-uppercase" value="Finalizar">
+                    <input type="submit" class="btn btn-primary text-uppercase" value="Finalizar">
                 </div>
                 <div class="col-sm-12 text-center py-3">
                     <a href="menuAdm.html" class="font-personalizada-2 text-black">Voltar</a>
@@ -99,10 +111,10 @@
                 <!-- Content -->
                 <p style="color: #9F9F9F">CONHEÇA A COMUNIDADE</p>
                 <p>
-                    <a href="#">Nossa história</a>
+                    <a href="#" style="color: #fff">Nossa história</a>
                 </p>
                 <p>
-                    <a href="#">Visite-nos</a>
+                    <a href="#" style="color: #fff">Visite-nos</a>
                 </p>
             </div>
 

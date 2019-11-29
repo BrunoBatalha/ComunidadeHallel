@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Comunidade Hallel - Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="../rsc/css/bootstrap_lux.min.css">
+    <link rel="stylesheet" href="../rsc/css/principal.css">
+    <link rel="stylesheet" href="../rsc/css/menuAdm.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+</head>
+
+<body>
+
+    <div class="row" style="height: 100%">
+
+        <div class="col-md-3 painel" style="height: 100%;">
+
+            <br><br>
+            <div>
+                <div class="row">
+                    <div class="col-md-12 text-center my-5">
+                        <h4 class="font-weight-bold" style="color: #fff" id="bemvindo">Bem vindo!</h4>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="v-pills-sol-tab" data-toggle="pill" href="#v-pills-sol" role="tab"
+                    aria-controls="v-pills-sol" aria-selected="true">Solicitações para administrar</a>
+                <a class="nav-link " id="v-pills-eventos-tab" data-toggle="pill" href="#v-pills-eventos" role="tab"
+                    aria-controls="v-pills-eventos" aria-selected="false">Eventos</a>
+                <a class="nav-link " id="v-pills-noticias-tab" data-toggle="pill" href="#v-pills-noticias" role="tab"
+                    aria-controls="v-pills-noticias" aria-selected="false">Notícias</a>
+                <a class="nav-link " id="v-pills-pedidos-tab" data-toggle="pill" href="#v-pills-pedidos" role="tab"
+                    aria-controls="v-pills-pedidos" aria-selected="false">Pedidos de oração</a>
+                <a class="nav-link " id="v-pills-associados-tab" data-toggle="pill" href="#v-pills-associados"
+                    role="tab" aria-controls="v-pills-associados" aria-selected="false">Associados</a>
+            </div>
+
+            <br><br><br>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <a href="#"><button type="button" class="btn btn-dark" data-toggle="modal"
+                            data-target="#configuracoes">Configurações</button>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="#"><button type="button" class="btn btn-dark" data-toggle="modal"
+                            data-target="#sair">Sair</button>
+                    </a>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="col-md-9 exibicao">
+
+            <div class="tab-content" id="v-pills-tabContent">
+
+                <div class="tab-pane fade show active" id="v-pills-sol" role="tabpanel"
+                    aria-labelledby="v-pills-sol-tab">
+
+                    <h3>Solicitações para administrar</h3>
+                    <br>
+                    <div class="container">
+                        <table class="table table-bordered">
+                            <thead class="thead-light">
+                                <tr class="text-center">
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Aprovar</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-sm" id="list-associados">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+
+                <div class="tab-pane fade" id="v-pills-eventos" role="tabpanel" aria-labelledby="v-pills-eventos-tab">
+
+                    <h3> Eventos </h3>
+
+                    <br>
+                    <div class="row mb-3">
+                        <div class="col-sm-4">
+                            <a href="pubEvento.html">
+                                <button class="btn btn-primary w-75">Novo</button>
+                            </a>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" placeholder="Pesquise eventos..."
+                                id="pesquisa-evento">
+                        </div>
+                        <div class="col-sm-2 pl-0">
+                            <button class="btn btn-primary w-100" id="btn-pesquisar-evt">Buscar</button>
+
+                        </div>
+
+                    </div>
+
+                    <!--Cards-->
+                    <div class="row justify-content-start" id="cards-eventos" style="margin-bottom: 200px">
+                    </div>
+
+                </div>
+
+                <div class="tab-pane fade" id="v-pills-noticias" role="tabpanel" aria-labelledby="v-pills-noticias-tab">
+                    <h3> Notícias </h3>
+                    <br>
+                    <div class="row mb-3">
+                        <div class="col-sm-4">
+                            <a href="pubNoticia.html">
+                                <button class="btn btn-primary w-75">Novo</button>
+                            </a>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" placeholder="Pesquise notícias...">
+                        </div>
+                        <div class="col-sm-2 pl-0">
+                            <button class="btn btn-primary w-100">Buscar</button>
+                        </div>
+                    </div>
+
+                    <!--Cards-->
+                    <div class="row justify-content-start" id="cards-noticias">
+                    </div>
+
+                </div>
+
+                <div class="tab-pane fade" id="v-pills-pedidos" role="tabpanel" aria-labelledby="v-pills-pedidos-tab">
+
+                    <h3> Pedidos de oração </h3>
+                    <br>
+                    <div class="container">
+                        <table class="table table-bordered">
+                            <thead class="thead-light">
+                                <tr class="text-center">
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Pedido</th>
+                                    <th scope="col">Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-sm" id="usersList">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="tab-pane fade" id="v-pills-associados" role="tabpanel"
+                    aria-labelledby="v-pills-associados-tab">
+
+                    <h3> Associados </h3>
+                    <br>
+                    <div class="container">
+                        <table class="table table-bordered">
+                            <thead class="thead-light">
+                                <tr class="text-center">
+                                    <th scope="col">Nome</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Telefone</th>
+                                    <th scope="col">Contribuição</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-sm" id="list-associados">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="sair" tabindex="-1" role="dialog" aria-labelledby="sair" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sair">Deseja mesmo sair?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Ficamos tristes em ver você ir :(
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <a href="index.html"><button type="button" class="btn btn-primary">Sair</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fim do corpo-->
+
+    <script type="text/javascript " src="../rsc/js/jquery-3.4.0.min.js"></script>
+    <script src="../rsc/js/firebase.js"></script>
+    <script type="text/javascript " src="../rsc/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../rsc/js/menuAdm.js"></script>
+
+</body>
+
+</html>

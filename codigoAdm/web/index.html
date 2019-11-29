@@ -8,25 +8,44 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-    <link rel="stylesheet" href="../rsc/css/edicoesBootstrap.css" />
+    <link rel="stylesheet" href="../rsc/css/bootstrap_lux.min.css" />
 
 
 </head>
 
 <body>
 
-    <header class="container-fluid px-0">
-        <nav class="navbar navbar-light bg-vinho">
-            <a class="navbar-brand text-center mx-auto" href="#">
-                <img src="../rsc/img/nome-topo.png" alt="logo-hallel" style="width: 200px;">
-            </a>
-        </nav>
-    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">HALLEL</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Início
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <a href="#">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="button" style="margin-right: 6px" data-toggle="modal" data-target="#exampleModal">Login</button>
+                </a>
+                <a href="#">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="button">Cadastrar</button>
+                </a>
+            </form>
+        </div>
+    </nav>
 
     <div class="container-fluid mt-5">
         <div class="text-center">
             <h2>Bem vindo, administrador!</h2>
-            <p>Aqui você pode gerenciar:</p>
+            <p style="font-size: 14px">Aqui você pode gerenciar:</p>
         </div>
         <div class="row justify-content-center text-center mt-5">
             <div class="col-sm-2">
@@ -49,10 +68,10 @@
         <h5 class="text-center my-4"><b>Para continuar</b></h5>
         <div class="row justify-content-center">
             <div class="col-sm-2">
-                <button type="button" class="btn btn-vinho w-100" data-toggle="modal" data-target="#modal-login">Login</button>
+                <button type="button" class="btn btn-primary w-100" data-toggle="modal" data-target="#modal-login">Login</button>
             </div>
             <div class="col-sm-2">
-                <button type="button" class="btn btn-vinho w-100" data-toggle="modal" data-target="#modal-cadastro">Cadastrar-se</button>
+                <button type="button" class="btn btn-primary w-100" data-toggle="modal" data-target="#modal-cadastro">Cadastrar-se</button>
             </div>
 
         </div>

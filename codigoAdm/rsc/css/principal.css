@@ -111,18 +111,22 @@ body,
     background-color: #464646
 }
 
-#v-pills-home-tab {
+#v-pills-noticias-tab {
     color: white;
 }
 
-#v-pills-profile-tab {
+#v-pills-sol-tab {
     color: white;
 }
 
-#v-pills-messages-tab {
+#v-pills-eventos-tab {
     color: white;
 }
 
-#v-pills-settings-tab {
+#v-pills-associados-tab {
+    color: white;
+}
+
+#v-pills-pedidos-tab {
     color: white;
 }

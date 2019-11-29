@@ -326,6 +326,8 @@ function pesquisar(strPesq) {
     }
 }
 
+
+
 /* TODO: utilizar isso em formações*/
 /*
     $(document).on('click', '.td-clicavel', function (e) {

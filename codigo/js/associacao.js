@@ -129,7 +129,7 @@ function criar() {
         datadenascimento: $('#dataNasc-ass').val(),
         profissao: $('#profissao-ass').val(),
         nacionalidade: $('#nacionalidade-ass').val(),
-        naturalidade: $('#naturalidade-ass').val(),
+        
         cep: $('#cep-ass').val(),
         rua: $('#rua-ass').val(),
         bairro: $('#bairro-ass').val(),
@@ -176,7 +176,7 @@ function criar() {
                         datadenascimento: associado.datadenascimento,
                         profissao: associado.profissao,
                         nacionalidade: associado.nacionalidade,
-                        naturalidade: associado.naturalidade,
+                        
                         cep: associado.cep,
                         rua: associado.rua,
                         bairro: associado.bairro,

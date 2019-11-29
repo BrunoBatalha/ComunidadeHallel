@@ -24,7 +24,7 @@ function cadastro() {
             .then(function(result) {
                 rootRef.child("administradores").child(dados.nome).set(dados);
                 $('#modal-cadastro').modal('hide')
-                window.location.href = "menuAdm.html";
+                window.location.href = "principal.html";
             })
             .catch(function(error) {
                 alert("Não foi possível concluir o cadastro: " + error.message)

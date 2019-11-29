@@ -14,7 +14,7 @@ function login() {
             refAdm.once('child_added', snap => {
                 const nomeAdm = snap.val().nome
                 window.sessionStorage.setItem('NOME_ADM', nomeAdm);
-                window.location.href = "menuAdm.html";
+                window.location.href = "principal.html";
             })
 
         })

@@ -1,6 +1,6 @@
 body {
-    overflow-x: hidden;
     color: black;
+    overflow: hidden;
 }
 
 .container2 {
@@ -85,7 +85,7 @@ input[id='arquivo'] {
 .painel {
     background-color: #000000;
     text-align: center;
-    padding-left: 3%;
+    padding-left: 2%;
 }
 
 html,
@@ -101,7 +101,7 @@ body,
 .exibicao {
     padding: 5%;
     height: 100%;
-    width: 100%;
+    width: 90%;
     overflow: auto;
 }
 

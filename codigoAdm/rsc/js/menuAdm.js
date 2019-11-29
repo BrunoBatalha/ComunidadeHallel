@@ -160,7 +160,7 @@ function exibirNoticias() {
 
             //Dropdown
             let div1 = $('<div class="dropdown"></div>')
-            let a = $('<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>')
+            let a = $('<a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>')
             let dropme = $('<div class="dropdown-menu my-0 py-0" aria-labelledby="dropdownMenuLink"></div>')
             let item2 = $('<button class="dropdown-item btn-add-destaque-not" data-name="' + item.val().titulo + '">Adicionar aos destaques</button>')
             let item3 = $('<button class="dropdown-item btn-rem-destaque-not" data-name="' + item.val().titulo + '">Remover dos destaques</button>')
@@ -246,7 +246,7 @@ function iniciarBotoes(ref) {
 }
 
 function criarDropdown(titulo, destaque, card) {
-    let a = $('<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>')
+    let a = $('<a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opções</a>')
     let dropme = $('<div class="dropdown-menu my-0 py-0" aria-labelledby="dropdownMenuLink"></div>')
     let item2 = $('<button class="dropdown-item btn-add-destaque-evt" data-name="' + titulo + '">Adicionar aos destaques</button>')
     let item3 = $('<button class="dropdown-item btn-rem-destaque-evt" data-name="' + titulo + '">Remover dos destaques</button>')

@@ -109,7 +109,7 @@
                         </div>
                         <div class="form-column mt-2">
                             <label for="">CPF</label>
-                            <input type="number" class="text-field form-control" id="cpf-ass" placeholder="Informe seu CPF" required>
+                            <input type="number" class="text-field form-control" id="cpf-ass" placeholder="Informe seu CPF" onblur="testeCPF(this.value);" required>
                         </div>
                         <div class="form-column mt-2">
                             <label for="">RG</label>
@@ -123,7 +123,7 @@
                             <label for="">Profissão</label>
                             <input type="text" class="text-field form-control" id="profissao-ass" placeholder="Informe sua profissão" required>
                         </div>
-                                      
+
                         <div class="full-wdth clearfix">
                             <a href="javascript:;" class="form-wizard-next-btn btn btn-primary float-right">Próximo</a>
                         </div>
@@ -136,7 +136,7 @@
                     <h6>Localidade</h6>
                     <div class="form-row">
 
-                        
+
                         <div class="form-column mt-2">
                             <label for="">CEP</label>
                             <input type="number" class="text-field form-control" id="cep-ass" placeholder="Informe seu CEP" onblur="pesquisacep(this.value);" required>

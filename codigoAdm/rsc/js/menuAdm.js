@@ -1,4 +1,5 @@
 var key;
+var pedidos_impressao = [];
 
 $(document).ready(function () {
     const nomeAdm = sessionStorage.getItem("NOME_ADM")
@@ -36,6 +37,30 @@ $(document).on('input', '#pesquisa-evento', function () {
     pesquisar(valor)
 })
 
+$(document).on('click', '#btnImprimir', function () {
+    selecionaParaImpressao()
+})
+
+function selecionaParaImpressao() {
+
+    var aChk = document.getElementsByName("check_impressao");
+
+    for (var i = 0; i < aChk.length; i++) {
+
+        if (aChk[i].checked) {
+            let k = $(aChk[i]).attr('id')
+            pedidos_impressao.push(k)
+            window.sessionStorage.setItem('lista_pedidos_impressao', pedidos_impressao.toString());
+            window.location.href = "exibirPedidos.html";
+        } else {
+
+        }
+
+    }
+
+}
+
+
 function mostrarPedidos() {
     refPedidos.on('value', function (snapshot) {
         $('#usersList').html('')
@@ -47,7 +72,7 @@ function mostrarPedidos() {
             let td2 = $('<td class="align-middle">' + pedido.email + '</td>')
             let td3 = $('<td class="align-middle">' + pedido.pedido + '</td>')
             let td4 = $('<td class="text-center"></td>')
-            let td5 = $('<td class="text-center align-middle"><div class="custom-control custom-checkbox" ><input type="checkbox" class="custom-control-input" id="' + pedido_key + '"><label class="custom-control-label" for="' + pedido_key + '">Imprimir</label></div></td>')
+            let td5 = $('<td class="text-center align-middle"><div class="custom-control custom-checkbox" ><input type="checkbox" class="custom-control-input" id="' + pedido_key + '" name="check_impressao"><label class="custom-control-label" for="' + pedido_key + '">Imprimir</label></div></td>')
             let btn = $('<button class="btn visualizar" data-name="' + pedido_key + '"></button>')
 
             if (pedido.visualizado) {
@@ -108,11 +133,11 @@ function mostrarAssociados() {
         $('#total-contribuicoes').html('')
 
         let contribuicoes = $('<th scope="col">Total de contribuições</th> <th scope="col">R$' + contribuicaoTotal + '</th>')
-    
+
         $('#total-contribuicoes').append(contribuicoes)
     });
 
-   
+
 
 }
 
@@ -329,11 +354,10 @@ function pesquisar(strPesq) {
         let aba = 'eventos'
         let ref;
         switch (aba) {
-            case 'eventos':
-                {
-                    ref = refEventos.orderByChild('titulo');
-                    break;
-                }
+            case 'eventos': {
+                ref = refEventos.orderByChild('titulo');
+                break;
+            }
         }
 
         ref.startAt(strPesq)

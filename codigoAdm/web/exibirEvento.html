@@ -14,13 +14,25 @@
 
 <body>
 
-    <header class="container-fluid px-0">
-        <nav class="navbar navbar-light bg-vinho">
-            <a class="navbar-brand text-center mx-auto" href="#">
-                <img src="../rsc/img/nome-topo.png" alt="logo-hallel" style="width: 200px;">
-            </a>
-        </nav>
-    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">HALLEL</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="principal.html">Principal
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </div>
+    </nav>
 
     <div class="container mt-5">
 
@@ -45,15 +57,15 @@
                 <hr>
                 <form action="javascript:inscricoes()">
                     <div class="form-group col-sm-12">
-                        <input type="submit" class="btn btn-vinho btn-block" value="Visualizar inscrições">
+                        <input type="submit" class="btn btn-primary btn-block" value="Visualizar inscrições">
 
                     </div>
                 </form>
                 <div class="form-group col-sm-12">
-                    <button id="editarEvento" class="btn btn-vinho btn-block">Editar evento</button>
+                    <button id="editarEvento" class="btn btn-primary btn-block">Editar evento</button>
                 </div>
                 <div class="form-group col-sm-12">
-                    <a href="#" style="color:#999999;"><button class="btn btn-vinho btn-block">Apagar
+                    <a href="#" style="color:#999999; text-decoration: none;"><button class="btn btn-primary btn-block">Apagar
                             evento</button></a>
                 </div>
             </div>

@@ -64,7 +64,7 @@ function atualizar() {
     if (arquivo == null) {
         refEventos.update(evento)
         alert('Evento atualizado com sucesso')
-        window.location = '../web/menuAdm.html'
+        window.location = '../web/principal.html'
         console.log(window.location)
         alert('Evento atualizado com sucesso1')
     } else {
@@ -75,7 +75,7 @@ function atualizar() {
                 refEventos.update({URLdownloadImg: url})
                 
                 alert('Evento atualizado com sucesso')
-                window.location = '../web/menuAdm.html'
+                window.location = '../web/principal.html'
                 console.log(window.location)
                 
             })

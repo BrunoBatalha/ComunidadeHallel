@@ -177,10 +177,7 @@ function destaqueNoticias() {
 
     var quadradomaior = "";
     var quadradomedio = "";
-    var quadradomenor1 = "";
-    var quadradomenor2 = "";
-
-
+   
     refNoticia.on('value', function (snapshot) {
         $('#destaque-noticias').html('')
         snapshot.forEach(function (item) {
@@ -279,9 +276,6 @@ function destaqueNoticias() {
                     $('#destaque-noticias').append(divcolmedio);
 
                 }
-
-
-
 
             }
 

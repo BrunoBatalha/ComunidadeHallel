@@ -31,11 +31,16 @@
             <br>
 
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link active" id="v-pills-sol-tab" data-toggle="pill" href="#v-pills-sol" role="tab" aria-controls="v-pills-sol" aria-selected="true">Solicitações para administrar</a>
-                <a class="nav-link " id="v-pills-eventos-tab" data-toggle="pill" href="#v-pills-eventos" role="tab" aria-controls="v-pills-eventos" aria-selected="false">Eventos</a>
-                <a class="nav-link " id="v-pills-noticias-tab" data-toggle="pill" href="#v-pills-noticias" role="tab" aria-controls="v-pills-noticias" aria-selected="false">Notícias</a>
-                <a class="nav-link " id="v-pills-pedidos-tab" data-toggle="pill" href="#v-pills-pedidos" role="tab" aria-controls="v-pills-pedidos" aria-selected="false">Pedidos de oração</a>
-                <a class="nav-link " id="v-pills-associados-tab" data-toggle="pill" href="#v-pills-associados" role="tab" aria-controls="v-pills-associados" aria-selected="false">Associados</a>
+                <a class="nav-link active" id="v-pills-sol-tab" data-toggle="pill" href="#v-pills-sol" role="tab"
+                    aria-controls="v-pills-sol" aria-selected="true">Solicitações para administrar</a>
+                <a class="nav-link " id="v-pills-eventos-tab" data-toggle="pill" href="#v-pills-eventos" role="tab"
+                    aria-controls="v-pills-eventos" aria-selected="false">Eventos</a>
+                <a class="nav-link " id="v-pills-noticias-tab" data-toggle="pill" href="#v-pills-noticias" role="tab"
+                    aria-controls="v-pills-noticias" aria-selected="false">Notícias</a>
+                <a class="nav-link " id="v-pills-pedidos-tab" data-toggle="pill" href="#v-pills-pedidos" role="tab"
+                    aria-controls="v-pills-pedidos" aria-selected="false">Pedidos de oração</a>
+                <a class="nav-link " id="v-pills-associados-tab" data-toggle="pill" href="#v-pills-associados"
+                    role="tab" aria-controls="v-pills-associados" aria-selected="false">Associados</a>
             </div>
 
             <br><br><br>
@@ -64,7 +69,8 @@
 
             <div class="tab-content" id="v-pills-tabContent">
 
-                <div class="tab-pane fade show active" id="v-pills-sol" role="tabpanel" aria-labelledby="v-pills-sol-tab">
+                <div class="tab-pane fade show active" id="v-pills-sol" role="tabpanel"
+                    aria-labelledby="v-pills-sol-tab">
 
                     <h4>Solicitações para administrar</h4>
                     <br>
@@ -99,7 +105,8 @@
                         </div>
 
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" placeholder="Pesquise eventos..." id="pesquisa-evento">
+                            <input type="text" class="form-control" placeholder="Pesquise eventos..."
+                                id="pesquisa-evento">
                         </div>
                         <div class="col-sm-2 pl-0">
                             <button class="btn btn-primary w-100" id="btn-pesquisar-evt">Buscar</button>
@@ -140,6 +147,7 @@
                 <div class="tab-pane fade" id="v-pills-pedidos" role="tabpanel" aria-labelledby="v-pills-pedidos-tab">
 
                     <h4> Pedidos de oração </h4>
+                    
                     <br>
                     <table class="table table-bordered">
                         <thead class="thead-light">
@@ -148,6 +156,8 @@
                                 <th scope="col">Email</th>
                                 <th scope="col">Pedido</th>
                                 <th scope="col">Estado</th>
+                                <th scope="col">Impressão</th>
+
                             </tr>
                         </thead>
                         <tbody class="table-sm" id="usersList">
@@ -155,10 +165,12 @@
                         </tbody>
                     </table>
 
+                    <button class="btn btn-primary">Imprimir</button>
 
                 </div>
 
-                <div class="tab-pane fade" id="v-pills-associados" role="tabpanel" aria-labelledby="v-pills-associados-tab">
+                <div class="tab-pane fade" id="v-pills-associados" role="tabpanel"
+                    aria-labelledby="v-pills-associados-tab">
 
                     <h4> Associados </h4>
                     <br>
@@ -214,8 +226,8 @@
                 <div class="modal-header">
                     <h5 class="modal-title">Pedido de oração</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                  <span aria-hidden="true">&times;</span>
-               </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -241,11 +253,14 @@
 
     <!-- Fim do corpo-->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script>
 
     <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>

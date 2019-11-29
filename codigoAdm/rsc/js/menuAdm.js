@@ -47,6 +47,7 @@ function mostrarPedidos() {
             let td2 = $('<td class="align-middle">' + pedido.email + '</td>')
             let td3 = $('<td class="align-middle">' + pedido.pedido + '</td>')
             let td4 = $('<td class="text-center"></td>')
+            let td5 = $('<td class="text-center align-middle"><div class="custom-control custom-checkbox" ><input type="checkbox" class="custom-control-input" id="'+pedido_key+'"><label class="custom-control-label" for="'+pedido_key+'">Imprimir</label></div></td>')
             let btn = $('<button class="btn visualizar" data-name="' + pedido_key + '"></button>')
 
             if (pedido.visualizado) {
@@ -62,6 +63,7 @@ function mostrarPedidos() {
             tr.append(td2);
             tr.append(td3);
             tr.append(td4);
+            tr.append(td5);
             $('#usersList').append(tr);
         });
     });

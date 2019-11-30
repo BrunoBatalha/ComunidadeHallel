@@ -1,4 +1,5 @@
 var key;
+var estado;
 var pedidos_impressao = [];
 
 $(document).ready(function () {
@@ -14,21 +15,29 @@ $(document).on('click', '.visualizar', function () {
     key = $(this).data('name');
     refPedidos.child(key).once('value', snap => {
         let pedido = snap.val();
+        estado = pedido.visualizado;
         $('#informacoes #nome-modal').val(pedido.nome)
         $('#informacoes #mensagem-modal').val(pedido.pedido)
         if (pedido.visualizado) {
-            $('#btn-visualizou').addClass('disabled')
+            $('#btn-visu').addClass('btn-danger').html('Retirar da agenda')
         } else {
-            $('#btn-visualizou').removeClass('disabled')
+            $('#btn-visu').addClass('btn-success').html('Agendar')
         }
     })
     $('#informacoes').modal('toggle')
 })
 
-$(document).on('click', '#btn-visualizou', function () {
-    refPedidos.child(key).update({
-        visualizado: true
-    })
+$(document).on('click', '#btn-visu', function () {
+    if (estado) {
+        refPedidos.child(key).update({
+            visualizado: false
+        })
+    } else {
+        refPedidos.child(key).update({
+            visualizado: true
+        })
+    }
+
     $('#informacoes').modal('toggle')
 })
 
@@ -38,10 +47,10 @@ $(document).on('input', '#pesquisa-evento', function () {
 })
 
 $(document).on('click', '#btnImprimir', function () {
-    selecionaParaImpressao()
+    imprimir()
 })
 
-function selecionaParaImpressao() {
+function imprimir() {
 
     var aChk = document.getElementsByName("check_impressao");
 
@@ -52,10 +61,7 @@ function selecionaParaImpressao() {
             pedidos_impressao.push(k)
             window.sessionStorage.setItem('lista_pedidos_impressao', pedidos_impressao.toString());
             window.location.href = "exibirPedidos.html";
-        } else {
-
         }
-
     }
 
 }
@@ -76,10 +82,10 @@ function mostrarPedidos() {
             let btn = $('<button class="btn visualizar" data-name="' + pedido_key + '"></button>')
 
             if (pedido.visualizado) {
-                btn.addClass('btn-success').html('Visualizado')
+                btn.addClass('btn-success').html('Agendado')
                 console.debug(pedido.visualizado)
             } else {
-                btn.addClass('btn-danger').html('Não visualizado')
+                btn.addClass('btn-danger').html('Não Agendado')
                 console.debug(pedido.visualizado)
             }
 

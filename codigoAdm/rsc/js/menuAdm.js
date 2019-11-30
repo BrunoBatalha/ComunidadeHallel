@@ -39,20 +39,24 @@ $(document).on('input', '#pesquisa-evento', function () {
 $(document).on('click', '#btnImprimir', function () {
     imprimir()
 })
-$(document).on('click',"input[name='check_impressao']",function(){
-    let dataName = $(this).attr('id') 
-    console.debug(  $('.visualizar[data-name='+dataName+']'))
-    if($(this).prop('checked')){
-        if( $('.visualizar[data-name='+dataName+']').html() == "Não Agendado"){
-            $('.visualizar[data-name='+dataName+']').removeClass('btn-danger').addClass('btn-info').html('Ainda não visualizado');        
-        }else{
-            $('.visualizar[data-name='+dataName+']').removeClass('btn-success').addClass('btn-warning').html('Pronto para impressão');
+$(document).on('click', "input[name='check_impressao']", function () {
+    let dataName = $(this).attr('id')
+    console.debug($('.visualizar[data-name=' + dataName + ']'))
+    if ($(this).prop('checked')) {
+        if ($('.visualizar[data-name=' + dataName + ']').html() == "Não Agendado") {
+            $('.visualizar[data-name=' + dataName + ']').removeClass('btn-danger').addClass('btn-info').html('Ainda não visualizado');
+        } else {
+            $('.visualizar[data-name=' + dataName + ']').removeClass('btn-success').addClass('btn-warning').html('Pronto para impressão');
         }
-        
-    }else{
-        $('.visualizar[data-name='+dataName+']').removeClass('btn-warning').addClass('btn-success').html('Agendado');
+    } else {
+        if ($('.visualizar[data-name=' + dataName + ']').html() == "Ainda não visualizado") {
+            $('.visualizar[data-name=' + dataName + ']').removeClass('btn-info').addClass('btn-danger').html('Não Agendado');
+        } else {
+            $('.visualizar[data-name=' + dataName + ']').removeClass('btn-warning').addClass('btn-success').html('Agendado');
+        }
+
     }
-    
+
 
 })
 

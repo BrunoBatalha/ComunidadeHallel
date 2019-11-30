@@ -499,25 +499,53 @@ function validarProfissao() {
 
 function validarCartao() {
 
-    var cartoes = {
-        visa: /^4[0-9]{12}(?:[0-9]{3})/,
-        mast: /^5[1-5][0-9]{14}/,
-        amex: /^3[47][0-9]{13}/
-    };
+    var cartao = $('#cc').val()
 
-    document.getElementById('num').addEventListener('keyup', testarCC);
-    var inputs = document.querySelectorAll('.fsResDir input[type="radio"]');
+    var numero = $('#nmrCartao-ass').val()
 
-}
+    if (numero > 0 && cartao == "") {
+
+        $('#nmrCartao-ass').addClass('is-invalid')
+        $('#nmrCartao-ass').removeClass('is-valid')
+
+    } else {
+
+        console.log(cartao)
+        console.log(numero.length)
+
+        if (cartao == "cc-visa" && numero.length == 16) {
+
+            $('#nmrCartao-ass').addClass('is-valid')
+            $('#nmrCartao-ass').removeClass('is-invalid')
+
+        } else {
+
+            if (cartao == "cc-mastercard" && numero.length == 16) {
+
+                $('#nmrCartao-ass').addClass('is-valid')
+                $('#nmrCartao-ass').removeClass('is-invalid')
+
+            } else {
+
+                if (cartao == "cc-amex" && numero.length == 15) {
+
+                    $('#nmrCartao-ass').addClass('is-valid')
+                    $('#nmrCartao-ass').removeClass('is-invalid')
+
+                } else {
+
+                    $('#nmrCartao-ass').addClass('is-invalid')
+                    $('#nmrCartao-ass').removeClass('is-valid')
+
+                }
+
+            }
+
+        }
 
 
 
-function testarCC(e) {
-    var nr = this.value;
-    var tipo;
-    for (var cartao in cartoes)
-        if (nr.match(cartoes[cartao])) tipo = cartao;
-    if (tipo) document.getElementById(tipo).click();
-    else
-        for (var i = 0; i < inputs.length; i++) inputs[i].checked = false;
+
+    }
+
 }

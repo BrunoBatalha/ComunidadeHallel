@@ -181,15 +181,15 @@
                             <label for="">Selecione seu cartão:</label>
 
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="cc-visa" value="cc-visa">
+                                <input class="form-check-input" type="radio" name="cc-visa" id="cc" value="cc-visa">
                                 <label class="form-check-label" for="cc-visa"><i class="fab fa-cc-visa fa-2x"></i></label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="cc-mastercard" value="cc-mastercard">
+                                <input class="form-check-input" type="radio" name="cc-mastercard" id="cc" value="cc-mastercard">
                                 <label class="form-check-label" for="cc-mastercard"><i class="fab fa-cc-mastercard fa-2x"></i></label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="cc-amex" value="cc-amex">
+                                <input class="form-check-input" type="radio" name="cc-amex" id="cc" value="cc-amex">
                                 <label class="form-check-label" for="cc-amex"><i class="fab fa-cc-amex fa-2x"></i></label>
                             </div>
 
@@ -205,7 +205,7 @@
                         </div>
                         <div class="form-column">
                             <label for="">Número do cartão</label>
-                            <input type="number" class="text-field form-control" id="nmrCartao-ass" placeholder="Informe o número do seu cartão de crédito" required>
+                            <input type="number" class="text-field form-control" id="nmrCartao-ass" placeholder="Informe o número do seu cartão de crédito" onblur="validarCartao()" required>
                         </div>
                         <div class="form-column">
                             <label for="">Validade</label>

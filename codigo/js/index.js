@@ -6,11 +6,11 @@ var stgNoticia = storageRef.child('noticias')
 
 var database = firebase.database();
 
-$(document).ready(function () {
+$(document).ready(function() {
     destaqueEventos()
     destaqueNoticias()
 
-    $(document).on('click', '.titulo-imagens', function (e) {
+    $(document).on('click', '.titulo-imagens', function(e) {
         e.preventDefault;
         clicouevento($(this).text());
     });
@@ -39,10 +39,10 @@ function destaqueEventos() {
 
     console.log("entrou destaques");
 
-    refEvento.on('value', function (snapshot) {
+    refEvento.on('value', function(snapshot) {
         $('#destaque-eventos').html('')
         $('#proximos-eventos').html('')
-        snapshot.forEach(function (item) {
+        snapshot.forEach(function(item) {
 
             if (item.val().destaque == true) {
 
@@ -58,7 +58,7 @@ function destaqueEventos() {
                 var titulo = $('<p></p>');
                 var chamada = $('<p></p>');
 
-                divcol.addClass('col-md-3 col-borda-menor');
+                divcol.addClass('col-md-3 col-sem-direita');
                 divzoom.addClass('zoom');
                 divimg.addClass('img-responsive cortar2');
                 divtext.addClass('text-item');
@@ -68,10 +68,10 @@ function destaqueEventos() {
 
                 stgEvento.child(item.val().titulo + "/foto")
                     .getDownloadURL()
-                    .then(function (url) {
+                    .then(function(url) {
                         img.src = url
                         divimg.append(img)
-                    }).catch(function (error) {
+                    }).catch(function(error) {
                         img.src = "rsc/img/retangulo-cinza.png"
                         divimg.append(img)
                     });
@@ -162,10 +162,10 @@ function destaqueNoticias() {
 
     var quadradomaior = "";
     var quadradomedio = "";
-   
-    refNoticia.on('value', function (snapshot) {
+
+    refNoticia.on('value', function(snapshot) {
         $('#destaque-noticias').html('')
-        snapshot.forEach(function (item) {
+        snapshot.forEach(function(item) {
 
 
             if (item.val().destaque == true) {
@@ -176,7 +176,7 @@ function destaqueNoticias() {
 
                     console.log("quadrado maior")
 
-                    let divcolmaior = $('<div class="col-md-6 col-sem-margem col-lateral-direita"></div>');
+                    let divcolmaior = $('<div class="col-md-6 sem-esquerda"></div>');
                     let amaior = $('<a href="#"></a>');
                     let divzoommaior = $('<div class="zoom"></div>')
 
@@ -221,7 +221,7 @@ function destaqueNoticias() {
 
                     console.log("entroumedio")
 
-                    let divcolmedio = $('<div class="col-md-6 col-sem-margem col-lateral-direita"></div>');
+                    let divcolmedio = $('<div class="col-md-6  sem-direita"></div>');
                     let amedio = $('<a href="#"></a>');
                     let divzoommedio = $('<div class="zoom mx-auto"></div>')
 
@@ -276,7 +276,7 @@ function clicouevento(titulo) {
     console.log("cganou")
     stgEvento.child(titulo + "/foto")
         .getDownloadURL()
-        .then(function (url) {
+        .then(function(url) {
             localStorage.setItem("imagem", url);
             console.log(url);
             refEvento.orderByChild('titulo').equalTo(titulo)
@@ -290,7 +290,7 @@ function clicouevento(titulo) {
                     localStorage.setItem("contato", item.val().contato)
                 })
             window.location.href = "exibirEvento.html";
-        }).catch(function (error) {
+        }).catch(function(error) {
             localStorage.setItem("imagem", "rsc/img/retangulo-cinza.png");
             console.log(url);
             refEvento.orderByChild('titulo').equalTo(titulo)

@@ -48,7 +48,6 @@ a:hover {
     bottom: 5px;
     z-index: 10;
     padding-top: 20px;
-   
 }
 
 .cortar1 {
@@ -70,32 +69,16 @@ a:hover {
     object-position: center;
 }
 
-.col-margem {
-    padding: 5px;
-}
-
-.col-sem-margem {
-    padding: 0px;
-}
-
-.col-sem-margem-bottom {
-    padding-bottom: 0px;
-}
-
-.col-lateral-direita {
-    padding-right: 10px;
-}
-
-.col-lateral-esquerda {
-    padding-left: 10px;
-}
-
-.col-sem-lateral {
+.col-sem-direita {
     padding-right: 0px;
 }
 
-.col-borda-menor {
-    padding: 5px;
+.sem-direita {
+    padding-left: 7.5px;
+}
+
+.sem-esquerda {
+    padding-right: 7.5px;
 }
 
 .titulo {

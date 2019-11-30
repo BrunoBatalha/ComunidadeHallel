@@ -261,7 +261,7 @@ function exibirNoticias() {
             divcol1.append(h5Titulo)
             let divcol2 = $('<div class="col-sm-2 text-right"></div>')
             let tituloCodificado = item.val().titulo.replace(' ', '&')
-            let linkver = $('<a href="exibirEvento.html?e=' + tituloCodificado + '"  title="Editar"><i class="fas fa-edit  text-dark"></i></a>')
+            let linkver = $('<a href="exibirNoticia.html?e=' + tituloCodificado + '"  title="Editar"><i class="fas fa-edit  text-dark"></i></a>')
             divcol2.append(linkver)
 
             divrow.append(divcol1)

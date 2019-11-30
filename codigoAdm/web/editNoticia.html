@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Comunidade Hallel - Novo Evento</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+    <link rel="stylesheet" href="../rsc/css/bootstrap_lux.min.css" />
+    <link rel="stylesheet" href="../rsc/css/rodape.css">
+    <link rel="stylesheet" href="../rsc/css/overlayFoto.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">HALLEL</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="principal.html">Principal
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                
+            </ul>
+            
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class=" text-center font-weight-bold mt-5">Realizar alterações</h3>
+            </div>
+        </div>
+
+        <form class="mt-5" method="post" action="javascript:atualizar()">
+            <div class="form-row">
+                <div class="col-sm-5 row">
+                    <div class="col-sm-12">
+                        <figure class="figure">
+                            <div id="localAlteracao">
+                                <img src="../rsc/img/retangulo-cinza.png" class="img-fluid rounded-0" id="fotoPerfil" width="300px" height="300px">
+                                <div id="labelAlterar" class="rounded-0 d-flex align-items-center justify-content-center">
+                                    <label class="btn btn-dark" for='inputArquivo'>Trocar capa de notícia</label>
+                                    <input type="file" class="open" id="inputArquivo" accept="image/png, image/jpeg" name="inputArquivo">
+                                </div>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="form-group col-sm-12 ">
+                        <label for="titulo" class="font-weight-bold">Título:</label>
+                        <input class="form-control" type="text" id="titulo" readonly>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <label for="autor" class="font-weight-bold">Autor: </label>
+                        <input class="form-control" type="text"  id="autor" readonly>
+                    </div>
+                </div>
+                <div class="col-sm-7 row">
+                    <div class="col-sm-12">
+                        <label for="chamada" class="font-weight-bold">Chamada</label>
+                        <input class="form-control" type="text" placeholder="Escreva algo para anunciar o evento" id="chamada">
+                    </div>
+                    <div class="col-sm-12">
+                        <fieldset class="" style="width: 100%">
+                            <label class="font-weight-bold">Descrição<span class="text-wine font-weight-bold">
+                                    *</span></label>
+                            <textarea class="form-control rounded-0 text-black" type="text" placeholder="Digite uma descrição para o evento" name="descricaoEvento" id="descricao"></textarea>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="col-sm-12 text-center pt-5">
+                    <input type="submit" class="btn btn-primary text-uppercase" value="Atualizar">
+                </div>
+                <div class="col-sm-12 text-center py-3">
+                    <a href="principal.html" class="font-personalizada-2 text-black">Voltar</a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <!-- Inicio do Footer -->
+    <footer class="page-footer font-small pt-3 rodape container-fluid">
+        <br>
+        <div class="row ">
+            <div class="col-md-6 text-center text-md-left">
+                <!-- Content -->
+                <p style="color: #9F9F9F">CONHEÇA A COMUNIDADE</p>
+                <p>
+                    <a href="#" style="color: white">Nossa história</a>
+                </p>
+                <p>
+                    <a href="#" style="color: white">Visite-nos</a>
+                </p>
+            </div>
+
+            <div class="col-md-6 text-center text-md-right">
+                <p style="color: #9F9F9F">CONTATOS</p>
+                <p>
+                    comunidadehallel95@gmail.com
+                    <i class="fas fa-envelope"></i>
+                </p>
+                <p>
+                    (92) 3085-1787
+                    <span class="fa fa-phone"></span>
+                </p>
+            </div>
+        </div>
+        <br>
+    </footer>
+    <!-- Fim do Footer -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+
+    <script src="http://digitalbush.com/wp-content/uploads/2014/10/jquery.maskedinput.js"></script>
+    <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+
+    <script type="text/javascript" src="../rsc/js/firebase.js"></script>
+    <script type="text/javascript" src="../rsc/js/editNoticia.js"></script>
+    
+    <script type="text/javascript" src="../rsc/js/configCkeditor.js"></script>
+    
+    <script type="text/javascript">
+        function enviar_imagem(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#fotoPerfil').attr('src', e.target.result);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#inputArquivo").change(function() {
+            enviar_imagem(this);
+        });
+    </script>
+</body></html>

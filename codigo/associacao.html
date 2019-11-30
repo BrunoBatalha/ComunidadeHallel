@@ -201,7 +201,7 @@
 
                         <div class="form-column">
                             <label for="">Nome completo</label>
-                            <input type="text" class="text-field form-control" placeholder="Informe seu nome completo" required>
+                            <input type="text" class="text-field form-control" id="nome-completo-ass" placeholder="Informe seu nome completo" onblur="validarNomeCompleto()" required>
                         </div>
                         <div class="form-column">
                             <label for="">Número do cartão</label>
@@ -209,11 +209,11 @@
                         </div>
                         <div class="form-column">
                             <label for="">Validade</label>
-                            <input type="date" class="text-field form-control" id="validade-ass" placeholder="Informe a validade do seu cartão de crédito" required>
+                            <input type="date" class="text-field form-control" id="validade-ass" placeholder="Informe a validade do seu cartão de crédito" onblur="validarValidadeCartao()" required>
                         </div>
                         <div class="form-column">
                             <label for="">CVV</label>
-                            <input type="number" class="text-field form-control" id="CVV-ass" placeholder="Informe o CVV do seu cartão de crédito" required>
+                            <input type="number" class="text-field form-control" id="cvv-ass" placeholder="Informe o CVV do seu cartão de crédito" onblur="validarCVV()" required>
                         </div>
                         <div class="form-column">
                             <label for="">Sua contribuição mensal</label>
@@ -251,48 +251,48 @@
                             <label for="">Sou membro associado da vocação Hallel:</label>
                             <br>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                <label class="form-check-label" for="inlineRadio1">Vida</label>
+                                <input class="form-check-input" type="radio" name="vocacao" id="vida" value="vida">
+                                <label class="form-check-label" for="vida">Vida</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <label class="form-check-label" for="inlineRadio2">Aliança</label>
+                                <input class="form-check-input" type="radio" name="vocacao" id="alianca" value="alianca">
+                                <label class="form-check-label" for="alianca">Aliança</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                <label class="form-check-label" for="inlineRadio3">Discípulo vocacional</label>
+                                <input class="form-check-input" type="radio" name="vocacao" id="vocacional" value="vocacional">
+                                <label class="form-check-label" for="vocacional">Discípulo vocacional</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                                <label class="form-check-label" for="inlineRadio3">Serviço</label>
+                                <input class="form-check-input" type="radio" name="vocacao" id="servico" value="servico">
+                                <label class="form-check-label" for="servico">Serviço</label>
                             </div>
                         </div>
                         <br>
                         <br>
 
                         <div class="form-group form-check" style="margin-left: 16px; margin-top: 30px">
-                            <input type="checkbox" class="form-check-input" id="recorrentes-box" required>
-                            <label class="form-check-label" for="exampleCheck1" required>Estou ciente de que os pagamentos são recorrentes.</label>
+                            <input type="checkbox" class="form-check-input" id="recorrentes-box" onchange="checkRecorrente()" required>
+                            <label class="form-check-label" for="exampleCheck1">Estou ciente de que os pagamentos são recorrentes.</label>
                         </div>
                         <div class="form-group form-check" style="margin-left: 16px;">
-                            <input type="checkbox" class="form-check-input" id="compromisso-box" required>
-                            <label class="form-check-label" for="exampleCheck1" required>Declaro sob compromisso que as informações que preenchi nesta Ficha de Inscrição são verdadeiras,
+                            <input type="checkbox" class="form-check-input" id="compromisso-box" onblur="checkCompromisso()" required>
+                            <label class="form-check-label" for="exampleCheck1">Declaro sob compromisso que as informações que preenchi nesta Ficha de Inscrição são verdadeiras,
                                 assim como declaro conhecer e cumprir os estatutos e regulamentos internos da Associação
                                 Civil e da Associação Pública de Fiéis.</label>
                         </div>
 
                         <div class="form-column mt-2">
                             <label for="">Senha</label>
-                            <input type="text" class="text-field form-control" id="senha-ass" placeholder="Informe uma senha" required>
+                            <input type="password" class="text-field form-control" id="senha-ass" placeholder="Informe uma senha" onblur="validarSenha()" required>
                         </div>
                         <div class="form-column mt-2">
                             <label for="">Confirme sua senha</label>
-                            <input type="text" class="text-field form-control" id="confirmeSenha-ass" placeholder="Informe sua senha novamente" required>
+                            <input type="password" class="text-field form-control" id="confirmeSenha-ass" placeholder="Informe sua senha novamente" onblur="validarConfSenha()" required>
                         </div>
 
                         <div class="full-wdth clearfix">
                             <a href="javascript:;" class="form-wizard-previous-btn btn btn-secondary float-left">Anterior</a>
-                            <a href="javascript:;" class="btn btn-primary float-right salvar">Salvar</a>
+                            <input type="submit" href="javascript:;" class="btn btn-primary float-right salvar" value="Salvar"></a>
                         </div>
 
                     </div>

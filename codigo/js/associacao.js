@@ -69,7 +69,41 @@ $(document).ready(function() {
         });
     });
     $('.salvar').click(function() {
-        criar()
+
+        var pm = $("primeiro-nome-ass").hasClass("is-valid")
+        var un = $("ultimo-nome-ass").hasClass("is-valid")
+        var em = $("email-ass").hasClass("is-valid")
+
+
+        var tel = $("telefone-ass").hasClass("is-valid")
+        var cpf = $("cpf-ass").hasClass("is-valid")
+        var rg = $("rg-ass").hasClass("is-valid")
+        var dt = $("dataNasc-ass").hasClass("is-valid")
+        var prof = $("profissao-ass").hasClass("is-valid")
+
+        var cep = $("cep-ass").hasClass("is-valid")
+        var rua = $("rua-ass").hasClass("is-valid")
+        var bai = $("bairro-ass").hasClass("is-valid")
+        var cid = $("cidade-ass").hasClass("is-valid")
+        var est = $("estado-ass").hasClass("is-valid")
+
+        var nc = $("nome-completo-ass").hasClass("is-valid")
+        var nmrc = $("nmrCartao-ass").hasClass("is-valid")
+        var val = $("validade-ass").hasClass("is-valid")
+        var cvv = $("cvv-ass").hasClass("is-valid")
+
+        var rb = $("recorrentes-box").hasClass("is-valid")
+        var cb = $("compromisso-box").hasClass("is-valid")
+
+        var senha = $("senha-ass").hasClass("is-valid")
+        var csenha = $("confirmeSenha-ass").hasClass("is-valid")
+
+        if (pm && un && em && tel && cpf && rg && dt && prof && cep && rua && bai && cid && est && nc && nmrc && val && cvv && rb && cd) {
+            criar()
+        } else {
+            console.log("tem erro")
+        }
+
     });
 
     $('#input-outro-valor').hide();
@@ -440,10 +474,6 @@ function validarRG() {
 
 }
 
-function dataNasc() {
-
-}
-
 function validarDataNasc() {
     var data = $("#dataNasc-ass").val(); // pega o valor do input
     data = data.replace(/\//g, "-"); // substitui eventuais barras (ex. IE) "/" por hífen "-"
@@ -544,8 +574,131 @@ function validarCartao() {
         }
 
 
+    }
+
+}
+
+function validarValidadeCartao() {
+
+    console.log("oi")
+
+    var data = $("#validade-ass").val(); // pega o valor do input
+    data = data.replace(/\//g, "-"); // substitui eventuais barras (ex. IE) "/" por hífen "-"
+    var data_array = data.split("-"); // quebra a data em array
+
+    // para o IE onde será inserido no formato dd/MM/yyyy
+    if (data_array[0].length != 4) {
+        data = data_array[2] + "-" + data_array[1] + "-" + data_array[0]; // remonto a data no formato yyyy/MM/dd
+    }
+
+    // comparo as datas e calculo a idade
+    var hoje = new Date();
+    var val = new Date(data);
+
+    if (val => hoje) {
+        $('#validade-ass').addClass('is-valid')
+        $('#validade-ass').removeClass('is-invalid')
+        console.log("pode ir")
+    } else {
+        console.log("já passou")
+        $('#validade-ass').addClass('is-invalid')
+        $('#validade-ass').removeClass('is-valid')
+    }
 
 
+}
+
+function validarNomeCompleto() {
+
+    var nome = $('#nome-completo-ass').val()
+
+    const regex = /[0-9]/
+
+    if ((!regex.test(nome)) && nome.length > 0) {
+        $('#nome-completo-ass').addClass('is-valid')
+        $('#nome-completo-ass').removeClass('is-invalid')
+    } else {
+        $('#nome-completo-ass').addClass('is-invalid')
+        $('#nome-completo-ass').removeClass('is-valid')
+    }
+
+}
+
+function validarCVV() {
+
+    var cvv = $('#cvv-ass').val()
+
+    if (cvv.length == 3) {
+        $('#cvv-ass').addClass('is-valid')
+        $('#cvv-ass').removeClass('is-invalid')
+    } else {
+        $('#cvv-ass').addClass('is-invalid')
+        $('#cvv-ass').removeClass('is-valid')
+    }
+
+}
+
+function checkRecorrente() {
+
+    var check = $('#recorrentes-box').is(':checked');
+
+    console.log(check)
+
+    if (check) {
+        $('#recorrentes-box').addClass('is-valid')
+        $('#recorrentes-box').removeClass('is-invalid')
+    } else {
+        $('#recorrentes-box').addClass('is-invalid')
+        $('#recorrentes-box').removeClass('is-valid')
+    }
+
+}
+
+function checkCompromisso() {
+
+    var check = $('#compromisso-box').is(':checked');
+
+    console.log(check)
+
+    if (check) {
+        $('#compromisso-box').addClass('is-valid')
+        $('#compromisso-box').removeClass('is-invalid')
+    } else {
+        $('#compromisso-box').addClass('is-invalid')
+        $('#compromisso-box').removeClass('is-valid')
+    }
+
+}
+
+function validarSenha() {
+
+    var senha = $('#senha-ass').val()
+
+    console.log(senha.length)
+
+    if (senha.length >= 6) {
+
+        $('#senha-ass').addClass('is-valid')
+        $('#senha-ass').removeClass('is-invalid')
+    } else {
+        $('#senha-ass').addClass('is-invalid')
+        $('#senha-ass').removeClass('is-valid')
+    }
+
+}
+
+function validarConfSenha() {
+
+    var senha = $('#senha-ass').val()
+    var confSenha = $('#confirmeSenha-ass').val()
+
+    if (senha.length >= 6 && senha == confSenha) {
+
+        $('#confirmeSenha-ass').addClass('is-valid')
+        $('#confirmeSenha-ass').removeClass('is-invalid')
+    } else {
+        $('#confirmeSenha-ass').addClass('is-invalid')
+        $('#confirmeSenha-ass').removeClass('is-valid')
     }
 
 }

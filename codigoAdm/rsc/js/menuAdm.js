@@ -13,6 +13,7 @@ $(document).ready(function () {
 
 $(document).on('click', '.visualizar', function () {
     key = $(this).data('name');
+
     refPedidos.child(key).once('value', snap => {
         let pedido = snap.val();
         estado = pedido.visualizado;
@@ -28,6 +29,34 @@ $(document).on('click', '.visualizar', function () {
 })
 
 $(document).on('click', '#btn-visu', function () {
+    mudarEstadoDePedido();
+})
+
+$(document).on('input', '#pesquisa-evento', function () {
+    pesquisar($(this).val())
+})
+
+$(document).on('click', '#btnImprimir', function () {
+    imprimir()
+})
+$(document).on('click',"input[name='check_impressao']",function(){
+    let dataName = $(this).attr('id') 
+    console.debug(  $('.visualizar[data-name='+dataName+']'))
+    if($(this).prop('checked')){
+        if( $('.visualizar[data-name='+dataName+']').html() == "Não Agendado"){
+            $('.visualizar[data-name='+dataName+']').removeClass('btn-danger').addClass('btn-info').html('Ainda não visualizado');        
+        }else{
+            $('.visualizar[data-name='+dataName+']').removeClass('btn-success').addClass('btn-warning').html('Pronto para impressão');
+        }
+        
+    }else{
+        $('.visualizar[data-name='+dataName+']').removeClass('btn-warning').addClass('btn-success').html('Agendado');
+    }
+    
+
+})
+
+function mudarEstadoDePedido() {
     if (estado) {
         refPedidos.child(key).update({
             visualizado: false
@@ -37,18 +66,8 @@ $(document).on('click', '#btn-visu', function () {
             visualizado: true
         })
     }
-
     $('#informacoes').modal('toggle')
-})
-
-$(document).on('input', '#pesquisa-evento', function () {
-    let valor = $(this).val()
-    pesquisar(valor)
-})
-
-$(document).on('click', '#btnImprimir', function () {
-    imprimir()
-})
+}
 
 function imprimir() {
 
@@ -66,7 +85,6 @@ function imprimir() {
 
 }
 
-
 function mostrarPedidos() {
     refPedidos.on('value', function (snapshot) {
         $('#usersList').html('')
@@ -83,10 +101,8 @@ function mostrarPedidos() {
 
             if (pedido.visualizado) {
                 btn.addClass('btn-success').html('Agendado')
-                console.debug(pedido.visualizado)
             } else {
                 btn.addClass('btn-danger').html('Não Agendado')
-                console.debug(pedido.visualizado)
             }
 
             td4.append(btn);

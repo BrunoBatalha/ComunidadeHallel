@@ -128,8 +128,7 @@ function criar() {
         rg: $('#rg-ass').val(),
         datadenascimento: $('#dataNasc-ass').val(),
         profissao: $('#profissao-ass').val(),
-        nacionalidade: $('#nacionalidade-ass').val(),
-        
+
         cep: $('#cep-ass').val(),
         rua: $('#rua-ass').val(),
         bairro: $('#bairro-ass').val(),
@@ -175,8 +174,7 @@ function criar() {
                         rg: associado.rg,
                         datadenascimento: associado.datadenascimento,
                         profissao: associado.profissao,
-                        nacionalidade: associado.nacionalidade,
-                        
+
                         cep: associado.cep,
                         rua: associado.rua,
                         bairro: associado.bairro,
@@ -220,11 +218,39 @@ function meu_callback(conteudo) {
         document.getElementById('bairro-ass').value = (conteudo.bairro);
         document.getElementById('cidade-ass').value = (conteudo.localidade);
         document.getElementById('estado-ass').value = (conteudo.uf);
+
+        $('#cep-ass').addClass('is-valid')
+        $('#cep-ass').removeClass('is-invalid')
+
+        $('#rua-ass').addClass('is-valid')
+        $('#rua-ass').removeClass('is-invalid')
+
+        $('#bairro-ass').addClass('is-valid')
+        $('#bairro-ass').removeClass('is-invalid')
+
+        $('#cidade-ass').addClass('is-valid')
+        $('#cidade-ass').removeClass('is-invalid')
+
+        $('#estado-ass').addClass('is-valid')
+        $('#estado-ass').removeClass('is-invalid')
     } //end if.
     else {
         //CEP não Encontrado.
         limpa_formulário_cep();
-        alert("CEP não encontrado.");
+        $('#cep-ass').addClass('is-invalid')
+        $('#cep-ass').removeClass('is-valid')
+
+        $('#rua-ass').addClass('is-invalid')
+        $('#rua-ass').removeClass('is-valid')
+
+        $('#bairro-ass').addClass('is-invalid')
+        $('#bairro-ass').removeClass('is-valid')
+
+        $('#cidade-ass').addClass('is-invalid')
+        $('#cidade-ass').removeClass('is-valid')
+
+        $('#estado-ass').addClass('is-invalid')
+        $('#estado-ass').removeClass('is-valid')
     }
 }
 
@@ -260,8 +286,20 @@ function pesquisacep(valor) {
         } //end if.
         else {
             //cep é inválido.
-            limpa_formulário_cep();
-            alert("Formato de CEP inválido.");
+            $('#cep-ass').addClass('is-invalid')
+            $('#cep-ass').removeClass('is-valid')
+
+            $('#rua-ass').addClass('is-invalid')
+            $('#rua-ass').removeClass('is-valid')
+
+            $('#bairro-ass').addClass('is-invalid')
+            $('#bairro-ass').removeClass('is-valid')
+
+            $('#cidade-ass').addClass('is-invalid')
+            $('#cidade-ass').removeClass('is-valid')
+
+            $('#estado-ass').addClass('is-invalid')
+            $('#estado-ass').removeClass('is-valid')
         }
     } //end if.
     else {
@@ -312,8 +350,149 @@ function testeCPF(cpf) {
         resultado = false;
 
     if (resultado == true) {
-        alert("valido")
+        $('#cpf-ass').addClass('is-valid')
+        $('#cpf-ass').removeClass('is-invalid')
     } else {
-        alert("invalido")
+        $('#cpf-ass').addClass('is-invalid')
+        $('#cpf-ass').removeClass('is-valid')
     }
+}
+
+function validarPrimeiroNome() {
+
+    var primeiroNome = $('#primeiro-nome-ass').val()
+
+    const regex = /[0-9]/
+
+    if ((!regex.test(primeiroNome)) && primeiroNome.length > 0) {
+        $('#primeiro-nome-ass').addClass('is-valid')
+        $('#primeiro-nome-ass').removeClass('is-invalid')
+    } else {
+        $('#primeiro-nome-ass').addClass('is-invalid')
+        $('#primeiro-nome-ass').removeClass('is-valid')
+    }
+
+}
+
+function validarSegundoNome() {
+
+    var segundoNome = $('#ultimo-nome-ass').val()
+
+    const regex = /[0-9]/
+
+    if ((!regex.test(segundoNome)) && segundoNome.length > 0) {
+        $('#ultimo-nome-ass').addClass('is-valid')
+        $('#ultimo-nome-ass').removeClass('is-invalid')
+    } else {
+        $('#ultimo-nome-ass').addClass('is-invalid')
+        $('#ultimo-nome-ass').removeClass('is-valid')
+    }
+
+}
+
+function validarEmail() {
+
+    var email = $('#email-ass').val()
+
+    usuario = email.substring(0, email.indexOf("@"));
+    dominio = email.substring(email.indexOf("@") + 1, email.length);
+
+    if ((usuario.length >= 1) &&
+        (dominio.length >= 3) &&
+        (usuario.search("@") == -1) &&
+        (dominio.search("@") == -1) &&
+        (usuario.search(" ") == -1) &&
+        (dominio.search(" ") == -1) &&
+        (dominio.search(".") != -1) &&
+        (dominio.indexOf(".") >= 1) &&
+        (dominio.lastIndexOf(".") < dominio.length - 1)) {
+        $('#email-ass').addClass('is-valid')
+        $('#email-ass').removeClass('is-invalid')
+    } else {
+        $('#email-ass').addClass('is-invalid')
+        $('#email-ass').removeClass('is-valid')
+    }
+}
+
+function validarTelefone(phone) {
+    var regex = new RegExp('^((1[1-9])|([2-9][0-9]))((3[0-9]{3}[0-9]{4})|(9[0-9]{3}[0-9]{5}))$');
+
+    if (regex.test(phone)) {
+        $('#telefone-ass').addClass('is-valid')
+        $('#telefone-ass').removeClass('is-invalid')
+    } else {
+        $('#telefone-ass').addClass('is-invalid')
+        $('#telefone-ass').removeClass('is-valid')
+    }
+}
+
+function validarRG() {
+
+    var rg = $('#rg-ass').val()
+
+    if (rg.length == 9) {
+        $('#rg-ass').addClass('is-valid')
+        $('#rg-ass').removeClass('is-invalid')
+    } else {
+        $('#rg-ass').addClass('is-invalid')
+        $('#rg-ass').removeClass('is-valid')
+    }
+
+}
+
+function dataNasc() {
+
+}
+
+function validarDataNasc() {
+    var data = $("#dataNasc-ass").val(); // pega o valor do input
+    data = data.replace(/\//g, "-"); // substitui eventuais barras (ex. IE) "/" por hífen "-"
+    var data_array = data.split("-"); // quebra a data em array
+
+    // para o IE onde será inserido no formato dd/MM/yyyy
+    if (data_array[0].length != 4) {
+        data = data_array[2] + "-" + data_array[1] + "-" + data_array[0]; // remonto a data no formato yyyy/MM/dd
+    }
+
+    // comparo as datas e calculo a idade
+    var hoje = new Date();
+    var nasc = new Date(data);
+    var idade = hoje.getFullYear() - nasc.getFullYear();
+    var m = hoje.getMonth() - nasc.getMonth();
+    if (m < 0 || (m === 0 && hoje.getDate() < nasc.getDate())) idade--;
+
+    if (idade < 18) {
+        $('#dataNasc-ass').addClass('is-invalid')
+        $('#dataNasc-ass').removeClass('is-valid')
+        console.log("menor que 18")
+    }
+
+    if (idade >= 18 && idade <= 120) {
+        console.log("ok")
+        $('#dataNasc-ass').addClass('is-valid')
+        $('#dataNasc-ass').removeClass('is-invalid')
+    }
+
+    if (idade > 120) {
+        console.log("maior que 120")
+        $('#dataNasc-ass').addClass('is-invalid')
+        $('#dataNasc-ass').removeClass('is-valid')
+    }
+
+}
+
+function validarProfissao() {
+
+    var profissao = $('#profissao-ass').val()
+
+    const regex = /[0-9]/
+
+    if ((!regex.test(profissao)) && profissao.length > 0) {
+        $('#profissao-ass').addClass('is-valid')
+        $('#profissao-ass').removeClass('is-invalid')
+    } else {
+        $('#profissao-ass').addClass('is-invalid')
+        $('#profissao-ass').removeClass('is-valid')
+    }
+
 }

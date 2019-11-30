@@ -21,8 +21,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#">HALLEL</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
-            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -50,8 +49,8 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0" id="esquerdaNav">
-                
-                
+
+
             </form>
         </div>
     </nav>
@@ -93,19 +92,23 @@
                     <div class="form-row">
                         <div class="form-column">
                             <label for="">Primeiro nome</label>
-                            <input type="text" class="text-field form-control" id="primeiro-nome-ass" placeholder="Informe seu primeiro nome" required>
+                            <input type="text" class="text-field form-control" id="primeiro-nome-ass" placeholder="Informe seu primeiro nome" onblur="validarPrimeiroNome();" required>
+
                         </div>
                         <div class="form-column">
                             <label for="">Último nome</label>
-                            <input type="text" class="text-field form-control" id="ultimo-nome-ass" placeholder="Informe seu último nome" required>
+                            <input type="text" class="text-field form-control" id="ultimo-nome-ass" placeholder="Informe seu último nome" onblur="validarSegundoNome();" required>
+
                         </div>
                         <div class="form-column mt-2">
                             <label for="">Email</label>
-                            <input type="email" class="text-field form-control" id="email-ass" placeholder="Informe seu email" required>
+                            <input type="email" class="text-field form-control" id="email-ass" placeholder="Informe seu email" onblur="validarEmail();" required>
+
                         </div>
                         <div class="form-column mt-2">
-                            <label for="">Número de telefone</label>
-                            <input type="text" class="text-field form-control" id="telefone-ass" placeholder="Informe seu número de telefone" required>
+                            <label for="">Número de celular</label>
+                            <input type="number" class="text-field form-control" id="telefone-ass" placeholder="Informe seu número de celular" onblur="validarTelefone(this.value)" required>
+
                         </div>
                         <div class="form-column mt-2">
                             <label for="">CPF</label>
@@ -113,15 +116,15 @@
                         </div>
                         <div class="form-column mt-2">
                             <label for="">RG</label>
-                            <input type="number" class="text-field form-control" id="rg-ass" placeholder="Informe seu RG" required>
+                            <input type="number" class="text-field form-control" id="rg-ass" placeholder="Informe seu RG" onblur="validarRG()" required>
                         </div>
                         <div class="form-column mt-2">
                             <label for="">Data de nascimento</label>
-                            <input type="date" class="text-field form-control" id="dataNasc-ass" placeholder="Informe sua data de nascimento" required>
+                            <input type="date" class="text-field form-control" id="dataNasc-ass" placeholder="Informe sua data de nascimento" onblur="validarDataNasc()" required>
                         </div>
                         <div class="form-column mt-2">
                             <label for="">Profissão</label>
-                            <input type="text" class="text-field form-control" id="profissao-ass" placeholder="Informe sua profissão" required>
+                            <input type="text" class="text-field form-control" id="profissao-ass" placeholder="Informe sua profissão" onblur="validarProfissao()" required>
                         </div>
 
                         <div class="full-wdth clearfix">
@@ -157,10 +160,7 @@
                             <label for="">Estado</label>
                             <input type="text" class="text-field form-control" id="estado-ass" placeholder="Informe seu estado" required>
                         </div>
-                        <div class="form-column mt-2">
-                            <label for="">Nacionalidade</label>
-                            <input type="text" class="text-field form-control" id="nacionalidade-ass" placeholder="Informe sua nacionalidade" required>
-                        </div>
+
 
                         <div class="full-wdth clearfix">
                             <a href="javascript:;" class="form-wizard-previous-btn btn btn-secondary float-left">Anterior</a>

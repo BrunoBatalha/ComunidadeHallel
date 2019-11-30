@@ -145,12 +145,10 @@ label {
     margin: 0 0 10px;
 }
 
-
-
 .form-wizard-content-wrapper {
     position: relative;
     background-color: #fff;
-    height: 500px;
+    height: 580px;
 }
 
 .text-field {
@@ -169,4 +167,16 @@ label {
 
 .a-bot:hover {
     color: #797979;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
 }

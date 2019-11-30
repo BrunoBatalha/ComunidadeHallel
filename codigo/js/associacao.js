@@ -70,35 +70,37 @@ $(document).ready(function() {
     });
     $('.salvar').click(function() {
 
-        var pm = $("primeiro-nome-ass").hasClass("is-valid")
-        var un = $("ultimo-nome-ass").hasClass("is-valid")
-        var em = $("email-ass").hasClass("is-valid")
+        var pm = $("#primeiro-nome-ass").hasClass("is-valid")
+        var un = $("#ultimo-nome-ass").hasClass("is-valid")
+        var em = $("#email-ass").hasClass("is-valid")
 
 
-        var tel = $("telefone-ass").hasClass("is-valid")
-        var cpf = $("cpf-ass").hasClass("is-valid")
-        var rg = $("rg-ass").hasClass("is-valid")
-        var dt = $("dataNasc-ass").hasClass("is-valid")
-        var prof = $("profissao-ass").hasClass("is-valid")
+        var tel = $("#telefone-ass").hasClass("is-valid")
+        var cpf = $("#cpf-ass").hasClass("is-valid")
+        var rg = $("#rg-ass").hasClass("is-valid")
+        var dt = $("#dataNasc-ass").hasClass("is-valid")
+        var prof = $("#profissao-ass").hasClass("is-valid")
 
-        var cep = $("cep-ass").hasClass("is-valid")
-        var rua = $("rua-ass").hasClass("is-valid")
-        var bai = $("bairro-ass").hasClass("is-valid")
-        var cid = $("cidade-ass").hasClass("is-valid")
-        var est = $("estado-ass").hasClass("is-valid")
+        var cep = $("#cep-ass").hasClass("is-valid")
+        var rua = $("#rua-ass").hasClass("is-valid")
+        var bai = $("#bairro-ass").hasClass("is-valid")
+        var cid = $("#cidade-ass").hasClass("is-valid")
+        var est = $("#estado-ass").hasClass("is-valid")
 
-        var nc = $("nome-completo-ass").hasClass("is-valid")
-        var nmrc = $("nmrCartao-ass").hasClass("is-valid")
-        var val = $("validade-ass").hasClass("is-valid")
-        var cvv = $("cvv-ass").hasClass("is-valid")
+        var nc = $("#nome-completo-ass").hasClass("is-valid")
+        var nmrc = $("#nmrCartao-ass").hasClass("is-valid")
+        var val = $("#validade-ass").hasClass("is-valid")
+        var cvv = $("#cvv-ass").hasClass("is-valid")
 
-        var rb = $("recorrentes-box").hasClass("is-valid")
-        var cb = $("compromisso-box").hasClass("is-valid")
+        var rb = $("#recorrentes-box").hasClass("is-valid")
+        var cb = $("#compromisso-box").hasClass("is-valid")
 
-        var senha = $("senha-ass").hasClass("is-valid")
-        var csenha = $("confirmeSenha-ass").hasClass("is-valid")
+        var senha = $("#senha-ass").hasClass("is-valid")
+        var csenha = $("#confirmeSenha-ass").hasClass("is-valid")
 
-        if (pm && un && em && tel && cpf && rg && dt && prof && cep && rua && bai && cid && est && nc && nmrc && val && cvv && rb && cd) {
+        console.log(pm && un && em && tel && cpf && rg && dt && prof && cep && rua && bai && cid && est && nc && nmrc && val && cvv && rb && cb && senha && csenha)
+
+        if (pm == true) {
             criar()
         } else {
             console.log("tem erro")
@@ -162,7 +164,6 @@ function criar() {
         rg: $('#rg-ass').val(),
         datadenascimento: $('#dataNasc-ass').val(),
         profissao: $('#profissao-ass').val(),
-
         cep: $('#cep-ass').val(),
         rua: $('#rua-ass').val(),
         bairro: $('#bairro-ass').val(),
@@ -171,7 +172,7 @@ function criar() {
         senha: $('#senha-ass').val(),
         numerocartao: $('#nmrCartao-ass').val(),
         validade: $('#validade-ass').val(),
-        CVV: $('#CVV-ass').val(),
+        CVV: $('#cvv-ass').val(),
 
     }
 
@@ -187,7 +188,7 @@ function criar() {
                     // faz login no authentication
                     firebase.auth().signInWithEmailAndPassword(associado.email, associado.senha)
                         .then(function(result) {
-                            const refAss = rootRef.child('administradores').orderByChild('email').equalTo(associado.email)
+                            const refAss = rootRef.child('associados').orderByChild('email').equalTo(associado.email)
                             refAss.once('child_added', snap => {
                                 const nomeAssociado = snap.val().nome
                                 window.sessionStorage.setItem('nome_associado', nomeAssociado);

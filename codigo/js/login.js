@@ -1,14 +1,17 @@
-$(document).ready(function () {
-    
-    firebase.auth().onAuthStateChanged(function (user) {
+$(document).ready(function() {
+
+    firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             $('#esquerdaNav').html('')
 
             console.log(user.email)
-            
+
             let email = $('<p style="color: white">' + user.email + '</p>');
 
+            let sair = $('<a href="javascript:;" class="btn btn-primary" id="sair">Sair</a>')
+
             $('#esquerdaNav').append(email);
+            $('#esquerdaNav').append(sair);
         } else {
             adicionarBtnLogin()
 
@@ -16,8 +19,25 @@ $(document).ready(function () {
         }
     });
 
+
+    $('#sair').click(function() {
+
+        console.log("saiu")
+
+        sair()
+
+    });
+
 });
 
+function sair() {
+    firebase.auth().signOut().then(function() {
+
+        window.location.reload()
+    }).catch(function(error) {
+
+    });
+}
 
 function login() {
 
@@ -31,7 +51,7 @@ function login() {
             console.log(result)
             console.log("sign in feito")
             window.location.reload()
-            
+
         })
         .catch(function(error) {
             alert("Não foi possível concluir o login: " + error.message)

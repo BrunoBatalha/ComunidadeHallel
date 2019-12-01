@@ -155,6 +155,24 @@ function criar() {
         valorcontribuicao = 20
     }
 
+    var voc = $('#vocacao').val()
+
+    var vocacao = ""
+
+    if (voc == "alianca") {
+        vocacao = "aliança"
+    }
+    if (voc == "vida") {
+        vocacao = "vida"
+    }
+    if (voc == "vocacao") {
+        vocacao = "vocação"
+    }
+    if (voc == "servico") {
+        vocacao = "serviço"
+    }
+
+
     var associado = {
         primeiroNome: $('#primeiro-nome-ass').val(),
         segundoNome: $('#primeiro-nome-ass').val(),
@@ -172,7 +190,7 @@ function criar() {
         senha: $('#senha-ass').val(),
         numerocartao: $('#nmrCartao-ass').val(),
         validade: $('#validade-ass').val(),
-        CVV: $('#cvv-ass').val(),
+        CVV: $('#cvv-ass').val()
 
     }
 
@@ -209,7 +227,6 @@ function criar() {
                         rg: associado.rg,
                         datadenascimento: associado.datadenascimento,
                         profissao: associado.profissao,
-
                         cep: associado.cep,
                         rua: associado.rua,
                         bairro: associado.bairro,
@@ -219,7 +236,8 @@ function criar() {
                         numero: associado.numerocartao,
                         validade: associado.validade,
                         CVV: associado.CVV,
-                        contribuicao: `R$${valorcontribuicao}`
+                        contribuicao: `R$${valorcontribuicao}`,
+                        vocacaoHallel: vocacao
                     });
                     console.log("Cadastro realizado com sucesso!");
                     window.location.href = "index.html";

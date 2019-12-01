@@ -4,6 +4,8 @@
 
 $(document).ready(function() {
 
+    $('#alert-erro').hide()
+
     $('.form-wizard-wrapper').find('.form-wizard-link').click(function() {
         $('.form-wizard-link').removeClass('active');
         var innerWidth = $(this).innerWidth();
@@ -103,7 +105,7 @@ $(document).ready(function() {
         if (pm == true) {
             criar()
         } else {
-            console.log("tem erro")
+            $('#alert-erro').show()
         }
 
     });

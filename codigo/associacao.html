@@ -182,15 +182,18 @@
 
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="cc-visa" id="cc" value="cc-visa">
-                                <label class="form-check-label" for="cc-visa"><i class="fab fa-cc-visa fa-2x"></i></label>
+                                <label class="form-check-label" for="cc-visa"><i
+                                        class="fab fa-cc-visa fa-2x"></i></label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="cc-mastercard" id="cc" value="cc-mastercard">
-                                <label class="form-check-label" for="cc-mastercard"><i class="fab fa-cc-mastercard fa-2x"></i></label>
+                                <label class="form-check-label" for="cc-mastercard"><i
+                                        class="fab fa-cc-mastercard fa-2x"></i></label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="cc-amex" id="cc" value="cc-amex">
-                                <label class="form-check-label" for="cc-amex"><i class="fab fa-cc-amex fa-2x"></i></label>
+                                <label class="form-check-label" for="cc-amex"><i
+                                        class="fab fa-cc-amex fa-2x"></i></label>
                             </div>
 
                         </div>
@@ -272,11 +275,13 @@
 
                         <div class="form-group form-check" style="margin-left: 16px; margin-top: 30px">
                             <input type="checkbox" class="form-check-input" id="recorrentes-box" onchange="checkRecorrente()" required>
-                            <label class="form-check-label" for="exampleCheck1">Estou ciente de que os pagamentos são recorrentes.</label>
+                            <label class="form-check-label" for="exampleCheck1">Estou ciente de que os pagamentos são
+                                recorrentes.</label>
                         </div>
                         <div class="form-group form-check" style="margin-left: 16px;">
                             <input type="checkbox" class="form-check-input" id="compromisso-box" onblur="checkCompromisso()" required>
-                            <label class="form-check-label" for="exampleCheck1">Declaro sob compromisso que as informações que preenchi nesta Ficha de Inscrição são verdadeiras,
+                            <label class="form-check-label" for="exampleCheck1">Declaro sob compromisso que as
+                                informações que preenchi nesta Ficha de Inscrição são verdadeiras,
                                 assim como declaro conhecer e cumprir os estatutos e regulamentos internos da Associação
                                 Civil e da Associação Pública de Fiéis.</label>
                         </div>
@@ -292,9 +297,18 @@
 
                         <div class="full-wdth clearfix">
                             <a href="javascript:;" class="form-wizard-previous-btn btn btn-secondary float-left">Anterior</a>
-                            <a href="javascript:;" class="btn btn-primary float-right salvar" value="Salvar"></a>
+                            <a href="javascript:;" class="btn btn-primary float-right salvar">Salvar</a>
                         </div>
 
+                        <center>
+
+                            <div style="margin-left: 70px; margin-top: 30px;" id="alert-erro">
+                                <div class="alert alert-danger">
+                                    <strong> Há problemas com seus dados!</strong> Por favor corrija-os antes de continuar.
+                                </div>
+
+                            </div>
+                        </center>
                     </div>
                 </form>
             </div>

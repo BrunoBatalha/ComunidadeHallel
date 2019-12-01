@@ -1,17 +1,18 @@
 var refEvento = rootRef.child("eventos")
 var stgEvento = storageRef.child('eventos')
 
-$(document).ready(function () {
+$(document).ready(function() {
 
     mostrarEventos()
-    
+
 });
 
 function mostrarEventos() {
 
-    refEvento.on('value', function (snapshot) {
+    refEvento.on('value', function(snapshot) {
         $('#destaque-eventos').html('')
-        snapshot.forEach(function (item) {
+        $('#mais-proximos').html('')
+        snapshot.forEach(function(item) {
 
             var divcol = $('<div></div>');
             var divzoom = $('<div></div>');
@@ -57,8 +58,68 @@ function mostrarEventos() {
 
             console.log("já")
 
+            // mais próximos
+
+            let parts = item.val().data.split('-')
+
+            var date = new Date(parts[0], parts[1] - 1, parts[2])
+
+            console.log(date)
+
+            let parts2 = dataAtualFormatada().split('/')
+
+            var date2 = new Date(parts2[2], parts2[1] - 1, parts2[0])
+
+            var umdia = 1000 * 60 * 60 * 24;
+
+            var c = parseInt(date.getTime() - date2.getTime());
+
+            var d = (c / umdia);
+
+            console.log(d)
+
+            if (d >= 0) {
+
+                if (d <= 6) {
+
+                    var divtudo = $('<div></div>')
+                    var ptitulo = $('<p></p>');
+                    var plocal = $('<p></p>');
+                    var pdata = $('<p></p>');
+
+                    ptitulo.addClass('tituloevento');
+                    plocal.addClass('local');
+                    pdata.addClass('data');
+
+                    ptitulo.append(item.val().titulo);
+                    plocal.append("Local: " + item.val().local);
+                    pdata.append("Data: " + item.val().data);
+
+                    divtudo.append(ptitulo);
+                    divtudo.append(plocal);
+                    divtudo.append(pdata);
+
+                    $('#mais-proximos').append(divtudo);
+
+
+                }
+
+            }
+
         });
+
+
 
     });
 
+}
+
+function dataAtualFormatada() {
+    var data = new Date(),
+        dia = data.getDate().toString(),
+        diaF = (dia.length == 1) ? '0' + dia : dia,
+        mes = (data.getMonth() + 1).toString(), //+1 pois no getMonth Janeiro começa com zero.
+        mesF = (mes.length == 1) ? '0' + mes : mes,
+        anoF = data.getFullYear();
+    return diaF + "/" + mesF + "/" + anoF;
 }

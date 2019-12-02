@@ -472,10 +472,11 @@ function validarEmail() {
     }
 }
 
-function validarTelefone(phone) {
-    var regex = new RegExp('^((1[1-9])|([2-9][0-9]))((3[0-9]{3}[0-9]{4})|(9[0-9]{3}[0-9]{5}))$');
-
-    if (regex.test(phone)) {
+function validarTelefone() {
+    
+    let valTele = $('#telefone-ass').cleanVal();
+    
+    if (valTele.length == 11) {
         $('#telefone-ass').addClass('is-valid')
         $('#telefone-ass').removeClass('is-invalid')
     } else {
@@ -486,9 +487,9 @@ function validarTelefone(phone) {
 
 function validarRG() {
 
-    var rg = $('#rg-ass').val()
+    var rg = $('#rg-ass').cleanVal()
 
-    if (rg.length == 9) {
+    if (rg.length == 8) {
         $('#rg-ass').addClass('is-valid')
         $('#rg-ass').removeClass('is-invalid')
     } else {

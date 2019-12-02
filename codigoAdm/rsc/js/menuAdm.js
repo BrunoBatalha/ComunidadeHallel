@@ -20,9 +20,9 @@ $(document).on('click', '.visualizar', function () {
         $('#informacoes #nome-modal').val(pedido.nome)
         $('#informacoes #mensagem-modal').val(pedido.pedido)
         if (pedido.visualizado) {
-            $('#btn-visu').addClass('btn-danger').html('Retirar da agenda')
+            $('#btn-visu').removeClass('btn-success').addClass('btn-danger').html('Retirar da agenda')
         } else {
-            $('#btn-visu').addClass('btn-success').html('Agendar')
+            $('#btn-visu').removeClass('btn-danger').addClass('btn-success').html('Agendar')
         }
     })
     $('#informacoes').modal('toggle')

@@ -99,11 +99,13 @@ $(document).ready(function () {
         var senha = $("#senha-ass").hasClass("is-valid")
         var csenha = $("#confirmeSenha-ass").hasClass("is-valid")
 
-        console.log(pm && un && em && tel && cpf && rg && dt && prof && cep && rua && bai && cid && est && nc && nmrc && val && cvv && rb && cb && senha && csenha)
-
-        if (pm == true) {
+        let res = pm && un && em && tel && cpf && rg && dt && prof && cep && rua && bai && cid && est && nc && nmrc && val && cvv && rb && cb && senha && csenha
+        console.log(res)
+        if (res == true) {
+            //$('#salvar').removeClass('disabled')
             criar()
         } else {
+            //$('#salvar').addClass('disabled')
             $('#alert-erro').show()
         }
 

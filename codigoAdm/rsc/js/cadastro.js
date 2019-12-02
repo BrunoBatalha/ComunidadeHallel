@@ -1,38 +1,43 @@
 function cadastro() {
 
-    console.log("entrou")
-
-    var adm = {
+    var ddInformados = {
         email: $('#email-cad').val(),
         senha: $('#senha-cad').val(),
         nome: $('#nome-cad').val(),
-        telefone: $('#telefone-cad').val(),
+        telefone: $('#telefone-cad').cleanVal(),
         confsenha: $('#confsenha-cad').val()
     }
 
-    let dados = {
-        email: adm.email,
-        senha: adm.senha,
-        nome: adm.nome,
-        telefone: adm.email
+    let adm = {
+        email: ddInformados.email,
+        senha: ddInformados.senha,
+        nome: ddInformados.nome,
+        telefone: ddInformados.telefone
     };
 
-    if (dados.senha.length >= 6) {
+    if (ddInformados.senha == ddInformados.confsenha) {
+        if (adm.senha.length >= 6) {
+            firebase.auth()
+                .createUserWithEmailAndPassword(adm.email, adm.senha)
+                .then(function (result) {
+                    rootRef.child("administradores").child(adm.nome).set(adm);
+                    $('#modal-cadastro').modal('hide')
+                    window.location.href = "principal.html";
+                })
+                .catch(function (error) {
+                    alert("Não foi possível concluir o cadastro: " + error.message)
+                });
 
-        firebase.auth()
-            .createUserWithEmailAndPassword(dados.email, dados.senha)
-            .then(function(result) {
-                rootRef.child("administradores").child(dados.nome).set(dados);
-                $('#modal-cadastro').modal('hide')
-                window.location.href = "principal.html";
-            })
-            .catch(function(error) {
-                alert("Não foi possível concluir o cadastro: " + error.message)
-            });
 
+        } else {
+            console.log("Não foi possível concluir.")
+        }
 
     } else {
-        console.log("Não foi possível concluir.")
+        alert("As senhas não correspondem");
     }
+
+
+
 
 }

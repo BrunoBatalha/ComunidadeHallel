@@ -22,22 +22,16 @@ function cadastro() {
                 .then(function (result) {
                     rootRef.child("administradores").child(adm.nome).set(adm);
                     $('#modal-cadastro').modal('hide')
+                    window.sessionStorage.setItem('NOME_ADM', adm.nome);
                     window.location.href = "principal.html";
                 })
                 .catch(function (error) {
                     alert("Não foi possível concluir o cadastro: " + error.message)
                 });
-
-
         } else {
-            console.log("Não foi possível concluir.")
+            console.log("Sua senha deve conter no mínimo 6 caracteres.")
         }
-
     } else {
-        alert("As senhas não correspondem");
+        alert("As senhas não correspondem.");
     }
-
-
-
-
 }

@@ -17,14 +17,6 @@
  const refPedidos = rootRef.child("pedidos");
  const refAssociados = rootRef.child("associados");
 
- var user = firebase.auth().currentUser;
-
- if (user) {
-
- } else {
-
-
- }
 
  firebase.auth().onAuthStateChanged(function (user) {
      if (user) {

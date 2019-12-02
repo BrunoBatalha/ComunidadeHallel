@@ -112,11 +112,11 @@
                         </div>
                         <div class="form-column mt-2">
                             <label for="">CPF</label>
-                            <input type="number" class="text-field form-control" id="cpf-ass" placeholder="Informe seu CPF" onblur="testeCPF(this.value);" required>
+                            <input type="text" class="text-field form-control" id="cpf-ass" placeholder="XXX.XXX.XX-XX" onblur="testeCPF();" required>
                         </div>
                         <div class="form-column mt-2">
                             <label for="">RG</label>
-                            <input type="number" class="text-field form-control" id="rg-ass" placeholder="Informe seu RG" onblur="validarRG()" required>
+                            <input type="text" class="text-field form-control" id="rg-ass" placeholder="Informe seu RG" onblur="validarRG()" required>
                         </div>
                         <div class="form-column mt-2">
                             <label for="">Data de nascimento</label>
@@ -182,18 +182,15 @@
 
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="cc-visa" id="cc" value="cc-visa">
-                                <label class="form-check-label" for="cc-visa"><i
-                                        class="fab fa-cc-visa fa-2x"></i></label>
+                                <label class="form-check-label" for="cc-visa"><i class="fab fa-cc-visa fa-2x"></i></label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="cc-mastercard" id="cc" value="cc-mastercard">
-                                <label class="form-check-label" for="cc-mastercard"><i
-                                        class="fab fa-cc-mastercard fa-2x"></i></label>
+                                <label class="form-check-label" for="cc-mastercard"><i class="fab fa-cc-mastercard fa-2x"></i></label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="cc-amex" id="cc" value="cc-amex">
-                                <label class="form-check-label" for="cc-amex"><i
-                                        class="fab fa-cc-amex fa-2x"></i></label>
+                                <label class="form-check-label" for="cc-amex"><i class="fab fa-cc-amex fa-2x"></i></label>
                             </div>
 
                         </div>
@@ -365,6 +362,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/firebase.js"></script>
     <script type="text/javascript" src="js/associacao.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script>
+        $('#cpf-ass').mask('999.999.999-99');
+
+    </script>
 </body>
 
 </html>

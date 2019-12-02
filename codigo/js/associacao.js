@@ -2,11 +2,10 @@
 
 
 
-$(document).ready(function() {
-
+$(document).ready(function () {
     $('#alert-erro').hide()
 
-    $('.form-wizard-wrapper').find('.form-wizard-link').click(function() {
+    $('.form-wizard-wrapper').find('.form-wizard-link').click(function () {
         $('.form-wizard-link').removeClass('active');
         var innerWidth = $(this).innerWidth();
         $(this).addClass('active');
@@ -16,7 +15,7 @@ $(document).ready(function() {
             "width": innerWidth
         });
         var attr = $(this).attr('data-attr');
-        $('.form-wizard-content').each(function() {
+        $('.form-wizard-content').each(function () {
             if ($(this).attr('data-tab-content') == attr) {
                 $(this).addClass('show');
             } else {
@@ -24,14 +23,14 @@ $(document).ready(function() {
             }
         });
     });
-    $('.form-wizard-next-btn').click(function() {
+    $('.form-wizard-next-btn').click(function () {
         var next = $(this);
         next.parents('.form-wizard-content').removeClass('show');
         next.parents('.form-wizard-content').next('.form-wizard-content').addClass('show');
-        $(document).find('.form-wizard-content').each(function() {
+        $(document).find('.form-wizard-content').each(function () {
             if ($(this).hasClass('show')) {
                 var formAtrr = $(this).attr('data-tab-content');
-                $(document).find('.form-wizard-wrapper li a').each(function() {
+                $(document).find('.form-wizard-wrapper li a').each(function () {
                     if ($(this).attr('data-attr') == formAtrr) {
                         $(this).addClass('active');
                         var innerWidth = $(this).innerWidth();
@@ -47,14 +46,14 @@ $(document).ready(function() {
             }
         });
     });
-    $('.form-wizard-previous-btn').click(function() {
+    $('.form-wizard-previous-btn').click(function () {
         var prev = $(this);
         prev.parents('.form-wizard-content').removeClass('show');
         prev.parents('.form-wizard-content').prev('.form-wizard-content').addClass('show');
-        $(document).find('.form-wizard-content').each(function() {
+        $(document).find('.form-wizard-content').each(function () {
             if ($(this).hasClass('show')) {
                 var formAtrr = $(this).attr('data-tab-content');
-                $(document).find('.form-wizard-wrapper li a').each(function() {
+                $(document).find('.form-wizard-wrapper li a').each(function () {
                     if ($(this).attr('data-attr') == formAtrr) {
                         $(this).addClass('active');
                         var innerWidth = $(this).innerWidth();
@@ -70,7 +69,7 @@ $(document).ready(function() {
             }
         });
     });
-    $('.salvar').click(function() {
+    $('.salvar').click(function () {
 
         var pm = $("#primeiro-nome-ass").hasClass("is-valid")
         var un = $("#ultimo-nome-ass").hasClass("is-valid")
@@ -113,7 +112,7 @@ $(document).ready(function() {
     $('#input-outro-valor').hide();
     $('#quota-minima-2').hide();
     document.getElementById("texto-outro-valor").style.display = 'none';
-    $('#contribuicao-ass').change(function() {
+    $('#contribuicao-ass').change(function () {
         if ($('#contribuicao-ass').val() == 'Outro valor') {
             $('#input-outro-valor').show();
             $('#quota-minima-2').show();
@@ -203,11 +202,11 @@ function criar() {
             //cria usuário no authentication
             firebase.auth()
                 .createUserWithEmailAndPassword(associado.email, associado.senha)
-                .then(function(result) {
+                .then(function (result) {
 
                     // faz login no authentication
                     firebase.auth().signInWithEmailAndPassword(associado.email, associado.senha)
-                        .then(function(result) {
+                        .then(function (result) {
                             const refAss = rootRef.child('associados').orderByChild('email').equalTo(associado.email)
                             refAss.once('child_added', snap => {
                                 const nomeAssociado = snap.val().nome
@@ -215,7 +214,7 @@ function criar() {
                             })
 
                         })
-                        .catch(function(error) {
+                        .catch(function (error) {
                             alert("Não foi possível concluir o login: " + error.message)
                         });
 
@@ -244,7 +243,7 @@ function criar() {
                     console.log("Cadastro realizado com sucesso!");
                     window.location.href = "index.html";
                 })
-                .catch(function(error) {
+                .catch(function (error) {
                     alert("Não foi possível concluir o cadastro: " + error.message)
                 });
         } else {
@@ -363,45 +362,49 @@ function pesquisacep(valor) {
     }
 };
 
-function testeCPF(cpf) {
-    cpf = cpf.replace(/[^\d]+/g, '');
+function testeCPF() {
+    let valCpf = $('#cpf-ass').cleanVal()
+    console.log(valCpf)
 
     resultado = true
 
-    if (cpf == '') resultado = false;
+    if (valCpf == '') resultado = false;
 
     // Elimina CPFs invalidos conhecidos	
-    if (cpf.length != 11 ||
-        cpf == "00000000000" ||
-        cpf == "11111111111" ||
-        cpf == "22222222222" ||
-        cpf == "33333333333" ||
-        cpf == "44444444444" ||
-        cpf == "55555555555" ||
-        cpf == "66666666666" ||
-        cpf == "77777777777" ||
-        cpf == "88888888888" ||
-        cpf == "99999999999")
+    if (valCpf.length != 11 ||
+        valCpf == "00000000000" ||
+        valCpf == "11111111111" ||
+        valCpf == "22222222222" ||
+        valCpf == "33333333333" ||
+        valCpf == "44444444444" ||
+        valCpf == "55555555555" ||
+        valCpf == "66666666666" ||
+        valCpf == "77777777777" ||
+        valCpf == "88888888888" ||
+        valCpf == "99999999999") {
+        
         resultado = false;
+    }
+
 
     // Valida 1o digito	
     add = 0;
     for (i = 0; i < 9; i++)
-        add += parseInt(cpf.charAt(i)) * (10 - i);
+        add += parseInt(valCpf.charAt(i)) * (10 - i);
     rev = 11 - (add % 11);
     if (rev == 10 || rev == 11)
         rev = 0;
-    if (rev != parseInt(cpf.charAt(9)))
+    if (rev != parseInt(valCpf.charAt(9)))
         resultado = false;
 
     // Valida 2o digito	
     add = 0;
     for (i = 0; i < 10; i++)
-        add += parseInt(cpf.charAt(i)) * (11 - i);
+        add += parseInt(valCpf.charAt(i)) * (11 - i);
     rev = 11 - (add % 11);
     if (rev == 10 || rev == 11)
         rev = 0;
-    if (rev != parseInt(cpf.charAt(10)))
+    if (rev != parseInt(valCpf.charAt(10)))
         resultado = false;
 
     if (resultado == true) {

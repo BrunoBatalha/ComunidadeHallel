@@ -139,10 +139,9 @@
                     <h6>Localidade</h6>
                     <div class="form-row">
 
-
                         <div class="form-column mt-2">
                             <label for="">CEP</label>
-                            <input type="text" class="text-field form-control" id="cep-ass" placeholder=".020-120" onblur="pesquisacep(this.value);" required>
+                            <input type="text" class="text-field form-control" id="cep-ass" placeholder="XXXXX-XXX" onblur="pesquisacep(this.value);" required>
                         </div>
                         <div class="form-column mt-2">
                             <label for="">Rua</label>
@@ -367,6 +366,8 @@
         $('#cpf-ass').mask('999.999.999-99');
         $('#rg-ass').mask('9999999-9');
         $('#telefone-ass').mask('(99) 99999-9999');
+        $('#cep-ass').mask('99999-999');
+        
         
 
     </script>

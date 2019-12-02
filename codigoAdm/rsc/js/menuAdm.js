@@ -39,6 +39,15 @@ $(document).on('input', '#pesquisa-evento', function () {
 $(document).on('click', '#btnImprimir', function () {
     imprimir()
 })
+
+$(document).on('click', '#logout', function () {
+    firebase.auth().signOut().then(function () {
+        window.location = "../rsc/web/index.html"
+    }).catch(function (error) {
+        alert("Ocorreu um erro ao se desconectar de sua conta")
+    });
+})
+
 $(document).on('click', "input[name='check_impressao']", function () {
     let dataName = $(this).attr('id')
     console.debug($('.visualizar[data-name=' + dataName + ']'))

@@ -16,3 +16,26 @@
  const refNoticias = rootRef.child("noticias");
  const refPedidos = rootRef.child("pedidos");
  const refAssociados = rootRef.child("associados");
+
+ var user = firebase.auth().currentUser;
+
+ if (user) {
+
+ } else {
+
+
+ }
+
+ firebase.auth().onAuthStateChanged(function (user) {
+     if (user) {
+         console.debug('logasdo')
+     } else {
+         console.debug('deslogado')
+         let url = window.location.href
+         url = url.substr(url.length - 10, url.length)
+         console.debug(url);
+         if (url != "index.html") {
+             window.location = "../web/index.html"
+         }
+     }
+ });

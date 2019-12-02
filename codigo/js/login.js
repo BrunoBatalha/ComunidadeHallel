@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-    firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             $('#esquerdaNav').html('')
 
@@ -18,24 +18,17 @@ $(document).ready(function() {
             console.log("não tem ninguém")
         }
     });
-
-
-    $('#sair').click(function() {
-
-        console.log("saiu")
-
-        sair()
-
-    });
-
 });
 
+$(document).on('click', '#sair', function () {
+    sair()
+})
+
 function sair() {
-    firebase.auth().signOut().then(function() {
-
+    firebase.auth().signOut().then(function () {
         window.location.reload()
-    }).catch(function(error) {
-
+    }).catch(function (error) {
+        console.debug(error)
     });
 }
 
@@ -47,13 +40,13 @@ function login() {
     }
 
     firebase.auth().signInWithEmailAndPassword(usu.email, usu.senha)
-        .then(function(result) {
+        .then(function (result) {
             console.log(result)
             console.log("sign in feito")
             window.location.reload()
 
         })
-        .catch(function(error) {
+        .catch(function (error) {
             alert("Não foi possível concluir o login: " + error.message)
         });
 

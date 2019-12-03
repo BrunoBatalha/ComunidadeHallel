@@ -1,11 +1,9 @@
 //Form para cadastro de associados
 
-
-
-$(document).ready(function () {
+$(document).ready(function() {
     $('#alert-erro').hide()
 
-    $('.form-wizard-wrapper').find('.form-wizard-link').click(function () {
+    $('.form-wizard-wrapper').find('.form-wizard-link').click(function() {
         $('.form-wizard-link').removeClass('active');
         var innerWidth = $(this).innerWidth();
         $(this).addClass('active');
@@ -15,7 +13,7 @@ $(document).ready(function () {
             "width": innerWidth
         });
         var attr = $(this).attr('data-attr');
-        $('.form-wizard-content').each(function () {
+        $('.form-wizard-content').each(function() {
             if ($(this).attr('data-tab-content') == attr) {
                 $(this).addClass('show');
             } else {
@@ -23,14 +21,14 @@ $(document).ready(function () {
             }
         });
     });
-    $('.form-wizard-next-btn').click(function () {
+    $('.form-wizard-next-btn').click(function() {
         var next = $(this);
         next.parents('.form-wizard-content').removeClass('show');
         next.parents('.form-wizard-content').next('.form-wizard-content').addClass('show');
-        $(document).find('.form-wizard-content').each(function () {
+        $(document).find('.form-wizard-content').each(function() {
             if ($(this).hasClass('show')) {
                 var formAtrr = $(this).attr('data-tab-content');
-                $(document).find('.form-wizard-wrapper li a').each(function () {
+                $(document).find('.form-wizard-wrapper li a').each(function() {
                     if ($(this).attr('data-attr') == formAtrr) {
                         $(this).addClass('active');
                         var innerWidth = $(this).innerWidth();
@@ -46,14 +44,14 @@ $(document).ready(function () {
             }
         });
     });
-    $('.form-wizard-previous-btn').click(function () {
+    $('.form-wizard-previous-btn').click(function() {
         var prev = $(this);
         prev.parents('.form-wizard-content').removeClass('show');
         prev.parents('.form-wizard-content').prev('.form-wizard-content').addClass('show');
-        $(document).find('.form-wizard-content').each(function () {
+        $(document).find('.form-wizard-content').each(function() {
             if ($(this).hasClass('show')) {
                 var formAtrr = $(this).attr('data-tab-content');
-                $(document).find('.form-wizard-wrapper li a').each(function () {
+                $(document).find('.form-wizard-wrapper li a').each(function() {
                     if ($(this).attr('data-attr') == formAtrr) {
                         $(this).addClass('active');
                         var innerWidth = $(this).innerWidth();
@@ -69,7 +67,7 @@ $(document).ready(function () {
             }
         });
     });
-    $('.salvar').click(function () {
+    $('.salvar').click(function() {
 
         var pm = $("#primeiro-nome-ass").hasClass("is-valid")
         var un = $("#ultimo-nome-ass").hasClass("is-valid")
@@ -114,7 +112,7 @@ $(document).ready(function () {
     $('#input-outro-valor').hide();
     $('#quota-minima-2').hide();
     document.getElementById("texto-outro-valor").style.display = 'none';
-    $('#contribuicao-ass').change(function () {
+    $('#contribuicao-ass').change(function() {
         if ($('#contribuicao-ass').val() == 'Outro valor') {
             $('#input-outro-valor').show();
             $('#quota-minima-2').show();
@@ -204,11 +202,11 @@ function criar() {
             //cria usuário no authentication
             firebase.auth()
                 .createUserWithEmailAndPassword(associado.email, associado.senha)
-                .then(function (result) {
+                .then(function(result) {
 
                     // faz login no authentication
                     firebase.auth().signInWithEmailAndPassword(associado.email, associado.senha)
-                        .then(function (result) {
+                        .then(function(result) {
                             const refAss = rootRef.child('associados').orderByChild('email').equalTo(associado.email)
                             refAss.once('child_added', snap => {
                                 const nomeAssociado = snap.val().nome
@@ -216,7 +214,7 @@ function criar() {
                             })
 
                         })
-                        .catch(function (error) {
+                        .catch(function(error) {
                             alert("Não foi possível concluir o login: " + error.message)
                         });
 
@@ -245,7 +243,7 @@ function criar() {
                     console.log("Cadastro realizado com sucesso!");
                     window.location.href = "index.html";
                 })
-                .catch(function (error) {
+                .catch(function(error) {
                     alert("Não foi possível concluir o cadastro: " + error.message)
                 });
         } else {
@@ -384,7 +382,7 @@ function testeCPF() {
         valCpf == "77777777777" ||
         valCpf == "88888888888" ||
         valCpf == "99999999999") {
-        
+
         resultado = false;
     }
 
@@ -475,9 +473,9 @@ function validarEmail() {
 }
 
 function validarTelefone() {
-    
+
     let valTele = $('#telefone-ass').cleanVal();
-    
+
     if (valTele.length == 11) {
         $('#telefone-ass').addClass('is-valid')
         $('#telefone-ass').removeClass('is-invalid')

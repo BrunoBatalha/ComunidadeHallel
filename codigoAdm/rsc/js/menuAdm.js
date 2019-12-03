@@ -2,7 +2,7 @@ var key;
 var estado;
 var pedidos_impressao = [];
 
-$(document).ready(function () {
+$(document).ready(function() {
     const nomeAdm = sessionStorage.getItem("NOME_ADM")
     $('#bemvindo').html("Bem vindo(a), " + nomeAdm + "!")
     mostrarPedidos()
@@ -11,7 +11,7 @@ $(document).ready(function () {
     mostrarAssociados()
 });
 
-$(document).on('click', '.visualizar', function () {
+$(document).on('click', '.visualizar', function() {
     key = $(this).data('name');
 
     refPedidos.child(key).once('value', snap => {
@@ -28,27 +28,27 @@ $(document).on('click', '.visualizar', function () {
     $('#informacoes').modal('toggle')
 })
 
-$(document).on('click', '#btn-visu', function () {
+$(document).on('click', '#btn-visu', function() {
     mudarEstadoDePedido();
 })
 
-$(document).on('input', '#pesquisa-evento', function () {
+$(document).on('input', '#pesquisa-evento', function() {
     pesquisar($(this).val())
 })
 
-$(document).on('click', '#btnImprimir', function () {
+$(document).on('click', '#btnImprimir', function() {
     imprimir()
 })
 
-$(document).on('click', '#logout', function () {
-    firebase.auth().signOut().then(function () {
+$(document).on('click', '#logout', function() {
+    firebase.auth().signOut().then(function() {
         window.location = "../rsc/web/index.html"
-    }).catch(function (error) {
+    }).catch(function(error) {
         alert("Ocorreu um erro ao se desconectar de sua conta")
     });
 })
 
-$(document).on('click', "input[name='check_impressao']", function () {
+$(document).on('click', "input[name='check_impressao']", function() {
     let dataName = $(this).attr('id')
     console.debug($('.visualizar[data-name=' + dataName + ']'))
     if ($(this).prop('checked')) {
@@ -99,9 +99,9 @@ function imprimir() {
 }
 
 function mostrarPedidos() {
-    refPedidos.on('value', function (snapshot) {
+    refPedidos.on('value', function(snapshot) {
         $('#usersList').html('')
-        snapshot.forEach(function (item) {
+        snapshot.forEach(function(item) {
             let pedido_key = item.key
             let pedido = item.val()
             let tr = $('<tr></tr>')
@@ -133,9 +133,9 @@ function mostrarAssociados() {
 
     var contribuicaoTotal = 0
 
-    refAssociados.on('value', function (snapshot) {
+    refAssociados.on('value', function(snapshot) {
         $('#list-associados').html('')
-        snapshot.forEach(function (item) {
+        snapshot.forEach(function(item) {
             let associado_key = item.key
             let associado = item.val()
             let tr = $('<tr></tr>')
@@ -177,11 +177,11 @@ function mostrarAssociados() {
 }
 
 function exibicaoEventos(strFiltro) {
-    refEventos.on('value', function (snapshot) {
+    refEventos.on('value', function(snapshot) {
         if (!strFiltro) {
             $('#cards-eventos').html('')
         }
-        snapshot.forEach(function (item) {
+        snapshot.forEach(function(item) {
 
             let divCol = $('<div class="xx col-sm-6 col-md-4 col-xl-4 mb-4  justify-content-center"></div>');
             let divCard = $('<div class="card w-80 filterDiv ' + item.val().titulo + '"></div>');
@@ -232,9 +232,9 @@ function exibicaoEventos(strFiltro) {
 }
 
 function exibirNoticias() {
-    refNoticias.on('value', function (snapshot) {
+    refNoticias.on('value', function(snapshot) {
         $('#cards-noticias').html('')
-        snapshot.forEach(function (item) {
+        snapshot.forEach(function(item) {
 
             let divCol = $('<div class="col-sm-6 col-md-4 col-xl-4 mb-4 justify-content-center"></div>');
             let divCard = $('<div class="card w-80"></div>');
@@ -253,13 +253,13 @@ function exibirNoticias() {
             let item2 = $('<button class="dropdown-item btn-add-destaque-not" data-name="' + item.val().titulo + '">Adicionar aos destaques</button>')
             let item3 = $('<button class="dropdown-item btn-rem-destaque-not" data-name="' + item.val().titulo + '">Remover dos destaques</button>')
 
-            $('.btn-add-destaque-not').unbind("click").click(function () {
+            $('.btn-add-destaque-not').unbind("click").click(function() {
                 let titulo = $(this).data("name");
                 let ref = refNoticias.child(titulo)
                 setDestaque(true, ref)
             });
 
-            $('.btn-rem-destaque-not').unbind("click").click(function () {
+            $('.btn-rem-destaque-not').unbind("click").click(function() {
                 let titulo = $(this).data("name");
                 let ref = refNoticias.child(titulo)
                 setDestaque(false, ref)
@@ -321,12 +321,12 @@ function exibirNoticias() {
 }
 
 function iniciarBotoes(ref) {
-    $('.btn-add-destaque-evt').on("click", function () {
+    $('.btn-add-destaque-evt').on("click", function() {
         let titulo = $(this).data("name");
         let r = ref.child(titulo)
         setDestaque(true, r)
     });
-    $('.btn-rem-destaque-evt').on("click", function () {
+    $('.btn-rem-destaque-evt').on("click", function() {
         let titulo = $(this).data("name");
         let r = ref.child(titulo)
         setDestaque(false, r)
@@ -389,21 +389,22 @@ function pesquisar(strPesq) {
         let aba = 'eventos'
         let ref;
         switch (aba) {
-            case 'eventos': {
-                ref = refEventos.orderByChild('titulo');
-                break;
-            }
+            case 'eventos':
+                {
+                    ref = refEventos.orderByChild('titulo');
+                    break;
+                }
         }
 
         ref.startAt(strPesq)
             .endAt(strPesq + '\uf8ff')
-            .once('value', function (snapshot) {
+            .once('value', function(snapshot) {
                 $('#cards-eventos').html('')
-                snapshot.forEach(function (item) {
+                snapshot.forEach(function(item) {
                     let pedido = item.val()
                     console.debug(pedido)
                     exibicaoEventos(pedido.titulo)
-                    //console.debug($('.xx:contains(' + pedido.titulo + ')').remove())
+                        //console.debug($('.xx:contains(' + pedido.titulo + ')').remove())
                 })
             })
     } else {

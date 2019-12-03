@@ -1,6 +1,6 @@
 body {
     color: black;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .container2 {
@@ -37,14 +37,6 @@ body {
 .text {
     color: black;
     font-size: 16px;
-}
-
-.objectImage2 {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 50%;
 }
 
 input[id='arquivo'] {

@@ -15,6 +15,31 @@ $(document).ready(function() {
         clicouevento($(this).text());
     });
 
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+
+            rootRef.child("associados").on('value', function(snapshot) {
+                snapshot.forEach(function(item) {
+
+                    console.log(item.val().email)
+                    console.log(user.email)
+
+                    if (user.email == item.val().email) {
+
+                        console.log("oi")
+                        $('#nome').val(item.val().primeiroNome + " " + item.val().segundoNome)
+                        $('#email').val(item.val().email)
+                    }
+
+                });
+            });
+
+        } else {
+            console.log("não tem ninguém")
+        }
+    });
+
+
 });
 
 function criar() {
@@ -31,6 +56,10 @@ function criar() {
         pedido: pedido.pedido,
         visualizado: false
     });
+
+    $('#nome').val("")
+    $('#email').val("")
+    $('#pedido').val("")
 
     console.log("cadastrou");
 }

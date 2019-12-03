@@ -1,18 +1,18 @@
-$(document).ready(function () {
+$(document).ready(function() {
     exibirEvento()
-    
-    
-    
-    
+
+
+
+
     $('#confirmacao').hide();
 
     console.log("entrou")
 
-    firebase.auth().onAuthStateChanged(function (user) {
+    firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
 
-            rootRef.child("associados").on('value', function (snapshot) {
-                snapshot.forEach(function (item) {
+            rootRef.child("associados").on('value', function(snapshot) {
+                snapshot.forEach(function(item) {
 
                     console.log(item.val().email)
                     console.log(user.email)
@@ -73,8 +73,12 @@ function inscrever() {
 
 function verificarExistenciaInscricao(inscricao) {
     let existe = false;
+
+    var cpf1 = inscricao.cpf.replace(".", "");
+    var cpf2 = cpf1.replace(/[^\d]+/g, "");
+
     const refEventos = rootRef.child("eventos").child(`${localStorage.getItem("titulo")}`).child("inscritos")
-    refEventos.orderByChild('cpf').equalTo(inscricao.cpf).once('value', snap => {
+    refEventos.orderByChild('cpf').equalTo(cpf2).once('value', snap => {
         if (snap.exists()) {
             alert("Este cpf já foi cadastrado")
         } else {
@@ -92,7 +96,10 @@ function verificarExistenciaInscricao(inscricao) {
 }
 
 function enviarInscricao(inscricao) {
-    const refEventos = rootRef.child("eventos").child(`${localStorage.getItem("titulo")}`).child("inscritos").child(inscricao.cpf)
+
+    var cpf1 = inscricao.cpf.replace(".", "");
+    var cpf2 = cpf1.replace(/[^\d]+/g, "");
+    const refEventos = rootRef.child("eventos").child(`${localStorage.getItem("titulo")}`).child("inscritos").child(cpf2)
 
     refEventos.set(inscricao)
 

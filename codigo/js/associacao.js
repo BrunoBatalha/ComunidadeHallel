@@ -218,8 +218,10 @@ function criar() {
                             alert("Não foi possível concluir o login: " + error.message)
                         });
 
+
+
                     //cria nó no database
-                    rootRef.child("associados").child(associado.cpf).set({
+                    rootRef.child("associados").child($('#cpf-ass').cleanVal()).set({
                         primeiroNome: associado.primeiroNome,
                         segundoNome: associado.segundoNome,
                         email: associado.email,
@@ -489,7 +491,7 @@ function validarRG() {
 
     var rg = $('#rg-ass').cleanVal()
 
-    if (rg.length == 8) {
+    if (rg.length == 9) {
         $('#rg-ass').addClass('is-valid')
         $('#rg-ass').removeClass('is-invalid')
     } else {
